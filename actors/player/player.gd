@@ -13,6 +13,10 @@ const JUMP_BUFFER_DURATION := 0.1
 var _coyote_timer := 0.0
 var _jump_buffer_timer := 0.0
 var _current_interactable: Node = null
+var _was_on_floor := true
+var _land_timer := 0.0
+
+@onready var _sprite: AnimatedSprite2D = $Visual
 
 
 func _physics_process(delta: float) -> void:
@@ -42,6 +46,40 @@ func _physics_process(delta: float) -> void:
 	velocity.x = Input.get_axis("move_left", "move_right") * SPEED
 
 	move_and_slide()
+
+	# Tick land timer.
+	if _land_timer > 0.0:
+		_land_timer -= delta
+
+	_update_animation()
+	_was_on_floor = is_on_floor()
+
+
+func _update_animation() -> void:
+	# Detect landing transition (air → ground).
+	if not _was_on_floor and is_on_floor():
+		_sprite.play("land")
+		_land_timer = 0.2
+		return
+
+	# Hold land animation while timer is active.
+	if _land_timer > 0.0:
+		return
+
+	if not is_on_floor():
+		if velocity.y < 0:
+			_sprite.play("jump")
+		else:
+			_sprite.play("fall")
+	elif absf(velocity.x) > 10.0:
+		_sprite.play("walk")
+	else:
+		_sprite.play("idle")
+
+	if velocity.x < -10.0:
+		_sprite.flip_h = true
+	elif velocity.x > 10.0:
+		_sprite.flip_h = false
 
 
 func _unhandled_input(event: InputEvent) -> void:
