@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
 [ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://actors/terminals/ReplenishTerminal.tscn" id="6_replenish"]
 [ext_resource type="Texture2D" path="res://assets/backgrounds/greenhouse_sector_bg.png" id="7_bg"]
 [ext_resource type="Texture2D" path="res://assets/tilesets/greenhouse_tiles.png" id="8_tiles"]
+[ext_resource type="PackedScene" path="res://actors/agents/GardenerDrone.tscn" id="9_drone"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 32)
@@ -84,6 +85,9 @@ position = Vector2(200, 238)
 plot_id = "plot_2"
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="GardenerDrone" parent="." instance=ExtResource("9_drone")]
+position = Vector2(0, 180)
 
 [node name="RepairTerminal" parent="." instance=ExtResource("5_repair")]
 position = Vector2(420, 232)
