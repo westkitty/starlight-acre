@@ -1,0 +1,9 @@
+.DS_Store
+*.tmp
+*.swp
+# Godot
+.godot/
+*.import
+export_presets.cfg
+# Claude
+.claude/
