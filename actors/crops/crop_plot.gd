@@ -12,12 +12,11 @@ enum State { EMPTY, PLANTED, GROWING, READY }
 @export var plot_id: String = "plot_0"
 
 @onready var _visual: Sprite2D = $Visual
-@onready var _area: Area2D = $Area2D
-
 var _state: State = State.EMPTY
 var _growth_timer: float = 0.0
 var _power_available: bool = true
 var _crop: CropDefinition
+var _player_in_range: Node = null
 
 
 func _ready() -> void:
@@ -92,6 +91,9 @@ func _set_state(new_state: State) -> void:
 	_state = new_state
 	_apply_visual()
 	Events.crop_state_changed.emit(plot_id, State.keys()[new_state])
+	# Refresh the interaction prompt if the player is currently in range.
+	if _player_in_range != null:
+		_player_in_range.register_interactable(self)
 
 
 func _apply_visual() -> void:
@@ -111,11 +113,13 @@ func _on_resource_changed(resource_name: String, value: float) -> void:
 
 func _on_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		_player_in_range = body
 		body.register_interactable(self)
 
 
 func _on_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		_player_in_range = null
 		body.unregister_interactable(self)
 
 

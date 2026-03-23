@@ -56,14 +56,14 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_animation() -> void:
+	# Hold current locked animation (land or interact) to completion.
+	if _land_timer > 0.0:
+		return
+
 	# Detect landing transition (air → ground).
 	if not _was_on_floor and is_on_floor():
 		_sprite.play("land")
 		_land_timer = 0.2
-		return
-
-	# Hold land animation while timer is active.
-	if _land_timer > 0.0:
 		return
 
 	if not is_on_floor():

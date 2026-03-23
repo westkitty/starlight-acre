@@ -20,7 +20,11 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	power = maxf(0.0, power - POWER_DRAIN_PER_SECOND * delta)
+	if power <= 0.0:
+		return
+	power -= POWER_DRAIN_PER_SECOND * delta
+	if power < 0.0:
+		power = 0.0
 	Events.resource_changed.emit("power", power)
 
 

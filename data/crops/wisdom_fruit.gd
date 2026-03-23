@@ -20,9 +20,3 @@ var nutrient_cost: int = 1
 
 ## Number of harvest items produced per harvest.
 var harvest_yield: int = 1
-
-## Placeholder ColorRect colors per crop state.
-var color_empty: Color = Color(0.45, 0.45, 0.45)
-var color_planted: Color = Color(0.30, 0.20, 0.10)
-var color_growing: Color = Color(0.20, 0.65, 0.20)
-var color_ready: Color = Color(1.00, 0.85, 0.10)
