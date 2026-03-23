@@ -85,6 +85,8 @@ func _update_animation() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and _current_interactable != null:
 		_current_interactable.interact()
+		_sprite.play("interact")
+		_land_timer = 0.25  # 2 frames at 8fps
 
 
 ## Called by an interactable's Area2D body_entered signal.
