@@ -1,0 +1,7 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Starlight Acre Emblem - Vector Source -->
+  <circle cx="64" cy="64" r="60" fill="#0A0E1A" />
+  <ellipse cx="64" cy="64" rx="55" ry="20" fill="none" stroke="#D4AF37" stroke-width="2" transform="rotate(-20, 64, 64)" />
+  <path d="M64,30 L70,55 L95,55 L75,70 L82,95 L64,80 L46,95 L53,70 L33,55 L58,55 Z" fill="#D4AF37" />
+  <circle cx="64" cy="64" r="5" fill="#2E8B8B" />
+</svg>
