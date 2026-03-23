@@ -1,8 +1,9 @@
 # crop_plot.gd
 # Manages a single crop plot's lifecycle: EMPTY → PLANTED → GROWING → READY → EMPTY.
 # Interactable: register/unregister called by Area2D body signals.
-# Visual: ColorRect changes color per state.
+# Visual: Sprite2D uses wisdom_fruit_states.png frame per state.
 # Growth pauses when FarmingManager's power reaches 0.
+class_name CropPlot
 extends Node2D
 
 enum State { EMPTY, PLANTED, GROWING, READY }
@@ -10,7 +11,7 @@ enum State { EMPTY, PLANTED, GROWING, READY }
 ## Unique identifier emitted with crop_state_changed signals.
 @export var plot_id: String = "plot_0"
 
-@onready var _visual: ColorRect = $Visual
+@onready var _visual: Sprite2D = $Visual
 @onready var _area: Area2D = $Area2D
 
 var _state: State = State.EMPTY
@@ -48,6 +49,10 @@ func get_prompt() -> String:
 		State.GROWING: return "E — Tend"
 		State.READY:   return "E — Harvest"
 	return ""
+
+
+func get_state() -> State:
+	return _state
 
 
 # --- Actions ---
@@ -91,10 +96,10 @@ func _set_state(new_state: State) -> void:
 
 func _apply_visual() -> void:
 	match _state:
-		State.EMPTY:   _visual.color = _crop.color_empty
-		State.PLANTED: _visual.color = _crop.color_planted
-		State.GROWING: _visual.color = _crop.color_growing
-		State.READY:   _visual.color = _crop.color_ready
+		State.EMPTY:   _visual.frame = 0
+		State.PLANTED: _visual.frame = 1
+		State.GROWING: _visual.frame = 2
+		State.READY:   _visual.frame = 3
 
 
 # --- Signals ---

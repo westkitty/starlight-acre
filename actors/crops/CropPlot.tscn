@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://actors/crops/crop_plot.gd" id="1_cropplot"]
+[ext_resource type="Texture2D" path="res://assets/sprites/crops/wisdom_fruit_states.png" id="2_croptex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crop"]
 size = Vector2(40, 40)
 
-[node name="CropPlot" type="Node2D"]
+[node name="CropPlot" type="Node2D" groups=["crop_plots"]]
 script = ExtResource("1_cropplot")
 
-[node name="Visual" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
-offset_bottom = 0.0
-color = Color(0.45, 0.45, 0.45, 1.0)
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("2_croptex")
+hframes = 4
+frame = 0
+position = Vector2(0, -16)
 
 [node name="Area2D" type="Area2D" parent="."]
 
