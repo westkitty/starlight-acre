@@ -1,0 +1,96 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
+[ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
+[ext_resource type="PackedScene" path="res://actors/crops/CropPlot.tscn" id="3_cropplot"]
+[ext_resource type="PackedScene" path="res://ui/hud/HUD.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://actors/terminals/RepairTerminal.tscn" id="5_repair"]
+[ext_resource type="PackedScene" path="res://actors/terminals/ReplenishTerminal.tscn" id="6_replenish"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/greenhouse_sector_bg.png" id="7_bg"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/greenhouse_tiles.png" id="8_tiles"]
+[ext_resource type="PackedScene" path="res://actors/agents/GardenerDrone.tscn" id="9_drone"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(1200, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(32, 600)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_greenhouse"]
+texture = ExtResource("8_tiles")
+texture_region_size = Vector2i(16, 16)
+
+[sub_resource type="TileSet" id="TileSet_greenhouse"]
+tile_size = Vector2i(16, 16)
+sources/0 = SubResource("TileSetAtlasSource_greenhouse")
+
+[node name="GreenhouseSector" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("7_bg")
+z_index = -10
+
+[node name="TileMapLayer_Background" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_greenhouse")
+z_index = -5
+
+[node name="TileMapLayer_Floor" type="TileMapLayer" parent="."]
+
+[node name="TileMapLayer_Walls" type="TileMapLayer" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="FloorVisual" type="ColorRect" parent="Floor"]
+offset_left = -600.0
+offset_top = -16.0
+offset_right = 600.0
+offset_bottom = 16.0
+color = Color(0.20, 0.30, 0.25, 1.0)
+
+[node name="WallLeft" type="StaticBody2D" parent="."]
+position = Vector2(-616, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="WallRight" type="StaticBody2D" parent="."]
+position = Vector2(616, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-400, 230)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(-400, 230)
+
+[node name="FarmingManager" type="Node" parent="."]
+script = ExtResource("2_fm")
+
+[node name="CropPlot0" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(-200, 238)
+plot_id = "plot_0"
+
+[node name="CropPlot1" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(0, 238)
+plot_id = "plot_1"
+
+[node name="CropPlot2" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(200, 238)
+plot_id = "plot_2"
+
+[node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="GardenerDrone" parent="." instance=ExtResource("9_drone")]
+position = Vector2(0, 180)
+
+[node name="RepairTerminal" parent="." instance=ExtResource("5_repair")]
+position = Vector2(420, 232)
+
+[node name="ReplenishTerminal" parent="." instance=ExtResource("6_replenish")]
+position = Vector2(500, 232)
