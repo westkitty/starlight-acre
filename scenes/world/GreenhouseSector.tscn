@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
 [ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
+[ext_resource type="PackedScene" path="res://actors/crops/CropPlot.tscn" id="3_cropplot"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 32)
@@ -57,3 +58,15 @@ position = Vector2(-400, 230)
 
 [node name="FarmingManager" type="Node" parent="."]
 script = ExtResource("2_fm")
+
+[node name="CropPlot0" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(-200, 238)
+plot_id = "plot_0"
+
+[node name="CropPlot1" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(0, 238)
+plot_id = "plot_1"
+
+[node name="CropPlot2" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(200, 238)
+plot_id = "plot_2"
