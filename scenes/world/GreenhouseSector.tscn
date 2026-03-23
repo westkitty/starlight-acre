@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
 [ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
 [ext_resource type="PackedScene" path="res://actors/crops/CropPlot.tscn" id="3_cropplot"]
 [ext_resource type="PackedScene" path="res://ui/hud/HUD.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://actors/terminals/RepairTerminal.tscn" id="5_repair"]
+[ext_resource type="PackedScene" path="res://actors/terminals/ReplenishTerminal.tscn" id="6_replenish"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 32)
@@ -73,3 +75,9 @@ position = Vector2(200, 238)
 plot_id = "plot_2"
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
+
+[node name="RepairTerminal" parent="." instance=ExtResource("5_repair")]
+position = Vector2(420, 232)
+
+[node name="ReplenishTerminal" parent="." instance=ExtResource("6_replenish")]
+position = Vector2(500, 232)
