@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
+[ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 32)
@@ -55,3 +56,4 @@ position = Vector2(-400, 230)
 position = Vector2(-400, 230)
 
 [node name="FarmingManager" type="Node" parent="."]
+script = ExtResource("2_fm")
