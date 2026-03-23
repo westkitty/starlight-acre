@@ -1,19 +1,19 @@
 # Starlight Acre — Tasks
 
-## Immediate (Phase 2 Start)
+## Immediate (Phase 2 — remaining)
 
-- [ ] Replace player ColorRect with `player_sheet.png` sprite (32×48px, AnimatedSprite2D)
-- [ ] Connect player animation states to movement code
-- [ ] Replace CropPlot ColorRect with `wisdom_fruit_states.png` (32×32px, 4 frames)
+- [x] Replace player ColorRect with `player_sheet.png` sprite (32×48px, AnimatedSprite2D)
+- [x] Connect player animation states to movement code
+- [x] Replace CropPlot ColorRect with `wisdom_fruit_states.png` (32×32px, 4 frames)
+- [x] Add background: `backgrounds/greenhouse_sector_bg.png` (1920×1080)
+- [x] Set all pixel art imports to Filter: Nearest (via project.godot global setting)
+- [x] Gardener drone: Node2D agent, patrol area, tend and harvest tasks
 - [ ] Replace terminal ColorRects with `terminals.png` slices (32×64px)
-- [ ] Replace HUD icons with `hud_icons.png` sprites (16×16px)
-- [ ] Populate greenhouse TileMapLayer with `greenhouse_tiles.png`
-- [ ] Add background: `backgrounds/greenhouse_sector_bg.png` (1920×1080)
-- [ ] Set all pixel art imports to Filter: Nearest, Compress: Lossless
+- [ ] Replace HUD text labels with `hud_icons.png` sprites (16×16px)
+- [ ] Populate greenhouse TileMapLayer with actual tiles (requires editor — TileSet configured, no tiles placed)
 
-## Next Milestone (Phase 2 Complete)
+## Next Milestone (Phase 2 Complete → Phase 3)
 
-- [ ] Gardener drone: Node2D agent, patrol area, tend and harvest tasks
 - [ ] Trickster Vine: second crop with unpredictable growth speed
 - [ ] Room transition: door trigger area, second sector scene
 - [ ] Dexter the Stinkweasel: docking event, trade UI stub
@@ -25,26 +25,22 @@
 | Phase | Status | Goal |
 |-------|--------|------|
 | Phase 1 | ✅ Complete | Runnable vertical slice |
-| Phase 2 | 🔲 Next | Pixel art + gardener drone |
+| Phase 2 | 🔄 In Progress | Pixel art + gardener drone |
 | Phase 3 | 🔲 Future | Second sector + room transitions |
 | Phase 4 | 🔲 Future | Dexter vendor + progression unlock |
 | Phase 5 | 🔲 Future | Polish, audio, save/load |
 
 ## Known Blockers
 
-None currently. Phase 1 is complete and the codebase is in a clean state.
+- TileMapLayer tile placement requires the Godot editor open. The TileSet is configured (`greenhouse_tiles.png`, 16×16 cells) but no tiles have been painted.
 
-## Prioritized Checklist (Phase 2 Entry)
+## Remaining Phase 2 Checklist
 
-1. **Asset import setup** — Configure Godot import settings for all pixel art
-2. **Player sprite** — Most visible win; proves the art direction is working
-3. **Crop sprites** — Second most visible; the crop lifecycle needs its mythic look
-4. **Background + tileset** — Sets the atmospheric tone
-5. **Gardener drone** — First agent; core to the game's identity beyond pure platformer
-6. **Trickster Vine** — Second crop; proves the crop system is extensible
-7. **Room transitions** — Unlocks spatial exploration
-8. **Dexter** — Narrative and economy hook
-9. **Save/load** — Makes the game retainable
+1. **Terminal sprites** — Replace orange/blue ColorRect placeholders with `terminals.png` (32×64px; Repair = left half, Replenish = right half)
+2. **HUD icons** — Replace text-only labels with icon+label combos using `hud_icons.png` (16×16px)
+3. **Tile painting** — Open Godot editor, select TileMapLayer_Background, paint floor/wall/beam tiles
+4. **Trickster Vine** — Second crop with distinct behavior; requires new CropDefinition + CropPlot variant
+5. **GpuParticles2D** — growth_glow effect on READY crop state using `effects/pixel_art_effects.png`
 
 ## Deferred (Post-Phase 2)
 

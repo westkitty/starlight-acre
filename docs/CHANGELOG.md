@@ -4,6 +4,44 @@ All notable changes to Starlight Acre are documented here.
 
 ---
 
+## [Phase 2 — Partial] — 2026-03-23 — Sprite Integration + Gardener Drone
+
+### Added
+
+**Pixel art integration**
+- `actors/player/Player.tscn` — AnimatedSprite2D replacing ColorRect placeholder; 15 AtlasTexture frames, 6 animations (idle/walk/jump/fall/land/interact)
+- `actors/crops/CropPlot.tscn` — Sprite2D replacing ColorRect; `wisdom_fruit_states.png` 4-frame horizontal strip driven by crop state
+- `scenes/world/GreenhouseSector.tscn` — Background ColorRect replaced with Sprite2D (`greenhouse_sector_bg.png`); TileMapLayer_Background wired to TileSet (`greenhouse_tiles.png`, 16×16 cells)
+- `project.godot` — Global 2D texture filter set to Nearest for pixel art crispness
+
+**Player animation**
+- `actors/player/player.gd` — `_update_animation()` drives idle/walk/jump/fall/land/interact states; `flip_h` tracks facing direction; `_land_timer` locks animations to completion
+
+**Gardener Drone agent**
+- `actors/agents/gardener_drone.gd` — Patrols ±300px at 80px/s; scans every 5s; tends GROWING plots and harvests READY plots via `CropPlot.interact()`
+- `actors/agents/GardenerDrone.tscn` — Teal ColorRect placeholder; instanced in GreenhouseSector at (0, 180)
+
+**CropPlot improvements**
+- `actors/crops/crop_plot.gd` — Added `class_name CropPlot`, `get_state() -> State`, and `groups=["crop_plots"]` for drone discovery
+
+### Fixed (Bug Sweep)
+
+- `crop_plot.gd` — Interaction prompt now refreshes on state change while player is in range; fixes Gardener Drone harvesting a READY plot causing stale "E — Harvest" prompt that silently planted
+- `farming_manager.gd` — Power drain signal no longer emits every frame once power reaches zero
+- `crop_plot.gd` — Removed unused `_area: Area2D` @onready variable
+- `player.gd` — Animation lock guard now fires before landing detection; interact animation can no longer be interrupted by a concurrent landing event
+- `wisdom_fruit.gd` — Removed dead `color_*` fields superseded by sprite frames
+
+### Still Pending (Phase 2)
+
+- Terminal sprite integration (`terminals.png`)
+- HUD icon integration (`hud_icons.png`)
+- TileMapLayer tile painting (requires Godot editor)
+- Trickster Vine second crop
+- GpuParticles2D growth_glow effect
+
+---
+
 ## [Phase 1] — 2026-03-22 — Bootstrap Complete
 
 ### Added

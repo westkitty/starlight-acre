@@ -13,7 +13,7 @@
 
 **Target experience:** Restoring a failing orbital greenhouse into a self-sustaining mythic ecosystem. A calm but purposeful game where every day has a rhythm.
 
-**Current phase:** Phase 1 — Bootstrap complete. First vertical slice implemented.
+**Current phase:** Phase 2 — In progress. Sprite integration and Gardener Drone complete; terminal sprites, HUD icons, and tile painting remain.
 
 ---
 
@@ -286,24 +286,39 @@ Impact: If FarmingManager's `_ready()` runs after an interactable tries to call 
 
 ## 12. Next-Step Handoff
 
-**Current repo state:** Runnable Godot 4 project. Open project.godot in Godot 4 editor, run with F5. Player moves in a dark greenhouse room. Three crop plots (grey = empty). Two terminals (orange = repair, blue = replenish). Passive power drain visible in HUD. Full crop lifecycle functional. All docs written. Pixel art asset pack in assets/ — not yet wired to scenes (Phase 2 visual pass).
+### Session: 2026-03-22 — Phase 1 Bootstrap
 
-**What should happen next (Phase 2 priorities):**
+**State at end of session:** Runnable Godot 4 project. Open project.godot in Godot 4 editor, run with F5. Player moves in a dark greenhouse room. Three crop plots (grey = empty). Two terminals (orange = repair, blue = replenish). Passive power drain visible in HUD. Full crop lifecycle functional. All docs written. Pixel art asset pack in assets/ — not yet wired to scenes.
 
-1. **Gardener drone agent** — One simple heuristic agent that tends and harvests crops on a timer. No deep scheduling. One task type only. This proves the orchestration identity of the game.
-2. **TileMapLayer visual pass** — Set up a basic TileSet, paint the floor and walls with proper tiles, integrate the pixel art asset pack (see assets/docs/asset_usage_notes.md and assets/docs/style_guide.md).
-3. **Second crop: Trickster Vine** — Implement the fleeing harvest behavior as a separate mechanic. Requires a new CropDefinition and a new CropPlot variant.
-4. **Room transitions** — Add one adjacent sector. Implement door interactable. Player retains inventory state (requires moving FarmingManager to a scene-persistent location or introducing a lightweight GameState autoload).
-5. **Dexter the Stinkweasel** — Simple trade UI. Appears on a timer. Sells seeds.
+---
+
+### Session: 2026-03-23 — Phase 2 Partial (Sprite Integration + Drone)
+
+**State at end of session:** Player now uses AnimatedSprite2D with 6 animations (idle/walk/jump/fall/land/interact) from `player_sheet.png`. Crop plots show `wisdom_fruit_states.png` (4 states, frame-driven). Background shows `greenhouse_sector_bg.png`. TileMapLayer_Background has a TileSet configured (`greenhouse_tiles.png`, 16×16) but no tiles painted. Gardener Drone patrols ±300px, tends GROWING and harvests READY plots every 5s. Global texture filter set to Nearest. Five bugs fixed (see CHANGELOG.md). All docs updated.
+
+**What remains in Phase 2:**
+
+1. **Terminal sprites** — Replace RepairTerminal and ReplenishTerminal ColorRect placeholders with `terminals.png` (32×64px). Repair = left slice, Replenish = right slice.
+2. **HUD icons** — Replace text-only labels with icon+label pairs using `hud_icons.png` (16×16px per icon).
+3. **Tile painting** — Open Godot editor, select TileMapLayer_Background, paint greenhouse floor/wall/beam tiles. This cannot be done in text format — requires visual tile placement in the editor.
+4. **Trickster Vine** — Second crop. New CropDefinition subclass with distinct growth behavior (erratic timer, fleeing harvest). New CropPlot variant or extended state machine.
+5. **GpuParticles2D** — Add growth_glow particles over READY crop state using `effects/pixel_art_effects.png`.
+
+**After Phase 2 is complete:**
+- Phase 3: Room transitions (door interactable, second sector scene, FarmingManager state persistence)
+- Phase 4: Dexter the Stinkweasel (docking event, trade UI)
+- Phase 5: Save/load, audio, polish
 
 **Top priorities for next session:**
-1. Read this bible before doing anything.
-2. Play through the current crop loop once to feel what needs tuning.
-3. Then start the gardener drone — it is the first thing that will prove this is not just a farming game.
+1. Read this bible.
+2. Open the project in Godot 4.3 and run it — verify player sprite, crop sprite, background, and drone are all working.
+3. Paint the TileMapLayer tiles while the editor is open (it's the one task that requires the editor).
+4. Then implement terminal sprites and HUD icons (can be done in text-format .tscn).
 
 **Warnings for next worker:**
 - Do NOT add a second autoload without a strong reason. FarmingManager staying as a scene child is intentional.
 - Do NOT implement natural language agent creation. It is documented in the concept doc but is explicitly post-MVP.
-- The StaticBody2D floor is a Phase 1 stub. Replace it with TileMapLayer collision in Phase 2, not Phase 1.
-- Growth time (30s) and power drain (1%/3s) are first-pass values. They need playtesting before being considered final.
-- The pixel art asset pack in assets/ is ready to use — see assets/docs/ for integration notes. Player sheet is 32×48px, wisdom fruit states are 32×32px, terminals are 32×64px.
+- The StaticBody2D floor is still the Phase 1 collision stub. The TileMapLayer now has a TileSet but no collision tiles. Do not remove StaticBody2D until TileMapLayer collision is set up.
+- Growth time (30s) and power drain (1%/3s) are first-pass values. Needs playtesting.
+- The Gardener Drone calls `interact()` via the CropPlot interface — it does NOT call private `_tend()`/`_harvest()` directly. Keep this clean.
+- `_player_in_range` in crop_plot.gd is set by Area2D body_entered/exited. If a room transition occurs while the player is inside a plot's area, `_player_in_range` will be stale in the new scene. Null-check guards it safely.

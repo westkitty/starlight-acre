@@ -8,15 +8,22 @@ A small, polished orbital mythic farming station game. You restore and cultivate
 
 ## Current Status
 
-**Phase 1 — Bootstrap complete.**
+**Phase 2 — In progress.**
 
-Playable vertical slice:
-- Player movement (run, jump, coyote time, jump buffer)
-- One crop lifecycle: Wisdom Fruit (plant → tend → harvest)
+Complete:
+- Player with animated sprite (idle/walk/jump/fall/land/interact)
+- Wisdom Fruit crop lifecycle with sprite states (plant → tend → harvest)
 - Power drain hazard (passive drain; growth pauses at zero power)
-- Repair Terminal (restores power) and Replenish Terminal (restores water + nutrients)
-- HUD showing Water, Nutrient, Power, Wisdom Fruit count
+- Repair Terminal + Replenish Terminal
+- HUD (Water, Nutrient, Power%, Wisdom Fruit count)
 - Interaction prompt system
+- Background art + TileSet configured
+- Gardener Drone agent (patrols greenhouse, tends and harvests automatically)
+
+Remaining in Phase 2:
+- Terminal sprites (`terminals.png`)
+- HUD icons (`hud_icons.png`)
+- TileMapLayer tile painting (requires Godot editor)
 
 ---
 
