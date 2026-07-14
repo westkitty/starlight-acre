@@ -16,7 +16,7 @@ var power: float = 100.0
 
 func _ready() -> void:
 	add_to_group("farming_manager")
-	_apply_pending_save_data()
+	_apply_pending_state_data()
 	_broadcast_all()
 
 
@@ -111,9 +111,7 @@ func replenish_consumables() -> void:
 	Events.resource_changed.emit("nutrient", float(nutrient))
 
 
-func _apply_pending_save_data() -> void:
-	if not GameState.has_pending_load():
-		return
+func _apply_pending_state_data() -> void:
 	var data := GameState.get_pending_resources()
 	if data.is_empty():
 		return
