@@ -4,6 +4,22 @@ All notable changes to Starlight Acre are documented here.
 
 ---
 
+## [Validation Support Pass] - 2026-07-14
+
+### Added
+
+- `tools/validation/static_scene_audit.py` to check required prototype files, key scene nodes, and `res://` references from a full checkout.
+- `tools/validation/godot_smoke_test.gd` to load and instantiate core scenes in Godot 4.3 headless mode.
+- `docs/VALIDATION.md` with static, headless, and manual validation steps.
+- Text-authored `TileVisualPass` in `GreenhouseSector.tscn` using `greenhouse_tiles.png` as a visual fallback before editor-authored TileMapLayer painting.
+
+### Notes
+
+- `TileVisualPass` is visual only. StaticBody2D floor and walls remain authoritative for collision until TileMapLayer collision is configured and tested in the Godot editor.
+- Godot runtime validation is still required before using controlled terms such as "runs", "tested", or "verified" for the prototype branch.
+
+---
+
 ## [Adversarial Repair Pass] - 2026-07-14
 
 ### Fixed
@@ -49,7 +65,6 @@ All notable changes to Starlight Acre are documented here.
 ### Still Pending
 
 - Godot 4.3 import/run validation.
-- Manual TileMapLayer painting in the Godot editor.
 - Dedicated Trickster Vine art.
 - Full Dexter shop UI and rotating stock.
 - Audio, accessibility pass, release packaging, and clean-machine validation.
