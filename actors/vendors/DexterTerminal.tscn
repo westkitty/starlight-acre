@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://actors/vendors/dexter_terminal.gd" id="1_dexter"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dexter"]
+size = Vector2(48, 64)
+
+[node name="DexterTerminal" type="Node2D"]
+script = ExtResource("1_dexter")
+
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 20.0
+offset_bottom = 0.0
+color = Color(0.7, 0.45, 0.2, 1.0)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -28)
+shape = SubResource("RectangleShape2D_dexter")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_body_exited"]
