@@ -8,22 +8,27 @@ A small, polished orbital mythic farming station game. You restore and cultivate
 
 ## Current Status
 
-**Phase 2 — In progress.**
+**Prototype build branch:** `codex/full-build-plan-implementation`
 
-Complete:
+Implemented on this branch:
 - Player with animated sprite (idle/walk/jump/fall/land/interact)
-- Wisdom Fruit crop lifecycle with sprite states (plant → tend → harvest)
+- Wisdom Fruit crop lifecycle with sprite states (plant -> tend -> harvest)
+- Trickster Vine second crop with erratic growth timing
 - Power drain hazard (passive drain; growth pauses at zero power)
-- Repair Terminal + Replenish Terminal
-- HUD (Water, Nutrient, Power%, Wisdom Fruit count)
+- Repair Terminal + Replenish Terminal using terminal sprites
+- Save/load terminals using JSON at `user://save.json`
+- HUD icon/value rows for Water, Nutrient, Power, Wisdom Fruit, and Trickster Vine
 - Interaction prompt system
 - Background art + TileSet configured
 - Gardener Drone agent (patrols greenhouse, tends and harvests automatically)
+- Archive Library second sector with door transitions
+- Dexter trade stub: spend 2 Wisdom Fruit to restore power and consumables
 
-Remaining in Phase 2:
-- Terminal sprites (`terminals.png`)
-- HUD icons (`hud_icons.png`)
-- TileMapLayer tile painting (requires Godot editor)
+Still requires Godot editor/runtime validation:
+- TileMapLayer tile painting
+- Full smoke test in Godot 4.3
+- Dedicated Trickster Vine art
+- Full Dexter shop UI and rotating stock
 
 ---
 
@@ -47,8 +52,8 @@ Press **F5** or click the Play button. The entry scene is `scenes/world/Greenhou
 
 | Action | Keys |
 |--------|------|
-| Move   | A / D or ← → |
-| Jump   | Space or ↑ |
+| Move | A / D or Left / Right |
+| Jump | Space or Up |
 | Interact | E |
 
 ---
@@ -56,82 +61,48 @@ Press **F5** or click the Play button. The entry scene is `scenes/world/Greenhou
 ## Folder Overview
 
 ```
-autoload/        Global signal bus (Events.gd)
-actors/          Player, crop plots, terminals
-  player/        CharacterBody2D with movement + interaction
-  crops/         CropPlot state machine (EMPTY→PLANTED→GROWING→READY)
-  terminals/     RepairTerminal, ReplenishTerminal
-systems/         FarmingManager (resources, power drain)
-  farming/
-scenes/          Game scenes
-  world/         GreenhouseSector.tscn (entry scene)
-data/            Content definitions
-  crops/         CropDefinition resource + wisdom_fruit.gd
+autoload/        Global Events signal bus and GameState transition/save state
+actors/          Player, crop plots, terminals, transitions, vendors
+systems/         FarmingManager resource and power-drain logic
+scenes/          Game scenes; entry scene is scenes/world/GreenhouseSector.tscn
+data/            Crop definitions
 ui/              HUD and overlays
-  hud/
-assets/          Art, pixel art asset pack (Phase 2 integration)
-  branding/
-  sprites/
-  ui/
-  backgrounds/
-  tilesets/
-  effects/
-  docs/
-docs/            Project documentation
+assets/          Pixel art asset pack
+docs/            Project documentation and validation notes
 ```
 
 ---
 
 ## MVP Definition
 
-**In scope (Phase 1 complete):**
-- 1 station sector (Greenhouse)
-- 1 player character
-- 1 crop: Wisdom Fruit (plant → tend → harvest)
-- 1 resource loop: water + nutrients → grow → harvest → produce
-- 1 hazard: passive power drain
-- 2 terminals: Repair (power) and Replenish (water + nutrients)
-- HUD resource display
+**Current prototype proves:**
+- Mythic orbital farming identity
+- Player movement + interaction
+- Crop lifecycle and resource costs
+- Power drain tension
+- Drone automation
+- Second crop behavior variation
+- First room transition
+- Minimal trade/progression hook
+- Basic save/load persistence
 
-**Post-MVP (Phase 2+):**
-- Pixel art sprite integration (asset pack is included in `assets/`)
-- Gardener drone agent
-- Second crop: Trickster Vine
-- Room transitions to adjacent sectors
-- Dexter the Stinkweasel vendor encounter
-- TileMapLayer visual pass
-
----
-
-## Short Roadmap
-
-| Phase | Goal |
-|-------|------|
-| ✅ Phase 1 | Runnable vertical slice with core loop |
-| Phase 2 | Pixel art integration + gardener drone |
-| Phase 3 | Second sector + room transitions |
-| Phase 4 | Vendor (Dexter) + progression unlock |
-| Phase 5 | Polish, audio, save/load |
+**Not release-ready:**
+- No clean-machine export evidence
+- No platform packaging
+- No accessibility validation
+- No license/release gate review
+- No public release approval
 
 ---
 
 ## Documentation
 
-- `docs/ARCHITECTURE.md` — Engine choice, folder structure, scene strategy
-- `docs/GAME_DESIGN.md` — Core loop, crop system, resource economy, hazards
-- `docs/PROJECT_OVERVIEW.md` — Vision, goals, MVP scope, non-goals
-- `docs/TASKS.md` — Immediate tasks and roadmap
-- `Starlight_Acre_bible.md` — Persistent project handoff ledger
-
----
-
-## Pixel Art Assets
-
-A GBA/SNES-style pixel art asset pack is included in `assets/`. Integration is planned for Phase 2.
-
-Assets include: player sprite sheet (32×48px, 15 frames), Wisdom Fruit states (32×32px, 4 states), terminals (32×64px), HUD icons (16×16px), tileset, background, VFX effects.
-
-See `assets/docs/` for slicing dimensions and Godot import settings.
+- `docs/ARCHITECTURE.md` - Engine choice, folder structure, scene strategy
+- `docs/GAME_DESIGN.md` - Core loop, crop system, resource economy, hazards
+- `docs/PROJECT_OVERVIEW.md` - Vision, goals, MVP scope, non-goals
+- `docs/TASKS.md` - Immediate tasks, blockers, and validation checklist
+- `docs/CHANGELOG.md` - Change history
+- `Starlight_Acre_bible.md` - Persistent project handoff ledger
 
 ---
 
