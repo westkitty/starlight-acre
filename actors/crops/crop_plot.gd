@@ -133,7 +133,7 @@ func _apply_pending_save_data() -> void:
 	var state_name: String = data.get("state", "EMPTY")
 	var state_index := State.keys().find(state_name)
 	if state_index >= 0:
-		_state = state_index as State
+		_state = state_index
 	_growth_timer = float(data.get("growth_timer", _growth_timer))
 
 
