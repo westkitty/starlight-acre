@@ -1,13 +1,12 @@
 # hud.gd
-# Renders the resource bar (Water, Nutrient, Power, Wisdom Fruit)
-# and the interaction prompt label.
-# Driven entirely by Events signals — no direct coupling to game nodes.
+# Renders resources and interaction prompt from Events signals.
 extends CanvasLayer
 
-@onready var _water_label: Label = $TopBar/WaterLabel
-@onready var _nutrient_label: Label = $TopBar/NutrientLabel
-@onready var _power_label: Label = $TopBar/PowerLabel
-@onready var _fruit_label: Label = $TopBar/FruitLabel
+@onready var _water_label: Label = $TopBar/Water/Value
+@onready var _nutrient_label: Label = $TopBar/Nutrient/Value
+@onready var _power_label: Label = $TopBar/Power/Value
+@onready var _fruit_label: Label = $TopBar/WisdomFruit/Value
+@onready var _trickster_label: Label = $TopBar/TricksterVine/Value
 @onready var _prompt_label: Label = $PromptLabel
 
 
@@ -20,13 +19,15 @@ func _ready() -> void:
 func _on_resource_changed(resource_name: String, value: float) -> void:
 	match resource_name:
 		"water":
-			_water_label.text = "Water: %d/10" % int(value)
+			_water_label.text = "%d/10" % int(value)
 		"nutrient":
-			_nutrient_label.text = "Nutrient: %d/10" % int(value)
+			_nutrient_label.text = "%d/10" % int(value)
 		"power":
-			_power_label.text = "Power: %d%%" % int(value)
+			_power_label.text = "%d%%" % int(value)
 		"wisdom_fruit":
-			_fruit_label.text = "Wisdom Fruit: %d" % int(value)
+			_fruit_label.text = "%d" % int(value)
+		"trickster_vine":
+			_trickster_label.text = "%d" % int(value)
 
 
 func _on_prompt_changed(prompt_text: String) -> void:
