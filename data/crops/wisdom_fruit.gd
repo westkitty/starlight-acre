@@ -1,12 +1,16 @@
 # wisdom_fruit.gd
-# CropDefinition Resource — defines all data for a crop type.
-# Phase 1: this file IS the CropDefinition class AND the Wisdom Fruit data.
-# Phase 2: split into CropDefinition base class + separate .tres resource files per crop.
+# CropDefinition Resource plus the default Wisdom Fruit data.
 class_name CropDefinition
 extends Resource
 
-## Human-readable name shown in HUD and logs.
+## Stable ID used by save data and scripted crop behavior.
+var crop_id: String = "wisdom_fruit"
+
+## Human-readable name shown in prompts and logs.
 var crop_name: String = "Wisdom Fruit"
+
+## Resource key awarded by FarmingManager on harvest.
+var harvest_resource: String = "wisdom_fruit"
 
 ## Time in seconds for the crop to grow from PLANTED to READY.
 var growth_time: float = 30.0
@@ -20,3 +24,6 @@ var nutrient_cost: int = 1
 
 ## Number of harvest items produced per harvest.
 var harvest_yield: int = 1
+
+## Optional behavior key used by CropPlot for small crop-specific rules.
+var behavior: String = "standard"
