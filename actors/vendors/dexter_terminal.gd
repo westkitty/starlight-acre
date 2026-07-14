@@ -8,11 +8,14 @@ const WISDOM_COST := 2
 func interact() -> void:
 	var fm := get_tree().get_first_node_in_group("farming_manager")
 	if fm == null:
+		Events.status_message_changed.emit("Dexter cannot reach station systems")
 		return
 	if not fm.spend_resource("wisdom_fruit", WISDOM_COST):
+		Events.status_message_changed.emit("Dexter wants 2 Wisdom Fruit")
 		return
 	fm.replenish_consumables()
 	fm.restore_power()
+	Events.status_message_changed.emit("Dexter restored station supplies")
 
 
 func get_prompt() -> String:
