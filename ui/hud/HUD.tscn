@@ -96,6 +96,17 @@ stretch_mode = 3
 [node name="Value" type="Label" parent="TopBar/TricksterVine"]
 text = "0"
 
+[node name="StatusLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.0
+offset_right = 180.0
+offset_top = 48.0
+offset_bottom = 78.0
+horizontal_alignment = 1
+text = ""
+visible = false
+
 [node name="PromptLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
