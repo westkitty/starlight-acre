@@ -25,14 +25,14 @@ func _ready() -> void:
 	_visual.modulate = visual_modulate
 	_ready_glow.visible = false
 	Events.resource_changed.connect(_on_resource_changed)
-	_apply_pending_save_data()
+	_apply_pending_state_data()
 	_apply_visual()
 
 
 func _process(delta: float) -> void:
 	if _state != State.GROWING or not _power_available:
 		return
-	_growth_timer -= _get_growth_delta(delta)
+	_growth_timer -= delta
 	if _growth_timer <= 0.0:
 		_set_state(State.READY)
 
@@ -74,12 +74,17 @@ func get_save_data() -> Dictionary:
 func _try_plant() -> void:
 	var fm := _get_farming_manager()
 	if fm == null:
+		Events.status_message_changed.emit("No farming manager found")
 		return
 	if not fm.can_plant(_crop.water_cost, _crop.nutrient_cost):
+		Events.status_message_changed.emit("Need more water or nutrients")
 		return
 	fm.spend_water(_crop.water_cost)
 	fm.spend_nutrient(_crop.nutrient_cost)
 	_growth_timer = _crop.growth_time
+	if _crop.behavior == "erratic_growth":
+		_growth_timer += randf_range(-4.0, 5.0)
+		_growth_timer = maxf(12.0, _growth_timer)
 	_set_state(State.PLANTED)
 	# Brief PLANTED pause before growth begins, giving visual feedback.
 	await get_tree().create_timer(0.5).timeout
@@ -98,6 +103,7 @@ func _harvest() -> void:
 	var fm := _get_farming_manager()
 	if fm != null:
 		fm.add_harvest(_crop.harvest_resource, _crop.harvest_yield)
+		Events.status_message_changed.emit("Harvested %s" % _crop.crop_name)
 	_set_state(State.EMPTY)
 
 
@@ -120,9 +126,7 @@ func _apply_visual() -> void:
 	_ready_glow.visible = _state == State.READY
 
 
-func _apply_pending_save_data() -> void:
-	if not GameState.has_pending_load():
-		return
+func _apply_pending_state_data() -> void:
 	var data := GameState.get_pending_crop(plot_id)
 	if data.is_empty():
 		return
@@ -135,12 +139,6 @@ func _apply_pending_save_data() -> void:
 	if state_index >= 0:
 		_state = state_index
 	_growth_timer = float(data.get("growth_timer", _growth_timer))
-
-
-func _get_growth_delta(delta: float) -> float:
-	if _crop.behavior == "erratic_growth":
-		return delta * randf_range(0.75, 1.4)
-	return delta
 
 
 func _load_crop_definition() -> CropDefinition:
