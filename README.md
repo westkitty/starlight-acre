@@ -13,20 +13,23 @@ A small, polished orbital mythic farming station game. You restore and cultivate
 Implemented on this branch:
 - Player with animated sprite (idle/walk/jump/fall/land/interact)
 - Wisdom Fruit crop lifecycle with sprite states (plant -> tend -> harvest)
-- Trickster Vine second crop with erratic growth timing
+- Trickster Vine second crop with bounded erratic behavior
 - Power drain hazard (passive drain; growth pauses at zero power)
 - Repair Terminal + Replenish Terminal using terminal sprites
 - Save/load terminals using JSON at `user://save.json`
 - HUD icon/value rows for Water, Nutrient, Power, Wisdom Fruit, and Trickster Vine
+- HUD status messages for save/load, insufficient resources, harvests, and trades
 - Interaction prompt system
 - Background art + TileSet configured
+- Text-authored `TileVisualPass` fallback using `greenhouse_tiles.png`
 - Gardener Drone agent (patrols greenhouse, tends and harvests automatically)
 - Archive Library second sector with door transitions
 - Dexter trade stub: spend 2 Wisdom Fruit to restore power and consumables
+- Static and Godot headless validation scripts in `tools/validation/`
 
 Still requires Godot editor/runtime validation:
-- TileMapLayer tile painting
 - Full smoke test in Godot 4.3
+- Optional editor-authored TileMapLayer painting and collision migration
 - Dedicated Trickster Vine art
 - Full Dexter shop UI and rotating stock
 
@@ -45,6 +48,16 @@ Still requires Godot editor/runtime validation:
 
 ### Run
 Press **F5** or click the Play button. The entry scene is `scenes/world/GreenhouseSector.tscn`.
+
+### Validate
+From a full checkout, run:
+
+```bash
+python3 tools/validation/static_scene_audit.py
+godot4 --headless --path . --script tools/validation/godot_smoke_test.gd
+```
+
+See `docs/VALIDATION.md` for the complete manual smoke path and evidence requirements.
 
 ---
 
@@ -66,6 +79,7 @@ actors/          Player, crop plots, terminals, transitions, vendors
 systems/         FarmingManager resource and power-drain logic
 scenes/          Game scenes; entry scene is scenes/world/GreenhouseSector.tscn
 data/            Crop definitions
+tools/           Validation scripts
 ui/              HUD and overlays
 assets/          Pixel art asset pack
 docs/            Project documentation and validation notes
@@ -75,7 +89,7 @@ docs/            Project documentation and validation notes
 
 ## MVP Definition
 
-**Current prototype proves:**
+**Current prototype proves after validation:**
 - Mythic orbital farming identity
 - Player movement + interaction
 - Crop lifecycle and resource costs
@@ -101,6 +115,7 @@ docs/            Project documentation and validation notes
 - `docs/GAME_DESIGN.md` - Core loop, crop system, resource economy, hazards
 - `docs/PROJECT_OVERVIEW.md` - Vision, goals, MVP scope, non-goals
 - `docs/TASKS.md` - Immediate tasks, blockers, and validation checklist
+- `docs/VALIDATION.md` - Validation commands, smoke path, and evidence requirements
 - `docs/CHANGELOG.md` - Change history
 - `Starlight_Acre_bible.md` - Persistent project handoff ledger
 
