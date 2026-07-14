@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=15 format=3]
 
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
 [ext_resource type="Script" path="res://systems/farming/farming_manager.gd" id="2_fm"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" path="res://assets/backgrounds/greenhouse_sector_bg.png" id="7_bg"]
 [ext_resource type="Texture2D" path="res://assets/tilesets/greenhouse_tiles.png" id="8_tiles"]
 [ext_resource type="PackedScene" path="res://actors/agents/GardenerDrone.tscn" id="9_drone"]
+[ext_resource type="PackedScene" path="res://actors/transitions/DoorTransition.tscn" id="10_door"]
+[ext_resource type="PackedScene" path="res://actors/terminals/SaveTerminal.tscn" id="11_save"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 32)
@@ -66,6 +68,9 @@ shape = SubResource("RectangleShape2D_wall")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-400, 230)
 
+[node name="ArchiveReturnSpawn" type="Marker2D" parent="."]
+position = Vector2(-520, 230)
+
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(-400, 230)
 
@@ -84,10 +89,30 @@ plot_id = "plot_1"
 position = Vector2(200, 238)
 plot_id = "plot_2"
 
+[node name="TricksterPlot" parent="." instance=ExtResource("3_cropplot")]
+position = Vector2(320, 238)
+plot_id = "trickster_plot_0"
+crop_definition_path = "res://data/crops/trickster_vine.gd"
+visual_modulate = Color(0.6, 1, 0.75, 1)
+
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
 
 [node name="GardenerDrone" parent="." instance=ExtResource("9_drone")]
 position = Vector2(0, 180)
+
+[node name="ArchiveDoor" parent="." instance=ExtResource("10_door")]
+position = Vector2(-540, 232)
+target_scene_path = "res://scenes/world/ArchiveLibrary.tscn"
+target_spawn_name = "GreenhouseReturnSpawn"
+prompt_text = "E - Enter Archive Library"
+
+[node name="SaveTerminal" parent="." instance=ExtResource("11_save")]
+position = Vector2(-460, 232)
+action = "save"
+
+[node name="LoadTerminal" parent="." instance=ExtResource("11_save")]
+position = Vector2(-390, 232)
+action = "load"
 
 [node name="RepairTerminal" parent="." instance=ExtResource("5_repair")]
 position = Vector2(420, 232)
