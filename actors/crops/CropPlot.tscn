@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://actors/crops/crop_plot.gd" id="1_cropplot"]
 [ext_resource type="Texture2D" path="res://assets/sprites/crops/wisdom_fruit_states.png" id="2_croptex"]
+[ext_resource type="Texture2D" path="res://assets/effects/pixel_art_effects.png" id="3_effects"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crop"]
 size = Vector2(40, 40)
@@ -14,6 +15,14 @@ texture = ExtResource("2_croptex")
 hframes = 4
 frame = 0
 position = Vector2(0, -16)
+
+[node name="ReadyGlow" type="Sprite2D" parent="."]
+texture = ExtResource("3_effects")
+hframes = 4
+frame = 2
+position = Vector2(0, -24)
+modulate = Color(1, 1, 1, 0.65)
+visible = false
 
 [node name="Area2D" type="Area2D" parent="."]
 
