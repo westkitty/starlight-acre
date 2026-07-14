@@ -4,6 +4,26 @@ All notable changes to Starlight Acre are documented here.
 
 ---
 
+## [Adversarial Repair Pass] - 2026-07-14
+
+### Fixed
+
+- `GameState.gd` now captures resource and per-scene crop state before room transitions so entering the Archive Library and returning to the Greenhouse does not reset the prototype loop.
+- `FarmingManager` now restores resources from either save data or the current session cache, not only fresh defaults.
+- `CropPlot` now restores plot state from the current scene's session/save cache.
+- Trickster Vine erratic behavior no longer applies random growth speed every frame; randomness is bounded to planting and tending so the behavior is easier to test.
+- Save/load, crop failures, harvests, and Dexter trades now emit status messages instead of silently succeeding or failing.
+- HUD now displays transient status feedback through `StatusLabel`.
+
+### Critique Captured
+
+- The previous implementation crossed several planned milestones in one branch. It remains a prototype branch, not a release candidate.
+- The previous room-transition implementation was incomplete because scene-local resource and crop state reset on scene changes.
+- The previous UX was too silent for a prototype: failed load, failed trade, and insufficient resources gave no player feedback.
+- The branch still has not been Godot-runtime validated in this environment.
+
+---
+
 ## [Prototype Build Plan Implementation] - 2026-07-14
 
 ### Added
