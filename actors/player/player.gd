@@ -97,6 +97,7 @@ func unregister_interactable(node: Node) -> void:
 func _apply_spawn_state() -> void:
 	if GameState.has_pending_load():
 		global_position = GameState.get_pending_player_position(global_position)
+		GameState.clear_pending_load()
 		return
 
 	var current_scene := get_tree().current_scene
