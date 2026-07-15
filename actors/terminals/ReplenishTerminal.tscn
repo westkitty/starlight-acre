@@ -1,26 +1,23 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="Script" path="res://actors/terminals/replenish_terminal.gd" id="1_replenish"]
-[ext_resource type="Texture2D" path="res://assets/sprites/terminals/terminals.png" id="2_terminals"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_replenish_terminal"]
-atlas = ExtResource("2_terminals")
-region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_replenish"]
-size = Vector2(40, 64)
+size = Vector2(36, 48)
 
 [node name="ReplenishTerminal" type="Node2D"]
 script = ExtResource("1_replenish")
 
-[node name="Visual" type="Sprite2D" parent="."]
-position = Vector2(0, -32)
-texture = SubResource("AtlasTexture_replenish_terminal")
+[node name="Visual" type="ColorRect" parent="."]
+offset_left = -18.0
+offset_top = -48.0
+offset_right = 18.0
+offset_bottom = 0.0
+color = Color(0.2, 0.6, 0.9, 1.0)
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_replenish")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_body_entered"]

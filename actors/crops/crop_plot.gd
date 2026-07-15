@@ -1,5 +1,5 @@
 # crop_plot.gd
-# Manages a single crop plot's lifecycle: EMPTY -> PLANTED -> GROWING -> READY -> EMPTY.
+# Manages a single crop plot's lifecycle: EMPTY → PLANTED → GROWING → READY → EMPTY.
 # Interactable: register/unregister called by Area2D body signals.
 # Visual: Sprite2D uses wisdom_fruit_states.png frame per state.
 # Growth pauses when FarmingManager's power reaches 0.
@@ -12,7 +12,6 @@ enum State { EMPTY, PLANTED, GROWING, READY }
 @export var plot_id: String = "plot_0"
 
 @onready var _visual: Sprite2D = $Visual
-@onready var _ready_glow: GPUParticles2D = $ReadyGlow
 var _state: State = State.EMPTY
 var _growth_timer: float = 0.0
 var _power_available: bool = true
@@ -45,9 +44,9 @@ func interact() -> void:
 
 func get_prompt() -> String:
 	match _state:
-		State.EMPTY:   return "E - Plant Wisdom Fruit (1 Water, 1 Nutrient)"
-		State.GROWING: return "E - Tend"
-		State.READY:   return "E - Harvest"
+		State.EMPTY:   return "E — Plant Wisdom Fruit (1 Water, 1 Nutrient)"
+		State.GROWING: return "E — Tend"
+		State.READY:   return "E — Harvest"
 	return ""
 
 
@@ -103,7 +102,6 @@ func _apply_visual() -> void:
 		State.PLANTED: _visual.frame = 1
 		State.GROWING: _visual.frame = 2
 		State.READY:   _visual.frame = 3
-	_ready_glow.emitting = _state == State.READY
 
 
 # --- Signals ---

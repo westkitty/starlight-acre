@@ -4,27 +4,6 @@ All notable changes to Starlight Acre are documented here.
 
 ---
 
-## [Phase 2 — Asset Integration Follow-up] — 2026-07-15
-
-### Added
-
-- `actors/terminals/RepairTerminal.tscn` — Replaced orange ColorRect placeholder with the repair slice from `assets/sprites/terminals/terminals.png`.
-- `actors/terminals/ReplenishTerminal.tscn` — Replaced blue ColorRect placeholder with the replenish slice from `assets/sprites/terminals/terminals.png`.
-- `ui/hud/HUD.tscn` — Replaced text-only resource bar with icon/value pairs from `assets/ui/icons/hud_icons.png`; added prompt icon.
-- `actors/crops/CropPlot.tscn` — Added `GPUParticles2D` ready-crop glow using `assets/effects/pixel_art_effects.png`.
-
-### Changed
-
-- `ui/hud/hud.gd` — Updated node paths and label text to drive the icon-led HUD layout.
-- `actors/crops/crop_plot.gd` — Ready crop state now toggles the glow effect on; non-ready states keep it off.
-- `README.md` and `docs/TASKS.md` — Updated Phase 2 status so completed asset integrations are no longer listed as pending.
-
-### Still Pending (Phase 2)
-
-- TileMapLayer tile painting and TileMap collision migration. This still requires opening the project in the Godot editor for visual tile placement and smoke testing.
-
----
-
 ## [Phase 2 — Partial] — 2026-03-23 — Sprite Integration + Gardener Drone
 
 ### Added

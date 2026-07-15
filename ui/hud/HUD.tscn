@@ -1,27 +1,6 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=2 format=3]
 
 [ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_hud"]
-[ext_resource type="Texture2D" path="res://assets/ui/icons/hud_icons.png" id="2_icons"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_water"]
-atlas = ExtResource("2_icons")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nutrient"]
-atlas = ExtResource("2_icons")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_power"]
-atlas = ExtResource("2_icons")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fruit"]
-atlas = ExtResource("2_icons")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_prompt"]
-atlas = ExtResource("2_icons")
-region = Rect2(64, 0, 16, 16)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -29,77 +8,36 @@ layer = 10
 
 [node name="TopBar" type="HBoxContainer" parent="."]
 anchor_right = 1.0
-offset_left = 8.0
 offset_top = 8.0
-offset_right = -8.0
 offset_bottom = 40.0
-theme_override_constants/separation = 16
+offset_left = 8.0
+offset_right = -8.0
 
-[node name="Water" type="HBoxContainer" parent="TopBar"]
+[node name="WaterLabel" type="Label" parent="TopBar"]
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+text = "Water: 5/10"
 
-[node name="Icon" type="TextureRect" parent="TopBar/Water"]
-custom_minimum_size = Vector2(16, 16)
-texture = SubResource("AtlasTexture_water")
-stretch_mode = 3
-
-[node name="ValueLabel" type="Label" parent="TopBar/Water"]
-text = "5/10"
-
-[node name="Nutrient" type="HBoxContainer" parent="TopBar"]
+[node name="NutrientLabel" type="Label" parent="TopBar"]
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+text = "Nutrient: 5/10"
 
-[node name="Icon" type="TextureRect" parent="TopBar/Nutrient"]
-custom_minimum_size = Vector2(16, 16)
-texture = SubResource("AtlasTexture_nutrient")
-stretch_mode = 3
-
-[node name="ValueLabel" type="Label" parent="TopBar/Nutrient"]
-text = "5/10"
-
-[node name="Power" type="HBoxContainer" parent="TopBar"]
+[node name="PowerLabel" type="Label" parent="TopBar"]
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+text = "Power: 100%"
 
-[node name="Icon" type="TextureRect" parent="TopBar/Power"]
-custom_minimum_size = Vector2(16, 16)
-texture = SubResource("AtlasTexture_power")
-stretch_mode = 3
-
-[node name="ValueLabel" type="Label" parent="TopBar/Power"]
-text = "100%"
-
-[node name="Fruit" type="HBoxContainer" parent="TopBar"]
+[node name="FruitLabel" type="Label" parent="TopBar"]
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+text = "Wisdom Fruit: 0"
 
-[node name="Icon" type="TextureRect" parent="TopBar/Fruit"]
-custom_minimum_size = Vector2(16, 16)
-texture = SubResource("AtlasTexture_fruit")
-stretch_mode = 3
-
-[node name="ValueLabel" type="Label" parent="TopBar/Fruit"]
-text = "0"
-
-[node name="PromptBar" type="HBoxContainer" parent="."]
+[node name="PromptLabel" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_top = 1.0
 anchor_bottom = 1.0
+anchor_top = 1.0
 offset_left = -150.0
-offset_top = -60.0
 offset_right = 150.0
+offset_top = -60.0
 offset_bottom = -30.0
-alignment = 1
-theme_override_constants/separation = 6
-visible = false
-
-[node name="PromptIcon" type="TextureRect" parent="PromptBar"]
-custom_minimum_size = Vector2(16, 16)
-texture = SubResource("AtlasTexture_prompt")
-stretch_mode = 3
-
-[node name="PromptLabel" type="Label" parent="PromptBar"]
+horizontal_alignment = 1
 text = ""
+visible = false

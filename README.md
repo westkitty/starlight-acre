@@ -8,20 +8,21 @@ A small, polished orbital mythic farming station game. You restore and cultivate
 
 ## Current Status
 
-**Phase 2 — Mostly complete.**
+**Phase 2 — In progress.**
 
 Complete:
 - Player with animated sprite (idle/walk/jump/fall/land/interact)
 - Wisdom Fruit crop lifecycle with sprite states (plant → tend → harvest)
-- Ready-crop glow effect using the VFX asset sheet
 - Power drain hazard (passive drain; growth pauses at zero power)
-- Repair Terminal + Replenish Terminal with terminal sprites
-- HUD with resource icons (Water, Nutrient, Power%, Wisdom Fruit count)
-- Interaction prompt system with prompt icon
+- Repair Terminal + Replenish Terminal
+- HUD (Water, Nutrient, Power%, Wisdom Fruit count)
+- Interaction prompt system
 - Background art + TileSet configured
 - Gardener Drone agent (patrols greenhouse, tends and harvests automatically)
 
 Remaining in Phase 2:
+- Terminal sprites (`terminals.png`)
+- HUD icons (`hud_icons.png`)
 - TileMapLayer tile painting (requires Godot editor)
 
 ---
@@ -107,7 +108,7 @@ docs/            Project documentation
 | Phase | Goal |
 |-------|------|
 | ✅ Phase 1 | Runnable vertical slice with core loop |
-| 🔄 Phase 2 | Pixel art integration + gardener drone; tile painting remains |
+| Phase 2 | Pixel art integration + gardener drone |
 | Phase 3 | Second sector + room transitions |
 | Phase 4 | Vendor (Dexter) + progression unlock |
 | Phase 5 | Polish, audio, save/load |
@@ -126,11 +127,9 @@ docs/            Project documentation
 
 ## Pixel Art Assets
 
-A GBA/SNES-style pixel art asset pack is included in `assets/`. Most Phase 2 gameplay-facing assets are now wired into scenes.
+A GBA/SNES-style pixel art asset pack is included in `assets/`. Integration is planned for Phase 2.
 
-Integrated assets include: player sprite sheet (32×48px, 15 frames), Wisdom Fruit states (32×32px, 4 states), terminals (32×64px), HUD icons (16×16px), background, and ready-crop VFX.
-
-Still pending: editor-painted TileMapLayer tiles using `assets/tilesets/greenhouse_tiles.png`.
+Assets include: player sprite sheet (32×48px, 15 frames), Wisdom Fruit states (32×32px, 4 states), terminals (32×64px), HUD icons (16×16px), tileset, background, VFX effects.
 
 See `assets/docs/` for slicing dimensions and Godot import settings.
 
