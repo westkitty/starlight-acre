@@ -1,13 +1,35 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://actors/crops/crop_plot.gd" id="1_cropplot"]
 [ext_resource type="Texture2D" path="res://assets/sprites/crops/wisdom_fruit_states.png" id="2_croptex"]
+[ext_resource type="Texture2D" path="res://assets/effects/pixel_art_effects.png" id="3_effects"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crop"]
 size = Vector2(40, 40)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ready_glow"]
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector3(0, -1, 0)
+spread = 35.0
+gravity = Vector3(0, -12, 0)
+initial_velocity_min = 4.0
+initial_velocity_max = 10.0
+scale_min = 0.5
+scale_max = 1.0
+
 [node name="CropPlot" type="Node2D" groups=["crop_plots"]]
 script = ExtResource("1_cropplot")
+
+[node name="ReadyGlow" type="GPUParticles2D" parent="."]
+position = Vector2(0, -24)
+z_index = 1
+emitting = false
+amount = 10
+lifetime = 1.2
+local_coords = false
+process_material = SubResource("ParticleProcessMaterial_ready_glow")
+texture = ExtResource("3_effects")
 
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("2_croptex")

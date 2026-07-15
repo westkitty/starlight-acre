@@ -4,12 +4,13 @@
 
 - [x] Replace player ColorRect with `player_sheet.png` sprite (32×48px, AnimatedSprite2D)
 - [x] Connect player animation states to movement code
-- [x] Replace CropPlot ColorRect with `wisdom_fruit_states.png` (32×32px, 4 frames)
+- [x] Replace CropPlot ColorRect with `wisdom_fruit_states.png` sprite states (32×32px, 4 frames)
 - [x] Add background: `backgrounds/greenhouse_sector_bg.png` (1920×1080)
 - [x] Set all pixel art imports to Filter: Nearest (via project.godot global setting)
 - [x] Gardener drone: Node2D agent, patrol area, tend and harvest tasks
-- [ ] Replace terminal ColorRects with `terminals.png` slices (32×64px)
-- [ ] Replace HUD text labels with `hud_icons.png` sprites (16×16px)
+- [x] Replace terminal ColorRects with `terminals.png` slices (32×64px)
+- [x] Replace HUD text-only resource labels with `hud_icons.png` icon/value pairs (16×16px)
+- [x] Add ready-crop glow effect using `effects/pixel_art_effects.png`
 - [ ] Populate greenhouse TileMapLayer with actual tiles (requires editor — TileSet configured, no tiles placed)
 
 ## Next Milestone (Phase 2 Complete → Phase 3)
@@ -18,14 +19,13 @@
 - [ ] Room transition: door trigger area, second sector scene
 - [ ] Dexter the Stinkweasel: docking event, trade UI stub
 - [ ] Save/load: JSON serialization of FarmingManager + CropPlot states + player position
-- [ ] GpuParticles2D: growth_glow effect over READY crop state
 
 ## Short-Term Roadmap
 
 | Phase | Status | Goal |
 |-------|--------|------|
 | Phase 1 | ✅ Complete | Runnable vertical slice |
-| Phase 2 | 🔄 In Progress | Pixel art + gardener drone |
+| Phase 2 | 🔄 Mostly complete | Pixel art + gardener drone; tile painting remains |
 | Phase 3 | 🔲 Future | Second sector + room transitions |
 | Phase 4 | 🔲 Future | Dexter vendor + progression unlock |
 | Phase 5 | 🔲 Future | Polish, audio, save/load |
@@ -36,11 +36,16 @@
 
 ## Remaining Phase 2 Checklist
 
-1. **Terminal sprites** — Replace orange/blue ColorRect placeholders with `terminals.png` (32×64px; Repair = left half, Replenish = right half)
-2. **HUD icons** — Replace text-only labels with icon+label combos using `hud_icons.png` (16×16px)
-3. **Tile painting** — Open Godot editor, select TileMapLayer_Background, paint floor/wall/beam tiles
-4. **Trickster Vine** — Second crop with distinct behavior; requires new CropDefinition + CropPlot variant
-5. **GpuParticles2D** — growth_glow effect on READY crop state using `effects/pixel_art_effects.png`
+1. **Tile painting** — Open Godot editor, select TileMapLayer_Background, paint floor/wall/beam tiles.
+2. **Tile collision migration** — Keep StaticBody2D floor/walls until TileMapLayer collision is configured and tested.
+
+## Recommended Path To Finished
+
+1. Finish the Greenhouse presentation pass: tile painting, tile collision, terminal placement polish, and crop glow tuning.
+2. Add one new mechanic at a time: Trickster Vine first, then room transition, then Dexter trade stub.
+3. Make progression real: Wisdom Fruit should buy one station upgrade before more crops or rooms are added.
+4. Add persistence only after the second sector exists, so save/load covers real state instead of a throwaway prototype.
+5. Add audio and short feedback animations after mechanics stabilize.
 
 ## Deferred (Post-Phase 2)
 

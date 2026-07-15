@@ -40,10 +40,10 @@ Each crop plot cycles through four states:
 
 | State | Visual | Interaction |
 |-------|--------|-------------|
-| EMPTY | Gray | E to plant (costs water + nutrients) |
-| PLANTED | Brown | — (waiting, brief) |
-| GROWING | Green | E to tend (reduces growth timer) |
-| READY | Gold/Glowing | E to harvest (yields produce) |
+| EMPTY | Empty planter | E to plant (costs water + nutrients) |
+| PLANTED | Sprout | — (waiting, brief) |
+| GROWING | Growing Wisdom Fruit | E to tend (reduces growth timer) |
+| READY | Ready sprite + glow | E to harvest (yields produce) |
 
 Growth pauses when station power reaches zero.
 
@@ -53,7 +53,7 @@ Growth pauses when station power reaches zero.
 - **Tend bonus:** 20% timer reduction per tend
 - **Cost:** 1 water, 1 nutrient to plant
 - **Yield:** 1 Wisdom Fruit per harvest
-- **Phase 2:** Sprite from `assets/sprites/crops/wisdom_fruit_states.png` (32×32px, 4 states)
+- **Current visual:** `assets/sprites/crops/wisdom_fruit_states.png` (32×32px, 4 states) with ready-state glow from `assets/effects/pixel_art_effects.png`
 
 ### Future Crops (Post-MVP)
 - **Trickster Vine** (Loki) — unstable harvest behavior, evasive
@@ -72,24 +72,24 @@ Growth pauses when station power reaches zero.
 | Power | Repair Terminal | Passive drain; required for crop growth |
 | Wisdom Fruit | Harvesting | Upgrades, progression currency |
 
-**Phase 1 economy:**
+**Current economy:**
 - Power drains at ~0.333/second (100% lasts ~5 minutes)
-- Replenish Terminal restores water to 5 and nutrients to 5
+- Replenish Terminal restores water and nutrients to their current caps of 10
 - Repair Terminal restores power to 100%
 
-**Phase 2+ additions:** Biomass, Refined Goods, Research Data, Anomaly Residue
+**Planned additions:** Biomass, Refined Goods, Research Data, Anomaly Residue
 
 ---
 
-## Agent System (Phase 2+)
+## Agent System
 
 Agents are simple heuristic workers — not AI, not simulated people. They execute task types in assigned zones.
 
-**Phase 2 target: Gardener Drone**
-- Task types: Water, Tend, Harvest
-- Assigned to a zone (one sector)
-- One efficiency stat
-- No scheduling complexity in Phase 2
+**Current agent: Gardener Drone**
+- Patrols the greenhouse
+- Scans crop plots every 5 seconds
+- Tends GROWING plots and harvests READY plots through the public `CropPlot.interact()` interface
+- Does not water, schedule, pathfind, or manage multiple sectors yet
 
 Agent roles to follow in later phases: Engineer, Maintenance Drone, Harvester.
 
@@ -99,10 +99,10 @@ Agent roles to follow in later phases: Engineer, Maintenance Drone, Harvester.
 
 ## Hazard System
 
-### Phase 1: Power Drain (Active)
+### Current: Power Drain
 Passive power drain at 0.333/second forces the player to visit the Repair Terminal periodically. Growth halts at zero power, creating a tension between tending crops and keeping the lights on.
 
-### Phase 2 Hazards
+### Planned Hazards
 - **Solar Flare** — temporary power disruption, accelerated drain
 - **Mythic Anomaly** — crop growth mutation (positive or negative)
 - **System Malfunction** — random terminal offline for a period
@@ -129,7 +129,7 @@ The station begins as a small greenhouse module. Expansion unlocks adjacent sect
 
 Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare seeds, unusual upgrades, and station components. His inventory reacts to station state and crop variety.
 
-**Phase 2+ implementation:** Docking event trigger, trade UI, rotation stock table.
+**Planned implementation:** Docking event trigger, trade UI, rotating stock table.
 
 ---
 
@@ -160,12 +160,20 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 | HUD resource display | ✅ Done |
 | Interaction prompt system | ✅ Done |
 
-## Post-MVP (Phase 2+)
+## Current Phase 2 Work
 
-- Pixel art sprite integration
-- Gardener drone (1 agent, 2 task types)
+| Element | Status |
+|---------|--------|
+| Player, crop, terminal, HUD, background sprite integration | ✅ Done |
+| Gardener drone | ✅ Done |
+| Ready-crop VFX | ✅ Done |
+| TileMapLayer painting and collision migration | 🔲 Requires Godot editor |
+
+## Post-MVP Roadmap
+
 - Trickster Vine (2nd crop)
 - Room transitions (2 sectors)
 - Dexter vendor encounter
+- Wisdom Fruit upgrade spend mechanic
 - Save/load system
 - Audio (ambience + feedback sounds)
