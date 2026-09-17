@@ -322,3 +322,49 @@ Impact: If FarmingManager's `_ready()` runs after an interactable tries to call 
 - Growth time (30s) and power drain (1%/3s) are first-pass values. Needs playtesting.
 - The Gardener Drone calls `interact()` via the CropPlot interface — it does NOT call private `_tend()`/`_harvest()` directly. Keep this clean.
 - `_player_in_range` in crop_plot.gd is set by Area2D body_entered/exited. If a room transition occurs while the player is inside a plot's area, `_player_in_range` will be stale in the new scene. Null-check guards it safely.
+
+
+---
+
+## Session — 2026-09-17 — Progression, Persistence, Recovery, and Godot 4.7 Validation
+
+**Objective:** Convert the March vertical slice into a progression-bearing multi-sector game foundation while recovering legitimate reverted Phase 2 work and proving the repository under the current Godot runtime.
+
+**Baseline evidence:**
+- Fresh clone from `westkitty/starlight-acre` at `97eb3f8`.
+- Installed runtime: Godot 4.7.1 stable.
+- Clean-clone editor initialization reproduced asset import failures because files named `.png` contained JPEG bytes.
+- Commit `defaecd` was inspected and contained Starlight Acre terminal/HUD/VFX work despite later being reverted as mistaken cross-project work.
+
+**Changes made:**
+- Recovered the Starlight Acre files changed by `defaecd` into the working tree for renewed validation.
+- Converted JPEG-encoded `.png` assets into actual PNG encoding while preserving paths.
+- Added `OPERATIONAL_STATE.md` as the current-state control surface.
+- Added `GameState` autoload and JSON persistence.
+- Added data-driven `CropDefinition` plus `wisdom_fruit.tres`.
+- Reworked the resource economy: two initial emergency resupplies, then 1 Wisdom Fruit resupply cost; deep power repair costs 1 Wisdom Fruit.
+- Added Efficient Grid (4 fruit, 40% lower drain) and Closed-Loop Hydroponics (6 fruit, 15-unit caps and free resupply).
+- Changed Gardener Drone behavior from global remote crop interaction to nearest-target travel and local interaction.
+- Added Engineering Bay, Research Terminal, reusable sector doors, and bidirectional transitions.
+- Migrated project feature metadata from Godot 4.3 to 4.7.
+- Added `tests/smoke_test.gd`.
+- Reconciled README, architecture, and tasks with current implementation.
+
+**Validation performed:**
+- `godot --headless --path . --editor --quit` — PASS after asset normalization.
+- `godot --headless --path . --script tests/smoke_test.gd` — PASS, emitted `STARLIGHT_SMOKE_PASS`.
+- `godot --headless --path . --quit-after 120` — PASS, no script/runtime errors observed.
+- `git diff --check` — PASS before final documentation reconciliation; rerun required after docs update.
+
+**Important remaining limitation:**
+The generated image assets are 640x640 even where historical docs claimed dimensions such as 32x48 or 32x32. Technical resource loading now succeeds, but visual sprite slicing is not yet proven correct. Do not remove this warning until an editor playthrough verifies the rendered assets.
+
+**Next recommended work:**
+1. Manual Godot editor visual/playthrough proof.
+2. Correct sprite slicing based on actual source imagery.
+3. Paint and validate TileMapLayer collision.
+4. Only then add a second crop and the first true Mythic Ecology cross-crop interaction.
+
+**Git delivery:** No commit or push performed. User authorization for implementation did not include Git delivery.
+
+Implementation commit: `07e6196bc1278e55dd6653798c5865e55f7d21fb`
