@@ -4,6 +4,27 @@ All notable changes to Starlight Acre are documented here.
 
 ---
 
+## [Phase 2 — Asset Integration Follow-up] — 2026-07-15
+
+### Added
+
+- `actors/terminals/RepairTerminal.tscn` — Replaced orange ColorRect placeholder with the repair slice from `assets/sprites/terminals/terminals.png`.
+- `actors/terminals/ReplenishTerminal.tscn` — Replaced blue ColorRect placeholder with the replenish slice from `assets/sprites/terminals/terminals.png`.
+- `ui/hud/HUD.tscn` — Replaced text-only resource bar with icon/value pairs from `assets/ui/icons/hud_icons.png`; added prompt icon.
+- `actors/crops/CropPlot.tscn` — Added `GPUParticles2D` ready-crop glow using `assets/effects/pixel_art_effects.png`.
+
+### Changed
+
+- `ui/hud/hud.gd` — Updated node paths and label text to drive the icon-led HUD layout.
+- `actors/crops/crop_plot.gd` — Ready crop state now toggles the glow effect on; non-ready states keep it off.
+- `README.md` and `docs/TASKS.md` — Updated Phase 2 status so completed asset integrations are no longer listed as pending.
+
+### Still Pending (Phase 2)
+
+- TileMapLayer tile painting and TileMap collision migration. This still requires opening the project in the Godot editor for visual tile placement and smoke testing.
+
+---
+
 ## [Phase 2 — Partial] — 2026-03-23 — Sprite Integration + Gardener Drone
 
 ### Added
@@ -100,3 +121,35 @@ All notable changes to Starlight Acre are documented here.
 ---
 
 *Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) conventions.*
+
+
+---
+
+## [Progression + Persistence Upgrade] — 2026-09-17
+
+### Added
+- GameState persistence and JSON save/load
+- data-driven CropDefinition resources
+- Engineering Bay and reusable sector doors
+- Research Terminal with Efficient Grid and Closed-Loop Hydroponics
+- finite emergency-resupply economy and Wisdom Fruit sinks
+- spatial Gardener Drone target travel
+- headless smoke test
+- OPERATIONAL_STATE.md
+
+### Recovered
+- Terminal sprites, HUD icons, and READY-crop VFX from reverted commit defaecd for renewed validation.
+
+### Fixed
+- Repository .png files that actually contained JPEG bytes; normalized to real PNG encoding so Godot can import them on a clean clone.
+
+### Migrated
+- Project feature target from Godot 4.3 to Godot 4.7.
+
+### Validation
+- Godot 4.7.1 headless editor load: PASS
+- smoke test: PASS
+- 120-frame main-scene headless run: PASS
+
+### Known limitation
+- Generated image dimensions do not match historical sprite-sheet dimension claims; visual slicing still requires manual QA.

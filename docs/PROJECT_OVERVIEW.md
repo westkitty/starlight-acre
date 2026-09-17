@@ -28,21 +28,24 @@ This is not a generic farming clone, not a parody, and not a prototype. It is a 
 
 ---
 
-## Current Implementation (Phase 1)
+## Current Implementation
 
-Phase 1 delivers a runnable vertical slice that proves the core identity of the game:
+Phase 1 delivered the runnable vertical slice. Phase 2 has now integrated the main gameplay-facing asset pass except for editor-painted TileMapLayer tiles.
 
 | System | Status | Notes |
 |--------|--------|-------|
 | Player movement | ✅ Done | Run, jump, coyote time, jump buffer |
 | Wisdom Fruit lifecycle | ✅ Done | EMPTY→PLANTED→GROWING→READY→EMPTY |
+| Crop VFX | ✅ Done | READY state emits glow particles |
 | Power drain hazard | ✅ Done | Passive drain; growth halts at zero |
-| Repair Terminal | ✅ Done | Restores power to 100% |
-| Replenish Terminal | ✅ Done | Restores water + nutrients |
-| HUD resource display | ✅ Done | Water, Nutrients, Power%, Wisdom Fruit count |
+| Repair Terminal | ✅ Done | Restores power to 100%; sprite integrated |
+| Replenish Terminal | ✅ Done | Restores water + nutrients; sprite integrated |
+| HUD resource display | ✅ Done | Icon/value pairs for Water, Nutrients, Power%, Wisdom Fruit |
 | Interaction prompt | ✅ Done | Context-sensitive E-prompt per interactable |
+| Gardener Drone | ✅ Done | Patrols, tends, harvests |
 | Signal architecture | ✅ Done | Events autoload, decoupled systems |
 | Project documentation | ✅ Done | Bible, architecture, game design docs |
+| TileMapLayer visual pass | 🔲 Pending | Requires Godot editor tile painting |
 
 ---
 
@@ -56,7 +59,6 @@ The MVP proves these things and no more:
 
 **The MVP is not:**
 - A complete game
-- A polished visual experience (Phase 2 integrates the pixel art asset pack)
 - A multi-room experience (Phase 3)
 - A multiplayer or networking project (never)
 
@@ -71,19 +73,19 @@ These are explicitly out of scope for all phases of this project:
 - Natural-language agent creation or LLM integration
 - Deep colony simulation (agents are simple heuristic workers)
 - Live-service features, DLC infrastructure, or analytics
-- Complex natural-physics liquid simulation (use GPUParticles2D)
+- Complex natural-physics liquid simulation (use GPUParticles2D-style feedback, not fluid simulation)
 - Generic farming mechanics without mythic identity
 
 ---
 
-## Implementation Priorities (Phase 2)
+## Implementation Priorities
 
 Ordered by value:
 
-1. **Pixel art integration** — replace ColorRect placeholders with sprites from `assets/`
-2. **TileMapLayer visual pass** — populate greenhouse tileset
-3. **Gardener drone agent** — one agent type, two task types (tend + harvest)
-4. **Trickster Vine** — second crop with distinct behavior
+1. **TileMapLayer visual pass** — paint greenhouse floor, wall, beam, and prop tiles in the Godot editor
+2. **Tile collision migration** — move from StaticBody2D stubs to tested TileMapLayer collision
+3. **Trickster Vine** — second crop with distinct behavior and bespoke art need
+4. **Wisdom Fruit upgrade spend** — one meaningful station upgrade to make harvest output matter
 5. **Room transitions** — door triggers between two sectors
 6. **Dexter the Stinkweasel** — docking event + simple trade UI
 7. **Save/load** — JSON serialization of game state
