@@ -1,8 +1,8 @@
 # Starlight Acre Operational State
 
 Project ID: starlight-acre
-Revision: 2
-Updated: 2026-09-17
+Revision: 3
+Updated: 2026-09-20
 
 ## Purpose
 A small, finishable 2D orbital mythic farming-station game in which the player restores a failing station by cultivating mythic crops, managing station systems, automating repetitive work, and expanding into additional sectors.
@@ -51,6 +51,14 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Audio remains absent.
 - Implementation commit recorded: 07e6196bc1278e55dd6653798c5865e55f7d21fb. Push status is recorded below after delivery.
 
+## Visual asset canon
+- All four candidate foundry runs are complete: original 44/44, original ALT 44/44, additional 24/24, additional ALT 24/24.
+- Visual-canon consolidation covers 136 candidates across 29 slots.
+- On 2026-09-20, the user explicitly approved all 29 draft PRIMARY recommendations as the human-ratified canon.
+- Authoritative decision file: `assets/candidates/visual_canon/RATIFICATION_DECISIONS.json`.
+- Ratified canon has not yet been compiled into final repaired assets or promoted into live game paths.
+- The pre-ratification repair queue contains 25 entries; synthetic compiler validation previously showed all-primary approval should prune this to 3 canonical repairs, but the real compiler run remains pending.
+
 ## Current gameplay economy
 - Initial water: 5.
 - Initial nutrients: 5.
@@ -84,6 +92,7 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 ## Revision history
 - Revision 1: initial current-state control surface created during upgrade pass.
 - Revision 2: promoted headless import/smoke/runtime checks to verified after successful execution; reconciled implemented progression and persistence state.
+- Revision 3: recorded explicit human approval of all 29 recommended visual-canon primaries; ratification decision file is now authoritative while repair compilation and live promotion remain pending.
 
 ## Delivery
 - Implementation commit: 07e6196bc1278e55dd6653798c5865e55f7d21fb
