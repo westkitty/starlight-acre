@@ -1,0 +1,41 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "W01_SECTOR_DOOR",
+  "source_candidate_id": "W01_C002",
+  "alternate_candidate_id": "W01_ALT_C002",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/W01_SECTOR_DOOR/W01_ALT_C002/source.png",
+  "game_ready_file": "slots/W01_SECTOR_DOOR/W01_ALT_C002/game_ready.png",
+  "actual_source_width": 784,
+  "actual_source_height": 1360,
+  "actual_game_width": 64,
+  "actual_game_height": 112,
+  "expected_width": 64,
+  "expected_height": 112,
+  "expected_frame_layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall",
+  "alpha_present": true,
+  "sha256_source": "bc5ed55682b26726e4e2fdbde6fdc791ebc398b521671aea3be35c822a9e9d98",
+  "sha256_game_ready": "27c089f78aa026071f3cf05e5596b0ca2d215b469c330a9418731933a76e11b6",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Reusable orbital station sector door for a 2D side-view pixel game: exactly ONE door prop on a solid flat pure magenta #FF00FF background (one flat color edge to edge, no border, no frame), no surrounding wall scenery. Strict side view, frontal frame of a mechanical bulkhead. Tall portrait composition about four tiles wide and seven tiles tall (roughly 4:7). Strong mechanical rectangular silhouette in worn dusk-blue and station-gray hull plating with copper reinforcing elements; teal status lighting; heavy floor threshold plate; subtle scuffs and old repair seams; obviously traversable and openable; old station hardware usable in both a greenhouse sector and an engineering bay. Dark subtle outline. No readable text, no second door, no floor, no drop shadow on the background.  CHALLENGER DESIGN (materially different from the incumbent horizontal-split bulkhead): a vertical folding accordion grille bulkhead: tall narrow vertical slats that fold sideways into a deep wall pocket on one side; copper guide rails along the top and bottom edges; every third slat carries a thin teal edge-light so the closed door reads as a striped field; a small lock stator at pocket height; scuffed lower slats, one slightly dented.",
+  "challenger_axes": [
+    "opening mechanism: accordion fold into wall pocket vs horizontal split",
+    "panel segmentation: many vertical slats vs two solid panels",
+    "status lighting: repeated slat edge-lights vs single central seal",
+    "visual rhythm: striped vertical field vs two heavy masses"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 18.6%)",
+    "content downscaled x0.0889 (NEAREST) into 64x112 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

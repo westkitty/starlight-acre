@@ -1,0 +1,32 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C03_LIGHTNING_VINE",
+  "source_candidate_id": "C03_C001",
+  "alternate_candidate_id": "C03_ALT_C001",
+  "priority": "C",
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "source_file": null,
+  "game_ready_file": null,
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": null,
+  "challenger_axes": [],
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "alternate not yet generated"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

@@ -1,0 +1,41 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "T02_RESEARCH_TERMINAL",
+  "source_candidate_id": "T02_C003",
+  "alternate_candidate_id": "T02_ALT_C003",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/source.png",
+  "game_ready_file": "slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/game_ready.png",
+  "actual_source_width": 928,
+  "actual_source_height": 1152,
+  "actual_game_width": 64,
+  "actual_game_height": 80,
+  "expected_width": 64,
+  "expected_height": 80,
+  "expected_frame_layout": "single sprite, 64x80 canvas, body ~56x72, bottom-center anchor at floor line",
+  "alpha_present": true,
+  "sha256_source": "53d5d7124ab0d094cdf1482d266391de33431eb69783d122568899c39f76bf35",
+  "sha256_game_ready": "126a7f232696cbc9cff3492b6f2702d9fe35808d4cddc7ccb813571f14558dd4",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Engineering Bay research terminal for a 2D side-view pixel game: exactly ONE terminal prop centered on a solid flat pure magenta #FF00FF background (one flat color edge to edge, no border, no frame, no captions). Slightly tall portrait composition (about 4:5). Strict side view. Dark station shell in deep space navy and dusk blue with worn station-gray trim and copper bolts; research function readable without any text: abstract holographic data shapes in cyan-teal glow with small violet accents (abstract shapes only, absolutely no readable text or letters); a scan-hood element and a specimen containment element somewhere in the design; cable runs into the base plate; bottom edge sits on the canvas floor line. Dark subtle outline, readable silhouette. No readable text, no second terminal, no floor plate, no scenery, no drop shadow on the background.  CHALLENGER DESIGN (materially different from the incumbent squat console with tall thin sensor mast): a vertical elevator-rack terminal: three offset instrument shelves stacked on a slim central column like a goods lift, each shelf carrying its own small glowing readout dial of a different size; the scan-hood integrated flush into the top shelf; small cyan glyph-shapes spiraling slowly around the column between shelves; a row of specimen vial slots on the middle shelf; a copper counterweight cable running down the back.",
+  "challenger_axes": [
+    "console architecture: three offset elevator shelves vs squat console body",
+    "scan-hood: flush-integrated in top shelf vs tall thin sensor mast",
+    "display: glyphs spiraling around column vs holo-lattice above",
+    "module rhythm: discrete stacked shelves with dials vs single console mass"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 70.7%)",
+    "content downscaled x0.0862 (NEAREST) into 64x80 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

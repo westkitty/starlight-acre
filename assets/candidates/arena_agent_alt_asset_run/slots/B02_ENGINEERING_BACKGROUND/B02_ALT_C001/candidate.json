@@ -1,0 +1,38 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B02_ENGINEERING_BACKGROUND",
+  "source_candidate_id": "B02_C001",
+  "alternate_candidate_id": "B02_ALT_C001",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B02_ENGINEERING_BACKGROUND/B02_ALT_C001/source.png",
+  "game_ready_file": "slots/B02_ENGINEERING_BACKGROUND/B02_ALT_C001/game_ready.png",
+  "actual_source_width": 1376,
+  "actual_source_height": 768,
+  "actual_game_width": 640,
+  "actual_game_height": 360,
+  "expected_width": 640,
+  "expected_height": 360,
+  "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
+  "alpha_present": false,
+  "sha256_source": "b605416b86af578e88324db83cb49e161ef2ae0710595916506d9f937c86aee7",
+  "sha256_game_ready": "537057b4bfb3a2eb6801424c6cf994d7bf39e2ff5091e151228eec2c716c808e",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D side-view game: the far interior of an orbital engineering bay of a decaying mythic farming station. Opaque flat full-frame illustration, no border, no letterboxing, no vignette frame. Distant industrial architecture; base colors deep space navy #0A0E1A and dusk blue #1E2D4A with teal/cyan energy accents and copper details; subtle mythic strangeness such as one impossible glowing filament vine far in the back. Quiet negative space in the middle band where foreground gameplay will happen; calm, atmospheric, slightly uncanny, lived-in. No characters, no UI, no doors, no foreground floors or platforms, no readable text, not a level screenshot, no isometric or top-down view.  CHALLENGER DESIGN (materially different from the incumbent symmetric hall with a huge central teal reactor ring): an asymmetric deep-perspective bay: the composition pushes left with a towering vertical gantry crane armature holding a dormant station module, its copper cables sagging across the upper third; distant machinery language of stacked vertical gantry towers and docking clamps instead of colossal symmetric silhouettes; lighting arranged as several small scattered worklight pools along a maintenance catwalk plus one faint amber warning beacon far in the back instead of one central reactor glow; a long diagonal conveyor line with idle carriers leads the eye into depth on the right, where a single teal-cyan coolant column rises; exposed aged plating and conduit bundles on the near-left wall, deep quiet negative space across the middle band.",
+  "challenger_axes": [
+    "architectural depth composition: asymmetric gantry-crane left-weighted depth vs symmetric hall",
+    "distant machinery language: stacked gantry towers + docking clamps vs colossal symmetric silhouettes",
+    "light-source arrangement: scattered worklight pools + one far amber beacon vs single central reactor ring",
+    "structural rhythm: diagonal conveyor line leading into depth vs central radial symmetry"
+  ],
+  "technical_flags": [
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
+  ],
+  "notes": [
+    "center-cropped to 16:9"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

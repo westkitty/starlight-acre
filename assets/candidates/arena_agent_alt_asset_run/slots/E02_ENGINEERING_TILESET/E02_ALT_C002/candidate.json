@@ -1,0 +1,32 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "E02_ENGINEERING_TILESET",
+  "source_candidate_id": "E02_C002",
+  "alternate_candidate_id": "E02_ALT_C002",
+  "priority": "A",
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "source_file": null,
+  "game_ready_file": null,
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 256,
+  "expected_height": 256,
+  "expected_frame_layout": "tileset sheet 256x256, strict 16x16 grid, 16 columns x 16 rows, 256 tiles, no spacing",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": null,
+  "challenger_axes": [],
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "alternate not yet generated"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}
