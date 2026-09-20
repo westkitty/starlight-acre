@@ -87,7 +87,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## T03_TERMINAL_ACTIVE_GLOW — challenges T03_C001
 
-### T03_ALT_C001 [not_generated]
+### T03_ALT_C001 [generated]
 
 Challenger axes:
 - diagonal corner wash vs concentric halo shells
@@ -100,7 +100,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## T03_TERMINAL_ACTIVE_GLOW — challenges T03_C002
 
-### T03_ALT_C002 [not_generated]
+### T03_ALT_C002 [generated]
 
 Challenger axes:
 - top-down falling curtain vs bottom-up rising mote columns
@@ -113,7 +113,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## T03_TERMINAL_ACTIVE_GLOW — challenges T03_C003
 
-### T03_ALT_C003 [not_generated]
+### T03_ALT_C003 [generated]
 
 Challenger axes:
 - outline vein tracing vs nested pulse rings
@@ -126,7 +126,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A03_ENGINEER_DRONE — challenges A03_C001
 
-### A03_ALT_C001 [not_generated]
+### A03_ALT_C001 [generated]
 
 Challenger axes:
 - underslung copper busbar rail vs side cable spool
@@ -140,7 +140,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A03_ENGINEER_DRONE — challenges A03_C002
 
-### A03_ALT_C002 [not_generated]
+### A03_ALT_C002 [generated]
 
 Challenger axes:
 - cube hull with transformer backpack vs twin-boom frame
@@ -153,7 +153,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A04_HARVESTER_DRONE — challenges A04_C001
 
-### A04_ALT_C001 [not_generated]
+### A04_ALT_C001 [generated]
 
 Challenger axes:
 - hanging mesh produce net vs slung woven basket
@@ -166,7 +166,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A04_HARVESTER_DRONE — challenges A04_C002
 
-### A04_ALT_C002 [not_generated]
+### A04_ALT_C002 [generated]
 
 Challenger axes:
 - front picker reel vs front scoop tray
@@ -179,7 +179,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A05_MAINTENANCE_DRONE — challenges A05_C001
 
-### A05_ALT_C001 [not_generated]
+### A05_ALT_C001 [generated]
 
 Challenger axes:
 - magnetic runner skids with belly buffing belt vs rotating brush pads underneath
@@ -192,7 +192,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## A05_MAINTENANCE_DRONE — challenges A05_C002
 
-### A05_ALT_C002 [not_generated]
+### A05_ALT_C002 [generated]
 
 Challenger axes:
 - patch stack with welder arm vs hopper with spray boom
@@ -205,7 +205,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B03_DOCKING_COLLAR — challenges B03_C001
 
-### B03_ALT_C001 [not_generated]
+### B03_ALT_C001 [generated]
 
 Challenger axes:
 - octagonal geometry vs circular collar
