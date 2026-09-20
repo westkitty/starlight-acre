@@ -4,27 +4,33 @@
   "source_candidate_id": "B02_C003",
   "alternate_candidate_id": "B02_ALT_C003",
   "priority": "A",
-  "generation_status": "not_generated",
-  "technical_status": "FAIL",
-  "source_file": null,
-  "game_ready_file": null,
-  "actual_source_width": null,
-  "actual_source_height": null,
-  "actual_game_width": null,
-  "actual_game_height": null,
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B02_ENGINEERING_BACKGROUND/B02_ALT_C003/source.png",
+  "game_ready_file": "slots/B02_ENGINEERING_BACKGROUND/B02_ALT_C003/game_ready.png",
+  "actual_source_width": 1376,
+  "actual_source_height": 768,
+  "actual_game_width": 640,
+  "actual_game_height": 360,
   "expected_width": 640,
   "expected_height": 360,
   "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
-  "alpha_present": null,
-  "sha256_source": null,
-  "sha256_game_ready": null,
-  "generation_prompt": null,
-  "challenger_axes": [],
+  "alpha_present": false,
+  "sha256_source": "e9ec9f687ecbaf4859e129a6e29ab6153bdccaaad474f94fcf1e27d29efc7df3",
+  "sha256_game_ready": "42fb236a44d32e2dc687ae73d0c7f78b954632d476c7822522e330e32d0b449f",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D side-view game: the far interior of an orbital engineering bay of a decaying mythic farming station. Opaque flat full-frame illustration, no border, no letterboxing, no vignette frame. Distant industrial architecture; base colors deep space navy #0A0E1A and dusk blue #1E2D4A with teal/cyan energy accents and copper details; subtle mythic strangeness such as one impossible glowing filament vine far in the back. Quiet negative space in the middle band where foreground gameplay will happen; calm, atmospheric, slightly uncanny, lived-in. No characters, no UI, no doors, no foreground floors or platforms, no readable text, not a level screenshot, no isometric or top-down view.  CHALLENGER DESIGN (materially different from the incumbent deep vertical shaft with stacked galleries and thin copper light lines): a great flywheel hall: a colossal slow flywheel governor half-visible in the far depth, its spokes catching teal rim light; strong horizontal banding with three stacked pipe galleries running the full width at different depths; two calm steam plumes rising from vents on the right; warm porthole lights spaced along the upper band instead of copper light lines; aged plating and conduit bundles low in the frame; wide quiet negative space across the middle band.",
+  "challenger_axes": [
+    "spatial concept: colossal half-hidden flywheel in deep depth vs vertical shaft galleries",
+    "structural rhythm: horizontal stacked pipe galleries vs vertical stacking",
+    "light language: warm porthole lights along top band vs thin copper light lines",
+    "atmosphere: calm steam plumes vs shaft void"
+  ],
   "technical_flags": [
-    "NOT_GENERATED"
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
   ],
   "notes": [
-    "alternate not yet generated"
+    "center-cropped to 16:9"
   ],
   "selected": false,
   "rejected": false,

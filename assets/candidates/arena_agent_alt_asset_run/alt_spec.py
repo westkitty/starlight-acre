@@ -65,6 +65,32 @@ SLOT_CONTRACT = {
         "characters, no UI, no doors, no foreground floors or platforms, no readable text, not a "
         "level screenshot, no isometric or top-down view."
     ),
+    "E02_ENGINEERING_TILESET": (
+        "A modular 16x16 pixel tileset sheet for a 2D side-view orbital engineering bay, arranged as "
+        "a strict clean grid of 16 columns by 16 rows of 16x16 pixel tiles on a square 256x256-"
+        "proportioned sheet: tiles touching with no gaps, and the sheet extends fully to all four "
+        "canvas edges with NO outer margin, NO border, NO frame, NO caption panel, no labels, no "
+        "drawn grid lines. Crisp GBA/SNES pixel-art, side-view orientation, identical pixel scale, "
+        "one coherent light direction from upper left; coherent industrial material language (dark "
+        "navy floor plates, dusk-blue wall panels, structural beams, conduit runs, pipes with "
+        "joints, vents, grilles, service panels, framed energy-containment glass tiles glowing faint "
+        "cyan, small noncollision decorative details such as bolts, stains, tiny status LEDs). Worn, "
+        "repaired, modular station hardware. Flat uniform very dark navy sheet background behind "
+        "tiles; no text, no letters, no isometric perspective."
+    ),
+    "C02_TRICKSTER_VINE": (
+        "Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four "
+        "consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 "
+        "empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small "
+        "worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) "
+        "appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one "
+        "single flat color across the whole strip - between cells, around the plants, edge to edge - "
+        "with absolutely no grid lines, no separating borders, no frame, no caption panel. The plant "
+        "is a mythic trickster vine (Loki-like spirit, no person depicted): subtly unruly, "
+        "asymmetric, implying a desire to escape; stage 4 is unmistakably harvest-ready with glowing "
+        "buds in mythic warm gold with a slight violet-green iridescence. NO cartoon face on the "
+        "plant. GBA/SNES pixel art, dark subtle outline, consistent planter alignment."
+    ),
     "D01_DEXTER_VENDOR": (
         "A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game: exactly ONE "
         "dog, single sprite centered on a solid flat pure magenta #FF00FF background (one flat color "
@@ -169,6 +195,81 @@ CHALLENGER = {
         "coolant column rises; exposed aged plating and conduit bundles on the near-left wall, deep "
         "quiet negative space across the middle band."
     ),
+    "B02_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent asymmetric collapsed machinery "
+        "slope with hanging cables and cyan vapor columns): a sunken service-pit bay: the far deck "
+        "opens into a wide maintenance pit exposing glowing sub-deck machinery below floor level, "
+        "ringed by a cool spill-light rim; two slender vertical lift towers rise on the right with "
+        "a parked service tram on a long horizontal rail line; a single taut cable-stayed mast "
+        "replaces the hanging cables; lighting is a horizontal rhythm: pit-rim spill lights plus one "
+        "warm amber crane beacon; the impossible filament vine climbs the far-left wall; deep quiet "
+        "negative space across the middle band."
+    ),
+    "B02_ALT_C003": (
+        "CHALLENGER DESIGN (materially different from the incumbent deep vertical shaft with stacked "
+        "galleries and thin copper light lines): a great flywheel hall: a colossal slow flywheel "
+        "governor half-visible in the far depth, its spokes catching teal rim light; strong "
+        "horizontal banding with three stacked pipe galleries running the full width at different "
+        "depths; two calm steam plumes rising from vents on the right; warm porthole lights spaced "
+        "along the upper band instead of copper light lines; aged plating and conduit bundles low in "
+        "the frame; wide quiet negative space across the middle band."
+    ),
+    "E02_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent heavy plated look with thick "
+        "bevels and generous copper ribs): an open lattice-truss vocabulary: thin-strut trusswork "
+        "tiles, mesh-grating walkway plates you can see through, angle-brace corner pieces, sparse "
+        "rivet dots; load-bearing struts marked with thin hydroponic-teal edge lines; copper used "
+        "only as small joint collars; wear shown as hairline scratches and one dented-strut variant "
+        "instead of heavy bevels and ribs; airy, engineered, precise."
+    ),
+    "E02_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent conduit-and-cabling density with "
+        "teal status LEDs on many panels): a plumbing-and-gauge vocabulary: rounded pressure-pipe "
+        "runs with ring collars, small valve wheels, round dial gauges, vertical tank segments and "
+        "drip trays as tile families; plain dusk-blue panels with copper brackets; glow used "
+        "sparingly - only two gauge faces glow teal and a few LEDs are bone-white; rhythm of circles "
+        "and cylinders instead of cable bundles."
+    ),
+    "E02_ALT_C003": (
+        "CHALLENGER DESIGN (materially different from the incumbent aged repair patches, mismatched "
+        "panel generations and moss-green residue): a clean ritual-upkeep vocabulary: deliberately "
+        "tidy refurbished tiles - brushed metal with dark composite inlays in alternating diagonal "
+        "hatching, a family of muted gold-and-navy safety chevron strip tiles, small engraved notch "
+        "counters (tally marks only, no text), and one tile family with a subtle mythic gold "
+        "filament inlay; wear is minimal soft edge scuffs; feels lovingly maintained, not decayed."
+    ),
+    "C02_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent hook-shaped curls with gold "
+        "bell-like pods and a leaning ready state): a whiplash fiddlehead vine: smooth confident "
+        "S-curve strokes; stage 3 tip coiled like a fern fiddlehead; the READY state is one great "
+        "coiled-spiral gold bud wound like a spring above loosely draping tendrils, with tiny violet "
+        "spark dots; the whole growth gesture cascades diagonally toward one side rather than "
+        "leaning."
+    ),
+    "C02_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent zigzag kinked stems with teal "
+        "sap dots and one oversized gold bud): a braided twin-tendril vine: two slender tendrils "
+        "twist around each other up a thin copper stake, small crescent-shaped gold buds strung "
+        "along the braid; the READY top bud is forked like a jester cap with a violet-green sheen; "
+        "the escape gesture: one tendril deliberately slipping off the stake and hooking outward "
+        "past the planter rim."
+    ),
+    "C02_ALT_C003": (
+        "CHALLENGER DESIGN (materially different from the incumbent spiraling tendrils that exit and "
+        "re-enter the soil with a gold mote halo): a question-mark flourish vine: elegant "
+        "interrogation-hook strokes; stage 3 forms a looping arc hovering over the planter rim; the "
+        "READY state is one bold hooked gold bud cluster shaped like a curled question mark with "
+        "tiny leaf-keys, and a sparse trail of violet motes hanging after it like punctuation."
+    ),
+    "D01_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent sitting-regally pose beside a "
+        "cargo crate corner): Dexter in a calm sphinx lie: chest down, forepaws extended straight "
+        "forward, head held high and perfectly level, tail wrapped over the front paws; no crate - "
+        "instead a tiny folded woven trade blanket pinned beneath one forepaw; the coat interpreted "
+        "smoother with a crisp white blaze down the chest; same floppy drop ears, same slightly "
+        "grayed muzzle, same half-lidded unimpressed ancient authority; strict side view, compact "
+        "reclining silhouette."
+    ),
     "D01_ALT_C001": (
         "CHALLENGER DESIGN (materially different from the incumbent standing-proud pose with leather "
         "satchel): Dexter mid-strut: an unhurried three-legged walk with the tail carried high and "
@@ -220,6 +321,42 @@ AXES = {
                      "distant machinery language: stacked gantry towers + docking clamps vs colossal symmetric silhouettes",
                      "light-source arrangement: scattered worklight pools + one far amber beacon vs single central reactor ring",
                      "structural rhythm: diagonal conveyor line leading into depth vs central radial symmetry"],
+    "B02_ALT_C002": ["spatial concept: sunken service pit below deck level vs collapsed machinery slope",
+                     "cable language: single taut cable-stayed mast vs hanging cable bundles",
+                     "atmosphere: calm pit-rim spill lights + rail rhythm vs cyan vapor columns",
+                     "depth markers: lift towers + parked tram on horizontal rail vs slope silhouette"],
+    "B02_ALT_C003": ["spatial concept: colossal half-hidden flywheel in deep depth vs vertical shaft galleries",
+                     "structural rhythm: horizontal stacked pipe galleries vs vertical stacking",
+                     "light language: warm porthole lights along top band vs thin copper light lines",
+                     "atmosphere: calm steam plumes vs shaft void"],
+    "E02_ALT_C001": ["modular vocabulary: thin-strut lattice trusses + mesh gratings vs heavy plated slabs",
+                     "material breakup: airy see-through grating tiles vs thick bevels",
+                     "copper usage: small joint collars only vs generous copper ribs",
+                     "wear pattern: hairline scratches + one dented strut vs heavy bevel wear"],
+    "E02_ALT_C002": ["modular vocabulary: pipes, valves, gauges, tank segments vs conduits and cables",
+                     "shape rhythm: circles and cylinders vs linear cable bundles",
+                     "light language: two glowing gauge faces + bone-white LEDs vs many teal LEDs",
+                     "decorative family: drip trays and ring collars vs status-LED panels"],
+    "E02_ALT_C003": ["wear story: clean ritual upkeep with soft scuffs vs aged patches and moss",
+                     "panel language: brushed metal + composite diagonal-hatch inlays vs mismatched generations",
+                     "accent family: muted gold/navy chevron strips + notch counters vs moss residue tiles",
+                     "mythic note: one gold filament inlay family vs organic moss growth"],
+    "C02_ALT_C001": ["botanical morphology: fiddlehead spiral strokes vs hook-shaped curls",
+                     "bud structure: one coiled-spring spiral bud vs bell-like pods",
+                     "growth gesture: diagonal cascade vs visible lean",
+                     "accent: violet spark dots vs gold pod glow only"],
+    "C02_ALT_C002": ["botanical morphology: two tendrils braided up a copper stake vs zigzag kinked stems",
+                     "bud structure: crescent buds strung along the braid + forked jester-cap top vs one oversized bud",
+                     "support element: thin copper stake (new prop) vs free-standing stems",
+                     "accent language: violet-green sheen on top bud vs teal sap dots"],
+    "C02_ALT_C003": ["botanical morphology: interrogation-hook question-mark strokes vs exit-and-reenter spirals",
+                     "ready state: bold hooked bud cluster with leaf-keys vs mote halo",
+                     "stage-3 gesture: looping arc hovering over the rim vs tendrils re-entering soil",
+                     "accent language: sparse violet punctuation motes vs gold mote halo"],
+    "D01_ALT_C002": ["pose: calm sphinx lie with tail over paws vs sitting regally upright",
+                     "prop: tiny folded woven trade blanket under one paw vs cargo crate corner",
+                     "coat interpretation: smoother coat with crisp white chest blaze vs silky natural fall",
+                     "silhouette: long low reclining mound vs upright seated posture"],
     "D01_ALT_C001": ["pose: unhurried mid-strut walk vs standing proud",
                      "trade detail: rolled seed-cloth bundle held in mouth vs leather satchel strap",
                      "coat interpretation: fluffier wind-brushed with stronger tan patches vs silky smooth",
