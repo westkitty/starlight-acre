@@ -1,0 +1,38 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_C001",
+  "asset_name": "Harvester Drone",
+  "priority": "B",
+  "category": "agent sprite",
+  "discovery_evidence": "docs/GAME_DESIGN.md Agent System: 'Agent roles to follow in later phases: Engineer, Maintenance Drone, Harvester.'",
+  "evidence_paths": [
+    "docs/GAME_DESIGN.md",
+    "actors/agents/gardener_drone.gd"
+  ],
+  "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "source_file": null,
+  "game_ready_file": null,
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 32,
+  "expected_height": 32,
+  "expected_topology": "single sprite, 32x32, hover center anchor (matches GardenerDrone A01 family)",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A small automated orbital HARVESTER drone for a 2D side-view pixel game: exactly ONE drone, single sprite centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Square 1:1 composition. Strict side view. This drone's job is GENTLE HARVESTING and produce carrying, visibly different from a gardening drone: a soft-grip claw or cutter and a visible produce basket, crate or scoop; worn station-metal hull in station gray and dusk blue with moss green and warm gold accents; hover center anchor; clearly a non-human helper. Dark subtle outline, clean hard edges against the background. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body, no second drone or duplicate, no floor, no stage, no drop shadow on the background.  Variant 1: a basket-drone: rounded hull with a woven station-gray produce basket slung underneath, one soft pincer claw folded above it, single ducted hover fan.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "discovered asset awaiting generation"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

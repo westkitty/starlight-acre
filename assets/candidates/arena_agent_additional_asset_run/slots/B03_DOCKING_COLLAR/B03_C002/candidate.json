@@ -1,0 +1,38 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B03_DOCKING_COLLAR",
+  "candidate_id": "B03_C002",
+  "asset_name": "Docking Bay Collar Fixture",
+  "priority": "B",
+  "category": "module fixture",
+  "discovery_evidence": "docs/GAME_DESIGN.md Station Expansion: 'Docking Bay - Enables Dexter's vendor visits'; Vendor section: 'Dexter is a periodic visitor who arrives at the Docking Bay' with planned 'Docking event trigger, trade UI, rotating stock table'.",
+  "evidence_paths": [
+    "docs/GAME_DESIGN.md",
+    "README.md"
+  ],
+  "integration_target": "future Docking Bay sector (door-scale wall fixture, 4x6 tiles)",
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "source_file": null,
+  "game_ready_file": null,
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 64,
+  "expected_height": 96,
+  "expected_topology": "single prop, 64x96 canvas (4x6 tiles of 16px, NEWLY PROPOSED dimensions), bottom-center anchor",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A universal docking collar fixture for the station's Docking Bay in a 2D side-view pixel game: exactly ONE fixture prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no border, no frame). Tall portrait composition about 2:3. Strict side view, frontal face of the fixture. Worn docking hardware: a heavy dusk-blue and station-gray collar ring with maintenance copper clamp petals or arms, teal guide lights in a calm ring, worn seal material, subtle scuffs and old repair seams; clearly the berth where a visiting ship or Dexter's trader vessel docks. Dark subtle outline. No readable text, no ship, no second fixture, no floor, no stage, no drop shadow on the background.  Variant 2: a rectangular freight airlock: tall cargo mouth with pressurized roller seal strips, side ram clamps, and chevron guide lights above the opening.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "discovered asset awaiting generation"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}
