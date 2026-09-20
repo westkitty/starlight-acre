@@ -1,0 +1,47 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "E03_CARGO_PROPS",
+  "source_candidate_id": "E03_C001",
+  "alternate_candidate_id": "E03_ALT_C001",
+  "asset_name": "Cargo & Storage Prop Sheet",
+  "priority": "C",
+  "category": "environment props",
+  "integration_target": "free-standing props in Greenhouse/Engineering sectors (32x32 prop scale)",
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "source_file": null,
+  "game_ready_file": null,
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 64,
+  "expected_height": 64,
+  "expected_topology": "prop sheet 64x64, 2x2 grid of 32x32 props: cargo crate / sealed canister / tool case / seed rack",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Cargo and storage prop sheet for a 2D side-view pixel game: a strict 2x2 grid of four consecutive 32x32 cells on a square 64x64-proportioned canvas - top-left, top-right, bottom-left, bottom-right - on a solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge, between cells and around props, with absolutely no grid lines, no separating borders, no frame, no caption panel. Top-left: a worn station cargo crate in dusk blue with copper corner brackets. Top-right: a sealed cylindrical supply canister in station gray with a teal seal ring. Bottom-left: a compact tool case with a copper latch and a small bone-white handle. Bottom-right: a small seed rack holding a few tiny seed trays with one moss-green sprout. Worn, repaired, lived-in orbital hardware; GBA/SNES pixel art, dark subtle outlines; no readable text, no letters, no characters, no floor, no shadows on the background.  Variant 1: matched utilitarian set - all four props share the same dusk-blue shell color and copper trim so they read as one station family.",
+  "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Cargo and storage prop sheet for a 2D side-view pixel game: a strict 2x2 grid of four consecutive 32x32 cells on a square 64x64-proportioned canvas - top-left, top-right, bottom-left, bottom-right - on a solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge, between cells and around props, with absolutely no grid lines, no separating borders, no frame, no caption panel. Top-left: a worn station cargo crate in dusk blue with copper corner brackets. Top-right: a sealed cylindrical supply canister in station gray with a teal seal ring. Bottom-left: a compact tool case with a copper latch and a small bone-white handle. Bottom-right: a small seed rack holding a few tiny seed trays with one moss-green sprout. Worn, repaired, lived-in orbital hardware; GBA/SNES pixel art, dark subtle outlines; no readable text, no letters, no characters, no floor, no shadows on the background.  Challenger design: riveted gray family - all four props rebuilt as one station-gray riveted family with copper straps and small teal working lights: the crate as a ribbed shipping box with strap buckles, the canister as a twin-cap capsule tank, the tool case as a chest with a fold-out tray lip, the seed rack as a tiered shelf with two moss-green sprouts.",
+  "challenger_axes": [
+    "station-gray riveted shells vs dusk-blue matched shells",
+    "ribbed crate / capsule tank / fold-out chest / tiered rack redesigns",
+    "teal working-light accents vs copper-trim-only accents"
+  ],
+  "source_technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "challenger prompt composed; awaiting generation"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}
