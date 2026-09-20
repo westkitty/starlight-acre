@@ -10,3 +10,4 @@ export_presets.cfg
 
 # Visual QA harness runtime output (screenshots, crops, reports)
 visual_qa_output/
+__pycache__/
