@@ -123,7 +123,7 @@
       "candidate_count": 2,
       "integration_target": "future Archive Library sector (tall shelf prop; matches research-terminal 64x80 scale)",
       "dimensions_note": "64x80 (derived from the neighboring research terminal prop scale)",
-      "generated_count": 1
+      "generated_count": 2
     },
     "V02_HAZARD_VFX": {
       "asset_name": "Hazard VFX Strip",
@@ -136,7 +136,7 @@
       "candidate_count": 2,
       "integration_target": "sector-level effect overlay/particles (V01 strip convention: 4 cells of 32x32)",
       "dimensions_note": "128x32 (four 32x32 cells; derived from the V01 VFX strip convention)",
-      "generated_count": 0
+      "generated_count": 2
     },
     "E03_CARGO_PROPS": {
       "asset_name": "Cargo & Storage Prop Sheet",
@@ -149,7 +149,7 @@
       "candidate_count": 1,
       "integration_target": "free-standing props in Greenhouse/Engineering sectors (32x32 prop scale)",
       "dimensions_note": "64x64 (2x2 grid of 32x32 props; matches crate/prop scale in the tileset family)",
-      "generated_count": 0
+      "generated_count": 1
     }
   }
 }
