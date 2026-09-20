@@ -58,7 +58,7 @@
       "candidate_count": 2,
       "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
       "dimensions_note": "32x32 (matches A01 gardener drone agent family)",
-      "generated_count": 1
+      "generated_count": 2
     },
     "A04_HARVESTER_DRONE": {
       "asset_name": "Harvester Drone",
@@ -71,7 +71,7 @@
       "candidate_count": 2,
       "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
       "dimensions_note": "32x32 (matches A01 agent family)",
-      "generated_count": 0
+      "generated_count": 2
     },
     "A05_MAINTENANCE_DRONE": {
       "asset_name": "Maintenance Drone",
@@ -84,7 +84,7 @@
       "candidate_count": 2,
       "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
       "dimensions_note": "32x32 (matches A01 agent family)",
-      "generated_count": 0
+      "generated_count": 2
     },
     "B03_DOCKING_COLLAR": {
       "asset_name": "Docking Bay Collar Fixture",
@@ -97,7 +97,7 @@
       "candidate_count": 2,
       "integration_target": "future Docking Bay sector (door-scale wall fixture, 4x6 tiles)",
       "dimensions_note": "64x96 (NEWLY PROPOSED: 4x6 tiles of 16px, between door 64x112 and terminal 64x80 prop scales)",
-      "generated_count": 0
+      "generated_count": 2
     },
     "B04_HYDROPONICS_RIG": {
       "asset_name": "Hydroponics Wing Recycler Rig",
@@ -110,7 +110,7 @@
       "candidate_count": 2,
       "integration_target": "future Hydroponics Wing sector (free-standing machine prop, 4x4 tiles)",
       "dimensions_note": "64x64 (NEWLY PROPOSED: 4x4 tiles of 16px, terminal-adjacent prop scale)",
-      "generated_count": 0
+      "generated_count": 2
     },
     "B05_ARCHIVE_STACK": {
       "asset_name": "Archive Library Data Stack",
@@ -123,7 +123,7 @@
       "candidate_count": 2,
       "integration_target": "future Archive Library sector (tall shelf prop; matches research-terminal 64x80 scale)",
       "dimensions_note": "64x80 (derived from the neighboring research terminal prop scale)",
-      "generated_count": 0
+      "generated_count": 1
     },
     "V02_HAZARD_VFX": {
       "asset_name": "Hazard VFX Strip",
