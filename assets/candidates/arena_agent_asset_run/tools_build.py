@@ -123,7 +123,7 @@ SHEET_TOPOLOGY = {
     "C04_SHADOW_ROOT":    dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
     "C05_GOLDEN_BLOSSOM": dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
     # four isolated VFX cells
-    "V01_CORE_VFX":       dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]]),
+    "V01_CORE_VFX":       dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], transparent_cells=True),
     # five 16x16 HUD icon cells
     "U01_HUD_ICONS":      dict(rows=1, cols=5, cw=16, ch=16, exp=[[1, 1, 1, 1, 1]]),
     # player sheet: 6 cols x 4 rows of 32x48; per Player.tscn rows idle x4 / walk x6 / jump-fall-land / interact x2
@@ -181,7 +181,6 @@ def analyze_sheet_topology(slot_id, gr_path, src_path):
                 for c in range(t["cols"]):
                     if t["exp"][r][c] != 0:
                         continue
-                    from collections import Counter
                     cnt = Counter()
                     for y in range(int(r * sh / t["rows"]), max(int(r * sh / t["rows"]) + 1, int((r + 1) * sh / t["rows"]))):
                         for x in range(int(c * sw / t["cols"]), max(int(c * sw / t["cols"]) + 1, int((c + 1) * sw / t["cols"]))):
@@ -203,6 +202,39 @@ def analyze_sheet_topology(slot_id, gr_path, src_path):
     if occ_bad:
         flags.add("EXPECTED_CELL_EMPTY")
         notes.append("cells that must contain a frame/prop are (near-)empty in game_ready: " + ", ".join(occ_bad))
+
+    if t.get("transparent_cells"):
+        # isolated-effect cells: each cell must be mostly transparent around its effect
+        full = [f"r{r+1}c{c+1}={occ[r][c]:.0%}" for r in range(t["rows"]) for c in range(t["cols"])
+                if occ[r][c] > 0.85]
+        if full:
+            flags.add("CELL_BACKGROUND_NOT_REMOVED")
+            notes.append("effect cells are fully opaque in game_ready (cell background not removed): " + ", ".join(full))
+            try:
+                src = Image.open(src_path).convert("RGB")
+                sw, sh = src.size
+                sp = src.load()
+                flat = []
+                for r in range(t["rows"]):
+                    for c in range(t["cols"]):
+                        if occ[r][c] <= 0.85:
+                            continue
+                        cnt = Counter()
+                        n = 0
+                        for y in range(int(r * sh / t["rows"]), max(int(r * sh / t["rows"]) + 1, int((r + 1) * sh / t["rows"])), 4):
+                            for x in range(int(c * sw / t["cols"]), max(int(c * sw / t["cols"]) + 1, int((c + 1) * sw / t["cols"])), 4):
+                                p = sp[x, y]
+                                cnt[(p[0] // 16, p[1] // 16, p[2] // 16)] += 1
+                                n += 1
+                        share = cnt.most_common(1)[0][1] / n if n and cnt else 0.0
+                        flat.append(f"r{r+1}c{c+1}={share:.0%}" if share >= 0.50 else f"r{r+1}c{c+1}=mixed")
+                notes.append("source cell dominant flat-color share (quantized, stride 4): " + ", ".join(flat) +
+                             "; where mostly flat, the cell background is a single flat color that differs from the "
+                             "border key color, so border-seeded flood keying left it opaque; re-key from the interior "
+                             "background color before slicing")
+            except Exception as e:
+                notes.append(f"source cell flatness check failed: {e}")
+
 
     if t.get("planter"):
         # lifecycle strips: planter band = bottom 10px of each 32px cell, must stay put across cells
@@ -417,6 +449,20 @@ def make_game_ready(slot_id, src):
             out = base.resize((tw, th), Image.NEAREST)
             flags.add("CONVERSION_REQUIRED")
             notes.append(f"square source downscaled {w}x{h} -> {tw}x{th}; 16x16 grid preserved proportionally")
+            if alpha_expected and seeds:
+                # keyed tileset: if keyed content still spans the full canvas, the flood did not
+                # just remove an outer margin — it removed interior tile pixels as well
+                kbbox = base.getbbox()
+                if kbbox and removed > 0.05 and (kbbox[2] - kbbox[0]) >= 0.9 * w and (kbbox[3] - kbbox[1]) >= 0.9 * h:
+                    inner = base.crop((w // 8, h // 8, w - w // 8, h - h // 8))
+                    hist = inner.getchannel("A").histogram()
+                    share = sum(hist[1:]) / (inner.width * inner.height)
+                    flags.add("TILESET_OVERKEYED")
+                    notes.append(f"flood keying removed {removed:.1%} of the sheet while keyed content still spans the "
+                                 f"full canvas — removal reached INTERIOR tile pixels (the dark navy sheet background "
+                                 f"is within keying tolerance of the dark navy/dusk-blue tile colors); interior tile "
+                                 f"block only {share:.0%} opaque in game_ready; slice tiles from source.png (intact "
+                                 f"opaque sheet) instead")
             return out, flags, notes
         out, sc = contain_fit(base, tw, th)
         flags.add("FRAME_LAYOUT_INVALID")
