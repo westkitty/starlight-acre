@@ -218,6 +218,38 @@ SLOT_CONTRACT = {
         "lightning; luminous, precise, slightly dangerous, not goofy. GBA/SNES pixel art, dark "
         "subtle outline, consistent planter alignment."
     ),
+    "C04_SHADOW_ROOT": (
+        "Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four "
+        "consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 "
+        "empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small "
+        "worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) "
+        "appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one "
+        "single flat color across the whole strip - between cells, around the plants, edge to "
+        "edge - with absolutely no grid lines, no separating borders, no frame, no caption "
+        "panel. The plant is a root-dominant mythic plant (Hades-inspired underworld botany, no "
+        "god or person depicted, mystical rather than evil): growth happens mostly BELOW and AT "
+        "the soil line with deep unusual silhouettes, dark purple-black root bulges partially "
+        "hidden by the planter soil, sparse pale bone-white and faint violet foliage above; the "
+        "READY state shows a heavy root crown lifted slightly above the soil with a cool violet "
+        "glow; partially hidden growth language, mysterious, calm, uncanny but not monstrous. "
+        "All growth stays INSIDE its 32x32 cell. GBA/SNES pixel art, dark subtle outline, "
+        "consistent planter alignment."
+    ),
+    "C05_GOLDEN_BLOSSOM": (
+        "Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four "
+        "consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 "
+        "empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small "
+        "worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) "
+        "appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one "
+        "single flat color across the whole strip - between cells, around the plants, edge to "
+        "edge - with absolutely no grid lines, no separating borders, no frame, no caption "
+        "panel. The plant is a warm-gold flowering mythic plant (Freya-inspired, no goddess or "
+        "person depicted): elegant but NOT ornate, clean generous silhouette implying efficiency, "
+        "attraction and abundance; stage 2 seedling with rounded paired leaves; stage 3 growing "
+        "stem with closed gold buds; stage 4 READY unmistakable with an open radiant warm-gold "
+        "blossom with a soft mythic glow and a few drifting gold petal motes; precious, calm, "
+        "welcoming. GBA/SNES pixel art, dark subtle outline, consistent planter alignment."
+    ),
     "D01_DEXTER_VENDOR": (
         "A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game: exactly ONE "
         "dog, single sprite centered on a solid flat pure magenta #FF00FF background (one flat color "
@@ -566,6 +598,37 @@ CHALLENGER = {
         "nest at the trunk fork, with contained lightning visibly feeding it from the canopy "
         "above."
     ),
+    "C04_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent gnarled subdued tuber "
+        "cluster with thin pale sprouts): an obelisk taproot: a single tall pale bone-white "
+        "taproot spire rising from the soil like a small obelisk, ringed by thin dark root "
+        "collars; cool violet light leaking from hairline cracks along the spire; sparse "
+        "drooping bone-white filaments at its base; the READY state: the obelisk crown splits "
+        "open just above the soil, revealing a glowing violet heart inside while the filaments "
+        "stiffen upward."
+    ),
+    "C04_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent near-leafless form with a "
+        "transparent soil cutaway hint and tiny violet flowers): a relic-seed rib-cage root: a "
+        "dark polished seed relic half-buried in the planter soil; from it, pale bone-white "
+        "roots arc up out of the soil and curve back in like a rib cage; tiny violet sparks at "
+        "the root tips; almost no foliage above ground; the READY state: the seed cracks open "
+        "showing a glowing violet interior while the rib-cage roots tighten around it."
+    ),
+    "C05_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent single large open bloom on "
+        "a sturdy stem with broad moss-green leaves): a chalice bloom: the blossom is a wide "
+        "shallow chalice of layered gold petals held horizontally like a water-lily, with a "
+        "glowing gold seed-cluster heart cradled inside; a slender arching stem with small "
+        "paired leaves; a few drifting gold petal motes; precious and calm."
+    ),
+    "C05_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent three modest upright "
+        "clustered blooms on a taller stem): a bell-flower cascade: several downturned warm-gold "
+        "bell blooms hanging along one gently leaning raceme like a small wisteria cascade, the "
+        "tip buds still closed; each bell lit softly from inside; sparse small leaves along the "
+        "stem; a few drifting gold motes; restrained and welcoming."
+    ),
     "D01_ALT_C001": (
         "CHALLENGER DESIGN (materially different from the incumbent standing-proud pose with leather "
         "satchel): Dexter mid-strut: an unhurried three-legged walk with the tail carried high and "
@@ -733,6 +796,22 @@ AXES = {
                      "spark path: arcs hopping along canopy edges vs tip sparks",
                      "READY structure: gold-cored coil nest at the trunk fork vs sparking bud spires",
                      "silhouette: miniature layered tree vs upright stems"],
+    "C04_ALT_C001": ["crown structure: splitting obelisk spire with violet heart vs gnarled tuber cluster",
+                     "foliage: drooping bone-white filaments vs thin pale sprouts",
+                     "glow language: violet leaking from hairline cracks vs underside glow",
+                     "silhouette: vertical monolithic spire vs knotted low mass"],
+    "C04_ALT_C002": ["root architecture: rib-cage arcs over a relic seed vs descending cutaway root",
+                     "focus object: dark polished cracking seed relic vs deep hanging root",
+                     "spark treatment: violet sparks at root tips vs tiny violet flowers",
+                     "ready gesture: seed cracking open while roots tighten vs lifted root crown"],
+    "C05_ALT_C001": ["bloom geometry: wide horizontal chalice like a water-lily vs upright sunflower-poppy",
+                     "heart treatment: cradled glowing seed-cluster vs open radiant face",
+                     "stem: slender arching vs sturdy straight",
+                     "leaf rhythm: small paired leaves vs broad moss-green leaves"],
+    "C05_ALT_C002": ["bloom orientation: downturned gold bells vs upright clustered blooms",
+                     "inflorescence: leaning raceme cascade vs cluster at the stem top",
+                     "glow treatment: bells lit from inside vs open radiance",
+                     "gesture: gentle cascade lean vs restrained vertical stem"],
     "D01_ALT_C001": ["pose: unhurried mid-strut walk vs standing proud",
                      "trade detail: rolled seed-cloth bundle held in mouth vs leather satchel strap",
                      "coat interpretation: fluffier wind-brushed with stronger tan patches vs silky smooth",
