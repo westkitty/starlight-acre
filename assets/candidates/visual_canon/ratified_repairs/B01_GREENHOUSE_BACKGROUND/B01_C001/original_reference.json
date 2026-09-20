@@ -1,0 +1,17 @@
+{
+ "slot_id": "B01_GREENHOUSE_BACKGROUND",
+ "candidate_id": "B01_C001",
+ "run": "original",
+ "asset_name": "B01_GREENHOUSE_BACKGROUND",
+ "family": "ENVIRONMENT BACKGROUNDS",
+ "original_source": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/source.png",
+ "original_game_ready": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/game_ready.png",
+ "original_source_sha256": "b0d4b1a1f7eead0281be51cda3de52d4b40ec90f72780be4bacfc07a3d637f32",
+ "original_game_ready_sha256": "6e3a3c847faf9078b1fb53c1b9c7685e4f71c7870aa25beb510225d8cc2d7e45",
+ "technical_status": "PASS_WITH_FLAGS",
+ "technical_flags": [
+  "CONVERSION_REQUIRED",
+  "CROPPED_CONTENT"
+ ],
+ "ratified_role": "PRIMARY (human-ratified APPROVE_PRIMARY)"
+}

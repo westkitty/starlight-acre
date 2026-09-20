@@ -1,0 +1,42 @@
+{
+ "slot_id": "B01_GREENHOUSE_BACKGROUND",
+ "candidate_id": "B01_C001",
+ "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+ "original_path": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/game_ready.png",
+ "original_source_path": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/source.png",
+ "repair_action": "TARGETED_IMAGE_EDIT",
+ "governing_reference": "E02_C001",
+ "repair_status": "REPAIRED",
+ "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/B01_GREENHOUSE_BACKGROUND/B01_C001/repaired_source.png",
+ "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/B01_GREENHOUSE_BACKGROUND/B01_C001/repaired_game_ready.png",
+ "expected_dimensions": [
+  640,
+  360
+ ],
+ "actual_dimensions": [
+  640,
+  360
+ ],
+ "sha256": {
+  "repaired_source": "549c815d30b54f88d49cb18e26f0aa26dfa762691fd6c3b211d0f858aba2dea4",
+  "repaired_game_ready": "8928d50a54293cfe9da1f000d32ff94cbcf44a99aa8518d93fca7fff1b61681e",
+  "original_source_unchanged": "b0d4b1a1f7eead0281be51cda3de52d4b40ec90f72780be4bacfc07a3d637f32"
+ },
+ "technical_flags_before": [
+  "CONVERSION_REQUIRED",
+  "CROPPED_CONTENT"
+ ],
+ "technical_flags_after": [
+  "CONVERSION_REQUIRED"
+ ],
+ "validation": {
+  "decodes": true,
+  "format": "PNG",
+  "exact_640x360": true,
+  "deterministic_derivation": "center-crop to 16:9 + nearest-neighbor downscale (no painting)",
+  "edge_calm_margin_repaired": 0.991,
+  "edge_calm_margin_damaged": 0.967,
+  "margin_improved": true
+ },
+ "notes": "targeted image edit of the ratified candidate source; composition recomposed to bring structures fully inside frame; visual composition QA (identity/palette/depth) requires human viewing \u2014 not claimed here; deterministic checks only; CROPPED_CONTENT resolved by recomposition (structures pulled fully inside frame); no visual-approval claim \u2014 this environment cannot view images"
+}

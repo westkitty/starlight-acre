@@ -1,0 +1,450 @@
+{
+ "project": "starlight-acre",
+ "decision_source": "human_ratification",
+ "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json",
+ "complete": true,
+ "repaired_slots": [
+  "B01_C001",
+  "B02_C002",
+  "E01_C002"
+ ],
+ "authoritative_for": "subsequent LIVE PROMOTION phase (asset selection input)",
+ "note": "Authoritative canonical asset manifest. Canonical files for repaired slots are the repaired derivatives under visual_canon/ratified_repairs/; all other canonical files are the original candidate game_ready assets. Live-game promotion remains pending; visual playthrough QA remains pending.",
+ "slots": [
+  {
+   "slot_id": "A01_GARDENER_DRONE",
+   "canonical_candidate_id": "A01_C003",
+   "canonical_file": "assets/candidates/arena_agent_asset_run/slots/A01_GARDENER_DRONE/A01_C003/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/A01_GARDENER_DRONE/A01_C003/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DRONES / AGENTS",
+   "dimensions": [
+    32,
+    32
+   ],
+   "sha256": "6054867444b43b5b48f4a4481a23a17a306c7680e32a9bc02d7cc5512fdbb5e9",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "A02_REACTOR_CORE",
+   "canonical_candidate_id": "A02_ALT_C002",
+   "canonical_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A02_REACTOR_CORE/A02_ALT_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A02_REACTOR_CORE/A02_ALT_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "LARGE MACHINERY",
+   "dimensions": [
+    96,
+    96
+   ],
+   "sha256": "03497b6aa6172f7b88ed4a2ebcb01d19f5effc9b88058929b3e008fce5779b4f",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "A03_ENGINEER_DRONE",
+   "canonical_candidate_id": "A03_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A03_ENGINEER_DRONE/A03_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A03_ENGINEER_DRONE/A03_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DRONES / AGENTS",
+   "dimensions": [
+    32,
+    32
+   ],
+   "sha256": "0e19bbfa1fd0c852fedf3760ad9aef0dc162171251f31b3c72d612aea27da0ea",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "A04_HARVESTER_DRONE",
+   "canonical_candidate_id": "A04_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DRONES / AGENTS",
+   "dimensions": [
+    32,
+    32
+   ],
+   "sha256": "77749aaede21ecb033a33ddfb6d28e38a79f75c21f12791c5386eb772f3a6243",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "A05_MAINTENANCE_DRONE",
+   "canonical_candidate_id": "A05_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DRONES / AGENTS",
+   "dimensions": [
+    32,
+    32
+   ],
+   "sha256": "efc8f333228b7836530338f55bc7d8214558e36058312ada21066577caa1f514",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "canonical_candidate_id": "B01_C001",
+   "canonical_file": "assets/candidates/visual_canon/ratified_repairs/B01_GREENHOUSE_BACKGROUND/B01_C001/repaired_game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/game_ready.png",
+   "was_repaired": true,
+   "repair_action": "TARGETED_IMAGE_EDIT",
+   "family": "ENVIRONMENT BACKGROUNDS",
+   "dimensions": [
+    640,
+    360
+   ],
+   "sha256": "8928d50a54293cfe9da1f000d32ff94cbcf44a99aa8518d93fca7fff1b61681e",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "canonical_candidate_id": "B02_C002",
+   "canonical_file": "assets/candidates/visual_canon/ratified_repairs/B02_ENGINEERING_BACKGROUND/B02_C002/repaired_game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/game_ready.png",
+   "was_repaired": true,
+   "repair_action": "TARGETED_IMAGE_EDIT",
+   "family": "ENVIRONMENT BACKGROUNDS",
+   "dimensions": [
+    640,
+    360
+   ],
+   "sha256": "b8280fbffb57c65ffa4e5a715584c8074502ce47dfb6aa6172f97e61f0c117ec",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "B03_DOCKING_COLLAR",
+   "canonical_candidate_id": "B03_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DOCKING TECHNOLOGY",
+   "dimensions": [
+    64,
+    96
+   ],
+   "sha256": "da4c7f45d50f24ab22d4aca342d4b8f2dd505809914f3228363b97c5eb21d110",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "B04_HYDROPONICS_RIG",
+   "canonical_candidate_id": "B04_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "GREENHOUSE MACHINERY",
+   "dimensions": [
+    64,
+    64
+   ],
+   "sha256": "6cb3e47adbd71b494a3053355d02b9f8e117809852ad9c03f49741ed25fd5651",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "B05_ARCHIVE_STACK",
+   "canonical_candidate_id": "B05_C002",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "ARCHIVE / RESEARCH TECHNOLOGY",
+   "dimensions": [
+    64,
+    80
+   ],
+   "sha256": "2dbe434dad1e29e58a9caf9d00e051bd4557ee4d32c8093fe8ab5ca751f0e717",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "C01_WISDOM_FRUIT",
+   "canonical_candidate_id": "C01_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/C01_WISDOM_FRUIT/C01_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/C01_WISDOM_FRUIT/C01_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "CROPS / MYTHIC BIOLOGY",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "8055c3a41da0134b13e1ace98851ebf9ba035c6fd3eacdcb72a31f53f8e04867",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "C02_TRICKSTER_VINE",
+   "canonical_candidate_id": "C02_ALT_C002",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/C02_TRICKSTER_VINE/C02_ALT_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/C02_TRICKSTER_VINE/C02_ALT_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "CROPS / MYTHIC BIOLOGY",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "a07faa51a41f876bc7237da2f41a6557e058d8029ad183434d214cb84f8b1ed7",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "C03_LIGHTNING_VINE",
+   "canonical_candidate_id": "C03_C001",
+   "canonical_file": "assets/candidates/arena_agent_asset_run/slots/C03_LIGHTNING_VINE/C03_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/C03_LIGHTNING_VINE/C03_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "CROPS / MYTHIC BIOLOGY",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "8637bfb44afc652e65216ba981a6cdd3b580b87f08bac5a9bc5fa6b6948d75e5",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "C04_SHADOW_ROOT",
+   "canonical_candidate_id": "C04_C001",
+   "canonical_file": "assets/candidates/arena_agent_asset_run/slots/C04_SHADOW_ROOT/C04_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/C04_SHADOW_ROOT/C04_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "CROPS / MYTHIC BIOLOGY",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "9ac9d074d23c7880a2f33cc8dff12ebd1e7698315ffa0b20da5c8cb6db274947",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "C05_GOLDEN_BLOSSOM",
+   "canonical_candidate_id": "C05_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "CROPS / MYTHIC BIOLOGY",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "21111ad9867ab38437965661f6be3481722e75aedf6f9f29472477055cea3fcc",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "D01_DEXTER_VENDOR",
+   "canonical_candidate_id": "D01_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/D01_DEXTER_VENDOR/D01_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/D01_DEXTER_VENDOR/D01_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DEXTER / VENDOR",
+   "dimensions": [
+    64,
+    64
+   ],
+   "sha256": "3bf08a0a67a5725d8759f644a17a3058833b94bc0bd1dee9499f1c0bb09959f7",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+   "canonical_candidate_id": "D02_ALT_C002",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "DEXTER / VENDOR",
+   "dimensions": [
+    96,
+    64
+   ],
+   "sha256": "330382f360663d170dbe76f5ed10e25efebc8520b74f1ec7b2444bbcf06a69a7",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "canonical_candidate_id": "E01_C002",
+   "canonical_file": "assets/candidates/visual_canon/ratified_repairs/E01_GREENHOUSE_TILESET/E01_C002/repaired_game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/game_ready.png",
+   "was_repaired": true,
+   "repair_action": "NORMALIZE_ONLY",
+   "family": "ENVIRONMENT TILESETS",
+   "dimensions": [
+    256,
+    256
+   ],
+   "sha256": "6064244e02f7e557e4d32013c374a9a9ef5a0263cf2947c7f4e41f51798ff549",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "E02_ENGINEERING_TILESET",
+   "canonical_candidate_id": "E02_C001",
+   "canonical_file": "assets/candidates/arena_agent_asset_run/slots/E02_ENGINEERING_TILESET/E02_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/E02_ENGINEERING_TILESET/E02_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "ENVIRONMENT TILESETS",
+   "dimensions": [
+    256,
+    256
+   ],
+   "sha256": "2d39e65bac96887616ba40a78f499ae64d676d161237e18f8e09f56537f32e63",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "E03_CARGO_PROPS",
+   "canonical_candidate_id": "E03_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/E03_CARGO_PROPS/E03_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/E03_CARGO_PROPS/E03_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "ENVIRONMENT PROPS",
+   "dimensions": [
+    64,
+    64
+   ],
+   "sha256": "656ae3da1ce2a9ed89577ad136edc42762231b9c68658abe3c69f5af2f6f9594",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "canonical_candidate_id": "P01_ALT_C002",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/P01_PLAYER_SHEET/P01_ALT_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/P01_PLAYER_SHEET/P01_ALT_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "PLAYER / HUMANOID",
+   "dimensions": [
+    192,
+    192
+   ],
+   "sha256": "4ebe7a542d11adf87d265cc2edf7dd1177a299089fad47a05378def25aadaf7a",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+   "canonical_candidate_id": "T01_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "TERMINALS",
+   "dimensions": [
+    64,
+    64
+   ],
+   "sha256": "cc5f904b5eecb574a121f4d0623fd9b497c234f1802e47e19db91015cfbeb67f",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "T02_RESEARCH_TERMINAL",
+   "canonical_candidate_id": "T02_ALT_C003",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "TERMINALS",
+   "dimensions": [
+    64,
+    80
+   ],
+   "sha256": "126a7f232696cbc9cff3492b6f2702d9fe35808d4cddc7ccb813571f14558dd4",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+   "canonical_candidate_id": "T03_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "VFX / GLOWS",
+   "dimensions": [
+    64,
+    64
+   ],
+   "sha256": "5978f5acbcfc2ff19f9b61356b08520fd0b1b2d7a2adbeea61c5ef741ed275fa",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "U01_HUD_ICONS",
+   "canonical_candidate_id": "U01_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/U01_HUD_ICONS/U01_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/U01_HUD_ICONS/U01_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "HUD / ICONOGRAPHY",
+   "dimensions": [
+    80,
+    16
+   ],
+   "sha256": "5c785445e7377559b0c5b91371d174823d7eca07aef7db552b51b08cf5ebd0be",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "U02_HUD_EXTENSION_ICONS",
+   "canonical_candidate_id": "U02_C002",
+   "canonical_file": "assets/candidates/arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "HUD / ICONOGRAPHY",
+   "dimensions": [
+    96,
+    16
+   ],
+   "sha256": "882a508960a630f8a09f47b509fd5627deb2ad2adf58ccc2d7a04d4168f7a0cc",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "V01_CORE_VFX",
+   "canonical_candidate_id": "V01_ALT_C002",
+   "canonical_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C002/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C002/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "VFX / GLOWS",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "c6834aaf71391db17d6b8547dc9682bafb4b45571a37e479cfe52cacd89b48c8",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "V02_HAZARD_VFX",
+   "canonical_candidate_id": "V02_ALT_C001",
+   "canonical_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C001/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C001/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "VFX / GLOWS",
+   "dimensions": [
+    128,
+    32
+   ],
+   "sha256": "b293539eb12acf2a0e2a4659e2435b3ba237feab14344605ceed7f27a3e4a173",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  },
+  {
+   "slot_id": "W01_SECTOR_DOOR",
+   "canonical_candidate_id": "W01_C003",
+   "canonical_file": "assets/candidates/arena_agent_asset_run/slots/W01_SECTOR_DOOR/W01_C003/game_ready.png",
+   "original_candidate_file": "assets/candidates/arena_agent_asset_run/slots/W01_SECTOR_DOOR/W01_C003/game_ready.png",
+   "was_repaired": false,
+   "repair_action": null,
+   "family": "STATION DOORS / FIXTURES",
+   "dimensions": [
+    64,
+    112
+   ],
+   "sha256": "5df6bf9961d9a2f9a3a3fe4a276f429c66aceb1b105ec3aff09b11b5513706aa",
+   "human_ratification_source": "assets/candidates/visual_canon/RATIFICATION_DECISIONS.json"
+  }
+ ]
+}

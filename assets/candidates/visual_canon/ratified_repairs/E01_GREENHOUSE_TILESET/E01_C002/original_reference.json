@@ -1,0 +1,19 @@
+{
+ "slot_id": "E01_GREENHOUSE_TILESET",
+ "candidate_id": "E01_C002",
+ "run": "original",
+ "asset_name": "E01_GREENHOUSE_TILESET",
+ "family": "ENVIRONMENT TILESETS",
+ "original_source": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/source.png",
+ "original_game_ready": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/game_ready.png",
+ "original_source_sha256": "a56b2c68f60fc04cf79cd795d74d4545f88be59291354183f766a125c448cd25",
+ "original_game_ready_sha256": "478371dfb1cc290396a1f68474b63a477a08148caa9eaa97fda8d46d73662444",
+ "technical_status": "PASS_WITH_FLAGS",
+ "technical_flags": [
+  "BACKGROUND_REMOVED",
+  "CONVERSION_REQUIRED",
+  "NO_ALPHA",
+  "TILESET_OVERKEYED"
+ ],
+ "ratified_role": "PRIMARY (human-ratified APPROVE_PRIMARY)"
+}

@@ -1,0 +1,14 @@
+{
+ "slot_id": "B02_ENGINEERING_BACKGROUND",
+ "candidate_id": "B02_C002",
+ "repair_action": "TARGETED_IMAGE_EDIT",
+ "problem": "CROPPED_CONTENT: composition cut at canvas edges (least-bad primary, still cropped)",
+ "severity": "medium",
+ "governing_reference": "B01_C001",
+ "retained_rule": "A/B: defective candidate is the ratified reference for its slot",
+ "contract": "Targeted image edit of the actual candidate source: recompose the engineering far-background into a complete 16:9 composition where the collapsed machinery slope, hanging cables and cyan vapor columns sit fully inside frame with safe margins. Preserve the exact scene identity, palette, depth hierarchy and quiet middle band. Then deterministic center-crop to 16:9 + nearest-neighbor downscale to exactly 640x360.",
+ "expected_dimensions": [
+  640,
+  360
+ ]
+}
