@@ -4,27 +4,33 @@
   "source_candidate_id": "B01_C002",
   "alternate_candidate_id": "B01_ALT_C002",
   "priority": "B",
-  "generation_status": "not_generated",
-  "technical_status": "FAIL",
-  "source_file": null,
-  "game_ready_file": null,
-  "actual_source_width": null,
-  "actual_source_height": null,
-  "actual_game_width": null,
-  "actual_game_height": null,
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B01_GREENHOUSE_BACKGROUND/B01_ALT_C002/source.png",
+  "game_ready_file": "slots/B01_GREENHOUSE_BACKGROUND/B01_ALT_C002/game_ready.png",
+  "actual_source_width": 1376,
+  "actual_source_height": 768,
+  "actual_game_width": 640,
+  "actual_game_height": 360,
   "expected_width": 640,
   "expected_height": 360,
   "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
-  "alpha_present": null,
-  "sha256_source": null,
-  "sha256_game_ready": null,
-  "generation_prompt": null,
-  "challenger_axes": [],
+  "alpha_present": false,
+  "sha256_source": "2614954fc795ca45ec903608875fdb913b0c5dc3de41fb19689b2f74f7fa426d",
+  "sha256_game_ready": "57f786da8f60f66bef7a2651df3726282038c47b62ea172517918c48ba90c6e1",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D side-view game: the far interior of a deteriorating orbital greenhouse where something impossible and precious is being cultivated. Opaque flat full-frame illustration, no border, no letterboxing, no vignette frame. Include: station shell ribs in dusk blue, tall greenhouse glazing panels with worn seal seams, deep space beyond the glass with distant stars and a restrained nebular wash of teal and faint warm gold, distant hydroponic infrastructure racks and pipes, quiet teal biological light, warm-gold mythic highlights from a far canopy of impossible plants, evidence of age and repeated repair (patched panels, copper weld seams). Calm atmospheric middle band with negative space for foreground gameplay. No characters, no UI, no doors, no foreground floors or platforms, no readable text, not a level screenshot, no isometric or top-down view.  CHALLENGER DESIGN (materially different from the incumbent long horizontal window band with nebula and stacked rack silhouettes): an under-canopy vista: seen from a lower deck, a vast ceiling of impossible gold-tinged foliage spans the upper third filtering bone-white light into soft shafts; slender support columns with ring platforms recede into depth; a tall vertical glazing wall on the far left opens onto deep space with stars and a thin teal nebula wash; low mist band across the middle distance; hydroponic rails and pipe runs low in the frame; wide quiet negative space across the middle band.",
+  "challenger_axes": [
+    "spatial concept: under-canopy vista from a lower deck vs long horizontal window band",
+    "light language: soft bone-white shafts filtered by foliage vs nebula wash through windows",
+    "depth markers: slender columns with ring platforms vs stacked rack silhouettes",
+    "glazing placement: tall vertical wall far left vs horizontal band"
+  ],
   "technical_flags": [
-    "NOT_GENERATED"
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
   ],
   "notes": [
-    "alternate not yet generated"
+    "center-cropped to 16:9"
   ],
   "selected": false,
   "rejected": false,

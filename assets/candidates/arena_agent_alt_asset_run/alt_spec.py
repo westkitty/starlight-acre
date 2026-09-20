@@ -149,6 +149,75 @@ SLOT_CONTRACT = {
         "Same civilization, used and repaired hardware, no readable text, no labels, dark subtle "
         "outlines, GBA/SNES pixel art."
     ),
+    "U01_HUD_ICONS": (
+        "HUD resource icon strip for a 2D pixel game: ONE row of five 16x16 pixel icons on a very "
+        "wide thin strip (80x16 proportion), on a solid flat pure magenta #FF00FF background that "
+        "is ONE single flat color edge to edge - between icons, around glyphs, across the whole "
+        "strip - with no border, no frame, no caption panel, no drawn dividing lines. Icon 1 WATER: "
+        "a droplet, cool blue and teal. Icon 2 NUTRIENTS: a small flask or granule pouch with a "
+        "moss green accent. Icon 3 POWER: a lightning bolt or plug, warm amber-gold. Icon 4 WISDOM "
+        "FRUIT: a small warm-gold subtly folded fruit with a teal glint. Icon 5 INTERACTION PROMPT: "
+        "the literal capital letter E in bone white inside a small dark rounded key cap. Each icon "
+        "is complete and centered inside its own 16x16 cell; strong tiny-scale readability, bold "
+        "single-pixel outlines, high contrast, GBA/SNES pixel art; no other letters anywhere, no "
+        "text besides the single E."
+    ),
+    "E01_GREENHOUSE_TILESET": (
+        "A modular 16x16 pixel tileset sheet for a 2D side-view orbital greenhouse sector, arranged "
+        "as a strict clean grid of 16 columns by 16 rows of 16x16 pixel tiles on a square "
+        "256x256-proportioned sheet: tiles touching with no gaps, and the sheet extends fully to "
+        "all four canvas edges with NO outer margin, NO border, NO frame, NO caption panel, no "
+        "labels, no drawn grid lines. GBA/SNES pixel art, side-view orientation, identical pixel "
+        "scale, coherent light from upper left. Tile families: worn navy-gray floor plates with "
+        "edges and corners, wall panels, structural beams, hydroponic planter rim tiles, crates, "
+        "small ceiling light strips in warm bone-white, vents, pipes with joints, hydroponic "
+        "machinery blocks, glass framing tiles, and a few small noncollision station props; one "
+        "tile with a tiny luminous teal sprout. Worn orbital hardware plus a hint of strange "
+        "living greenhouse. Flat uniform very dark navy sheet background behind tiles; no text, "
+        "no letters, no isometric perspective."
+    ),
+    "B01_GREENHOUSE_BACKGROUND": (
+        "Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D "
+        "side-view game: the far interior of a deteriorating orbital greenhouse where something "
+        "impossible and precious is being cultivated. Opaque flat full-frame illustration, no "
+        "border, no letterboxing, no vignette frame. Include: station shell ribs in dusk blue, "
+        "tall greenhouse glazing panels with worn seal seams, deep space beyond the glass with "
+        "distant stars and a restrained nebular wash of teal and faint warm gold, distant "
+        "hydroponic infrastructure racks and pipes, quiet teal biological light, warm-gold mythic "
+        "highlights from a far canopy of impossible plants, evidence of age and repeated repair "
+        "(patched panels, copper weld seams). Calm atmospheric middle band with negative space "
+        "for foreground gameplay. No characters, no UI, no doors, no foreground floors or "
+        "platforms, no readable text, not a level screenshot, no isometric or top-down view."
+    ),
+    "V01_CORE_VFX": (
+        "VFX sprite strip for a 2D pixel game: ONE row of four consecutive 32x32 cells on a wide "
+        "4:1 strip (128x32 proportion), each effect isolated and centered in its own cell, on a "
+        "solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge - "
+        "between cells, around effects, across the whole strip - with no border, no frame, no "
+        "caption panel, no drawn dividing lines. EVERY one of the four cells must actually "
+        "contain its effect, fully inside the cell, nothing crossing cell boundaries. Cell 1 "
+        "HARVEST BURST: a small radiating burst of warm gold shard particles. Cell 2 REPAIR "
+        "SPARK: a compact copper-orange spark cluster with tiny bolt lines. Cell 3 GROWTH GLOW: "
+        "pixel-clustered teal-green upward glow motes rising like spores. Cell 4 INTERACTION "
+        "PING: a bone-white ping with NO letterforms: a small hollow diamond or ring pulse with "
+        "four tick marks. GBA/SNES pixel art, hard pixel clusters, no smooth gradients, no text, "
+        "no letters anywhere."
+    ),
+    "C03_LIGHTNING_VINE": (
+        "Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four "
+        "consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 "
+        "empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small "
+        "worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) "
+        "appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one "
+        "single flat color across the whole strip - between cells, around the plants, edge to "
+        "edge - with absolutely no grid lines, no separating borders, no frame, no caption "
+        "panel. The plant is a living vine hosting contained electrical phenomena (Zeus-inspired "
+        "storm plant, no god or person depicted): stage 2 seedling with a first tiny arcing "
+        "filament, stage 3 vine with small contained sparks in pale electric blue-white, stage 4 "
+        "READY unmistakable with charged capacitor-like bulb fruits crackling with contained "
+        "lightning; luminous, precise, slightly dangerous, not goofy. GBA/SNES pixel art, dark "
+        "subtle outline, consistent planter alignment."
+    ),
     "D01_DEXTER_VENDOR": (
         "A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game: exactly ONE "
         "dog, single sprite centered on a solid flat pure magenta #FF00FF background (one flat color "
@@ -410,6 +479,93 @@ CHALLENGER = {
         "helical water column lit soft teal with a small nozzle at its base; slim, vertical, "
         "elegant, same worn station family."
     ),
+    "U01_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent flat two-tone icons with one "
+        "highlight cluster each): chunky enamel-badge icons: each glyph drawn as a rounded chunky "
+        "enamel pin with a thick bone-white rim and a deep-navy fill; WATER droplet with an "
+        "inner crescent; NUTRIENTS as a granule pouch with a rolled fold; POWER bolt with a "
+        "double-struck zigzag; WISDOM FRUIT with two visible seed dots; the E key cap drawn as a "
+        "round badge with a copper rim. Strong single-weight outlines, no gradient."
+    ),
+    "U01_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent dark key-cap backing tiles "
+        "behind each glyph): floating-glyph icons with no backings: each symbol hangs free with a "
+        "thin dark outline and an inner bone-white core line; WATER as a tilted double-droplet "
+        "pair; NUTRIENTS as a triangular flask with visible granules; POWER as a plug seen "
+        "side-on with two prongs and a short cable curl; WISDOM FRUIT as a folded fan shape with "
+        "a teal glint line; the E key cap as a slim hexagonal cap. Airy, high negative space, "
+        "one accent pixel cluster per icon."
+    ),
+    "E01_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent bright clean hydroponic "
+        "machinery and glass framing with strong teal glow): a copper-and-ceramic botanical "
+        "vitrine vocabulary: grow-medium floor panels with visible seeded furrow rows, "
+        "bone-white ceramic grow-trough rims instead of metal planter rims, copper-framed glass "
+        "cloche tiles with faint green tint, slim watering rails with copper joints, small "
+        "trellis-arch tiles; teal appears only as the tiny living sprout glows and one seedling "
+        "lamp tile; overall warmer and more botanical, less machinery glow."
+    ),
+    "E01_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent aged patched plating with "
+        "moss overgrowth creeping on tiles): an orchestrated air-and-water vocabulary: perforated "
+        "mist-grate floor tiles with visible hole patterns, slim water-channel tiles with copper "
+        "rims and calm reflective fills, arched hoop-support tiles for climbing plants, "
+        "condensation-drop decorative tiles, louvered vent tiles in neat banks, small fogger "
+        "nozzle props; green appears as deliberate crops (sprout rows on channel edges) rather "
+        "than moss residue; feels like a working greenhouse machine for plants."
+    ),
+    "B01_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent huge glazed dome curve with "
+        "a distant gold tree silhouette): a terraced grow-bay canyon: the greenhouse interior "
+        "steps down in wide terraces from the upper left, thin nutrient waterfalls dropping "
+        "between terrace edges; a calm giant seed-shaped bioreactor glows soft teal in the mid "
+        "depth; the impossible gold plant canopy hangs DOWN from overhead trellis arms instead of "
+        "standing; tall glazing panels on the far right with stars beyond; patched panels and "
+        "copper weld seams along the terrace lips; wide quiet negative space across the middle "
+        "band."
+    ),
+    "B01_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent long horizontal window band "
+        "with nebula and stacked rack silhouettes): an under-canopy vista: seen from a lower "
+        "deck, a vast ceiling of impossible gold-tinged foliage spans the upper third filtering "
+        "bone-white light into soft shafts; slender support columns with ring platforms recede "
+        "into depth; a tall vertical glazing wall on the far left opens onto deep space with "
+        "stars and a thin teal nebula wash; low mist band across the middle distance; hydroponic "
+        "rails and pipe runs low in the frame; wide quiet negative space across the middle band."
+    ),
+    "V01_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent dense particle clusters with "
+        "strong contrast): ring-geometry effects: HARVEST BURST as an expanding double ring of "
+        "gold shard triangles with a small inner four-point star; REPAIR SPARK as two orbiting "
+        "clamp-shaped sparks trailing short copper bolt strokes; GROWTH GLOW as a rising helix "
+        "of teal-green motes on a faint vertical axis; INTERACTION PING as a double-line hollow "
+        "diamond pulse with four outward tick marks. Clean orbital geometry, medium density."
+    ),
+    "V01_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent lighter sparser effects with "
+        "thin strokes): stamp-glyph effects: HARVEST BURST as a radial stamp of eight chunky "
+        "triangular gold shards from a tiny core dot; REPAIR SPARK as one bold crossed-bolt "
+        "stroke with two copper nodes; GROWTH GLOW as three short columns of ascending spore "
+        "dots at different heights; INTERACTION PING as a single thick hollow ring with four "
+        "tick marks and one small center dot. Bold and legible, generous negative space inside "
+        "each cell."
+    ),
+    "C03_ALT_C001": (
+        "CHALLENGER DESIGN (materially different from the incumbent rounded storm-bulb fruits "
+        "with forked micro-arcs between them): a coil-ladder storm vine: the stems grow as a "
+        "narrow zigzag ladder coil like a Jacob's ladder with small ceramic insulator discs at "
+        "each rung; sparks hop rung to rung in pale electric blue-white; the READY state crowns "
+        "a single Anthurium-like spathe fruit - a bright coil nest cradled in an open spathe "
+        "leaf - with a tight arc halo around the nest."
+    ),
+    "C03_ALT_C002": (
+        "CHALLENGER DESIGN (materially different from the incumbent tall thin stems ending in "
+        "sparking bud spires): a bonsai storm tree: a miniature gnarled trunk with two flat "
+        "layered canopy discs like a tiny bonsai; arcs hop along the canopy edges; small "
+        "insulator beads stud the trunk; the READY state gathers one bright gold-cored coil "
+        "nest at the trunk fork, with contained lightning visibly feeding it from the canopy "
+        "above."
+    ),
     "D01_ALT_C001": (
         "CHALLENGER DESIGN (materially different from the incumbent standing-proud pose with leather "
         "satchel): Dexter mid-strut: an unhurried three-legged walk with the tail carried high and "
@@ -537,6 +693,46 @@ AXES = {
                      "display element: open-framed amber coil cage (L) / transparent helical column (R) vs angled consoles",
                      "accents: copper breaker lever (L) / nozzle at base (R) vs base cable stubs",
                      "silhouette: slim vertical elegant vs wide boxy stance"],
+    "U01_ALT_C001": ["icon construction: chunky enamel-badge glyphs with thick bone rims vs flat two-tone fills",
+                     "WATER treatment: inner crescent droplet vs plain droplet",
+                     "NUTRIENTS shape: rolled-fold granule pouch vs flask",
+                     "E cap: round badge with copper rim vs plain dark key cap"],
+    "U01_ALT_C002": ["icon construction: free-floating outlined glyphs, no backings vs key-cap backing tiles",
+                     "WATER treatment: tilted double-droplet pair vs single droplet",
+                     "POWER shape: side-on plug with cable curl vs lightning bolt",
+                     "E cap: slim hexagonal cap vs rounded square cap"],
+    "E01_ALT_C001": ["material vocabulary: copper-framed glass cloches + ceramic troughs vs metal machinery blocks",
+                     "floor language: seeded furrow grow-medium panels vs plain worn plates",
+                     "accent strategy: teal only as living sprout glows vs strong teal machinery glow",
+                     "prop family: trellis arches + watering rails vs vents and machine blocks"],
+    "E01_ALT_C002": ["material vocabulary: mist grates + water channels + hoop supports vs patched plating",
+                     "green presence: deliberate crop rows on channel edges vs creeping moss",
+                     "decorative family: condensation drops + fogger nozzles vs worn patch scars",
+                     "air treatment: louvered vent banks + perforation patterns vs solid aged panels"],
+    "B01_ALT_C001": ["spatial concept: stepped terrace canyon descending left vs one huge dome curve",
+                     "water language: thin nutrient waterfalls between terraces vs none",
+                     "mythic anchor: calm giant seed-shaped bioreactor mid-depth vs distant gold tree silhouette",
+                     "canopy treatment: gold foliage hanging down from overhead trellis vs standing tree"],
+    "B01_ALT_C002": ["spatial concept: under-canopy vista from a lower deck vs long horizontal window band",
+                     "light language: soft bone-white shafts filtered by foliage vs nebula wash through windows",
+                     "depth markers: slender columns with ring platforms vs stacked rack silhouettes",
+                     "glazing placement: tall vertical wall far left vs horizontal band"],
+    "V01_ALT_C001": ["effect geometry: expanding rings + orbital clamps vs dense particle bursts",
+                     "burst structure: double ring of shard triangles + inner star vs radiating cluster",
+                     "glow gesture: rising helix of motes on an axis vs free-floating spores",
+                     "ping treatment: double-line hollow diamond vs single ring pulse"],
+    "V01_ALT_C002": ["effect geometry: bold radial stamps and single strokes vs lighter scattered effects",
+                     "burst structure: eight chunky shard triangles from a core dot vs sparse shards",
+                     "spark treatment: one crossed-bolt stroke with copper nodes vs diffuse spark cluster",
+                     "density rhythm: high negative space with chunky marks vs thin-stroke sparseness"],
+    "C03_ALT_C001": ["plant architecture: Jacob's-ladder coil stems with insulator discs vs rounded storm bulbs",
+                     "spark path: arcs hopping rung to rung vs forked micro-arcs between fruits",
+                     "READY structure: coil nest cradled in an open spathe vs clustered bulb fruits",
+                     "growth gesture: narrow vertical ladder vs bushy vine"],
+    "C03_ALT_C002": ["plant architecture: gnarled bonsai trunk with flat canopy discs vs tall thin spires",
+                     "spark path: arcs hopping along canopy edges vs tip sparks",
+                     "READY structure: gold-cored coil nest at the trunk fork vs sparking bud spires",
+                     "silhouette: miniature layered tree vs upright stems"],
     "D01_ALT_C001": ["pose: unhurried mid-strut walk vs standing proud",
                      "trade detail: rolled seed-cloth bundle held in mouth vs leather satchel strap",
                      "coat interpretation: fluffier wind-brushed with stronger tan patches vs silky smooth",
