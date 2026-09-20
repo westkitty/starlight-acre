@@ -28,7 +28,9 @@
   "notes": [
     "flood-keyed border background (seeds=2, removed 59.2%)",
     "content downscaled x0.0651 (NEAREST) into 128x32 canvas, bottom-center anchor",
-    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing"
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 28% 30% 47% 68%",
+    "planter-band IoU vs cell1: c2=0.85 c3=0.76 c4=0.69"
   ],
   "selected": false,
   "rejected": false,

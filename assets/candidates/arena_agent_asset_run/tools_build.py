@@ -114,6 +114,183 @@ def alpha_bbox(im):
 SINGLE_SPRITE_SLOTS = {"A01_GARDENER_DRONE", "T02_RESEARCH_TERMINAL", "W01_SECTOR_DOOR",
                        "D01_DEXTER_VENDOR", "D02_DEXTER_VENDOR_KIOSK"}
 
+# logical grid contracts for multi-cell sheets, measured on the final game_ready raster
+SHEET_TOPOLOGY = {
+    # crop growth strips: four consecutive 32x32 cells, planter at cell bottom in every cell
+    "C01_WISDOM_FRUIT":   dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
+    "C02_TRICKSTER_VINE": dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
+    "C03_LIGHTNING_VINE": dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
+    "C04_SHADOW_ROOT":    dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
+    "C05_GOLDEN_BLOSSOM": dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]], planter=True),
+    # four isolated VFX cells
+    "V01_CORE_VFX":       dict(rows=1, cols=4, cw=32, ch=32, exp=[[1, 1, 1, 1]]),
+    # five 16x16 HUD icon cells
+    "U01_HUD_ICONS":      dict(rows=1, cols=5, cw=16, ch=16, exp=[[1, 1, 1, 1, 1]]),
+    # player sheet: 6 cols x 4 rows of 32x48; per Player.tscn rows idle x4 / walk x6 / jump-fall-land / interact x2
+    "P01_PLAYER_SHEET":   dict(rows=4, cols=6, cw=32, ch=48, baseline=True,
+                               exp=[[1, 1, 1, 1, 0, 0], [1, 1, 1, 1, 1, 1],
+                                    [1, 1, 1, 0, 0, 0], [1, 1, 0, 0, 0, 0]]),
+    # two-terminal pair: LEFT repair (copper/warm), RIGHT replenish (teal/cool), each 32x64
+    "T01_REPAIR_REPLENISH_TERMINALS": dict(rows=1, cols=2, cw=32, ch=64, exp=[[1, 1]], halves=True),
+}
+
+
+def analyze_sheet_topology(slot_id, gr_path, src_path):
+    """Deterministic per-cell topology check of the final game_ready raster against the
+    slot's logical grid contract. Flags only; never modifies the image."""
+    t = SHEET_TOPOLOGY[slot_id]
+    flags, notes = set(), []
+    gr = Image.open(gr_path).convert("RGBA")
+    if gr.size != (t["cols"] * t["cw"], t["rows"] * t["ch"]):
+        notes.append(f"sheet topology not checked: game_ready {gr.size[0]}x{gr.size[1]} != "
+                     f"logical grid canvas {t['cols']*t['cw']}x{t['rows']*t['ch']}")
+        return flags, notes
+    px = gr.load()
+    occ = [[0.0] * t["cols"] for _ in range(t["rows"])]
+    bottoms = []
+    for r in range(t["rows"]):
+        for c in range(t["cols"]):
+            n = op = 0
+            for y in range(r * t["ch"], (r + 1) * t["ch"]):
+                for x in range(c * t["cw"], (c + 1) * t["cw"]):
+                    n += 1
+                    if px[x, y][3] > 0:
+                        op += 1
+            occ[r][c] = op / n
+    shares = " / ".join(" ".join(f"{v:.0%}" for v in row) for row in occ)
+    notes.append(f"sheet cell opaque shares (row-major): {shares}")
+
+    empty_bad, occ_bad = [], []
+    for r in range(t["rows"]):
+        for c in range(t["cols"]):
+            if t["exp"][r][c] == 0 and occ[r][c] > 0.25:
+                empty_bad.append(f"r{r+1}c{c+1}={occ[r][c]:.0%}")
+            if t["exp"][r][c] == 1 and occ[r][c] < 0.04:
+                occ_bad.append(f"r{r+1}c{c+1}={occ[r][c]:.0%}")
+    if empty_bad:
+        flags.add("EMPTY_CELLS_OPAQUE")
+        notes.append("cells that must stay transparent are opaque in game_ready: " + ", ".join(empty_bad))
+        # root cause: is the SOURCE's flat background a different color from its border frame,
+        # so border-seeded flood keying could not reach the interior?
+        try:
+            src = Image.open(src_path).convert("RGB")
+            sw, sh = src.size
+            sp = src.load()
+            flat_ok = True
+            for r in range(t["rows"]):
+                for c in range(t["cols"]):
+                    if t["exp"][r][c] != 0:
+                        continue
+                    from collections import Counter
+                    cnt = Counter()
+                    for y in range(int(r * sh / t["rows"]), max(int(r * sh / t["rows"]) + 1, int((r + 1) * sh / t["rows"]))):
+                        for x in range(int(c * sw / t["cols"]), max(int(c * sw / t["cols"]) + 1, int((c + 1) * sw / t["cols"]))):
+                            cnt[(sp[x, y][0] // 16, sp[x, y][1] // 16, sp[x, y][2] // 16)] += 1
+                    if not cnt or cnt.most_common(1)[0][1] / sum(cnt.values()) < 0.80:
+                        flat_ok = False
+            if flat_ok:
+                flags.add("KEYING_INCOMPLETE_FRAMED_SOURCE")
+                notes.append("source empty cells are >=80% a single flat color (the sheet background), but the "
+                             "source border is a different color (dark frame), so border-seeded flood keying "
+                             "removed only the frame and left the interior background opaque; re-key from the "
+                             "interior background color before slicing")
+            else:
+                flags.add("SOURCE_TOPOLOGY_MISMATCH")
+                notes.append("source empty cells are not a single flat background color; generated sheet does "
+                             "not follow the required empty-cell topology")
+        except Exception as e:
+            notes.append(f"source empty-cell flatness check failed: {e}")
+    if occ_bad:
+        flags.add("EXPECTED_CELL_EMPTY")
+        notes.append("cells that must contain a frame/prop are (near-)empty in game_ready: " + ", ".join(occ_bad))
+
+    if t.get("planter"):
+        # lifecycle strips: planter band = bottom 10px of each 32px cell, must stay put across cells
+        band = 10
+        b0 = [[px[x, y][3] > 0 for x in range(0, t["cw"])]
+              for y in range(t["ch"] - band, t["ch"])]
+        ious = []
+        for c in range(1, t["cols"]):
+            inter = union = 0
+            for yi in range(band):
+                for xi in range(t["cw"]):
+                    v = px[xi + c * t["cw"], yi + t["ch"] - band][3] > 0
+                    inter += 1 if (b0[yi][xi] and v) else 0
+                    union += 1 if (b0[yi][xi] or v) else 0
+            ious.append(inter / union if union else 0.0)
+        notes.append("planter-band IoU vs cell1: " + " ".join(f"c{c+2}={v:.2f}" for c, v in enumerate(ious)))
+        if ious and min(ious) < 0.50:
+            flags.add("PLANTER_BAND_INCONSISTENT")
+        drops = [occ[0][c] - occ[0][c + 1] for c in range(t["cols"] - 1)]
+        if any(d > 0.10 for d in drops):
+            flags.add("LIFECYCLE_OCCUPANCY_NON_MONOTONIC")
+            notes.append("crop strip cell occupancy decreases by >10% between consecutive stages")
+
+    if t.get("baseline"):
+        for r in range(t["rows"]):
+            for c in range(t["cols"]):
+                if not t["exp"][r][c]:
+                    continue
+                for y in range(t["ch"] - 1, -1, -1):
+                    if any(px[x, y + r * t["ch"]][3] > 0 for x in range(c * t["cw"], (c + 1) * t["cw"])):
+                        bottoms.append(y)
+                        break
+        if bottoms:
+            spread = max(bottoms) - min(bottoms)
+            notes.append(f"occupied-cell content bottom rows: min={min(bottoms)} max={max(bottoms)} "
+                         f"(cell height {t['ch']}, spread {spread})")
+            if spread > 6:
+                flags.add("PLAYER_BASELINE_MISALIGNED")
+
+    if t.get("halves"):
+        mid = t["cw"]
+        lw = sum(1 for y in range(t["ch"]) for x in range(0, mid) if px[x, y][3] > 0)
+        rw = sum(1 for y in range(t["ch"]) for x in range(mid, 2 * mid) if px[x, y][3] > 0)
+        if lw < 0.04 * mid * t["ch"] or rw < 0.04 * mid * t["ch"]:
+            flags.add("TERMINAL_HALF_MISSING")
+        # bridging: one connected component with substantial pixels in both halves
+        seen = {}
+        comps = []
+        for y0 in range(t["ch"]):
+            for x0 in range(2 * mid):
+                if px[x0, y0][3] > 0 and (x0, y0) not in seen:
+                    comp = [(x0, y0)]
+                    seen[(x0, y0)] = len(comps)
+                    stack = [(x0, y0)]
+                    while stack:
+                        x, y = stack.pop()
+                        for nx, ny in ((x+1, y), (x-1, y), (x, y+1), (x, y-1)):
+                            if 0 <= nx < 2 * mid and 0 <= ny < t["ch"] and px[nx, ny][3] > 0 and (nx, ny) not in seen:
+                                seen[(nx, ny)] = len(comps)
+                                comp.append((nx, ny))
+                                stack.append((nx, ny))
+                    comps.append(comp)
+        for i, comp in enumerate(comps):
+            l = sum(1 for x, y in comp if x < mid)
+            rr = sum(1 for x, y in comp if x >= mid)
+            if comp and min(l, rr) > 0.05 * len(comp) and l > 0.10 * lw and rr > 0.10 * rw:
+                flags.add("TERMINAL_HALVES_BRIDGED")
+                notes.append(f"component {i+1} spans both halves ({l}px left / {rr}px right)")
+                break
+        # theme colors: LEFT repair = copper/warm, RIGHT replenish = teal/cool
+        warm_l = cool_l = warm_r = cool_r = nl = nr = 0
+        for y in range(t["ch"]):
+            for x in range(2 * mid):
+                r_, g_, b_ = px[x, y][:3]
+                if px[x, y][3] > 0:
+                    if x < mid:
+                        nl += 1
+                        warm_l += 1 if (r_ > g_ + 20 and r_ > b_ + 20) else 0
+                        cool_l += 1 if (b_ > r_ + 20 or g_ > r_ + 20) else 0
+                    else:
+                        nr += 1
+                        warm_r += 1 if (r_ > g_ + 20 and r_ > b_ + 20) else 0
+                        cool_r += 1 if (b_ > r_ + 20 or g_ > r_ + 20) else 0
+        if nl and nr:
+            notes.append(f"half theme colors: left warm={warm_l/nl:.0%} cool={cool_l/nl:.0%}; "
+                         f"right warm={warm_r/nr:.0%} cool={cool_r/nr:.0%} (left should be warm/copper, right cool/teal)")
+    return flags, notes
+
 
 def count_major_islands(rgba, min_share=0.10, sample_max=512):
     """Number of disconnected opaque islands each covering >= min_share of opaque pixels.
@@ -326,6 +503,14 @@ def process_candidate(slot_id, cid):
         notes += gnotes
         if (rec["actual_game_width"], rec["actual_game_height"]) != (s["w"], s["h"]):
             flags.add("WRONG_DIMENSIONS")
+        if slot_id in SHEET_TOPOLOGY:
+            try:
+                tflags, tnotes = analyze_sheet_topology(slot_id, gp, src)
+                flags |= tflags
+                notes += tnotes
+            except Exception as e:
+                flags.add("TOPOLOGY_ANALYSIS_FAILED")
+                notes.append(f"sheet topology analysis error: {e}")
     except Exception as e:
         flags.add("NORMALIZATION_FAILED")
         notes.append(f"normalization error: {e}")
