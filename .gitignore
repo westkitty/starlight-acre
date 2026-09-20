@@ -7,3 +7,6 @@
 export_presets.cfg
 # Claude
 .claude/
+
+# Visual QA harness runtime output (screenshots, crops, reports)
+visual_qa_output/

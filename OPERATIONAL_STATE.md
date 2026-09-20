@@ -1,7 +1,7 @@
 # Starlight Acre Operational State
 
 Project ID: starlight-acre
-Revision: 5
+Revision: 6
 Updated: 2026-09-20
 
 ## Purpose
@@ -88,6 +88,8 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 | Scene diffs minimal: all original nodes/connections/scripts preserved | verified (deterministic, sandbox) |
 | Godot `tests/asset_promotion_test.gd` | pending user environment (no Godot binary in promotion sandbox; test delivered, one command: `godot --headless --script tests/asset_promotion_test.gd`, expect `STARLIGHT_ASSET_PROMOTION_PASS`) |
 | Godot post-promotion smoke + 120-frame re-run | pending user environment |
+| One-click visual QA harness: static build validation | verified (sandbox) |
+| One-click visual QA harness: actual Mac run + screenshots | pending user environment |
 | Manual editor playthrough | pending |
 | Visual QA of promoted art | PENDING HUMAN REVIEW |
 | TileMap visual/collision QA | pending |
