@@ -1,0 +1,34 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "W01_SECTOR_DOOR",
+  "candidate_id": "W01_C003",
+  "priority": "A",
+  "source_file": "slots/W01_SECTOR_DOOR/W01_C003/source.png",
+  "game_ready_file": "slots/W01_SECTOR_DOOR/W01_C003/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 784,
+  "actual_source_height": 1360,
+  "actual_game_width": 64,
+  "actual_game_height": 112,
+  "expected_width": 64,
+  "expected_height": 112,
+  "expected_frame_layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall",
+  "alpha_present": true,
+  "sha256_source": "6be7723d8cc8feae6733b8ca83aa6996eb0776a5f89fbfe5cf0bb109c0864216",
+  "sha256_game_ready": "5df6bf9961d9a2f9a3a3fe4a276f429c66aceb1b105ec3aff09b11b5513706aa",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Reusable orbital station sector door for a 2D side-view pixel game, single prop on a solid flat pure magenta #FF00FF background (flat, no checkerboard), no surrounding wall scenery. Strict side view, frontal frame of a sliding bulkhead. Approximately four 16px tiles wide and seven 16px tiles tall: strong mechanical rectangular silhouette in worn dusk-blue and station-gray hull plating with copper reinforcing ribs, central vertical seam showing it slides open into two panels, teal status light strip near the top, small warning chevrons in hydroponic teal, heavy floor threshold plate, subtle scuffs and old repair seams. Obviously traversable and openable; old station hardware; usable in both a greenhouse sector and an engineering bay. No readable text. Dark subtle outline. Variant 3: rounded-top pressure door with teal circular lock indicator and thick segmented frame.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 25.1%)",
+    "content downscaled x0.0900 (NEAREST) into 64x112 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

@@ -1,0 +1,30 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+  "candidate_id": "D02_C003",
+  "priority": "A",
+  "source_file": null,
+  "game_ready_file": null,
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 96,
+  "expected_height": 64,
+  "expected_frame_layout": "single prop, 96x64 canvas, bottom-center anchor, clear space left for Dexter beside/within the composition, NO dog in this asset",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A compact improvised orbital trading kiosk prop for a 2D side-view pixel game, single prop centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). A small repaired old station hardware counter: mismatched hull panels in dusk blue and station gray with copper brackets, a low trade shelf holding small seed containers, sealed rare biological goods canisters with faint teal and warm gold glow, one or two small cargo cases, a few unusual salvaged station components stacked at one end, a small canopy of salvaged strut and cloth in muted gold. Subtle teal/gold lighting, worn and lived-in. Deliberately leave clear empty space at one side of the counter where a very small dog vendor will later stand. NO animals, NO characters, NO readable text. Dark subtle outline, bottom edge on the canvas floor line. Variant 3: kiosk as a scaffold table with glowing canister rack and a small awning, open space on the left.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "source.png missing or empty"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

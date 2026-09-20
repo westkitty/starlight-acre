@@ -1,0 +1,30 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+  "candidate_id": "T01_C002",
+  "priority": "B",
+  "source_file": null,
+  "game_ready_file": null,
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 64,
+  "expected_height": 64,
+  "expected_frame_layout": "two-terminal sheet 64x64: LEFT cell 32x64 repair terminal, RIGHT cell 32x64 replenish terminal, bottom-center anchors",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Two-terminal sprite sheet for a 2D side-view pixel game: a 64x64 canvas on a solid flat pure magenta #FF00FF background (flat, no checkerboard) containing exactly two props side by side, each 32 pixels wide and 64 tall, feet on the canvas bottom line. LEFT: Repair Terminal in maintenance copper #B87333 and warm orange accents, power and hardware theme: a worn upright station pedestal with a small hatched panel, a copper coil or breaker element, a small amber status lamp, thick cable into the base. RIGHT: Replenish Terminal in hydroponic teal #2E8B8B and cool blue accents, water/nutrient/fluid theme: same station design language and same silhouette family as the repair terminal but visibly distinct, with a small transparent fluid window, a dripping nutrient nozzle, a teal status lamp. Same civilization, used and repaired hardware, no readable text, dark subtle outlines, GBA/SNES pixel art. Variant 2: boxy industrial pedestal family with angled console faces and base cable stubs.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "source.png missing or empty"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

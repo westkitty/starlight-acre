@@ -1,0 +1,30 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C04_SHADOW_ROOT",
+  "candidate_id": "C04_C001",
+  "priority": "C",
+  "source_file": null,
+  "game_ready_file": null,
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row, four consecutive 32x32 cells on a 128x32 canvas, left to right, on a solid flat pure magenta #FF00FF background (flat, no checkerboard). The same small worn hydroponic planter box (station gray with teal rim, identical position and design) in all four cells. A root-dominant mythic plant, Hades-inspired underworld botany without depicting any god or person, mystical rather than evil: growth happens mostly BELOW and AT the soil line with deep unusual silhouettes, dark purple-black root bulges partially hidden by the planter soil, sparse pale bone-white and faint violet foliage above, the READY state showing one heavy knotted root crown lifted slightly above the soil with a cool violet underside glow. Partially hidden growth language, mysterious, calm, uncanny but not monstrous. GBA/SNES pixel art, dark subtle outline, consistent planter alignment. Variant 1: root crown like a gnarled subdued tuber cluster with thin pale sprouts.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "source.png missing or empty"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

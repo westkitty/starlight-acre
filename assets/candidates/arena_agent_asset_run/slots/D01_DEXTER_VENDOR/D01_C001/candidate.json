@@ -1,0 +1,34 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "D01_DEXTER_VENDOR",
+  "candidate_id": "D01_C001",
+  "priority": "A",
+  "source_file": "slots/D01_DEXTER_VENDOR/D01_C001/source.png",
+  "game_ready_file": "slots/D01_DEXTER_VENDOR/D01_C001/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 1408,
+  "actual_source_height": 768,
+  "actual_game_width": 64,
+  "actual_game_height": 64,
+  "expected_width": 64,
+  "expected_height": 64,
+  "expected_frame_layout": "single character sprite, 64x64 canvas, bottom-center anchor, strict side view",
+  "alpha_present": true,
+  "sha256_source": "9919fbc6c82e5ef5791ab00f31e8163e11560d158eb6b601e31408d671e756e4",
+  "sha256_game_ready": "bf1221d36f40081cd66709960adc9d0aa90ec55bb04445c8f987bbf74bf3d6dc",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Dexter is a VERY SMALL compact Phalene (the drop-eared variant of the Papillon, NOT a Papillon with upright ears): long silky butterfly-spaniel coat, FLOPPY EARS HANGING DOWN beside his head, black/dark and white and warm tan tricolor markings, small elderly dog with slightly grayed muzzle, compact body, calm unimpressed demeanor, half-lidded small dark eyes, closed mouth, no grin, no giant cute eyes, not puppy-like, no excessive cuteness. Strict side view standing pose, bottom of paws on the canvas floor line, dark subtle outline. A tiny restrained cargo accessory is allowed: a small worn satchel strap across the flank or a tiny seed pouch. Visual thesis: a tiny ancient authority who happens to sell you things. No humanoid clothes beyond the strap, no fantasy merchant caricature. Variant 1: standing proud, small worn leather seed satchel, faint warm gold clasp.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=3, removed 60.3%)",
+    "content downscaled x0.0455 (NEAREST) into 64x64 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

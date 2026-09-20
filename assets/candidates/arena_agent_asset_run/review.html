@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Starlight Acre — Candidate Review</title>
+<style>
+  :root{
+    --navy:#0A0E1A; --dusk:#1E2D4A; --teal:#2E8B8B; --moss:#4F7942; --gold:#D4AF37;
+    --copper:#B87333; --gray:#708090; --bone:#F5F5DC;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--navy);color:var(--bone);
+       font-family:"Courier New",ui-monospace,monospace;font-size:13px}
+  header{padding:10px 16px;border-bottom:1px solid #1E2D4A;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  header h1{font-size:15px;margin:0;color:var(--gold);letter-spacing:2px}
+  header .sub{color:var(--gray)}
+  #filters{display:flex;gap:6px;flex-wrap:wrap}
+  button{background:var(--dusk);color:var(--bone);border:1px solid #2E8B8B55;padding:4px 10px;
+         cursor:pointer;font-family:inherit;font-size:12px;border-radius:2px}
+  button:hover{border-color:var(--teal)}
+  button.on{background:var(--teal);color:#06110f;border-color:var(--teal);font-weight:bold}
+  #slotNav{display:flex;gap:4px;flex-wrap:wrap;padding:8px 16px;border-bottom:1px solid #1E2D4A}
+  #slotNav button{font-size:11px;padding:3px 8px}
+  #slotNav button .n{color:var(--gold)}
+  main{display:flex;min-height:calc(100vh - 96px)}
+  #stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+         padding:18px;position:relative}
+  #canvasWrap{position:relative;background:transparent;
+              image-rendering:pixelated;image-rendering:crisp-edges}
+  #canvasWrap.checker{background:
+     repeating-conic-gradient(#141a2b 0% 25%, #1b2337 0% 50%) 0 0/16px 16px}
+  #stage img{image-rendering:pixelated;image-rendering:crisp-edges;display:block}
+  #meta{position:absolute;left:16px;top:12px;line-height:1.6}
+  #meta .cid{color:var(--gold);font-size:15px;letter-spacing:1px}
+  #meta .dim{color:var(--teal)}
+  #meta .flags{color:var(--copper);max-width:420px}
+  #zoom{position:absolute;right:16px;top:12px;display:flex;gap:6px;align-items:center}
+  #verdict{position:absolute;right:16px;bottom:14px;display:flex;gap:8px}
+  #verdict button{min-width:74px}
+  #verdict .keep.on{background:var(--moss);border-color:var(--moss);color:#eafbe7}
+  #verdict .maybe.on{background:var(--gold);border-color:var(--gold);color:#241d05}
+  #verdict .reject.on{background:#7a2e2e;border-color:#7a2e2e}
+  #promptBox{max-height:120px;overflow:auto;background:#0d1322;border:1px solid #1E2D4A;
+             padding:8px;margin-top:10px;color:#9fb0c8;font-size:11px;display:none}
+  #promptBox.open{display:block}
+  #cmp{display:none;gap:24px;align-items:flex-end;justify-content:center;width:100%}
+  #cmp .cell{text-align:center}
+  #cmp .cell .lbl{color:var(--gold);margin-bottom:6px}
+  #abBar{position:absolute;left:16px;bottom:14px;display:flex;gap:8px;align-items:center}
+  #abBar select{background:var(--dusk);color:var(--bone);border:1px solid #2E8B8B55;font-family:inherit;padding:3px}
+  .tag{display:inline-block;padding:1px 6px;border:1px solid;margin-left:6px;font-size:10px}
+  .tag.PASS{color:var(--moss);border-color:var(--moss)}
+  .tag.PASS_WITH_FLAGS{color:var(--gold);border-color:var(--gold)}
+  .tag.FAIL{color:#e07070;border-color:#e07070}
+</style>
+</head>
+<body>
+<header>
+  <h1>ST★RLIGHT ACRE</h1><span class="sub">candidate foundry review — nothing here is live</span>
+  <div id="filters"></div>
+  <span class="sub" id="count"></span>
+  <button id="promptToggle">prompt</button>
+  <button id="checkerToggle">checker</button>
+  <button id="srcToggle">view: game_ready</button>
+  <button id="sizeToggle">zoom 1:1</button>
+  <button id="cmpToggle">A/B</button>
+  <button id="exportBtn">EXPORT SELECTIONS</button>
+</header>
+<div id="slotNav"></div>
+<main>
+  <div id="stage">
+    <div id="meta"></div>
+    <div id="zoom">
+      <button id="zOut">−</button><span id="zLbl">4x</span><button id="zIn">+</button>
+      <button id="abA">set A</button><button id="abB">set B</button>
+    </div>
+    <div id="cmp"></div>
+    <div id="canvasWrap" class="checker"><img id="img" alt=""></div>
+    <div id="promptBox"></div>
+    <div id="abBar"></div>
+    <div id="verdict">
+      <button class="keep" data-v="keep">KEEP (K)</button>
+      <button class="maybe" data-v="maybe">MAYBE (M)</button>
+      <button class="reject" data-v="reject">REJECT (R)</button>
+      <button data-v="unsorted">UNSORTED (U)</button>
+    </div>
+  </div>
+</main>
+<script>
+const DATA = [{"cid": "A01_C001", "slot": "A01_GARDENER_DRONE", "priority": "A", "src": "slots/A01_GARDENER_DRONE/A01_C001/source.png", "ready": "slots/A01_GARDENER_DRONE/A01_C001/game_ready.png", "sw": 1408, "sh": 768, "gw": 32, "gh": 32, "ew": 32, "eh": 32, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 85.5%)", "content downscaled x0.0699 (NEAREST) into 32x32 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A small automated orbital gardener maintenance drone for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat single color, no checkerboard, no gradient). Strict side view. Compact utility machine: worn station-metal hull in station gray and dusk blue, hydroponic teal and moss green accents, a small clipped tool arm with tender-claw or nozzle for tending plants, a subtle teal sensor slit instead of eyes, small thruster nozzles beneath (hover center anchor). Clearly non-human, helper not enemy, botanical tending function visible in silhouette, readable at very small scale, dark subtle outline. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body. Variant 1: boxy utility chassis with rounded corners, tool arm folded low, single underside thruster glow.", "layout": "single sprite, 32x32, bottom-center/hover-center anchor"}, {"cid": "A01_C002", "slot": "A01_GARDENER_DRONE", "priority": "A", "src": "slots/A01_GARDENER_DRONE/A01_C002/source.png", "ready": "slots/A01_GARDENER_DRONE/A01_C002/game_ready.png", "sw": 1408, "sh": 768, "gw": 32, "gh": 32, "ew": 32, "eh": 32, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 86.4%)", "content downscaled x0.0664 (NEAREST) into 32x32 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A small automated orbital gardener maintenance drone for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat single color, no checkerboard, no gradient). Strict side view. Compact utility machine: worn station-metal hull in station gray and dusk blue, hydroponic teal and moss green accents, a small clipped tool arm with tender-claw or nozzle for tending plants, a subtle teal sensor slit instead of eyes, small thruster nozzles beneath (hover center anchor). Clearly non-human, helper not enemy, botanical tending function visible in silhouette, readable at very small scale, dark subtle outline. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body. Variant 2: compact pod drone with a visible small planter-clay pot cradle clip and misting nozzle, twin mini thrusters.", "layout": "single sprite, 32x32, bottom-center/hover-center anchor"}, {"cid": "A01_C003", "slot": "A01_GARDENER_DRONE", "priority": "A", "src": "slots/A01_GARDENER_DRONE/A01_C003/source.png", "ready": "slots/A01_GARDENER_DRONE/A01_C003/game_ready.png", "sw": 1408, "sh": 768, "gw": 32, "gh": 32, "ew": 32, "eh": 32, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 66.4%)", "content downscaled x0.0285 (NEAREST) into 32x32 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A small automated orbital gardener maintenance drone for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat single color, no checkerboard, no gradient). Strict side view. Compact utility machine: worn station-metal hull in station gray and dusk blue, hydroponic teal and moss green accents, a small clipped tool arm with tender-claw or nozzle for tending plants, a subtle teal sensor slit instead of eyes, small thruster nozzles beneath (hover center anchor). Clearly non-human, helper not enemy, botanical tending function visible in silhouette, readable at very small scale, dark subtle outline. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body. Variant 3: low wide hexagonal maintenance drone with side-mounted clipper arm and tiny top beacon in moss green.", "layout": "single sprite, 32x32, bottom-center/hover-center anchor"}, {"cid": "T02_C001", "slot": "T02_RESEARCH_TERMINAL", "priority": "A", "src": "slots/T02_RESEARCH_TERMINAL/T02_C001/source.png", "ready": "slots/T02_RESEARCH_TERMINAL/T02_C001/game_ready.png", "sw": 1408, "sh": 768, "gw": 64, "gh": 80, "ew": 64, "eh": 80, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 59.1%)", "content downscaled x0.0690 (NEAREST) into 64x80 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Engineering Bay research terminal for a 2D side-view pixel game, single prop sprite centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Strict side view. Tall dark station shell in deep space navy and dusk blue with worn station-gray trim and copper bolts; research function readable without text: a tilted scan-hood, a floating holographic data lattice in cyan-teal glow with small violet orbiting glyphs (abstract shapes only, NO readable text, no letters), thin violet accent strips, subtle cable runs into the base plate. Slightly strange and functional rather than decorative; same civilization design language as worn industrial repair and replenish terminals but visibly distinct: more instruments, an antenna-less sensor ring, a specimen-slot on the side. Bottom edge sits on the canvas floor line. Dark subtle outline, readable silhouette. Variant 1: monolith terminal with curved top hood and one large tilted holographic display plane, violet rim light.", "layout": "single sprite, 64x80 canvas, body ~56x72, bottom-center anchor at floor line"}, {"cid": "T02_C002", "slot": "T02_RESEARCH_TERMINAL", "priority": "A", "src": "slots/T02_RESEARCH_TERMINAL/T02_C002/source.png", "ready": "slots/T02_RESEARCH_TERMINAL/T02_C002/game_ready.png", "sw": 1408, "sh": 768, "gw": 64, "gh": 80, "ew": 64, "eh": 80, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 56.6%)", "content downscaled x0.0664 (NEAREST) into 64x80 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Engineering Bay research terminal for a 2D side-view pixel game, single prop sprite centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Strict side view. Tall dark station shell in deep space navy and dusk blue with worn station-gray trim and copper bolts; research function readable without text: a tilted scan-hood, a floating holographic data lattice in cyan-teal glow with small violet orbiting glyphs (abstract shapes only, NO readable text, no letters), thin violet accent strips, subtle cable runs into the base plate. Slightly strange and functional rather than decorative; same civilization design language as worn industrial repair and replenish terminals but visibly distinct: more instruments, an antenna-less sensor ring, a specimen-slot on the side. Bottom edge sits on the canvas floor line. Dark subtle outline, readable silhouette. Variant 2: twin-column terminal with central data core column, small orbiting hologram rings in cyan and violet.", "layout": "single sprite, 64x80 canvas, body ~56x72, bottom-center anchor at floor line"}, {"cid": "T02_C003", "slot": "T02_RESEARCH_TERMINAL", "priority": "A", "src": "slots/T02_RESEARCH_TERMINAL/T02_C003/source.png", "ready": "slots/T02_RESEARCH_TERMINAL/T02_C003/game_ready.png", "sw": 1408, "sh": 768, "gw": 64, "gh": 80, "ew": 64, "eh": 80, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 70.2%)", "content downscaled x0.0455 (NEAREST) into 64x80 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Engineering Bay research terminal for a 2D side-view pixel game, single prop sprite centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Strict side view. Tall dark station shell in deep space navy and dusk blue with worn station-gray trim and copper bolts; research function readable without text: a tilted scan-hood, a floating holographic data lattice in cyan-teal glow with small violet orbiting glyphs (abstract shapes only, NO readable text, no letters), thin violet accent strips, subtle cable runs into the base plate. Slightly strange and functional rather than decorative; same civilization design language as worn industrial repair and replenish terminals but visibly distinct: more instruments, an antenna-less sensor ring, a specimen-slot on the side. Bottom edge sits on the canvas floor line. Dark subtle outline, readable silhouette. Variant 3: squat wide console with tall thin sensor mast, holo-lattice hovering above, specimen slot glowing faintly violet.", "layout": "single sprite, 64x80 canvas, body ~56x72, bottom-center anchor at floor line"}, {"cid": "W01_C001", "slot": "W01_SECTOR_DOOR", "priority": "A", "src": "slots/W01_SECTOR_DOOR/W01_C001/source.png", "ready": "slots/W01_SECTOR_DOOR/W01_C001/game_ready.png", "sw": 784, "sh": 1360, "gw": 64, "gh": 112, "ew": 64, "eh": 112, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 15.3%)", "content downscaled x0.0868 (NEAREST) into 64x112 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Reusable orbital station sector door for a 2D side-view pixel game, single prop on a solid flat pure magenta #FF00FF background (flat, no checkerboard), no surrounding wall scenery. Strict side view, frontal frame of a sliding bulkhead. Approximately four 16px tiles wide and seven 16px tiles tall: strong mechanical rectangular silhouette in worn dusk-blue and station-gray hull plating with copper reinforcing ribs, central vertical seam showing it slides open into two panels, teal status light strip near the top, small warning chevrons in hydroponic teal, heavy floor threshold plate, subtle scuffs and old repair seams. Obviously traversable and openable; old station hardware; usable in both a greenhouse sector and an engineering bay. No readable text. Dark subtle outline. Variant 1: two-panel vertical-lift door with exposed copper piston columns on both sides and teal status band on top.", "layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall"}, {"cid": "W01_C002", "slot": "W01_SECTOR_DOOR", "priority": "A", "src": "slots/W01_SECTOR_DOOR/W01_C002/source.png", "ready": "slots/W01_SECTOR_DOOR/W01_C002/game_ready.png", "sw": 784, "sh": 1360, "gw": 64, "gh": 112, "ew": 64, "eh": 112, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 18.7%)", "content downscaled x0.0886 (NEAREST) into 64x112 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Reusable orbital station sector door for a 2D side-view pixel game, single prop on a solid flat pure magenta #FF00FF background (flat, no checkerboard), no surrounding wall scenery. Strict side view, frontal frame of a sliding bulkhead. Approximately four 16px tiles wide and seven 16px tiles tall: strong mechanical rectangular silhouette in worn dusk-blue and station-gray hull plating with copper reinforcing ribs, central vertical seam showing it slides open into two panels, teal status light strip near the top, small warning chevrons in hydroponic teal, heavy floor threshold plate, subtle scuffs and old repair seams. Obviously traversable and openable; old station hardware; usable in both a greenhouse sector and an engineering bay. No readable text. Dark subtle outline. Variant 2: horizontal split double-panel bulkhead with central teal seal light and riveted corner brackets.", "layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall"}, {"cid": "W01_C003", "slot": "W01_SECTOR_DOOR", "priority": "A", "src": "slots/W01_SECTOR_DOOR/W01_C003/source.png", "ready": "slots/W01_SECTOR_DOOR/W01_C003/game_ready.png", "sw": 784, "sh": 1360, "gw": 64, "gh": 112, "ew": 64, "eh": 112, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=2, removed 25.1%)", "content downscaled x0.0900 (NEAREST) into 64x112 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Reusable orbital station sector door for a 2D side-view pixel game, single prop on a solid flat pure magenta #FF00FF background (flat, no checkerboard), no surrounding wall scenery. Strict side view, frontal frame of a sliding bulkhead. Approximately four 16px tiles wide and seven 16px tiles tall: strong mechanical rectangular silhouette in worn dusk-blue and station-gray hull plating with copper reinforcing ribs, central vertical seam showing it slides open into two panels, teal status light strip near the top, small warning chevrons in hydroponic teal, heavy floor threshold plate, subtle scuffs and old repair seams. Obviously traversable and openable; old station hardware; usable in both a greenhouse sector and an engineering bay. No readable text. Dark subtle outline. Variant 3: rounded-top pressure door with teal circular lock indicator and thick segmented frame.", "layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall"}, {"cid": "D01_C001", "slot": "D01_DEXTER_VENDOR", "priority": "A", "src": "slots/D01_DEXTER_VENDOR/D01_C001/source.png", "ready": "slots/D01_DEXTER_VENDOR/D01_C001/game_ready.png", "sw": 1408, "sh": 768, "gw": 64, "gh": 64, "ew": 64, "eh": 64, "status": "PASS_WITH_FLAGS", "flags": ["BACKGROUND_REMOVED", "CONVERSION_REQUIRED", "NO_ALPHA", "UNREADABLE_AT_TARGET_SCALE"], "notes": ["flood-keyed border background (seeds=3, removed 60.3%)", "content downscaled x0.0455 (NEAREST) into 64x64 canvas, bottom-center anchor"], "prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Dexter is a VERY SMALL compact Phalene (the drop-eared variant of the Papillon, NOT a Papillon with upright ears): long silky butterfly-spaniel coat, FLOPPY EARS HANGING DOWN beside his head, black/dark and white and warm tan tricolor markings, small elderly dog with slightly grayed muzzle, compact body, calm unimpressed demeanor, half-lidded small dark eyes, closed mouth, no grin, no giant cute eyes, not puppy-like, no excessive cuteness. Strict side view standing pose, bottom of paws on the canvas floor line, dark subtle outline. A tiny restrained cargo accessory is allowed: a small worn satchel strap across the flank or a tiny seed pouch. Visual thesis: a tiny ancient authority who happens to sell you things. No humanoid clothes beyond the strap, no fantasy merchant caricature. Variant 1: standing proud, small worn leather seed satchel, faint warm gold clasp.", "layout": "single character sprite, 64x64 canvas, bottom-center anchor, strict side view"}];
+const SLOT_ORDER = [...new Set(DATA.map(d=>d.slot))];
+const store = {
+  get v(){ try{return JSON.parse(localStorage.getItem('sa_review_v1'))||{}}catch(e){return{}} },
+  set(k,val){ const s=this.v; s[k]=val; localStorage.setItem('sa_review_v1',JSON.stringify(s)); render(); },
+  verdict(cid){ return this.v['v:'+cid]||'unsorted'; }
+};
+let slotFilter='ALL', statusFilter='ALL', idx=0, zoom=null, showSrc=false, checker=true,
+    promptOpen=false, cmpMode=false, abA=null, abB=null;
+
+function list(){
+  return DATA.filter(d=>(slotFilter==='ALL'||d.slot===slotFilter))
+             .filter(d=>{
+               const v=store.verdict(d.cid);
+               if(statusFilter==='ALL')return true;
+               if(['keep','maybe','reject','unsorted'].includes(statusFilter)) return v===statusFilter;
+               return d.status===statusFilter;
+             });
+}
+function zoomFor(d){ if(zoom)return zoom;
+  const vw=Math.min(window.innerWidth-420, 1100), vh=window.innerHeight-260;
+  const s=Math.max(1,Math.min(Math.floor(vw/d.ew)||1, Math.floor(vh/d.eh)||1));
+  const s2=Math.min(vw/d.ew, vh/d.eh); return s2>1? Math.max(1,s) : Math.max(0.2,s2);
+}
+function render(){
+  const L=list(); if(idx>=L.length)idx=L.length-1; if(idx<0)idx=0;
+  document.getElementById('count').textContent = L.length+' / '+DATA.length+' candidates';
+  // slot nav
+  const nav=document.getElementById('slotNav'); nav.innerHTML='';
+  const mk=(id,label,n)=>{const b=document.createElement('button');b.textContent=(label||id)+ (n!==undefined?' ('+n+')':'');
+    b.onclick=()=>{slotFilter=id;idx=0;render();}; if(slotFilter===id)b.classList.add('on'); nav.appendChild(b);};
+  mk('ALL','ALL',DATA.length);
+  for(const s of SLOT_ORDER){ const n=DATA.filter(d=>d.slot===s).length; mk(s,null,n); }
+  // filters
+  const fl=document.getElementById('filters'); fl.innerHTML='';
+  for(const f of ['ALL','UNSORTED','KEEP','MAYBE','REJECT','PASS','PASS_WITH_FLAGS','FAIL']){
+    const b=document.createElement('button'); b.textContent=f;
+    b.onclick=()=>{statusFilter=f;render();}; if(statusFilter===f)b.classList.add('on'); fl.appendChild(b);
+  }
+  const d=L[idx]; const wrap=document.getElementById('canvasWrap'); const img=document.getElementById('img');
+  const cmp=document.getElementById('cmp');
+  document.getElementById('abBar').style.display=cmpMode?'flex':'none';
+  cmp.style.display=cmpMode?'flex':'none';
+  wrap.style.display=cmpMode?'none':'block';
+  if(!d){img.removeAttribute('src');document.getElementById('meta').innerHTML='no candidates match';return;}
+  const z=zoomFor(d), w=Math.round((showSrc?d.sw:d.gw||d.ew)*z), h=Math.round((showSrc?d.sh:d.gh||d.eh)*z);
+  if(!cmpMode){
+    img.src = (showSrc||!d.ready)? d.src : d.ready;
+    img.style.width=w+'px'; img.style.height=h+'px';
+    wrap.style.width=w+'px'; wrap.style.height=h+'px';
+    document.getElementById('zLbl').textContent=(Math.round(z*100)/100)+'x';
+  } else {
+    cmp.innerHTML='';
+    for(const [lbl,c] of [['A',abA],['B',abB]]){
+      const cd=DATA.find(x=>x.cid===c);
+      const cell=document.createElement('div');cell.className='cell';
+      cell.innerHTML='<div class="lbl">'+(cd?cd.cid:'— set with “set A/B” —')+'</div>';
+      if(cd){const im2=document.createElement('img');
+        const z2=zoomFor(d); im2.src=(showSrc||!cd.ready)?cd.src:cd.ready;
+        im2.style.width=Math.round((showSrc?cd.sw:cd.gw||cd.ew)*z2)+'px';
+        im2.style.height=Math.round((showSrc?cd.sh:cd.gh||cd.eh)*z2)+'px';
+        cell.appendChild(im2);}
+      cmp.appendChild(cell);
+    }
+  }
+  const v=store.verdict(d.cid);
+  document.getElementById('meta').innerHTML =
+    '<span class="cid">'+d.cid+'</span><span class="tag '+d.status+'">'+d.status+'</span><br>'+
+    '<span class="dim">expected '+d.ew+'x'+d.eh+'</span> · source '+d.sw+'x'+d.sh+
+    ' · game_ready '+(d.gw?d.gw+'x'+d.gh:'none')+'<br>'+
+    '<span class="flags">'+(d.flags.length?d.flags.join(' · '):'no flags')+'</span><br>'+
+    '<span style="color:#7f8ea6">'+d.layout+'</span>';
+  const pb=document.getElementById('promptBox'); pb.classList.toggle('open',promptOpen);
+  pb.textContent=d.prompt;
+  document.querySelectorAll('#verdict button').forEach(b=>{
+    b.classList.toggle('on', b.dataset.v===v || (b.dataset.v==='unsorted'&&v==='unsorted'));
+  });
+  // A/B selects
+  const ab=document.getElementById('abBar');
+  ab.innerHTML='A/B compare (same slot): '+selHtml('abSelA',abA,d)+' '+selHtml('abSelB',abB,d)+
+    '<button onclick="abA=null;abB=null;render()">clear</button>';
+}
+function setAB(which,val){ if(which==='A')abA=val||null; else abB=val||null; }
+function selHtml(id,val,d){
+  const which = id==='abSelA' ? 'A' : 'B';
+  const opts=['<option value="">—</option>'].concat(
+    DATA.filter(x=>x.slot===d.slot).map(x=>'<option value="'+x.cid+'"'+(x.cid===val?' selected':'')+'>'+x.cid+'</option>')
+  ).join('');
+  return '<select id="'+id+'" onchange="setAB(\''+which+'\',this.value);render()">'+opts+'</select>';
+}
+document.getElementById('verdict').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b)return; const d=list()[idx]; if(!d)return;
+  store.set('v:'+d.cid, b.dataset.v);
+});
+document.getElementById('promptToggle').onclick=()=>{promptOpen=!promptOpen;render();};
+document.getElementById('checkerToggle').onclick=()=>{checker=!checker;
+  document.getElementById('canvasWrap').classList.toggle('checker',checker);};
+document.getElementById('srcToggle').onclick=()=>{showSrc=!showSrc;
+  document.getElementById('srcToggle').textContent='view: '+(showSrc?'raw source':'game_ready');render();};
+document.getElementById('sizeToggle').onclick=()=>{ zoom = zoom===null ? 1 : null; render();
+  document.getElementById('sizeToggle').textContent = zoom ? 'zoom fit' : 'zoom 1:1';};
+document.getElementById('zIn').onclick=()=>{zoom=zoomFor(list()[idx])*1.5; if(zoom>40)zoom=40;render();};
+document.getElementById('zOut').onclick=()=>{zoom=zoomFor(list()[idx])/1.5; if(zoom<0.1)zoom=0.1;render();};
+document.getElementById('abA').onclick=()=>{const d=list()[idx]; if(d){abA=d.cid; render();}};
+document.getElementById('abB').onclick=()=>{const d=list()[idx]; if(d){abB=d.cid; cmpMode=true; document.getElementById('cmpToggle').classList.add('on'); render();}};
+document.getElementById('cmpToggle').onclick=()=>{cmpMode=!cmpMode;
+  document.getElementById('cmpToggle').classList.toggle('on',cmpMode);
+  if(cmpMode){const L=list();abA=abA||L[Math.max(0,idx-1)]?.cid;abB=abB||L[idx]?.cid;}render();};
+document.getElementById('exportBtn').onclick=()=>{
+  const out={exported:new Date().toISOString(), tool:'starlight-acre candidate review',
+             note:'review decisions only; nothing here is canonical production art', decisions:{}};
+  for(const d of DATA){ out.decisions[d.cid]={slot:d.slot, verdict:store.verdict(d.cid)}; }
+  const blob=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='selections.json'; a.click(); URL.revokeObjectURL(a.href);
+};
+window.addEventListener('keydown',e=>{
+  if(e.target.tagName==='SELECT')return;
+  const d=list()[idx];
+  switch(e.key){
+    case 'ArrowLeft': idx--; render(); e.preventDefault(); break;
+    case 'ArrowRight': idx++; render(); e.preventDefault(); break;
+    case 'k': case 'K': if(d)store.set('v:'+d.cid,'keep'); break;
+    case 'm': case 'M': if(d)store.set('v:'+d.cid,'maybe'); break;
+    case 'r': case 'R': if(d)store.set('v:'+d.cid,'reject'); break;
+    case 'u': case 'U': if(d)store.set('v:'+d.cid,'unsorted'); break;
+    case 'a': case 'A': abA=d.cid; render(); break;
+    case 'b': case 'B': abB=d.cid; render(); break;
+    case 'p': case 'P': promptOpen=!promptOpen; render(); break;
+  }
+});
+render();
+</script>
+</body>
+</html>

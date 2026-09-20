@@ -1,0 +1,30 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "P01_PLAYER_SHEET",
+  "candidate_id": "P01_C002",
+  "priority": "B",
+  "source_file": null,
+  "game_ready_file": null,
+  "generation_status": "not_generated",
+  "technical_status": "FAIL",
+  "actual_source_width": null,
+  "actual_source_height": null,
+  "actual_game_width": null,
+  "actual_game_height": null,
+  "expected_width": 192,
+  "expected_height": 192,
+  "expected_frame_layout": "animation sheet 192x192, 6 columns x 4 rows of 32x48 frames; row1: idle x4 then 2 empty; row2: walk x6; row3: jump, fall, land then 3 empty; row4: interact x2 then 4 empty",
+  "alpha_present": null,
+  "sha256_source": null,
+  "sha256_game_ready": null,
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Character animation sprite sheet for a 2D side-view pixel game: strict grid of 6 columns x 4 rows of 32x48 pixel frames on a 192x192 canvas, frames touching, on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Character: orbital technician-cultivator, an adult maintenance gardener of a decaying space station. NOT a soldier, NOT a space marine, NOT a fantasy warrior. Design: slim practical jumpsuit in dusk blue with moss green panel accents, teal hydroponic gloves, bone-white trim, small tool harness, dark boots, short practical hair under a slim cap or headband, calm purposeful face kept tiny and simple, dark subtle outline. Keep proportions, clothing, palette, scale, ground contact, facing direction and silhouette IDENTICAL in every frame. Row 1: 4 idle frames (subtle breathing bob) then 2 completely empty cells. Row 2: 6-frame walk cycle. Row 3: jump pose, fall pose, landing pose, then 3 completely empty cells. Row 4: 2-frame interact reach (arming reaching forward at waist height) then 4 completely empty cells. Empty cells must be left as the flat background color only. GBA/SNES pixel art, feet aligned to the same baseline in every frame. Variant 2: slimmer frame, open collar, teal knit cap, more silhouette contrast.",
+  "technical_flags": [
+    "NOT_GENERATED"
+  ],
+  "notes": [
+    "source.png missing or empty"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}
