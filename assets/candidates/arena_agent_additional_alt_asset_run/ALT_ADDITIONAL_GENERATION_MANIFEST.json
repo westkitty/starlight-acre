@@ -5,11 +5,11 @@
   "repository_commit_baseline": "97544d74d534b75472bfa99ee79439ba5752c9cf",
   "source_candidate_count": 24,
   "target_challenger_count": 24,
-  "generated_count": 16,
-  "validated_count": 16,
+  "generated_count": 24,
+  "validated_count": 24,
   "failed_count": 0,
   "technical_status_counts": {
-    "PASS_WITH_FLAGS": 16
+    "PASS_WITH_FLAGS": 24
   },
   "slots": [
     {
@@ -100,7 +100,7 @@
         "B03_ALT_C001",
         "B03_ALT_C002"
       ],
-      "generated_count": 1
+      "generated_count": 2
     },
     {
       "slot_id": "B04_HYDROPONICS_RIG",
@@ -112,7 +112,7 @@
         "B04_ALT_C001",
         "B04_ALT_C002"
       ],
-      "generated_count": 0
+      "generated_count": 2
     },
     {
       "slot_id": "B05_ARCHIVE_STACK",
@@ -124,7 +124,7 @@
         "B05_ALT_C001",
         "B05_ALT_C002"
       ],
-      "generated_count": 0
+      "generated_count": 2
     },
     {
       "slot_id": "V02_HAZARD_VFX",
@@ -136,7 +136,7 @@
         "V02_ALT_C001",
         "V02_ALT_C002"
       ],
-      "generated_count": 0
+      "generated_count": 2
     },
     {
       "slot_id": "E03_CARGO_PROPS",
@@ -146,7 +146,7 @@
       "challengers": [
         "E03_ALT_C001"
       ],
-      "generated_count": 0
+      "generated_count": 1
     }
   ],
   "mapping": "one-to-one: <SLOT>_C00N -> <SLOT>_ALT_C00N",
@@ -729,23 +729,26 @@
       "alternate_candidate_path": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/candidate.json",
       "priority": "B",
       "category": "module fixture",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/source.png",
+      "game_ready_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/game_ready.png",
+      "actual_source_width": 848,
+      "actual_source_height": 1264,
+      "actual_game_width": 64,
+      "actual_game_height": 96,
       "expected_width": 64,
       "expected_height": 96,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "b47bb9ee876100b3d31a8449925184c28998bc1ea82912ab743a647626f6c06a",
+        "sha256_game_ready": "3067f61a2869c93984728bc507742ffa33b341944848f0c804a98a16b33ad102"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "vertical slot mouth vs rectangular cargo mouth",
@@ -761,23 +764,26 @@
       "alternate_candidate_path": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/candidate.json",
       "priority": "B",
       "category": "machinery prop",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/source.png",
+      "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
       "expected_width": 64,
       "expected_height": 64,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "12d376031891461b75bd8f23754c85c196c66743edb03c0ee5824c77273da617",
+        "sha256_game_ready": "8cc53122ba8c9800f7821ad7f20b4da241f3b8cba91ebe5a01be140a1de57c3b"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "single end-on filter drum vs twin round tanks",
@@ -793,23 +799,26 @@
       "alternate_candidate_path": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/candidate.json",
       "priority": "B",
       "category": "machinery prop",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/source.png",
+      "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
       "expected_width": 64,
       "expected_height": 64,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "4837b7790d532fe0822b409f637bd7bad7f43f0188c3948347d385d8fe78b47d",
+        "sha256_game_ready": "94048f1d7bb08e75fb08d4cdb06dd5c5c7bcf9d79f0048748a0c0b75d27e43c7"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "zigzag pipe ladder vs vertical tube rack",
@@ -825,23 +834,26 @@
       "alternate_candidate_path": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/candidate.json",
       "priority": "B",
       "category": "module fixture",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/source.png",
+      "game_ready_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/game_ready.png",
+      "actual_source_width": 928,
+      "actual_source_height": 1152,
+      "actual_game_width": 64,
+      "actual_game_height": 80,
       "expected_width": 64,
       "expected_height": 80,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "dc0f273bc2ef4b2f0fa6b1cfc4ed752f81a0f9fab86bc88e71922bfe273f6e25",
+        "sha256_game_ready": "2928a6b10e14a7f506bdc3c839bb5f850fac1835f7f70629934a535553a8ef7a"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "offset drawers vs uniform shelf rows",
@@ -857,23 +869,26 @@
       "alternate_candidate_path": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/candidate.json",
       "priority": "B",
       "category": "module fixture",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/source.png",
+      "game_ready_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/game_ready.png",
+      "actual_source_width": 928,
+      "actual_source_height": 1152,
+      "actual_game_width": 64,
+      "actual_game_height": 80,
       "expected_width": 64,
       "expected_height": 80,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "198224d88978357d7bbaa0b5d0c77ef52c7532048b846695dec6e43aed42d5cf",
+        "sha256_game_ready": "c5c4172eb72f2936e8cc5d1fd6d4276e4ad6391d2a9a76eb47d779c1dc0f0418"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "hanging vial rails vs spiral drum slots",
@@ -889,23 +904,27 @@
       "alternate_candidate_path": "slots/V02_HAZARD_VFX/V02_ALT_C001/candidate.json",
       "priority": "B",
       "category": "VFX",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/V02_HAZARD_VFX/V02_ALT_C001/source.png",
+      "game_ready_file": "slots/V02_HAZARD_VFX/V02_ALT_C001/game_ready.png",
+      "actual_source_width": 2064,
+      "actual_source_height": 512,
+      "actual_game_width": 128,
+      "actual_game_height": 32,
       "expected_width": 128,
       "expected_height": 32,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "7df1da25cb4aaf648314719981a09e1d60bbb95523bf8a2130bf94dcd7bb3d0b",
+        "sha256_game_ready": "b293539eb12acf2a0e2a4659e2435b3ba237feab14344605ceed7f27a3e4a173"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "centered radial bursts vs corner washes and falling showers",
@@ -921,23 +940,27 @@
       "alternate_candidate_path": "slots/V02_HAZARD_VFX/V02_ALT_C002/candidate.json",
       "priority": "B",
       "category": "VFX",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/source.png",
+      "game_ready_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/game_ready.png",
+      "actual_source_width": 2064,
+      "actual_source_height": 512,
+      "actual_game_width": 128,
+      "actual_game_height": 32,
       "expected_width": 128,
       "expected_height": 32,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "157d690104cd3d70e95343a2d72472bb755c73fee7b3a962d5022fbdd2c93223",
+        "sha256_game_ready": "1a0e46dd74f14e523d491be039079c8f8422a033b8f5a083459e98dbd55e7940"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "sweeping curved strokes vs straight diagonal shards",
@@ -953,23 +976,27 @@
       "alternate_candidate_path": "slots/E03_CARGO_PROPS/E03_ALT_C001/candidate.json",
       "priority": "C",
       "category": "environment props",
-      "generation_status": "not_generated",
-      "technical_status": "FAIL",
-      "source_file": null,
-      "game_ready_file": null,
-      "actual_source_width": null,
-      "actual_source_height": null,
-      "actual_game_width": null,
-      "actual_game_height": null,
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/E03_CARGO_PROPS/E03_ALT_C001/source.png",
+      "game_ready_file": "slots/E03_CARGO_PROPS/E03_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
       "expected_width": 64,
       "expected_height": 64,
-      "alpha_present": null,
+      "alpha_present": true,
       "hashes": {
-        "sha256_source": null,
-        "sha256_game_ready": null
+        "sha256_source": "a79465ffe0b00b7ada0893d1fdeff30ccea5fdcfed167962a7c31e0d7fa54a8f",
+        "sha256_game_ready": "081f7eda4759f82e82051d2612c092ad047c2000c11cbc76457e532fb60d7bf9"
       },
       "flags": [
-        "NOT_GENERATED"
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
       ],
       "challenger_axes": [
         "station-gray riveted shells vs dusk-blue matched shells",

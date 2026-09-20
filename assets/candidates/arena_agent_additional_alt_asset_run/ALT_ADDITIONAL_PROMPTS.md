@@ -218,7 +218,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B03_DOCKING_COLLAR — challenges B03_C002
 
-### B03_ALT_C002 [not_generated]
+### B03_ALT_C002 [generated]
 
 Challenger axes:
 - vertical slot mouth vs rectangular cargo mouth
@@ -231,7 +231,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B04_HYDROPONICS_RIG — challenges B04_C001
 
-### B04_ALT_C001 [not_generated]
+### B04_ALT_C001 [generated]
 
 Challenger axes:
 - single end-on filter drum vs twin round tanks
@@ -244,7 +244,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B04_HYDROPONICS_RIG — challenges B04_C002
 
-### B04_ALT_C002 [not_generated]
+### B04_ALT_C002 [generated]
 
 Challenger axes:
 - zigzag pipe ladder vs vertical tube rack
@@ -257,7 +257,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B05_ARCHIVE_STACK — challenges B05_C001
 
-### B05_ALT_C001 [not_generated]
+### B05_ALT_C001 [generated]
 
 Challenger axes:
 - offset drawers vs uniform shelf rows
@@ -270,7 +270,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## B05_ARCHIVE_STACK — challenges B05_C002
 
-### B05_ALT_C002 [not_generated]
+### B05_ALT_C002 [generated]
 
 Challenger axes:
 - hanging vial rails vs spiral drum slots
@@ -283,7 +283,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## V02_HAZARD_VFX — challenges V02_C001
 
-### V02_ALT_C001 [not_generated]
+### V02_ALT_C001 [generated]
 
 Challenger axes:
 - centered radial bursts vs corner washes and falling showers
@@ -296,7 +296,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## V02_HAZARD_VFX — challenges V02_C002
 
-### V02_ALT_C002 [not_generated]
+### V02_ALT_C002 [generated]
 
 Challenger axes:
 - sweeping curved strokes vs straight diagonal shards
@@ -309,7 +309,7 @@ Starlight Acre visual identity: polished orbital mythic farming-station game; th
 
 ## E03_CARGO_PROPS — challenges E03_C001
 
-### E03_ALT_C001 [not_generated]
+### E03_ALT_C001 [generated]
 
 Challenger axes:
 - station-gray riveted shells vs dusk-blue matched shells

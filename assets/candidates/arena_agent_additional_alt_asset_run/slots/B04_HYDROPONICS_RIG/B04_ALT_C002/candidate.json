@@ -7,20 +7,20 @@
   "priority": "B",
   "category": "machinery prop",
   "integration_target": "future Hydroponics Wing sector (free-standing machine prop, 4x4 tiles)",
-  "generation_status": "not_generated",
-  "technical_status": "FAIL",
-  "source_file": null,
-  "game_ready_file": null,
-  "actual_source_width": null,
-  "actual_source_height": null,
-  "actual_game_width": null,
-  "actual_game_height": null,
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/source.png",
+  "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 64,
+  "actual_game_height": 64,
   "expected_width": 64,
   "expected_height": 64,
   "expected_topology": "single prop, 64x64 canvas (4x4 tiles of 16px, NEWLY PROPOSED dimensions), bottom-center anchor",
-  "alpha_present": null,
-  "sha256_source": null,
-  "sha256_game_ready": null,
+  "alpha_present": true,
+  "sha256_source": "4837b7790d532fe0822b409f637bd7bad7f43f0188c3948347d385d8fe78b47d",
+  "sha256_game_ready": "94048f1d7bb08e75fb08d4cdb06dd5c5c7bcf9d79f0048748a0c0b75d27e43c7",
   "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A hydroponics water-recycling rig for the station's Hydroponics Wing in a 2D side-view pixel game: exactly ONE machine prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no border, no frame). Slightly square 1:1 composition. Strict side view. Worn station hardware in dusk blue and station gray with maintenance copper pipes and fittings; visible water in calm hydroponic teal: tanks, gauges, filter cartridges and drip lines; a small moss-green trace of life where water feeds a plant rail; clearly a water recycling machine, calm and functional. Dark subtle outline. No readable text, no second machine, no floor, no stage, no drop shadow on the background.  Variant 2: a vertical rack of slim nutrient tubes around a small pump heart, with a topfill reservoir and a row of tiny gauge dials.",
   "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A hydroponics water-recycling rig for the station's Hydroponics Wing in a 2D side-view pixel game: exactly ONE machine prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no border, no frame). Slightly square 1:1 composition. Strict side view. Worn station hardware in dusk blue and station gray with maintenance copper pipes and fittings; visible water in calm hydroponic teal: tanks, gauges, filter cartridges and drip lines; a small moss-green trace of life where water feeds a plant rail; clearly a water recycling machine, calm and functional. Dark subtle outline. No readable text, no second machine, no floor, no stage, no drop shadow on the background.  Challenger design: a zigzag still - copper pipes descending in a zigzag ladder from a header tank into a lower calm chamber with a soft teal glow, one tiny plant rail with a moss-green sprout at the midpoint.",
   "challenger_axes": [
@@ -35,10 +35,14 @@
     "UNREADABLE_AT_TARGET_SCALE"
   ],
   "technical_flags": [
-    "NOT_GENERATED"
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
   ],
   "notes": [
-    "challenger prompt composed; awaiting generation"
+    "flood-keyed border background (seeds=2, removed 60.4%)",
+    "content downscaled x0.0753 (NEAREST) into 64x64 canvas, bottom-center anchor"
   ],
   "selected": false,
   "rejected": false,

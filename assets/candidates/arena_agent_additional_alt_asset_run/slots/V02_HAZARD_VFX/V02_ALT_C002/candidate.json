@@ -7,20 +7,20 @@
   "priority": "B",
   "category": "VFX",
   "integration_target": "sector-level effect overlay/particles (V01 strip convention: 4 cells of 32x32)",
-  "generation_status": "not_generated",
-  "technical_status": "FAIL",
-  "source_file": null,
-  "game_ready_file": null,
-  "actual_source_width": null,
-  "actual_source_height": null,
-  "actual_game_width": null,
-  "actual_game_height": null,
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/source.png",
+  "game_ready_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/game_ready.png",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
   "expected_width": 128,
   "expected_height": 32,
   "expected_topology": "vfx strip 128x32, four consecutive 32x32 cells: solar flare / anomaly shimmer / malfunction sparks / power failure",
-  "alpha_present": null,
-  "sha256_source": null,
-  "sha256_game_ready": null,
+  "alpha_present": true,
+  "sha256_source": "157d690104cd3d70e95343a2d72472bb755c73fee7b3a962d5022fbdd2c93223",
+  "sha256_game_ready": "1a0e46dd74f14e523d491be039079c8f8422a033b8f5a083459e98dbd55e7940",
   "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Hazard VFX sprite strip for a 2D pixel game: ONE row of four consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), each effect isolated and centered in its own cell, on a solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge - between cells, around effects, across the whole strip - with no border, no frame, no caption panel, no drawn dividing lines. EVERY one of the four cells must actually contain its effect, fully inside the cell, nothing crossing cell boundaries. Cell 1 SOLAR FLARE: a wash of warm gold-red diagonal ray shards from one corner. Cell 2 MYTHIC ANOMALY: a violet shimmer of floating mote clusters and one small distortion ring. Cell 3 SYSTEM MALFUNCTION: a spark shower of copper-orange bolt strokes falling from a small failing node. Cell 4 POWER FAILURE: a dimming bone-white light strip with dark flicker strokes and two dying glow dots. GBA/SNES pixel art, hard pixel clusters, no smooth gradients, no text, no letters anywhere.  Variant 2: sparser effects, thinner strokes, more negative space inside each cell.",
   "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Hazard VFX sprite strip for a 2D pixel game: ONE row of four consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), each effect isolated and centered in its own cell, on a solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge - between cells, around effects, across the whole strip - with no border, no frame, no caption panel, no drawn dividing lines. EVERY one of the four cells must actually contain its effect, fully inside the cell, nothing crossing cell boundaries. Cell 1 SOLAR FLARE: a wash of warm gold-red diagonal ray shards from one corner. Cell 2 MYTHIC ANOMALY: a violet shimmer of floating mote clusters and one small distortion ring. Cell 3 SYSTEM MALFUNCTION: a spark shower of copper-orange bolt strokes falling from a small failing node. Cell 4 POWER FAILURE: a dimming bone-white light strip with dark flicker strokes and two dying glow dots. GBA/SNES pixel art, hard pixel clusters, no smooth gradients, no text, no letters anywhere.  Challenger design: sweeping-arc interpretation - each effect rebuilt as sweeping curved strokes: the flare as a curved golden fan, the anomaly as a spiral shimmer curl, the malfunction as falling arcing bolt trails, the power failure as a waning crescent strip with guttering dots.  Hardening: every one of the four cells must end with clearly visible effect pixels after the flat background is removed; keep all effect colors far from pure magenta and make each cell's content unmistakably non-empty.",
   "challenger_axes": [
@@ -37,10 +37,17 @@
     "UNREADABLE_AT_TARGET_SCALE"
   ],
   "technical_flags": [
-    "NOT_GENERATED"
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
   ],
   "notes": [
-    "challenger prompt composed; awaiting generation"
+    "flood-keyed border background (seeds=2, removed 72.8%)",
+    "content downscaled x0.0662 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "sheet cell opaque shares (row-major): 58% 37% 12% 19%",
+    "multi-cell sheet: generated source is a single raster; per-cell topology measured deterministically where possible; review before slicing"
   ],
   "selected": false,
   "rejected": false,
