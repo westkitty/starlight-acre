@@ -111,6 +111,49 @@ def alpha_bbox(im):
     return im.getbbox()  # uses alpha channel for RGBA
 
 
+SINGLE_SPRITE_SLOTS = {"A01_GARDENER_DRONE", "T02_RESEARCH_TERMINAL", "W01_SECTOR_DOOR",
+                       "D01_DEXTER_VENDOR", "D02_DEXTER_VENDOR_KIOSK"}
+
+
+def count_major_islands(rgba, min_share=0.10, sample_max=512):
+    """Number of disconnected opaque islands each covering >= min_share of opaque pixels.
+    Deterministic; downsampled for speed. Used to flag multi-subject single-sprite sources."""
+    im = rgba.convert("RGBA")
+    w, h = im.size
+    if max(w, h) > sample_max:
+        sc = sample_max / max(w, h)
+        im = im.resize((max(1, int(w * sc)), max(1, int(h * sc))), Image.NEAREST)
+        w, h = im.size
+    a = im.getchannel("A")
+    px = a.load()
+    total_opaque = sum(1 for y in range(h) for x in range(w) if px[x, y] > 16)
+    if total_opaque == 0:
+        return 0
+    thresh = total_opaque * min_share
+    seen = bytearray(w * h)
+    major = 0
+    for y0 in range(h):
+        for x0 in range(w):
+            i0 = y0 * w + x0
+            if seen[i0] or px[x0, y0] <= 16:
+                continue
+            size = 0
+            stack = [(x0, y0)]
+            seen[i0] = 1
+            while stack:
+                x, y = stack.pop()
+                size += 1
+                for nx, ny in ((x+1,y),(x-1,y),(x,y+1),(x,y-1)):
+                    if 0 <= nx < w and 0 <= ny < h:
+                        j = ny * w + nx
+                        if not seen[j] and px[nx, ny] > 16:
+                            seen[j] = 1
+                            stack.append((nx, ny))
+            if size >= thresh:
+                major += 1
+    return major
+
+
 def make_game_ready(slot_id, src):
     """Deterministic normalization. Returns (img_or_None, flags, notes)."""
     s = SLOTS[slot_id]
@@ -140,6 +183,12 @@ def make_game_ready(slot_id, src):
             if (bw / im.width < 0.12) or (bh / im.height < 0.12):
                 notes.append(f"subject occupies only {bw}x{bh} of {im.width}x{im.height} source frame; "
                              f"consider regeneration for detail retention")
+        if slot_id in SINGLE_SPRITE_SLOTS:
+            islands = count_major_islands(base)
+            if islands >= 2:
+                flags.add("MULTIPLE_SUBJECTS_POSSIBLE")
+                notes.append(f"deterministic island analysis found {islands} major opaque islands in a "
+                             f"single-sprite slot; source may contain repeated subjects")
     else:
         base = im.convert("RGB")
 
