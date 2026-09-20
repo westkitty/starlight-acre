@@ -1,0 +1,416 @@
+[
+ {
+  "slot_id": "A01_GARDENER_DRONE",
+  "candidate_id": "A01_C002",
+  "run": "original",
+  "feature": "outline_ring_darkness",
+  "value": 0.819,
+  "family_median": 0.698,
+  "robust_z": 4.48
+ },
+ {
+  "slot_id": "T02_RESEARCH_TERMINAL",
+  "candidate_id": "T02_C001",
+  "run": "original",
+  "feature": "outline_ring_darkness",
+  "value": 0.592,
+  "family_median": 0.744,
+  "robust_z": 4.22
+ },
+ {
+  "slot_id": "W01_SECTOR_DOOR",
+  "candidate_id": "W01_C002",
+  "run": "original",
+  "feature": "light_from_above",
+  "value": -0.018,
+  "family_median": 0.002,
+  "robust_z": 6.66
+ },
+ {
+  "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+  "candidate_id": "D02_C002",
+  "run": "original",
+  "feature": "cluster_run_length",
+  "value": 1.07,
+  "family_median": 1.02,
+  "robust_z": 5.0
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_C001",
+  "run": "original",
+  "feature": "outline_ring_darkness",
+  "value": 0.542,
+  "family_median": 0.887,
+  "robust_z": 15.0
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_C001",
+  "run": "original",
+  "feature": "glow_ratio",
+  "value": 0.053,
+  "family_median": 0.01,
+  "robust_z": 5.66
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_C001",
+  "run": "original",
+  "feature": "dark_ratio",
+  "value": 0.0897,
+  "family_median": 0.47,
+  "robust_z": 4.68
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_C002",
+  "run": "original",
+  "feature": "outline_ring_darkness",
+  "value": 0.558,
+  "family_median": 0.887,
+  "robust_z": 14.3
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_C002",
+  "run": "original",
+  "feature": "dark_ratio",
+  "value": 0.1427,
+  "family_median": 0.47,
+  "robust_z": 4.03
+ },
+ {
+  "slot_id": "V01_CORE_VFX",
+  "candidate_id": "V01_C001",
+  "run": "original",
+  "feature": "cluster_run_length",
+  "value": 1.27,
+  "family_median": 1.04,
+  "robust_z": 7.67
+ },
+ {
+  "slot_id": "V01_CORE_VFX",
+  "candidate_id": "V01_C001",
+  "run": "original",
+  "feature": "glow_ratio",
+  "value": 0.8708,
+  "family_median": 0.294,
+  "robust_z": 4.32
+ },
+ {
+  "slot_id": "V01_CORE_VFX",
+  "candidate_id": "V01_C001",
+  "run": "original",
+  "feature": "mean_saturation",
+  "value": 0.171,
+  "family_median": 0.663,
+  "robust_z": 8.07
+ },
+ {
+  "slot_id": "A01_GARDENER_DRONE",
+  "candidate_id": "A01_ALT_C001",
+  "run": "alt",
+  "feature": "light_from_above",
+  "value": -0.062,
+  "family_median": 0.072,
+  "robust_z": 5.36
+ },
+ {
+  "slot_id": "A01_GARDENER_DRONE",
+  "candidate_id": "A01_ALT_C003",
+  "run": "alt",
+  "feature": "glow_ratio",
+  "value": 0.1996,
+  "family_median": 0.023,
+  "robust_z": 10.97
+ },
+ {
+  "slot_id": "A01_GARDENER_DRONE",
+  "candidate_id": "A01_ALT_C003",
+  "run": "alt",
+  "feature": "mean_saturation",
+  "value": 0.682,
+  "family_median": 0.471,
+  "robust_z": 5.41
+ },
+ {
+  "slot_id": "T02_RESEARCH_TERMINAL",
+  "candidate_id": "T02_ALT_C002",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.9,
+  "family_median": 0.744,
+  "robust_z": 4.33
+ },
+ {
+  "slot_id": "T02_RESEARCH_TERMINAL",
+  "candidate_id": "T02_ALT_C002",
+  "run": "alt",
+  "feature": "glow_ratio",
+  "value": 0.1876,
+  "family_median": 0.051,
+  "robust_z": 4.73
+ },
+ {
+  "slot_id": "T02_RESEARCH_TERMINAL",
+  "candidate_id": "T02_ALT_C002",
+  "run": "alt",
+  "feature": "light_from_above",
+  "value": 0.255,
+  "family_median": 0.029,
+  "robust_z": 4.91
+ },
+ {
+  "slot_id": "W01_SECTOR_DOOR",
+  "candidate_id": "W01_ALT_C002",
+  "run": "alt",
+  "feature": "cluster_run_length",
+  "value": 1.02,
+  "family_median": 1.07,
+  "robust_z": 5.0
+ },
+ {
+  "slot_id": "D01_DEXTER_VENDOR",
+  "candidate_id": "D01_ALT_C002",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.596,
+  "family_median": 0.785,
+  "robust_z": 4.2
+ },
+ {
+  "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+  "candidate_id": "D02_ALT_C003",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.563,
+  "family_median": 0.785,
+  "robust_z": 4.93
+ },
+ {
+  "slot_id": "P01_PLAYER_SHEET",
+  "candidate_id": "P01_ALT_C002",
+  "run": "alt",
+  "feature": "glow_ratio",
+  "value": 0.1045,
+  "family_median": 0.772,
+  "robust_z": 13.57
+ },
+ {
+  "slot_id": "P01_PLAYER_SHEET",
+  "candidate_id": "P01_ALT_C002",
+  "run": "alt",
+  "feature": "mean_saturation",
+  "value": 0.489,
+  "family_median": 0.907,
+  "robust_z": 41.8
+ },
+ {
+  "slot_id": "P01_PLAYER_SHEET",
+  "candidate_id": "P01_ALT_C002",
+  "run": "alt",
+  "feature": "anchor_adherence",
+  "value": 0.7716,
+  "family_median": 0.175,
+  "robust_z": 11.88
+ },
+ {
+  "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+  "candidate_id": "T01_ALT_C002",
+  "run": "alt",
+  "feature": "edge_density",
+  "value": 0.563,
+  "family_median": 0.333,
+  "robust_z": 4.69
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_ALT_C001",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.49,
+  "family_median": 0.887,
+  "robust_z": 17.26
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_ALT_C001",
+  "run": "alt",
+  "feature": "dark_ratio",
+  "value": 0.1301,
+  "family_median": 0.47,
+  "robust_z": 4.18
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_ALT_C002",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.523,
+  "family_median": 0.887,
+  "robust_z": 15.83
+ },
+ {
+  "slot_id": "E01_GREENHOUSE_TILESET",
+  "candidate_id": "E01_ALT_C002",
+  "run": "alt",
+  "feature": "dark_ratio",
+  "value": 0.1119,
+  "family_median": 0.47,
+  "robust_z": 4.4
+ },
+ {
+  "slot_id": "B01_GREENHOUSE_BACKGROUND",
+  "candidate_id": "B01_ALT_C002",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.682,
+  "family_median": 0.82,
+  "robust_z": 4.6
+ },
+ {
+  "slot_id": "B01_GREENHOUSE_BACKGROUND",
+  "candidate_id": "B01_ALT_C002",
+  "run": "alt",
+  "feature": "glow_ratio",
+  "value": 0.0855,
+  "family_median": 0.009,
+  "robust_z": 14.43
+ },
+ {
+  "slot_id": "B01_GREENHOUSE_BACKGROUND",
+  "candidate_id": "B01_ALT_C002",
+  "run": "alt",
+  "feature": "light_from_above",
+  "value": 0.214,
+  "family_median": 0.013,
+  "robust_z": 10.58
+ },
+ {
+  "slot_id": "V01_CORE_VFX",
+  "candidate_id": "V01_ALT_C002",
+  "run": "alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.83,
+  "family_median": 0.334,
+  "robust_z": 4.51
+ },
+ {
+  "slot_id": "A02_REACTOR_CORE",
+  "candidate_id": "A02_C001",
+  "run": "additional",
+  "feature": "light_from_above",
+  "value": 0.231,
+  "family_median": 0.092,
+  "robust_z": 4.21
+ },
+ {
+  "slot_id": "U02_HUD_EXTENSION_ICONS",
+  "candidate_id": "U02_C001",
+  "run": "additional",
+  "feature": "anchor_adherence",
+  "value": 0.6884,
+  "family_median": 0.912,
+  "robust_z": 4.16
+ },
+ {
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_C002",
+  "run": "additional",
+  "feature": "outline_ring_darkness",
+  "value": 0.838,
+  "family_median": 0.698,
+  "robust_z": 5.18
+ },
+ {
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_C002",
+  "run": "additional",
+  "feature": "light_from_above",
+  "value": -0.087,
+  "family_median": 0.072,
+  "robust_z": 6.36
+ },
+ {
+  "slot_id": "A05_MAINTENANCE_DRONE",
+  "candidate_id": "A05_C002",
+  "run": "additional",
+  "feature": "outline_ring_darkness",
+  "value": 0.87,
+  "family_median": 0.698,
+  "robust_z": 6.37
+ },
+ {
+  "slot_id": "B05_ARCHIVE_STACK",
+  "candidate_id": "B05_C001",
+  "run": "additional",
+  "feature": "glow_ratio",
+  "value": 0.1052,
+  "family_median": 0.017,
+  "robust_z": 6.78
+ },
+ {
+  "slot_id": "A02_REACTOR_CORE",
+  "candidate_id": "A02_ALT_C001",
+  "run": "additional_alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.548,
+  "family_median": 0.784,
+  "robust_z": 6.38
+ },
+ {
+  "slot_id": "A02_REACTOR_CORE",
+  "candidate_id": "A02_ALT_C003",
+  "run": "additional_alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.412,
+  "family_median": 0.784,
+  "robust_z": 10.05
+ },
+ {
+  "slot_id": "A03_ENGINEER_DRONE",
+  "candidate_id": "A03_ALT_C002",
+  "run": "additional_alt",
+  "feature": "mean_saturation",
+  "value": 0.309,
+  "family_median": 0.471,
+  "robust_z": 4.15
+ },
+ {
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_ALT_C001",
+  "run": "additional_alt",
+  "feature": "outline_ring_darkness",
+  "value": 0.521,
+  "family_median": 0.698,
+  "robust_z": 6.56
+ },
+ {
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_ALT_C001",
+  "run": "additional_alt",
+  "feature": "glow_ratio",
+  "value": 0.1,
+  "family_median": 0.023,
+  "robust_z": 4.78
+ },
+ {
+  "slot_id": "A04_HARVESTER_DRONE",
+  "candidate_id": "A04_ALT_C001",
+  "run": "additional_alt",
+  "feature": "light_from_above",
+  "value": -0.111,
+  "family_median": 0.072,
+  "robust_z": 7.32
+ },
+ {
+  "slot_id": "A05_MAINTENANCE_DRONE",
+  "candidate_id": "A05_ALT_C002",
+  "run": "additional_alt",
+  "feature": "glow_ratio",
+  "value": 0.1055,
+  "family_median": 0.023,
+  "robust_z": 5.12
+ }
+]

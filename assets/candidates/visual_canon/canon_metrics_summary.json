@@ -1,0 +1,950 @@
+{
+ "family_stats": {
+  "DRONES / AGENTS": {
+   "count": 18,
+   "features": {
+    "edge_density": {
+     "median": 0.456,
+     "mad": 0.038,
+     "n": 18
+    },
+    "cluster_run_length": {
+     "median": 1.01,
+     "mad": 0.01,
+     "n": 18
+    },
+    "outline_ring_darkness": {
+     "median": 0.698,
+     "mad": 0.027,
+     "n": 18
+    },
+    "glow_ratio": {
+     "median": 0.023,
+     "mad": 0.0161,
+     "n": 18
+    },
+    "dark_ratio": {
+     "median": 0.312,
+     "mad": 0.0383,
+     "n": 18
+    },
+    "mean_saturation": {
+     "median": 0.471,
+     "mad": 0.039,
+     "n": 18
+    },
+    "light_from_above": {
+     "median": 0.072,
+     "mad": 0.025,
+     "n": 18
+    },
+    "anchor_adherence": {
+     "median": 0.835,
+     "mad": 0.0653,
+     "n": 18
+    }
+   }
+  },
+  "TERMINALS": {
+   "count": 10,
+   "features": {
+    "edge_density": {
+     "median": 0.333,
+     "mad": 0.049,
+     "n": 10
+    },
+    "cluster_run_length": {
+     "median": 1.03,
+     "mad": 0.01,
+     "n": 10
+    },
+    "outline_ring_darkness": {
+     "median": 0.744,
+     "mad": 0.036,
+     "n": 10
+    },
+    "glow_ratio": {
+     "median": 0.051,
+     "mad": 0.0289,
+     "n": 10
+    },
+    "dark_ratio": {
+     "median": 0.396,
+     "mad": 0.1988,
+     "n": 10
+    },
+    "mean_saturation": {
+     "median": 0.613,
+     "mad": 0.046,
+     "n": 10
+    },
+    "light_from_above": {
+     "median": 0.029,
+     "mad": 0.046,
+     "n": 10
+    },
+    "anchor_adherence": {
+     "median": 0.781,
+     "mad": 0.0923,
+     "n": 10
+    }
+   }
+  },
+  "STATION DOORS / FIXTURES": {
+   "count": 6,
+   "features": {
+    "edge_density": {
+     "median": 0.41,
+     "mad": 0.043,
+     "n": 6
+    },
+    "cluster_run_length": {
+     "median": 1.07,
+     "mad": 0.01,
+     "n": 6
+    },
+    "outline_ring_darkness": {
+     "median": 0.888,
+     "mad": 0.055,
+     "n": 6
+    },
+    "glow_ratio": {
+     "median": 0.028,
+     "mad": 0.0102,
+     "n": 6
+    },
+    "dark_ratio": {
+     "median": 0.228,
+     "mad": 0.0374,
+     "n": 6
+    },
+    "mean_saturation": {
+     "median": 0.456,
+     "mad": 0.048,
+     "n": 6
+    },
+    "light_from_above": {
+     "median": 0.002,
+     "mad": 0.003,
+     "n": 6
+    },
+    "anchor_adherence": {
+     "median": 0.861,
+     "mad": 0.0674,
+     "n": 6
+    }
+   }
+  },
+  "ENVIRONMENT BACKGROUNDS": {
+   "count": 10,
+   "features": {
+    "edge_density": {
+     "median": 0.112,
+     "mad": 0.038,
+     "n": 10
+    },
+    "cluster_run_length": {
+     "median": 1.12,
+     "mad": 0.03,
+     "n": 10
+    },
+    "outline_ring_darkness": {
+     "median": 0.82,
+     "mad": 0.03,
+     "n": 10
+    },
+    "glow_ratio": {
+     "median": 0.009,
+     "mad": 0.0053,
+     "n": 10
+    },
+    "dark_ratio": {
+     "median": 0.652,
+     "mad": 0.1186,
+     "n": 10
+    },
+    "mean_saturation": {
+     "median": 0.583,
+     "mad": 0.026,
+     "n": 10
+    },
+    "light_from_above": {
+     "median": 0.013,
+     "mad": 0.019,
+     "n": 10
+    },
+    "anchor_adherence": {
+     "median": 0.902,
+     "mad": 0.0451,
+     "n": 10
+    }
+   }
+  },
+  "ENVIRONMENT TILESETS": {
+   "count": 10,
+   "features": {
+    "edge_density": {
+     "median": 0.243,
+     "mad": 0.046,
+     "n": 10
+    },
+    "cluster_run_length": {
+     "median": 1.06,
+     "mad": 0.01,
+     "n": 10
+    },
+    "outline_ring_darkness": {
+     "median": 0.887,
+     "mad": 0.023,
+     "n": 10
+    },
+    "glow_ratio": {
+     "median": 0.01,
+     "mad": 0.0076,
+     "n": 10
+    },
+    "dark_ratio": {
+     "median": 0.47,
+     "mad": 0.0813,
+     "n": 10
+    },
+    "mean_saturation": {
+     "median": 0.505,
+     "mad": 0.06,
+     "n": 10
+    },
+    "light_from_above": {
+     "median": -0.003,
+     "mad": 0.028,
+     "n": 10
+    },
+    "anchor_adherence": {
+     "median": 0.875,
+     "mad": 0.0566,
+     "n": 10
+    }
+   }
+  },
+  "CROPS / MYTHIC BIOLOGY": {
+   "count": 22,
+   "features": {
+    "edge_density": {
+     "median": 0.309,
+     "mad": 0.079,
+     "n": 22
+    },
+    "cluster_run_length": {
+     "median": 1.05,
+     "mad": 0.02,
+     "n": 22
+    },
+    "outline_ring_darkness": {
+     "median": 0.589,
+     "mad": 0.045,
+     "n": 22
+    },
+    "glow_ratio": {
+     "median": 0.065,
+     "mad": 0.0349,
+     "n": 22
+    },
+    "dark_ratio": {
+     "median": 0.276,
+     "mad": 0.037,
+     "n": 22
+    },
+    "mean_saturation": {
+     "median": 0.458,
+     "mad": 0.046,
+     "n": 22
+    },
+    "light_from_above": {
+     "median": 0.131,
+     "mad": 0.062,
+     "n": 22
+    },
+    "anchor_adherence": {
+     "median": 0.772,
+     "mad": 0.066,
+     "n": 22
+    }
+   }
+  },
+  "DEXTER / VENDOR": {
+   "count": 12,
+   "features": {
+    "edge_density": {
+     "median": 0.451,
+     "mad": 0.07,
+     "n": 12
+    },
+    "cluster_run_length": {
+     "median": 1.02,
+     "mad": 0.01,
+     "n": 12
+    },
+    "outline_ring_darkness": {
+     "median": 0.785,
+     "mad": 0.045,
+     "n": 12
+    },
+    "glow_ratio": {
+     "median": 0.175,
+     "mad": 0.0444,
+     "n": 12
+    },
+    "dark_ratio": {
+     "median": 0.379,
+     "mad": 0.0653,
+     "n": 12
+    },
+    "mean_saturation": {
+     "median": 0.495,
+     "mad": 0.053,
+     "n": 12
+    },
+    "light_from_above": {
+     "median": -0.003,
+     "mad": 0.106,
+     "n": 12
+    },
+    "anchor_adherence": {
+     "median": 0.781,
+     "mad": 0.0563,
+     "n": 12
+    }
+   }
+  },
+  "PLAYER / HUMANOID": {
+   "count": 4,
+   "features": {
+    "edge_density": {
+     "median": 0.2,
+     "mad": 0.116,
+     "n": 4
+    },
+    "cluster_run_length": {
+     "median": 1.11,
+     "mad": 0.03,
+     "n": 4
+    },
+    "outline_ring_darkness": {
+     "median": 0.249,
+     "mad": 0.197,
+     "n": 4
+    },
+    "glow_ratio": {
+     "median": 0.772,
+     "mad": 0.0492,
+     "n": 4
+    },
+    "dark_ratio": {
+     "median": 0.125,
+     "mad": 0.0964,
+     "n": 4
+    },
+    "mean_saturation": {
+     "median": 0.907,
+     "mad": 0.01,
+     "n": 4
+    },
+    "light_from_above": {
+     "median": -0.054,
+     "mad": 0.054,
+     "n": 4
+    },
+    "anchor_adherence": {
+     "median": 0.175,
+     "mad": 0.0502,
+     "n": 4
+    }
+   }
+  },
+  "HUD / ICONOGRAPHY": {
+   "count": 10,
+   "features": {
+    "edge_density": {
+     "median": 0.392,
+     "mad": 0.074,
+     "n": 10
+    },
+    "cluster_run_length": {
+     "median": 1.05,
+     "mad": 0.03,
+     "n": 10
+    },
+    "outline_ring_darkness": {
+     "median": 0.609,
+     "mad": 0.127,
+     "n": 10
+    },
+    "glow_ratio": {
+     "median": 0.08,
+     "mad": 0.0614,
+     "n": 10
+    },
+    "dark_ratio": {
+     "median": 0.425,
+     "mad": 0.237,
+     "n": 10
+    },
+    "mean_saturation": {
+     "median": 0.563,
+     "mad": 0.103,
+     "n": 10
+    },
+    "light_from_above": {
+     "median": 0.012,
+     "mad": 0.033,
+     "n": 10
+    },
+    "anchor_adherence": {
+     "median": 0.912,
+     "mad": 0.0537,
+     "n": 10
+    }
+   }
+  },
+  "VFX / GLOWS": {
+   "count": 14,
+   "features": {
+    "edge_density": {
+     "median": 0.337,
+     "mad": 0.076,
+     "n": 14
+    },
+    "cluster_run_length": {
+     "median": 1.04,
+     "mad": 0.03,
+     "n": 14
+    },
+    "outline_ring_darkness": {
+     "median": 0.334,
+     "mad": 0.11,
+     "n": 14
+    },
+    "glow_ratio": {
+     "median": 0.294,
+     "mad": 0.1334,
+     "n": 14
+    },
+    "dark_ratio": {
+     "median": 0.158,
+     "mad": 0.1467,
+     "n": 14
+    },
+    "mean_saturation": {
+     "median": 0.663,
+     "mad": 0.061,
+     "n": 14
+    },
+    "light_from_above": {
+     "median": 0.013,
+     "mad": 0.037,
+     "n": 14
+    },
+    "anchor_adherence": {
+     "median": 0.717,
+     "mad": 0.1756,
+     "n": 14
+    }
+   }
+  },
+  "LARGE MACHINERY": {
+   "count": 6,
+   "features": {
+    "edge_density": {
+     "median": 0.398,
+     "mad": 0.045,
+     "n": 6
+    },
+    "cluster_run_length": {
+     "median": 1.04,
+     "mad": 0.02,
+     "n": 6
+    },
+    "outline_ring_darkness": {
+     "median": 0.784,
+     "mad": 0.037,
+     "n": 6
+    },
+    "glow_ratio": {
+     "median": 0.189,
+     "mad": 0.0617,
+     "n": 6
+    },
+    "dark_ratio": {
+     "median": 0.243,
+     "mad": 0.0512,
+     "n": 6
+    },
+    "mean_saturation": {
+     "median": 0.622,
+     "mad": 0.063,
+     "n": 6
+    },
+    "light_from_above": {
+     "median": 0.092,
+     "mad": 0.033,
+     "n": 6
+    },
+    "anchor_adherence": {
+     "median": 0.64,
+     "mad": 0.0641,
+     "n": 6
+    }
+   }
+  },
+  "DOCKING TECHNOLOGY": {
+   "count": 4,
+   "features": {
+    "edge_density": {
+     "median": 0.421,
+     "mad": 0.046,
+     "n": 4
+    },
+    "cluster_run_length": {
+     "median": 1.05,
+     "mad": 0.01,
+     "n": 4
+    },
+    "outline_ring_darkness": {
+     "median": 0.86,
+     "mad": 0.081,
+     "n": 4
+    },
+    "glow_ratio": {
+     "median": 0.127,
+     "mad": 0.1116,
+     "n": 4
+    },
+    "dark_ratio": {
+     "median": 0.288,
+     "mad": 0.0141,
+     "n": 4
+    },
+    "mean_saturation": {
+     "median": 0.488,
+     "mad": 0.063,
+     "n": 4
+    },
+    "light_from_above": {
+     "median": 0.041,
+     "mad": 0.038,
+     "n": 4
+    },
+    "anchor_adherence": {
+     "median": 0.739,
+     "mad": 0.1277,
+     "n": 4
+    }
+   }
+  },
+  "GREENHOUSE MACHINERY": {
+   "count": 4,
+   "features": {
+    "edge_density": {
+     "median": 0.435,
+     "mad": 0.033,
+     "n": 4
+    },
+    "cluster_run_length": {
+     "median": 1.03,
+     "mad": 0.01,
+     "n": 4
+    },
+    "outline_ring_darkness": {
+     "median": 0.87,
+     "mad": 0.112,
+     "n": 4
+    },
+    "glow_ratio": {
+     "median": 0.055,
+     "mad": 0.0251,
+     "n": 4
+    },
+    "dark_ratio": {
+     "median": 0.309,
+     "mad": 0.0238,
+     "n": 4
+    },
+    "mean_saturation": {
+     "median": 0.514,
+     "mad": 0.07,
+     "n": 4
+    },
+    "light_from_above": {
+     "median": 0.048,
+     "mad": 0.038,
+     "n": 4
+    },
+    "anchor_adherence": {
+     "median": 0.776,
+     "mad": 0.0264,
+     "n": 4
+    }
+   }
+  },
+  "ARCHIVE / RESEARCH TECHNOLOGY": {
+   "count": 4,
+   "features": {
+    "edge_density": {
+     "median": 0.471,
+     "mad": 0.119,
+     "n": 4
+    },
+    "cluster_run_length": {
+     "median": 1.05,
+     "mad": 0.02,
+     "n": 4
+    },
+    "outline_ring_darkness": {
+     "median": 0.755,
+     "mad": 0.051,
+     "n": 4
+    },
+    "glow_ratio": {
+     "median": 0.017,
+     "mad": 0.013,
+     "n": 4
+    },
+    "dark_ratio": {
+     "median": 0.306,
+     "mad": 0.0592,
+     "n": 4
+    },
+    "mean_saturation": {
+     "median": 0.526,
+     "mad": 0.043,
+     "n": 4
+    },
+    "light_from_above": {
+     "median": 0.019,
+     "mad": 0.031,
+     "n": 4
+    },
+    "anchor_adherence": {
+     "median": 0.78,
+     "mad": 0.1288,
+     "n": 4
+    }
+   }
+  },
+  "ENVIRONMENT PROPS": {
+   "count": 2,
+   "features": {
+    "edge_density": {
+     "median": 0.614,
+     "mad": 0.189,
+     "n": 2
+    },
+    "cluster_run_length": {
+     "median": 1.02,
+     "mad": 0.01,
+     "n": 2
+    },
+    "outline_ring_darkness": {
+     "median": 0.801,
+     "mad": 0.036,
+     "n": 2
+    },
+    "glow_ratio": {
+     "median": 0.06,
+     "mad": 0.0264,
+     "n": 2
+    },
+    "dark_ratio": {
+     "median": 0.258,
+     "mad": 0.0246,
+     "n": 2
+    },
+    "mean_saturation": {
+     "median": 0.591,
+     "mad": 0.18,
+     "n": 2
+    },
+    "light_from_above": {
+     "median": -0.008,
+     "mad": 0.014,
+     "n": 2
+    },
+    "anchor_adherence": {
+     "median": 0.759,
+     "mad": 0.0832,
+     "n": 2
+    }
+   }
+  }
+ },
+ "global_stats": {
+  "edge_density": {
+   "median": 0.362,
+   "mad": 0.09
+  },
+  "cluster_run_length": {
+   "median": 1.04,
+   "mad": 0.02
+  },
+  "outline_ring_darkness": {
+   "median": 0.706,
+   "mad": 0.117
+  },
+  "glow_ratio": {
+   "median": 0.05,
+   "mad": 0.0408
+  },
+  "dark_ratio": {
+   "median": 0.301,
+   "mad": 0.095
+  },
+  "mean_saturation": {
+   "median": 0.518,
+   "mad": 0.071
+  },
+  "light_from_above": {
+   "median": 0.024,
+   "mad": 0.044
+  },
+  "anchor_adherence": {
+   "median": 0.784,
+   "mad": 0.0803
+  }
+ },
+ "slot_selections": [
+  {
+   "slot_id": "A01_GARDENER_DRONE",
+   "primary": "A01_C003",
+   "primary_run": "original",
+   "secondary": "A01_ALT_C002",
+   "rejects": [
+    "A01_ALT_C003"
+   ]
+  },
+  {
+   "slot_id": "A02_REACTOR_CORE",
+   "primary": "A02_ALT_C002",
+   "primary_run": "additional_alt",
+   "secondary": "A02_C003",
+   "rejects": []
+  },
+  {
+   "slot_id": "A03_ENGINEER_DRONE",
+   "primary": "A03_ALT_C001",
+   "primary_run": "additional_alt",
+   "secondary": "A03_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "A04_HARVESTER_DRONE",
+   "primary": "A04_C001",
+   "primary_run": "additional",
+   "secondary": "A04_ALT_C002",
+   "rejects": [
+    "A04_ALT_C001"
+   ]
+  },
+  {
+   "slot_id": "A05_MAINTENANCE_DRONE",
+   "primary": "A05_C001",
+   "primary_run": "additional",
+   "secondary": "A05_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "primary": "B01_C001",
+   "primary_run": "original",
+   "secondary": null,
+   "rejects": [
+    "B01_C002",
+    "B01_ALT_C001",
+    "B01_ALT_C002"
+   ]
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "primary": "B02_C002",
+   "primary_run": "original",
+   "secondary": null,
+   "rejects": [
+    "B02_C001",
+    "B02_C003",
+    "B02_ALT_C001",
+    "B02_ALT_C003",
+    "B02_ALT_C002"
+   ]
+  },
+  {
+   "slot_id": "B03_DOCKING_COLLAR",
+   "primary": "B03_C001",
+   "primary_run": "additional",
+   "secondary": "B03_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "B04_HYDROPONICS_RIG",
+   "primary": "B04_C001",
+   "primary_run": "additional",
+   "secondary": "B04_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "B05_ARCHIVE_STACK",
+   "primary": "B05_C002",
+   "primary_run": "additional",
+   "secondary": "B05_ALT_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "C01_WISDOM_FRUIT",
+   "primary": "C01_ALT_C001",
+   "primary_run": "alt",
+   "secondary": "C01_C001",
+   "rejects": [
+    "C01_ALT_C002"
+   ]
+  },
+  {
+   "slot_id": "C02_TRICKSTER_VINE",
+   "primary": "C02_ALT_C002",
+   "primary_run": "alt",
+   "secondary": "C02_C003",
+   "rejects": []
+  },
+  {
+   "slot_id": "C03_LIGHTNING_VINE",
+   "primary": "C03_C001",
+   "primary_run": "original",
+   "secondary": "C03_ALT_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "C04_SHADOW_ROOT",
+   "primary": "C04_C001",
+   "primary_run": "original",
+   "secondary": "C04_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "C05_GOLDEN_BLOSSOM",
+   "primary": "C05_ALT_C001",
+   "primary_run": "alt",
+   "secondary": "C05_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "D01_DEXTER_VENDOR",
+   "primary": "D01_ALT_C001",
+   "primary_run": "alt",
+   "secondary": "D01_C003",
+   "rejects": [
+    "D01_C002"
+   ]
+  },
+  {
+   "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+   "primary": "D02_ALT_C002",
+   "primary_run": "alt",
+   "secondary": "D02_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "primary": "E01_C002",
+   "primary_run": "original",
+   "secondary": null,
+   "rejects": [
+    "E01_ALT_C002",
+    "E01_ALT_C001",
+    "E01_C001"
+   ]
+  },
+  {
+   "slot_id": "E02_ENGINEERING_TILESET",
+   "primary": "E02_C001",
+   "primary_run": "original",
+   "secondary": "E02_ALT_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "E03_CARGO_PROPS",
+   "primary": "E03_C001",
+   "primary_run": "additional",
+   "secondary": "E03_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "primary": "P01_ALT_C002",
+   "primary_run": "alt",
+   "secondary": null,
+   "rejects": [
+    "P01_ALT_C001",
+    "P01_C001",
+    "P01_C002"
+   ]
+  },
+  {
+   "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+   "primary": "T01_ALT_C001",
+   "primary_run": "alt",
+   "secondary": "T01_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "T02_RESEARCH_TERMINAL",
+   "primary": "T02_ALT_C003",
+   "primary_run": "alt",
+   "secondary": "T02_C002",
+   "rejects": []
+  },
+  {
+   "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+   "primary": "T03_C001",
+   "primary_run": "additional",
+   "secondary": "T03_ALT_C003",
+   "rejects": []
+  },
+  {
+   "slot_id": "U01_HUD_ICONS",
+   "primary": "U01_ALT_C001",
+   "primary_run": "alt",
+   "secondary": "U01_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "U02_HUD_EXTENSION_ICONS",
+   "primary": "U02_C002",
+   "primary_run": "additional",
+   "secondary": "U02_ALT_C001",
+   "rejects": []
+  },
+  {
+   "slot_id": "V01_CORE_VFX",
+   "primary": "V01_ALT_C002",
+   "primary_run": "alt",
+   "secondary": "V01_ALT_C001",
+   "rejects": [
+    "V01_C001",
+    "V01_C002"
+   ]
+  },
+  {
+   "slot_id": "V02_HAZARD_VFX",
+   "primary": "V02_ALT_C001",
+   "primary_run": "additional_alt",
+   "secondary": "V02_ALT_C002",
+   "rejects": [
+    "V02_C001",
+    "V02_C002"
+   ]
+  },
+  {
+   "slot_id": "W01_SECTOR_DOOR",
+   "primary": "W01_C003",
+   "primary_run": "original",
+   "secondary": "W01_ALT_C001",
+   "rejects": []
+  }
+ ]
+}

@@ -1,0 +1,683 @@
+{
+ "project": "starlight-acre",
+ "method_note": "No image-viewing capability exists in this environment. All observations are deterministic pixel measurements computed from each candidate's game_ready.png (the actual in-game representation), combined with recorded generation prompts and technical flags. No human aesthetic viewing was performed.",
+ "note": "PRIMARY/SECONDARY are art-direction style references, not gameplay promotions. REJECT_AS_STYLE_REFERENCE candidates remain usable assets but must not teach future generators the project's visual language.",
+ "selections": [
+  {
+   "slot_id": "A01_GARDENER_DRONE",
+   "asset_name": "A01_GARDENER_DRONE",
+   "asset_family": "DRONES / AGENTS",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "A01_C003",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/A01_GARDENER_DRONE/A01_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/A01_GARDENER_DRONE/A01_C003/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.449 vs family 0.456; cluster run 1.02) | outline ring darkness 0.706, glow 0.0%, light-from-above bias 0.067 | family robust-z 0.662 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "A01_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/A01_GARDENER_DRONE/A01_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/A01_GARDENER_DRONE/A01_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.431 vs family 0.456; cluster run 1.04) | outline ring darkness 0.684, glow 5.7%, light-from-above bias 0.048 | family robust-z 1.148 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "A01_ALT_C003",
+     "run": "alt",
+     "reason": "visual outlier vs family (robust-z 3.009)"
+    }
+   ]
+  },
+  {
+   "slot_id": "A02_REACTOR_CORE",
+   "asset_name": "Energy Reactor Core",
+   "asset_family": "LARGE MACHINERY",
+   "primary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "A02_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A02_REACTOR_CORE/A02_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A02_REACTOR_CORE/A02_ALT_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.398 vs family 0.398; cluster run 1.04) | outline ring darkness 0.821, glow 18.9%, light-from-above bias 0.078 | family robust-z 0.491 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional",
+    "candidate_id": "A02_C003",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/A02_REACTOR_CORE/A02_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/A02_REACTOR_CORE/A02_C003/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.388 vs family 0.398; cluster run 1.03) | outline ring darkness 0.77, glow 16.4%, light-from-above bias 0.134 | family robust-z 0.728 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "A03_ENGINEER_DRONE",
+   "asset_name": "Engineer Drone",
+   "asset_family": "DRONES / AGENTS",
+   "primary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "A03_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A03_ENGINEER_DRONE/A03_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A03_ENGINEER_DRONE/A03_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.435 vs family 0.456; cluster run 1.01) | outline ring darkness 0.682, glow 4.2%, light-from-above bias 0.066 | family robust-z 0.619 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional",
+    "candidate_id": "A03_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/A03_ENGINEER_DRONE/A03_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/A03_ENGINEER_DRONE/A03_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.468 vs family 0.456; cluster run 1.01) | outline ring darkness 0.698, glow 0.6%, light-from-above bias 0.097 | family robust-z 0.798 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "A04_HARVESTER_DRONE",
+   "asset_name": "Harvester Drone",
+   "asset_family": "DRONES / AGENTS",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "A04_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.489 vs family 0.456; cluster run 1.0) | outline ring darkness 0.746, glow 2.5%, light-from-above bias 0.036 | family robust-z 0.811 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "A04_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A04_HARVESTER_DRONE/A04_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A04_HARVESTER_DRONE/A04_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.479 vs family 0.456; cluster run 1.02) | outline ring darkness 0.674, glow 1.0%, light-from-above bias 0.092 | family robust-z 1.351 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "A04_ALT_C001",
+     "run": "additional_alt",
+     "reason": "defect flags: MULTIPLE_SUBJECTS_POSSIBLE; visual outlier vs family (robust-z 3.873)"
+    }
+   ]
+  },
+  {
+   "slot_id": "A05_MAINTENANCE_DRONE",
+   "asset_name": "Maintenance Drone",
+   "asset_family": "DRONES / AGENTS",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "A05_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.323 vs family 0.456; cluster run 1.01) | outline ring darkness 0.705, glow 1.3%, light-from-above bias 0.072 | family robust-z 1.054 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "A05_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.433 vs family 0.456; cluster run 1.0) | outline ring darkness 0.648, glow 3.1%, light-from-above bias 0.167 | family robust-z 1.374 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "asset_name": "B01_GREENHOUSE_BACKGROUND",
+   "asset_family": "ENVIRONMENT BACKGROUNDS",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "B01_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/source.png",
+    "why_it_fits_the_family": "least-defective available (flags: CROPPED_CONTENT) | pixel density on family median (edge 0.172 vs family 0.112; cluster run 1.09) | outline ring darkness 0.82, glow 0.4%, light-from-above bias 0.038 | family robust-z 0.63 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": null,
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "B01_C002",
+     "run": "original",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B01_ALT_C001",
+     "run": "alt",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B01_ALT_C002",
+     "run": "alt",
+     "reason": "defect flags: CROPPED_CONTENT; visual outlier vs family (robust-z 5.151)"
+    }
+   ]
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "asset_name": "B02_ENGINEERING_BACKGROUND",
+   "asset_family": "ENVIRONMENT BACKGROUNDS",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "B02_C002",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/source.png",
+    "why_it_fits_the_family": "least-defective available (flags: CROPPED_CONTENT) | pixel density on family median (edge 0.104 vs family 0.112; cluster run 1.13) | outline ring darkness 0.85, glow 0.9%, light-from-above bias 0.024 | family robust-z 0.477 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": null,
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "B02_C001",
+     "run": "original",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B02_C003",
+     "run": "original",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B02_ALT_C001",
+     "run": "alt",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B02_ALT_C003",
+     "run": "alt",
+     "reason": "defect flags: CROPPED_CONTENT"
+    },
+    {
+     "candidate_id": "B02_ALT_C002",
+     "run": "alt",
+     "reason": "defect flags: CROPPED_CONTENT"
+    }
+   ]
+  },
+  {
+   "slot_id": "B03_DOCKING_COLLAR",
+   "asset_name": "Docking Bay Collar Fixture",
+   "asset_family": "DOCKING TECHNOLOGY",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "B03_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.405 vs family 0.421; cluster run 1.05) | outline ring darkness 0.728, glow 12.7%, light-from-above bias 0.048 | family robust-z 0.34 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "B03_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B03_DOCKING_COLLAR/B03_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B03_DOCKING_COLLAR/B03_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.375 vs family 0.421; cluster run 1.04) | outline ring darkness 0.877, glow 16.1%, light-from-above bias 0.041 | family robust-z 0.849 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "B04_HYDROPONICS_RIG",
+   "asset_name": "Hydroponics Wing Recycler Rig",
+   "asset_family": "GREENHOUSE MACHINERY",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "B04_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.435 vs family 0.435; cluster run 1.01) | outline ring darkness 0.758, glow 5.5%, light-from-above bias 0.048 | family robust-z 0.612 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "B04_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B04_HYDROPONICS_RIG/B04_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B04_HYDROPONICS_RIG/B04_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.388 vs family 0.435; cluster run 1.03) | outline ring darkness 0.87, glow 2.7%, light-from-above bias 0.064 | family robust-z 0.651 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "B05_ARCHIVE_STACK",
+   "asset_name": "Archive Library Data Stack",
+   "asset_family": "ARCHIVE / RESEARCH TECHNOLOGY",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "B05_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.471 vs family 0.471; cluster run 1.03) | outline ring darkness 0.747, glow 1.7%, light-from-above bias 0.05 | family robust-z 0.44 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "B05_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B05_ARCHIVE_STACK/B05_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/B05_ARCHIVE_STACK/B05_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.477 vs family 0.471; cluster run 1.01) | outline ring darkness 0.755, glow 0.4%, light-from-above bias 0.001 | family robust-z 0.785 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "C01_WISDOM_FRUIT",
+   "asset_name": "C01_WISDOM_FRUIT",
+   "asset_family": "CROPS / MYTHIC BIOLOGY",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "C01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/C01_WISDOM_FRUIT/C01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/C01_WISDOM_FRUIT/C01_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.319 vs family 0.309; cluster run 1.04) | outline ring darkness 0.634, glow 9.2%, light-from-above bias 0.119 | family robust-z 0.888 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "C01_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/C01_WISDOM_FRUIT/C01_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/C01_WISDOM_FRUIT/C01_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.238 vs family 0.309; cluster run 1.06) | outline ring darkness 0.682, glow 2.2%, light-from-above bias 0.109 | family robust-z 1.151 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "C01_ALT_C002",
+     "run": "alt",
+     "reason": "defect flags: PLANTER_BAND_INCONSISTENT"
+    }
+   ]
+  },
+  {
+   "slot_id": "C02_TRICKSTER_VINE",
+   "asset_name": "C02_TRICKSTER_VINE",
+   "asset_family": "CROPS / MYTHIC BIOLOGY",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "C02_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/C02_TRICKSTER_VINE/C02_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/C02_TRICKSTER_VINE/C02_ALT_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.258 vs family 0.309; cluster run 1.05) | outline ring darkness 0.598, glow 3.1%, light-from-above bias 0.07 | family robust-z 0.634 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "C02_C003",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/C02_TRICKSTER_VINE/C02_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/C02_TRICKSTER_VINE/C02_C003/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.382 vs family 0.309; cluster run 1.05) | outline ring darkness 0.576, glow 4.0%, light-from-above bias 0.024 | family robust-z 0.784 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "C03_LIGHTNING_VINE",
+   "asset_name": "C03_LIGHTNING_VINE",
+   "asset_family": "CROPS / MYTHIC BIOLOGY",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "C03_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/C03_LIGHTNING_VINE/C03_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/C03_LIGHTNING_VINE/C03_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.338 vs family 0.309; cluster run 1.03) | outline ring darkness 0.583, glow 13.7%, light-from-above bias 0.138 | family robust-z 0.905 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "C03_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/C03_LIGHTNING_VINE/C03_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/C03_LIGHTNING_VINE/C03_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.303 vs family 0.309; cluster run 1.03) | outline ring darkness 0.589, glow 6.5%, light-from-above bias 0.053 | family robust-z 0.923 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "C04_SHADOW_ROOT",
+   "asset_name": "C04_SHADOW_ROOT",
+   "asset_family": "CROPS / MYTHIC BIOLOGY",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "C04_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/C04_SHADOW_ROOT/C04_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/C04_SHADOW_ROOT/C04_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.313 vs family 0.309; cluster run 1.04) | outline ring darkness 0.527, glow 3.0%, light-from-above bias 0.131 | family robust-z 0.868 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "C04_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/C04_SHADOW_ROOT/C04_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/C04_SHADOW_ROOT/C04_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.23 vs family 0.309; cluster run 1.07) | outline ring darkness 0.525, glow 4.2%, light-from-above bias 0.181 | family robust-z 1.222 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "C05_GOLDEN_BLOSSOM",
+   "asset_name": "C05_GOLDEN_BLOSSOM",
+   "asset_family": "CROPS / MYTHIC BIOLOGY",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "C05_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.216 vs family 0.309; cluster run 1.05) | outline ring darkness 0.637, glow 8.9%, light-from-above bias 0.198 | family robust-z 0.821 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "C05_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/C05_GOLDEN_BLOSSOM/C05_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.391 vs family 0.309; cluster run 1.02) | outline ring darkness 0.583, glow 6.2%, light-from-above bias 0.166 | family robust-z 0.898 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "D01_DEXTER_VENDOR",
+   "asset_name": "D01_DEXTER_VENDOR",
+   "asset_family": "DEXTER / VENDOR",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "D01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/D01_DEXTER_VENDOR/D01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/D01_DEXTER_VENDOR/D01_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.468 vs family 0.451; cluster run 1.04) | outline ring darkness 0.89, glow 19.0%, light-from-above bias -0.076 | family robust-z 1.053 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "D01_C003",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/D01_DEXTER_VENDOR/D01_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/D01_DEXTER_VENDOR/D01_C003/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.439 vs family 0.451; cluster run 1.03) | outline ring darkness 0.83, glow 17.5%, light-from-above bias -0.109 | family robust-z 1.093 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "D01_C002",
+     "run": "original",
+     "reason": "curated run-history evidence: duplicate subject: two dogs in one sprite, recorded during original-run verification (PR #2 honest-flags inventory); pipeline island analysis did not flag it"
+    }
+   ]
+  },
+  {
+   "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+   "asset_name": "D02_DEXTER_VENDOR_KIOSK",
+   "asset_family": "DEXTER / VENDOR",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "D02_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.485 vs family 0.451; cluster run 1.01) | outline ring darkness 0.785, glow 10.3%, light-from-above bias 0.016 | family robust-z 0.688 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "D02_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/D02_DEXTER_VENDOR_KIOSK/D02_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.38 vs family 0.451; cluster run 1.02) | outline ring darkness 0.783, glow 5.9%, light-from-above bias 0.067 | family robust-z 0.792 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "asset_name": "E01_GREENHOUSE_TILESET",
+   "asset_family": "ENVIRONMENT TILESETS",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "E01_C002",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/source.png",
+    "why_it_fits_the_family": "least-defective available (flags: TILESET_OVERKEYED) | pixel density on family median (edge 0.188 vs family 0.243; cluster run 1.06) | outline ring darkness 0.558, glow 1.7%, light-from-above bias -0.075 | family robust-z 3.418 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": null,
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "E01_ALT_C002",
+     "run": "alt",
+     "reason": "defect flags: TILESET_OVERKEYED; visual outlier vs family (robust-z 3.691)"
+    },
+    {
+     "candidate_id": "E01_ALT_C001",
+     "run": "alt",
+     "reason": "defect flags: TILESET_OVERKEYED; visual outlier vs family (robust-z 4.031)"
+    },
+    {
+     "candidate_id": "E01_C001",
+     "run": "original",
+     "reason": "defect flags: TILESET_OVERKEYED; visual outlier vs family (robust-z 4.61)"
+    }
+   ]
+  },
+  {
+   "slot_id": "E02_ENGINEERING_TILESET",
+   "asset_name": "E02_ENGINEERING_TILESET",
+   "asset_family": "ENVIRONMENT TILESETS",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "E02_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/E02_ENGINEERING_TILESET/E02_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/E02_ENGINEERING_TILESET/E02_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.27 vs family 0.243; cluster run 1.06) | outline ring darkness 0.887, glow 0.9%, light-from-above bias 0.025 | family robust-z 0.274 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "E02_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/E02_ENGINEERING_TILESET/E02_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/E02_ENGINEERING_TILESET/E02_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.243 vs family 0.243; cluster run 1.06) | outline ring darkness 0.895, glow 1.0%, light-from-above bias -0.003 | family robust-z 0.4 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "E03_CARGO_PROPS",
+   "asset_name": "Cargo & Storage Prop Sheet",
+   "asset_family": "ENVIRONMENT PROPS",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "E03_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/E03_CARGO_PROPS/E03_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/E03_CARGO_PROPS/E03_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.425 vs family 0.614; cluster run 1.02) | outline ring darkness 0.765, glow 6.0%, light-from-above bias -0.022 | family robust-z 0.501 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "E03_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/E03_CARGO_PROPS/E03_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/E03_CARGO_PROPS/E03_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.614 vs family 0.614; cluster run 1.01) | outline ring darkness 0.801, glow 3.3%, light-from-above bias -0.008 | family robust-z 0.502 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "asset_name": "P01_PLAYER_SHEET",
+   "asset_family": "PLAYER / HUMANOID",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "P01_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/P01_PLAYER_SHEET/P01_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/P01_PLAYER_SHEET/P01_ALT_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.475 vs family 0.2; cluster run 1.0) | outline ring darkness 0.771, glow 10.4%, light-from-above bias -0.0 | family robust-z 9.954 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": null,
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "P01_ALT_C001",
+     "run": "alt",
+     "reason": "defect flags: EMPTY_CELLS_OPAQUE, KEYING_INCOMPLETE_FRAMED_SOURCE"
+    },
+    {
+     "candidate_id": "P01_C001",
+     "run": "original",
+     "reason": "defect flags: EMPTY_CELLS_OPAQUE, KEYING_INCOMPLETE_FRAMED_SOURCE"
+    },
+    {
+     "candidate_id": "P01_C002",
+     "run": "original",
+     "reason": "defect flags: EMPTY_CELLS_OPAQUE, KEYING_INCOMPLETE_FRAMED_SOURCE"
+    }
+   ]
+  },
+  {
+   "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+   "asset_name": "T01_REPAIR_REPLENISH_TERMINALS",
+   "asset_family": "TERMINALS",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "T01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.389 vs family 0.333; cluster run 1.02) | outline ring darkness 0.75, glow 5.0%, light-from-above bias 0.029 | family robust-z 0.7 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "T01_C002",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/T01_REPAIR_REPLENISH_TERMINALS/T01_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.34 vs family 0.333; cluster run 1.05) | outline ring darkness 0.78, glow 2.2%, light-from-above bias -0.017 | family robust-z 0.853 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "T02_RESEARCH_TERMINAL",
+   "asset_name": "T02_RESEARCH_TERMINAL",
+   "asset_family": "TERMINALS",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "T02_ALT_C003",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/T02_RESEARCH_TERMINAL/T02_ALT_C003/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.284 vs family 0.333; cluster run 1.02) | outline ring darkness 0.71, glow 5.1%, light-from-above bias 0.01 | family robust-z 0.829 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "T02_C002",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/T02_RESEARCH_TERMINAL/T02_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/T02_RESEARCH_TERMINAL/T02_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.333 vs family 0.333; cluster run 1.02) | outline ring darkness 0.744, glow 0.1%, light-from-above bias -0.015 | family robust-z 0.965 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+   "asset_name": "Terminal Active Glow Overlay",
+   "asset_family": "VFX / GLOWS",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "T03_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.317 vs family 0.337; cluster run 1.04) | outline ring darkness 0.267, glow 30.0%, light-from-above bias 0.037 | family robust-z 0.591 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "T03_ALT_C003",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C003/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.377 vs family 0.337; cluster run 1.04) | outline ring darkness 0.077, glow 27.8%, light-from-above bias -0.02 | family robust-z 0.703 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "U01_HUD_ICONS",
+   "asset_name": "U01_HUD_ICONS",
+   "asset_family": "HUD / ICONOGRAPHY",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "U01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/U01_HUD_ICONS/U01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/U01_HUD_ICONS/U01_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.422 vs family 0.392; cluster run 1.03) | outline ring darkness 0.609, glow 20.8%, light-from-above bias 0.021 | family robust-z 0.69 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "original",
+    "candidate_id": "U01_C001",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/U01_HUD_ICONS/U01_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/U01_HUD_ICONS/U01_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.353 vs family 0.392; cluster run 1.08) | outline ring darkness 0.736, glow 8.2%, light-from-above bias -0.062 | family robust-z 0.763 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "U02_HUD_EXTENSION_ICONS",
+   "asset_name": "HUD Extension Icon Strip",
+   "asset_family": "HUD / ICONOGRAPHY",
+   "primary_reference": {
+    "run": "additional",
+    "candidate_id": "U02_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.344 vs family 0.392; cluster run 1.05) | outline ring darkness 0.475, glow 14.8%, light-from-above bias 0.077 | family robust-z 0.724 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "U02_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.392 vs family 0.392; cluster run 1.05) | outline ring darkness 0.504, glow 1.9%, light-from-above bias 0.053 | family robust-z 0.843 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  },
+  {
+   "slot_id": "V01_CORE_VFX",
+   "asset_name": "V01_CORE_VFX",
+   "asset_family": "VFX / GLOWS",
+   "primary_reference": {
+    "run": "alt",
+    "candidate_id": "V01_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C002/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.357 vs family 0.337; cluster run 1.03) | outline ring darkness 0.83, glow 29.4%, light-from-above bias 0.041 | family robust-z 1.074 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "V01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/V01_CORE_VFX/V01_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.478 vs family 0.337; cluster run 1.01) | outline ring darkness 0.492, glow 52.8%, light-from-above bias 0.047 | family robust-z 1.337 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "V01_C001",
+     "run": "original",
+     "reason": "defect flags: CELL_BACKGROUND_NOT_REMOVED; visual outlier vs family (robust-z 3.524)"
+    },
+    {
+     "candidate_id": "V01_C002",
+     "run": "original",
+     "reason": "defect flags: EXPECTED_CELL_EMPTY"
+    }
+   ]
+  },
+  {
+   "slot_id": "V02_HAZARD_VFX",
+   "asset_name": "Hazard VFX Strip",
+   "asset_family": "VFX / GLOWS",
+   "primary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "V02_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C001/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.261 vs family 0.337; cluster run 1.08) | outline ring darkness 0.478, glow 36.0%, light-from-above bias 0.004 | family robust-z 0.673 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "additional_alt",
+    "candidate_id": "V02_ALT_C002",
+    "game_ready_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C002/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_additional_alt_asset_run/slots/V02_HAZARD_VFX/V02_ALT_C002/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.261 vs family 0.337; cluster run 1.04) | outline ring darkness 0.334, glow 28.1%, light-from-above bias -0.046 | family robust-z 0.731 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": [
+    {
+     "candidate_id": "V02_C001",
+     "run": "additional",
+     "reason": "defect flags: CELL_BACKGROUND_NOT_REMOVED"
+    },
+    {
+     "candidate_id": "V02_C002",
+     "run": "additional",
+     "reason": "defect flags: EXPECTED_CELL_EMPTY"
+    }
+   ]
+  },
+  {
+   "slot_id": "W01_SECTOR_DOOR",
+   "asset_name": "W01_SECTOR_DOOR",
+   "asset_family": "STATION DOORS / FIXTURES",
+   "primary_reference": {
+    "run": "original",
+    "candidate_id": "W01_C003",
+    "game_ready_file": "assets/candidates/arena_agent_asset_run/slots/W01_SECTOR_DOOR/W01_C003/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_asset_run/slots/W01_SECTOR_DOOR/W01_C003/source.png",
+    "why_it_fits_the_family": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.41 vs family 0.41; cluster run 1.06) | outline ring darkness 0.887, glow 2.9%, light-from-above bias 0.003 | family robust-z 0.487 (lower = more typical of the family's visual language)"
+   },
+   "secondary_reference": {
+    "run": "alt",
+    "candidate_id": "W01_ALT_C001",
+    "game_ready_file": "assets/candidates/arena_agent_alt_asset_run/slots/W01_SECTOR_DOOR/W01_ALT_C001/game_ready.png",
+    "source_file": "assets/candidates/arena_agent_alt_asset_run/slots/W01_SECTOR_DOOR/W01_ALT_C001/source.png",
+    "why": "cleanest technical record in slot (non-standard flags: none) | pixel density on family median (edge 0.453 vs family 0.41; cluster run 1.07) | outline ring darkness 0.674, glow 2.8%, light-from-above bias 0.002 | family robust-z 0.941 (lower = more typical of the family's visual language)"
+   },
+   "reject_as_style_reference": []
+  }
+ ]
+}
