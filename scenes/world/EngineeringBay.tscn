@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://systems/world/sector_controller.gd" id="1_sector"]
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="2_player"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" path="res://ui/hud/HUD.tscn" id="4_hud"]
 [ext_resource type="PackedScene" path="res://actors/terminals/ResearchTerminal.tscn" id="5_research"]
 [ext_resource type="PackedScene" path="res://systems/world/SectorDoor.tscn" id="6_door"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/engineering_bay_bg.png" id="7_bg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/fixtures/reactor_core.png" id="8_core"]
 
 [sub_resource type="RectangleShape2D" id="floor_shape"]
 size = Vector2(1200, 32)
@@ -16,14 +18,18 @@ size = Vector2(32, 600)
 script = ExtResource("1_sector")
 sector_id = "engineering"
 
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("7_bg")
+z_index = -10
+
 [node name="Backdrop" type="Polygon2D" parent="."]
+z_index = -11
 polygon = PackedVector2Array(-640, -360, 640, -360, 640, 280, -640, 280)
 color = Color(0.05, 0.07, 0.12, 1)
 
-[node name="CoreGlow" type="Polygon2D" parent="."]
+[node name="CoreGlow" type="Sprite2D" parent="."]
 position = Vector2(180, -40)
-polygon = PackedVector2Array(-90, -90, 90, -90, 120, 90, -120, 90)
-color = Color(0.12, 0.3, 0.4, 1)
+texture = ExtResource("8_core")
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(0, 280)
