@@ -1,0 +1,14 @@
+{
+ "slot_id": "E01_GREENHOUSE_TILESET",
+ "candidate_id": "E01_C002",
+ "repair_action": "NORMALIZE_ONLY",
+ "problem": "TILESET_OVERKEYED: background keying destroyed legitimate dark tile pixels (ring darkness 0.49-0.56 vs tileset median 0.887)",
+ "severity": "high",
+ "governing_reference": "E02_C001",
+ "retained_rule": "A/B: defective candidate is the ratified reference for its slot",
+ "contract": "Deterministic re-derivation from the preserved intact opaque 1024x1024 source sheet: direct nearest-neighbor downscale to 256x256 with ZERO keying (the original flood-key destroyed legitimate dark tile pixels because the sheet background sits within keying tolerance of the dark navy/dusk-blue tiles). Result is a fully opaque 16x16-grid tile sheet, per the original run note \"slice tiles from source.png (intact opaque sheet)\". No painting, no invented pixels, no rearrangement.",
+ "expected_dimensions": [
+  256,
+  256
+ ]
+}

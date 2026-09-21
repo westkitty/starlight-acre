@@ -111,3 +111,13 @@ shape = SubResource("CapsuleShape2D_body")
 position = Vector2(0, -21)
 sprite_frames = SubResource("SpriteFrames_player")
 animation = &"idle"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -148)
+enabled = true
+limit_left = -600
+limit_top = -64
+limit_right = 600
+limit_bottom = 296
+position_smoothing_enabled = false
+rotation_smoothing_enabled = false

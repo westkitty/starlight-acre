@@ -1,0 +1,45 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C04_SHADOW_ROOT",
+  "source_candidate_id": "C04_C002",
+  "alternate_candidate_id": "C04_ALT_C002",
+  "priority": "C",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/C04_SHADOW_ROOT/C04_ALT_C002/source.png",
+  "game_ready_file": "slots/C04_SHADOW_ROOT/C04_ALT_C002/game_ready.png",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": true,
+  "sha256_source": "c51608d3f17d73eac66d52846d02615833329cb9e6b3b315ccc92ffc83a9e66a",
+  "sha256_game_ready": "1227b8df9a951dc673981cb29f7f3062361e192df2e7e3595a3b5fea6dd65f47",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one single flat color across the whole strip - between cells, around the plants, edge to edge - with absolutely no grid lines, no separating borders, no frame, no caption panel. The plant is a root-dominant mythic plant (Hades-inspired underworld botany, no god or person depicted, mystical rather than evil): growth happens mostly BELOW and AT the soil line with deep unusual silhouettes, dark purple-black root bulges partially hidden by the planter soil, sparse pale bone-white and faint violet foliage above; the READY state shows a heavy root crown lifted slightly above the soil with a cool violet glow; partially hidden growth language, mysterious, calm, uncanny but not monstrous. All growth stays INSIDE its 32x32 cell. GBA/SNES pixel art, dark subtle outline, consistent planter alignment.  CHALLENGER DESIGN (materially different from the incumbent near-leafless form with a transparent soil cutaway hint and tiny violet flowers): a relic-seed rib-cage root: a dark polished seed relic half-buried in the planter soil; from it, pale bone-white roots arc up out of the soil and curve back in like a rib cage; tiny violet sparks at the root tips; almost no foliage above ground; the READY state: the seed cracks open showing a glowing violet interior while the rib-cage roots tighten around it.",
+  "challenger_axes": [
+    "root architecture: rib-cage arcs over a relic seed vs descending cutaway root",
+    "focus object: dark polished cracking seed relic vs deep hanging root",
+    "spark treatment: violet sparks at root tips vs tiny violet flowers",
+    "ready gesture: seed cracking open while roots tighten vs lifted root crown"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=3, removed 47.0%)",
+    "content downscaled x0.0625 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 45% 51% 58% 64%",
+    "planter-band IoU vs cell1: c2=0.98 c3=0.94 c4=0.93"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

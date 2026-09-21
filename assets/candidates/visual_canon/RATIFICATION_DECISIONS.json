@@ -1,0 +1,241 @@
+{
+  "project": "starlight-acre",
+  "schema_version": 1,
+  "visual_canon_source": "VISUAL_CANON_SELECTIONS.json",
+  "ratification_basis": "explicit_user_approval_of_all_recommended_primary_references",
+  "ratified_at": "2026-09-20",
+  "slots": [
+    {
+      "slot_id": "A01_GARDENER_DRONE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "A01_C003",
+      "draft_primary": "A01_C003",
+      "draft_secondary": "A01_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "A02_REACTOR_CORE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "A02_ALT_C002",
+      "draft_primary": "A02_ALT_C002",
+      "draft_secondary": "A02_C003",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "A03_ENGINEER_DRONE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "A03_ALT_C001",
+      "draft_primary": "A03_ALT_C001",
+      "draft_secondary": "A03_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "A04_HARVESTER_DRONE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "A04_C001",
+      "draft_primary": "A04_C001",
+      "draft_secondary": "A04_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "A05_MAINTENANCE_DRONE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "A05_C001",
+      "draft_primary": "A05_C001",
+      "draft_secondary": "A05_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "B01_GREENHOUSE_BACKGROUND",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "B01_C001",
+      "draft_primary": "B01_C001",
+      "draft_secondary": null,
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "B02_ENGINEERING_BACKGROUND",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "B02_C002",
+      "draft_primary": "B02_C002",
+      "draft_secondary": null,
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "B03_DOCKING_COLLAR",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "B03_C001",
+      "draft_primary": "B03_C001",
+      "draft_secondary": "B03_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "B04_HYDROPONICS_RIG",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "B04_C001",
+      "draft_primary": "B04_C001",
+      "draft_secondary": "B04_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "B05_ARCHIVE_STACK",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "B05_C002",
+      "draft_primary": "B05_C002",
+      "draft_secondary": "B05_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "C01_WISDOM_FRUIT",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "C01_ALT_C001",
+      "draft_primary": "C01_ALT_C001",
+      "draft_secondary": "C01_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "C02_TRICKSTER_VINE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "C02_ALT_C002",
+      "draft_primary": "C02_ALT_C002",
+      "draft_secondary": "C02_C003",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "C03_LIGHTNING_VINE",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "C03_C001",
+      "draft_primary": "C03_C001",
+      "draft_secondary": "C03_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "C04_SHADOW_ROOT",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "C04_C001",
+      "draft_primary": "C04_C001",
+      "draft_secondary": "C04_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "C05_GOLDEN_BLOSSOM",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "C05_ALT_C001",
+      "draft_primary": "C05_ALT_C001",
+      "draft_secondary": "C05_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "D01_DEXTER_VENDOR",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "D01_ALT_C001",
+      "draft_primary": "D01_ALT_C001",
+      "draft_secondary": "D01_C003",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "D02_ALT_C002",
+      "draft_primary": "D02_ALT_C002",
+      "draft_secondary": "D02_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "E01_GREENHOUSE_TILESET",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "E01_C002",
+      "draft_primary": "E01_C002",
+      "draft_secondary": null,
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "E02_ENGINEERING_TILESET",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "E02_C001",
+      "draft_primary": "E02_C001",
+      "draft_secondary": "E02_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "E03_CARGO_PROPS",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "E03_C001",
+      "draft_primary": "E03_C001",
+      "draft_secondary": "E03_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "P01_PLAYER_SHEET",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "P01_ALT_C002",
+      "draft_primary": "P01_ALT_C002",
+      "draft_secondary": null,
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "T01_ALT_C001",
+      "draft_primary": "T01_ALT_C001",
+      "draft_secondary": "T01_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "T02_RESEARCH_TERMINAL",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "T02_ALT_C003",
+      "draft_primary": "T02_ALT_C003",
+      "draft_secondary": "T02_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "T03_C001",
+      "draft_primary": "T03_C001",
+      "draft_secondary": "T03_ALT_C003",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "U01_HUD_ICONS",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "U01_ALT_C001",
+      "draft_primary": "U01_ALT_C001",
+      "draft_secondary": "U01_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "U02_HUD_EXTENSION_ICONS",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "U02_C002",
+      "draft_primary": "U02_C002",
+      "draft_secondary": "U02_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "V01_CORE_VFX",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "V01_ALT_C002",
+      "draft_primary": "V01_ALT_C002",
+      "draft_secondary": "V01_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "V02_HAZARD_VFX",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "V02_ALT_C001",
+      "draft_primary": "V02_ALT_C001",
+      "draft_secondary": "V02_ALT_C002",
+      "human_note": "User explicitly approved all recommended primary references."
+    },
+    {
+      "slot_id": "W01_SECTOR_DOOR",
+      "decision": "APPROVE_PRIMARY",
+      "selected_candidate_id": "W01_C003",
+      "draft_primary": "W01_C003",
+      "draft_secondary": "W01_ALT_C001",
+      "human_note": "User explicitly approved all recommended primary references."
+    }
+  ]
+}

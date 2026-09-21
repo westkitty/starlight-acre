@@ -16,22 +16,25 @@
 - [x] Add headless smoke test
 - [x] Pass headless editor load, smoke test, and 120-frame main-scene run
 
-## Next: visual truth pass
+## Visual truth pass
 
-- [ ] Open in Godot editor and visually inspect every recovered sprite slice
-- [ ] Correct player/crop/HUD/terminal slicing against the actual 640x640 generated source images
-- [ ] Paint greenhouse TileMapLayer
-- [ ] Add tested TileMap collision before removing StaticBody2D collision stubs
+- [x] Ratify and promote the canonical sprite/background/tileset assets at their documented live dimensions
+- [x] Verify player/crop/HUD/terminal atlas regions against the promoted canonical sheets
+- [x] Paint the Greenhouse floor and wall TileMapLayers from the canonical E01 tileset
+- [x] Prove TileMap collision independently, then remove the obsolete Greenhouse StaticBody2D collision stubs
+- [x] Enforce the 640×360 internal viewport and add a bounded player-follow camera with camera-synced sector backgrounds
+- [ ] Human-review the promoted scene composition and sprite animation feel
 - [ ] Play the complete loop manually: plant -> drone/manual tend -> harvest -> paid resupply -> research -> Engineering -> return -> restart
 
 ## Next: Mythic Ecology
 
-- [ ] Add a second crop only after crop visuals are trustworthy
-- [ ] Give each crop a station-law effect rather than only different costs/timers
-- [ ] Implement one cross-crop interaction as the proof slice
-- [ ] Candidate: Lightning Vine produces power but increases flare vulnerability
+- [x] Add a second crop only after crop visuals are trustworthy — Trickster Vine
+- [x] Give the Wisdom/Trickster pair a station-law interaction rather than only different costs/timers
+- [x] Implement one cross-crop interaction as the proof slice — Trickster steals one neighboring Wisdom tend per growth cycle
+- [x] Add the first recurring station hazard — Solar Flare: warning → accelerated power drain → recovery, with Efficient Grid mitigation
+- [x] Lightning Vine produces +20 power per harvest and each GROWING/READY vine amplifies active Solar Flare drain by +2×
 - [ ] Candidate: Shadow Root benefits from blackout state
-- [ ] Candidate: Trickster Vine relocates or steals a neighboring effect
+- [x] Trickster Vine relocates/steals a neighboring Wisdom tending effect; Paradox Trellis turns it into a shared pulse
 
 ## Later
 

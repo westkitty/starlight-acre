@@ -1,0 +1,143 @@
+{
+ "project": "starlight-acre",
+ "decision_source": "human_ratification (RATIFICATION_DECISIONS.json, all 29 APPROVE_PRIMARY)",
+ "source_queue": "RATIFIED_REPAIR_QUEUE.json (3 of 25 draft entries retained; 22 preserved as rejected candidates)",
+ "repairs_total": 3,
+ "statuses": {
+  "E01_C002": "REPAIRED_WITH_FLAGS",
+  "B01_C001": "REPAIRED",
+  "B02_C002": "REPAIRED"
+ },
+ "repairs": [
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "candidate_id": "E01_C002",
+   "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+   "original_path": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/game_ready.png",
+   "original_source_path": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/source.png",
+   "repair_action": "NORMALIZE_ONLY",
+   "governing_reference": "E02_C001",
+   "repair_status": "REPAIRED_WITH_FLAGS",
+   "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/E01_GREENHOUSE_TILESET/E01_C002/repaired_source.png",
+   "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/E01_GREENHOUSE_TILESET/E01_C002/repaired_game_ready.png",
+   "expected_dimensions": [
+    256,
+    256
+   ],
+   "actual_dimensions": [
+    256,
+    256
+   ],
+   "sha256": {
+    "repaired_source": "a56b2c68f60fc04cf79cd795d74d4545f88be59291354183f766a125c448cd25",
+    "repaired_game_ready": "6064244e02f7e557e4d32013c374a9a9ef5a0263cf2947c7f4e41f51798ff549",
+    "original_source_unchanged": "a56b2c68f60fc04cf79cd795d74d4545f88be59291354183f766a125c448cd25"
+   },
+   "technical_flags_before": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "TILESET_OVERKEYED"
+   ],
+   "technical_flags_after": [
+    "NO_ALPHA",
+    "CONVERSION_REQUIRED"
+   ],
+   "validation": {
+    "decodes": true,
+    "format": "PNG",
+    "exact_256x256": true,
+    "derivation": "direct nearest-neighbor downscale of the intact opaque 1024x1024 source; ZERO keying",
+    "identity_check": "100.0% of pixels retained by the damaged derivative match the repair exactly (42988/42988)",
+    "dark_pixel_retention": "6135 (damaged) -> 28413 (repaired): destroyed dark tile pixels restored",
+    "grid": "16x16 tile grid preserved proportionally (1024->256 exact 4:1)",
+    "source_untouched": true
+   },
+   "notes": "OPAQUE BY DESIGN: the preserved source is an intact opaque tile sheet whose background sits within keying tolerance of the dark navy tiles; per the original run guidance (\"slice tiles from source.png (intact opaque sheet)\") and the live tileset convention, the repaired sheet is a fully opaque 16x16-grid tile sheet. NO_ALPHA is recorded honestly as the by-design state."
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "candidate_id": "B01_C001",
+   "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+   "original_path": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/game_ready.png",
+   "original_source_path": "assets/candidates/arena_agent_asset_run/slots/B01_GREENHOUSE_BACKGROUND/B01_C001/source.png",
+   "repair_action": "TARGETED_IMAGE_EDIT",
+   "governing_reference": "E02_C001",
+   "repair_status": "REPAIRED",
+   "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/B01_GREENHOUSE_BACKGROUND/B01_C001/repaired_source.png",
+   "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/B01_GREENHOUSE_BACKGROUND/B01_C001/repaired_game_ready.png",
+   "expected_dimensions": [
+    640,
+    360
+   ],
+   "actual_dimensions": [
+    640,
+    360
+   ],
+   "sha256": {
+    "repaired_source": "549c815d30b54f88d49cb18e26f0aa26dfa762691fd6c3b211d0f858aba2dea4",
+    "repaired_game_ready": "8928d50a54293cfe9da1f000d32ff94cbcf44a99aa8518d93fca7fff1b61681e",
+    "original_source_unchanged": "b0d4b1a1f7eead0281be51cda3de52d4b40ec90f72780be4bacfc07a3d637f32"
+   },
+   "technical_flags_before": [
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
+   ],
+   "technical_flags_after": [
+    "CONVERSION_REQUIRED"
+   ],
+   "validation": {
+    "decodes": true,
+    "format": "PNG",
+    "exact_640x360": true,
+    "deterministic_derivation": "center-crop to 16:9 + nearest-neighbor downscale (no painting)",
+    "edge_calm_margin_repaired": 0.991,
+    "edge_calm_margin_damaged": 0.967,
+    "margin_improved": true
+   },
+   "notes": "targeted image edit of the ratified candidate source; composition recomposed to bring structures fully inside frame; visual composition QA (identity/palette/depth) requires human viewing \u2014 not claimed here; deterministic checks only; CROPPED_CONTENT resolved by recomposition (structures pulled fully inside frame); no visual-approval claim \u2014 this environment cannot view images"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_C002",
+   "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+   "original_path": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/game_ready.png",
+   "original_source_path": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/source.png",
+   "repair_action": "TARGETED_IMAGE_EDIT",
+   "governing_reference": "B01_C001",
+   "repair_status": "REPAIRED",
+   "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/B02_ENGINEERING_BACKGROUND/B02_C002/repaired_source.png",
+   "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/B02_ENGINEERING_BACKGROUND/B02_C002/repaired_game_ready.png",
+   "expected_dimensions": [
+    640,
+    360
+   ],
+   "actual_dimensions": [
+    640,
+    360
+   ],
+   "sha256": {
+    "repaired_source": "d7d3246bdee71d6efe25555c7e68f1c68194ab6737832aa1e861c208782370cf",
+    "repaired_game_ready": "b8280fbffb57c65ffa4e5a715584c8074502ce47dfb6aa6172f97e61f0c117ec",
+    "original_source_unchanged": "0121a01890b98e1c7163319710390c2db51fbfa90607af62bac1c08534821711"
+   },
+   "technical_flags_before": [
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
+   ],
+   "technical_flags_after": [
+    "CONVERSION_REQUIRED"
+   ],
+   "validation": {
+    "decodes": true,
+    "format": "PNG",
+    "exact_640x360": true,
+    "deterministic_derivation": "center-crop to 16:9 + nearest-neighbor downscale (no painting)",
+    "edge_calm_margin_repaired": 0.953,
+    "edge_calm_margin_damaged": 0.917,
+    "margin_improved": true
+   },
+   "notes": "targeted image edit of the ratified candidate source; composition recomposed to bring structures fully inside frame; visual composition QA (identity/palette/depth) requires human viewing \u2014 not claimed here; deterministic checks only; CROPPED_CONTENT resolved by recomposition (structures pulled fully inside frame); no visual-approval claim \u2014 this environment cannot view images"
+  }
+ ]
+}

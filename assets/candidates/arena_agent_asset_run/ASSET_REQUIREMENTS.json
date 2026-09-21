@@ -1,0 +1,262 @@
+{
+  "project": "starlight-acre",
+  "run_id": "arena_agent_asset_run",
+  "created": "2026-09-20",
+  "engine": "Godot 4.7.x",
+  "view": "2D side-view",
+  "authority_note": "Dimensions and slicing recorded from CURRENT implementation scenes (.tscn), which override historical prose documentation. Legacy generated sources in assets/ are 640x640 and do NOT define the integration contract; scenes slice game-sized regions (Player.tscn 32x48 frames, CropPlot.tscn hframes=4, HUD.tscn 16x16 icons, Repair/Replenish 32x64 atlas regions, TileSetAtlasSource 16x16). This run produces game-ready files at those true target sizes.",
+  "palette_anchors": {
+    "deep_space_navy": "#0A0E1A",
+    "dusk_blue": "#1E2D4A",
+    "hydroponic_teal": "#2E8B8B",
+    "moss_green": "#4F7942",
+    "mythic_warm_gold": "#D4AF37",
+    "maintenance_copper": "#B87333",
+    "station_gray": "#708090",
+    "bone_highlight": "#F5F5DC"
+  },
+  "asset_slots": {
+    "A01_GARDENER_DRONE": {
+      "slot_id": "A01_GARDENER_DRONE",
+      "priority": "A",
+      "expected_game_width": 32,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "single sprite, 32x32, bottom-center/hover-center anchor",
+      "candidates": [
+        "A01_C001",
+        "A01_C002",
+        "A01_C003"
+      ],
+      "source_of_truth": "actors/agents/GardenerDrone.tscn placeholder ColorRect 16x32, bottom-center anchor at origin"
+    },
+    "T02_RESEARCH_TERMINAL": {
+      "slot_id": "T02_RESEARCH_TERMINAL",
+      "priority": "A",
+      "expected_game_width": 64,
+      "expected_game_height": 80,
+      "alpha_expected": true,
+      "expected_frame_layout": "single sprite, 64x80 canvas, body ~56x72, bottom-center anchor at floor line",
+      "candidates": [
+        "T02_C001",
+        "T02_C002",
+        "T02_C003"
+      ],
+      "source_of_truth": "actors/terminals/ResearchTerminal.tscn Polygon2D placeholder; interaction shape 56x72 centered (0,-36)"
+    },
+    "W01_SECTOR_DOOR": {
+      "slot_id": "W01_SECTOR_DOOR",
+      "priority": "A",
+      "expected_game_width": 64,
+      "expected_game_height": 112,
+      "alpha_expected": true,
+      "expected_frame_layout": "single prop, 64x112 canvas, ~4x7 tiles of 16px, bottom-center anchor, no surrounding wall",
+      "candidates": [
+        "W01_C001",
+        "W01_C002",
+        "W01_C003"
+      ],
+      "source_of_truth": "systems/world/SectorDoor.tscn Polygon2D placeholder ~60x104; interaction shape 72x112 centered (0,-56)"
+    },
+    "B02_ENGINEERING_BACKGROUND": {
+      "slot_id": "B02_ENGINEERING_BACKGROUND",
+      "priority": "A",
+      "expected_game_width": 640,
+      "expected_game_height": 360,
+      "alpha_expected": false,
+      "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
+      "candidates": [
+        "B02_C001",
+        "B02_C002",
+        "B02_C003"
+      ],
+      "source_of_truth": "scenes/world/EngineeringBay.tscn Backdrop Polygon2D -640..640 x -360..280; internal res 640x360 per assumptions doc"
+    },
+    "E02_ENGINEERING_TILESET": {
+      "slot_id": "E02_ENGINEERING_TILESET",
+      "priority": "A",
+      "expected_game_width": 256,
+      "expected_game_height": 256,
+      "alpha_expected": false,
+      "expected_frame_layout": "tileset sheet 256x256, strict 16x16 grid, 16 columns x 16 rows, 256 tiles, no spacing",
+      "candidates": [
+        "E02_C001",
+        "E02_C002",
+        "E02_C003"
+      ],
+      "source_of_truth": "scenes tileset pattern: TileSetAtlasSource texture_region_size 16x16 (GreenhouseSector.tscn)"
+    },
+    "C02_TRICKSTER_VINE": {
+      "slot_id": "C02_TRICKSTER_VINE",
+      "priority": "A",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells left-to-right: empty planter / seedling / growing / ready; identical planter in all frames",
+      "candidates": [
+        "C02_C001",
+        "C02_C002",
+        "C02_C003"
+      ],
+      "source_of_truth": "actors/crops/CropPlot.tscn Sprite2D hframes=4, 32x32 cells, position (0,-16) bottom-center"
+    },
+    "D01_DEXTER_VENDOR": {
+      "slot_id": "D01_DEXTER_VENDOR",
+      "priority": "A",
+      "expected_game_width": 64,
+      "expected_game_height": 64,
+      "alpha_expected": true,
+      "expected_frame_layout": "single character sprite, 64x64 canvas, bottom-center anchor, strict side view",
+      "candidates": [
+        "D01_C001",
+        "D01_C002",
+        "D01_C003"
+      ],
+      "source_of_truth": "defined by run prompt; docs/GAME_DESIGN.md Phase 3 vendor (docs name 'Stinkweasel'; run contract redefines as tricolor Phalene dog)"
+    },
+    "D02_DEXTER_VENDOR_KIOSK": {
+      "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+      "priority": "A",
+      "expected_game_width": 96,
+      "expected_game_height": 64,
+      "alpha_expected": true,
+      "expected_frame_layout": "single prop, 96x64 canvas, bottom-center anchor, clear space left for Dexter beside/within the composition, NO dog in this asset",
+      "candidates": [
+        "D02_C001",
+        "D02_C002",
+        "D02_C003"
+      ],
+      "source_of_truth": "defined by run prompt; Docking Bay vendor from docs/GAME_DESIGN.md"
+    },
+    "P01_PLAYER_SHEET": {
+      "slot_id": "P01_PLAYER_SHEET",
+      "priority": "B",
+      "expected_game_width": 192,
+      "expected_game_height": 192,
+      "alpha_expected": true,
+      "expected_frame_layout": "animation sheet 192x192, 6 columns x 4 rows of 32x48 frames; row1: idle x4 then 2 empty; row2: walk x6; row3: jump, fall, land then 3 empty; row4: interact x2 then 4 empty",
+      "candidates": [
+        "P01_C001",
+        "P01_C002"
+      ],
+      "source_of_truth": "actors/player/Player.tscn SpriteFrames atlas regions 32x48, rows y=0/48/96/144"
+    },
+    "C01_WISDOM_FRUIT": {
+      "slot_id": "C01_WISDOM_FRUIT",
+      "priority": "B",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+      "candidates": [
+        "C01_C001",
+        "C01_C002"
+      ],
+      "source_of_truth": "actors/crops/CropPlot.tscn Sprite2D hframes=4 (wisdom_fruit_states.png)"
+    },
+    "T01_REPAIR_REPLENISH_TERMINALS": {
+      "slot_id": "T01_REPAIR_REPLENISH_TERMINALS",
+      "priority": "B",
+      "expected_game_width": 64,
+      "expected_game_height": 64,
+      "alpha_expected": true,
+      "expected_frame_layout": "two-terminal sheet 64x64: LEFT cell 32x64 repair terminal, RIGHT cell 32x64 replenish terminal, bottom-center anchors",
+      "candidates": [
+        "T01_C001",
+        "T01_C002"
+      ],
+      "source_of_truth": "actors/terminals/RepairTerminal.tscn + ReplenishTerminal.tscn AtlasTexture regions Rect2(0,0,32,64) / Rect2(32,0,32,64)"
+    },
+    "U01_HUD_ICONS": {
+      "slot_id": "U01_HUD_ICONS",
+      "priority": "B",
+      "expected_game_width": 80,
+      "expected_game_height": 16,
+      "alpha_expected": true,
+      "expected_frame_layout": "icon strip 80x16, five 16x16 icons in a row: water / nutrients / power / wisdom fruit / interaction E",
+      "candidates": [
+        "U01_C001",
+        "U01_C002"
+      ],
+      "source_of_truth": "ui/hud/HUD.tscn AtlasTexture regions 16x16 at x=0,16,32,48,64"
+    },
+    "E01_GREENHOUSE_TILESET": {
+      "slot_id": "E01_GREENHOUSE_TILESET",
+      "priority": "B",
+      "expected_game_width": 256,
+      "expected_game_height": 256,
+      "alpha_expected": true,
+      "expected_frame_layout": "tileset sheet 256x256, strict 16x16 grid, 16 columns x 16 rows, 256 tiles, no spacing",
+      "candidates": [
+        "E01_C001",
+        "E01_C002"
+      ],
+      "source_of_truth": "scenes/world/GreenhouseSector.tscn TileSetAtlasSource texture_region_size 16x16"
+    },
+    "B01_GREENHOUSE_BACKGROUND": {
+      "slot_id": "B01_GREENHOUSE_BACKGROUND",
+      "priority": "B",
+      "expected_game_width": 640,
+      "expected_game_height": 360,
+      "alpha_expected": false,
+      "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
+      "candidates": [
+        "B01_C001",
+        "B01_C002"
+      ],
+      "source_of_truth": "scenes/world/GreenhouseSector.tscn Background Sprite2D; internal res 640x360 per assumptions doc"
+    },
+    "V01_CORE_VFX": {
+      "slot_id": "V01_CORE_VFX",
+      "priority": "B",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "vfx strip 128x32, four consecutive 32x32 cells: harvest burst / repair spark / growth glow / interaction ping, each isolated in its cell",
+      "candidates": [
+        "V01_C001",
+        "V01_C002"
+      ],
+      "source_of_truth": "assets/effects/pixel_art_effects.png family; CropPlot ReadyGlow consumes effect textures"
+    },
+    "C03_LIGHTNING_VINE": {
+      "slot_id": "C03_LIGHTNING_VINE",
+      "priority": "C",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+      "candidates": [
+        "C03_C001",
+        "C03_C002"
+      ],
+      "source_of_truth": "run prompt definition"
+    },
+    "C04_SHADOW_ROOT": {
+      "slot_id": "C04_SHADOW_ROOT",
+      "priority": "C",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+      "candidates": [
+        "C04_C001",
+        "C04_C002"
+      ],
+      "source_of_truth": "run prompt definition"
+    },
+    "C05_GOLDEN_BLOSSOM": {
+      "slot_id": "C05_GOLDEN_BLOSSOM",
+      "priority": "C",
+      "expected_game_width": 128,
+      "expected_game_height": 32,
+      "alpha_expected": true,
+      "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+      "candidates": [
+        "C05_C001",
+        "C05_C002"
+      ],
+      "source_of_truth": "run prompt definition"
+    }
+  }
+}

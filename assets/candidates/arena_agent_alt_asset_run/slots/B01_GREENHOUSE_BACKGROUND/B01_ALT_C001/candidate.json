@@ -1,0 +1,38 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B01_GREENHOUSE_BACKGROUND",
+  "source_candidate_id": "B01_C001",
+  "alternate_candidate_id": "B01_ALT_C001",
+  "priority": "B",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B01_GREENHOUSE_BACKGROUND/B01_ALT_C001/source.png",
+  "game_ready_file": "slots/B01_GREENHOUSE_BACKGROUND/B01_ALT_C001/game_ready.png",
+  "actual_source_width": 1376,
+  "actual_source_height": 768,
+  "actual_game_width": 640,
+  "actual_game_height": 360,
+  "expected_width": 640,
+  "expected_height": 360,
+  "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
+  "alpha_present": false,
+  "sha256_source": "e57548dd7c9df163b7a716d4eaeefb3ea8fda33207b8b7422681c446fe41c725",
+  "sha256_game_ready": "55292ac7b32f0a7fe93ef448a21b13d2044d032424c9bf617d19d845f21f98a6",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D side-view game: the far interior of a deteriorating orbital greenhouse where something impossible and precious is being cultivated. Opaque flat full-frame illustration, no border, no letterboxing, no vignette frame. Include: station shell ribs in dusk blue, tall greenhouse glazing panels with worn seal seams, deep space beyond the glass with distant stars and a restrained nebular wash of teal and faint warm gold, distant hydroponic infrastructure racks and pipes, quiet teal biological light, warm-gold mythic highlights from a far canopy of impossible plants, evidence of age and repeated repair (patched panels, copper weld seams). Calm atmospheric middle band with negative space for foreground gameplay. No characters, no UI, no doors, no foreground floors or platforms, no readable text, not a level screenshot, no isometric or top-down view.  CHALLENGER DESIGN (materially different from the incumbent huge glazed dome curve with a distant gold tree silhouette): a terraced grow-bay canyon: the greenhouse interior steps down in wide terraces from the upper left, thin nutrient waterfalls dropping between terrace edges; a calm giant seed-shaped bioreactor glows soft teal in the mid depth; the impossible gold plant canopy hangs DOWN from overhead trellis arms instead of standing; tall glazing panels on the far right with stars beyond; patched panels and copper weld seams along the terrace lips; wide quiet negative space across the middle band.",
+  "challenger_axes": [
+    "spatial concept: stepped terrace canyon descending left vs one huge dome curve",
+    "water language: thin nutrient waterfalls between terraces vs none",
+    "mythic anchor: calm giant seed-shaped bioreactor mid-depth vs distant gold tree silhouette",
+    "canopy treatment: gold foliage hanging down from overhead trellis vs standing tree"
+  ],
+  "technical_flags": [
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
+  ],
+  "notes": [
+    "center-cropped to 16:9"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

@@ -1,0 +1,41 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "D01_DEXTER_VENDOR",
+  "source_candidate_id": "D01_C003",
+  "alternate_candidate_id": "D01_ALT_C003",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/D01_DEXTER_VENDOR/D01_ALT_C003/source.png",
+  "game_ready_file": "slots/D01_DEXTER_VENDOR/D01_ALT_C003/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 64,
+  "actual_game_height": 64,
+  "expected_width": 64,
+  "expected_height": 64,
+  "expected_frame_layout": "single character sprite, 64x64 canvas, bottom-center anchor, strict side view",
+  "alpha_present": true,
+  "sha256_source": "6d47dfa01acb04d6bc9295e9c62b98aed46744f7616babe9a5afae057b43b8b0",
+  "sha256_game_ready": "5b37bdb88a2a540453e962df5db38a8cb1f6358365e16cc1c04cd067cd9a2d15",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A tiny elderly tricolor Phalene dog game sprite for a 2D side-view pixel game: exactly ONE dog, single sprite centered on a solid flat pure magenta #FF00FF background (one flat color edge to edge, no checkerboard, no border). Square 1:1 composition. Dexter is a VERY SMALL compact Phalene (the drop-eared variant of the Papillon, NOT a Papillon with upright ears): long silky butterfly-spaniel coat, FLOPPY EARS HANGING DOWN beside his head, black/dark and white and warm tan tricolor markings, small elderly dog with slightly grayed muzzle, compact body, calm unimpressed demeanor, half-lidded small dark eyes, closed mouth, no grin, no giant cute eyes, not puppy-like, no excessive cuteness. Strict side view, bottom of paws on the canvas floor line, dark subtle outline. A tiny restrained cargo accessory is allowed. Visual thesis: a tiny ancient authority who happens to sell you things. No humanoid clothes, no fantasy merchant caricature, no second dog, no crate, no floor, no drop shadow on the background.  CHALLENGER DESIGN (materially different from the incumbent standing pose with a slight head-tilt of judgment and a thin teal collar tag): Dexter glancing back over his shoulder: body standing square but the head turned toward the viewer checking who approaches, ears swinging with the turn; no collar tag - instead a tiny brass botanist's loupe on a short cord at the chest; the coat interpreted with slightly wavy feathering and one crisp white forepaw sock; same floppy drop ears, same grayed muzzle, same half-lidded unimpressed ancient authority; strict side view body with the head-turn readable.",
+  "challenger_axes": [
+    "pose: glancing back over the shoulder vs standing with slight head-tilt",
+    "accessory: tiny brass botanist's loupe on a cord vs thin teal collar tag",
+    "coat interpretation: wavy feathering + one white forepaw sock vs smooth silky fall",
+    "gaze: head turned toward viewer, ears swinging vs level forward gaze"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 74.3%)",
+    "content downscaled x0.0832 (NEAREST) into 64x64 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

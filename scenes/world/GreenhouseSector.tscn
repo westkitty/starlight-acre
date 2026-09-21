@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=18 format=3]
 
 [ext_resource type="Script" path="res://systems/world/sector_controller.gd" id="0_sector"]
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
@@ -11,19 +11,97 @@
 [ext_resource type="Texture2D" path="res://assets/tilesets/greenhouse_tiles.png" id="8_tiles"]
 [ext_resource type="PackedScene" path="res://actors/agents/GardenerDrone.tscn" id="9_drone"]
 [ext_resource type="PackedScene" path="res://systems/world/SectorDoor.tscn" id="10_door"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
-size = Vector2(1200, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
-size = Vector2(32, 600)
+[ext_resource type="Resource" path="res://data/crops/trickster_vine.tres" id="11_trickster_def"]
+[ext_resource type="Texture2D" path="res://assets/sprites/crops/trickster_vine_states.png" id="12_trickster_tex"]
+[ext_resource type="PackedScene" path="res://systems/hazards/SolarFlareController.tscn" id="13_flare"]
+[ext_resource type="Resource" path="res://data/crops/lightning_vine.tres" id="14_lightning_def"]
+[ext_resource type="Texture2D" path="res://assets/sprites/crops/lightning_vine_states.png" id="15_lightning_tex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_greenhouse"]
 texture = ExtResource("8_tiles")
-texture_region_size = Vector2i(16, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_greenhouse"]
-tile_size = Vector2i(16, 16)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_greenhouse")
 
 [node name="GreenhouseSector" type="Node2D"]
@@ -39,31 +117,16 @@ tile_set = SubResource("TileSet_greenhouse")
 z_index = -5
 
 [node name="TileMapLayer_Floor" type="TileMapLayer" parent="."]
+z_index = -1
+position = Vector2(8, 8)
+tile_map_data = PackedByteArray("AADa/xAAAAACAAAAAADa/xEAAAADAAMAAADb/xAAAAADAAAAAADb/xEAAAAAAAMAAADc/xAAAAAAAAAAAADc/xEAAAABAAMAAADd/xAAAAABAAAAAADd/xEAAAACAAMAAADe/xAAAAACAAAAAADe/xEAAAADAAMAAADf/xAAAAADAAAAAADf/xEAAAAAAAMAAADg/xAAAAAAAAAAAADg/xEAAAABAAMAAADh/xAAAAABAAAAAADh/xEAAAACAAMAAADi/xAAAAACAAAAAADi/xEAAAADAAMAAADj/xAAAAADAAAAAADj/xEAAAAAAAMAAADk/xAAAAAAAAAAAADk/xEAAAABAAMAAADl/xAAAAABAAAAAADl/xEAAAACAAMAAADm/xAAAAACAAAAAADm/xEAAAADAAMAAADn/xAAAAADAAAAAADn/xEAAAAAAAMAAADo/xAAAAAAAAAAAADo/xEAAAABAAMAAADp/xAAAAABAAAAAADp/xEAAAACAAMAAADq/xAAAAACAAAAAADq/xEAAAADAAMAAADr/xAAAAADAAAAAADr/xEAAAAAAAMAAADs/xAAAAAAAAAAAADs/xEAAAABAAMAAADt/xAAAAABAAAAAADt/xEAAAACAAMAAADu/xAAAAACAAAAAADu/xEAAAADAAMAAADv/xAAAAADAAAAAADv/xEAAAAAAAMAAADw/xAAAAAAAAAAAADw/xEAAAABAAMAAADx/xAAAAABAAAAAADx/xEAAAACAAMAAADy/xAAAAACAAAAAADy/xEAAAADAAMAAADz/xAAAAADAAAAAADz/xEAAAAAAAMAAAD0/xAAAAAAAAAAAAD0/xEAAAABAAMAAAD1/xAAAAABAAAAAAD1/xEAAAACAAMAAAD2/xAAAAACAAAAAAD2/xEAAAADAAMAAAD3/xAAAAADAAAAAAD3/xEAAAAAAAMAAAD4/xAAAAAAAAAAAAD4/xEAAAABAAMAAAD5/xAAAAABAAAAAAD5/xEAAAACAAMAAAD6/xAAAAACAAAAAAD6/xEAAAADAAMAAAD7/xAAAAADAAAAAAD7/xEAAAAAAAMAAAD8/xAAAAAAAAAAAAD8/xEAAAABAAMAAAD9/xAAAAABAAAAAAD9/xEAAAACAAMAAAD+/xAAAAACAAAAAAD+/xEAAAADAAMAAAD//xAAAAADAAAAAAD//xEAAAAAAAMAAAAAABAAAAAAAAAAAAAAABEAAAABAAMAAAABABAAAAABAAAAAAABABEAAAACAAMAAAACABAAAAACAAAAAAACABEAAAADAAMAAAADABAAAAADAAAAAAADABEAAAAAAAMAAAAEABAAAAAAAAAAAAAEABEAAAABAAMAAAAFABAAAAABAAAAAAAFABEAAAACAAMAAAAGABAAAAACAAAAAAAGABEAAAADAAMAAAAHABAAAAADAAAAAAAHABEAAAAAAAMAAAAIABAAAAAAAAAAAAAIABEAAAABAAMAAAAJABAAAAABAAAAAAAJABEAAAACAAMAAAAKABAAAAACAAAAAAAKABEAAAADAAMAAAALABAAAAADAAAAAAALABEAAAAAAAMAAAAMABAAAAAAAAAAAAAMABEAAAABAAMAAAANABAAAAABAAAAAAANABEAAAACAAMAAAAOABAAAAACAAAAAAAOABEAAAADAAMAAAAPABAAAAADAAAAAAAPABEAAAAAAAMAAAAQABAAAAAAAAAAAAAQABEAAAABAAMAAAARABAAAAABAAAAAAARABEAAAACAAMAAAASABAAAAACAAAAAAASABEAAAADAAMAAAATABAAAAADAAAAAAATABEAAAAAAAMAAAAUABAAAAAAAAAAAAAUABEAAAABAAMAAAAVABAAAAABAAAAAAAVABEAAAACAAMAAAAWABAAAAACAAAAAAAWABEAAAADAAMAAAAXABAAAAADAAAAAAAXABEAAAAAAAMAAAAYABAAAAAAAAAAAAAYABEAAAABAAMAAAAZABAAAAABAAAAAAAZABEAAAACAAMAAAAaABAAAAACAAAAAAAaABEAAAADAAMAAAAbABAAAAADAAAAAAAbABEAAAAAAAMAAAAcABAAAAAAAAAAAAAcABEAAAABAAMAAAAdABAAAAABAAAAAAAdABEAAAACAAMAAAAeABAAAAACAAAAAAAeABEAAAADAAMAAAAfABAAAAADAAAAAAAfABEAAAAAAAMAAAAgABAAAAAAAAAAAAAgABEAAAABAAMAAAAhABAAAAABAAAAAAAhABEAAAACAAMAAAAiABAAAAACAAAAAAAiABEAAAADAAMAAAAjABAAAAADAAAAAAAjABEAAAAAAAMAAAAkABAAAAAAAAAAAAAkABEAAAABAAMAAAA=")
+tile_set = SubResource("TileSet_greenhouse")
 
 [node name="TileMapLayer_Walls" type="TileMapLayer" parent="."]
-
-[node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(0, 280)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-shape = SubResource("RectangleShape2D_floor")
-
-[node name="FloorVisual" type="ColorRect" parent="Floor"]
-offset_left = -600.0
-offset_top = -16.0
-offset_right = 600.0
-offset_bottom = 16.0
-color = Color(0.20, 0.30, 0.25, 1.0)
-
-[node name="WallLeft" type="StaticBody2D" parent="."]
-position = Vector2(-616, 0)
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
-shape = SubResource("RectangleShape2D_wall")
-
-[node name="WallRight" type="StaticBody2D" parent="."]
-position = Vector2(616, 0)
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
-shape = SubResource("RectangleShape2D_wall")
+z_index = -2
+position = Vector2(8, 8)
+tile_map_data = PackedByteArray("AADY/+7/AAAEAAIAAADZ/+7/AAAHAAIAAAAlAO7/AAAEAAIAAAAmAO7/AAAHAAIAAADY/+//AAAEAAMAAADZ/+//AAAHAAMAAAAlAO//AAAEAAMAAAAmAO//AAAHAAMAAADY//D/AAAEAAQAAADZ//D/AAAHAAQAAAAlAPD/AAAEAAQAAAAmAPD/AAAHAAQAAADY//H/AAAEAAAAAADZ//H/AAAHAAAAAAAlAPH/AAAEAAAAAAAmAPH/AAAHAAAAAADY//L/AAAEAAEAAADZ//L/AAAHAAEAAAAlAPL/AAAEAAEAAAAmAPL/AAAHAAEAAADY//P/AAAEAAIAAADZ//P/AAAHAAIAAAAlAPP/AAAEAAIAAAAmAPP/AAAHAAIAAADY//T/AAAEAAMAAADZ//T/AAAHAAMAAAAlAPT/AAAEAAMAAAAmAPT/AAAHAAMAAADY//X/AAAEAAQAAADZ//X/AAAHAAQAAAAlAPX/AAAEAAQAAAAmAPX/AAAHAAQAAADY//b/AAAEAAAAAADZ//b/AAAHAAAAAAAlAPb/AAAEAAAAAAAmAPb/AAAHAAAAAADY//f/AAAEAAEAAADZ//f/AAAHAAEAAAAlAPf/AAAEAAEAAAAmAPf/AAAHAAEAAADY//j/AAAEAAIAAADZ//j/AAAHAAIAAAAlAPj/AAAEAAIAAAAmAPj/AAAHAAIAAADY//n/AAAEAAMAAADZ//n/AAAHAAMAAAAlAPn/AAAEAAMAAAAmAPn/AAAHAAMAAADY//r/AAAEAAQAAADZ//r/AAAHAAQAAAAlAPr/AAAEAAQAAAAmAPr/AAAHAAQAAADY//v/AAAEAAAAAADZ//v/AAAHAAAAAAAlAPv/AAAEAAAAAAAmAPv/AAAHAAAAAADY//z/AAAEAAEAAADZ//z/AAAHAAEAAAAlAPz/AAAEAAEAAAAmAPz/AAAHAAEAAADY//3/AAAEAAIAAADZ//3/AAAHAAIAAAAlAP3/AAAEAAIAAAAmAP3/AAAHAAIAAADY//7/AAAEAAMAAADZ//7/AAAHAAMAAAAlAP7/AAAEAAMAAAAmAP7/AAAHAAMAAADY////AAAEAAQAAADZ////AAAHAAQAAAAlAP//AAAEAAQAAAAmAP//AAAHAAQAAADY/wAAAAAEAAAAAADZ/wAAAAAHAAAAAAAlAAAAAAAEAAAAAAAmAAAAAAAHAAAAAADY/wEAAAAEAAEAAADZ/wEAAAAHAAEAAAAlAAEAAAAEAAEAAAAmAAEAAAAHAAEAAADY/wIAAAAEAAIAAADZ/wIAAAAHAAIAAAAlAAIAAAAEAAIAAAAmAAIAAAAHAAIAAADY/wMAAAAEAAMAAADZ/wMAAAAHAAMAAAAlAAMAAAAEAAMAAAAmAAMAAAAHAAMAAADY/wQAAAAEAAQAAADZ/wQAAAAHAAQAAAAlAAQAAAAEAAQAAAAmAAQAAAAHAAQAAADY/wUAAAAEAAAAAADZ/wUAAAAHAAAAAAAlAAUAAAAEAAAAAAAmAAUAAAAHAAAAAADY/wYAAAAEAAEAAADZ/wYAAAAHAAEAAAAlAAYAAAAEAAEAAAAmAAYAAAAHAAEAAADY/wcAAAAEAAIAAADZ/wcAAAAHAAIAAAAlAAcAAAAEAAIAAAAmAAcAAAAHAAIAAADY/wgAAAAEAAMAAADZ/wgAAAAHAAMAAAAlAAgAAAAEAAMAAAAmAAgAAAAHAAMAAADY/wkAAAAEAAQAAADZ/wkAAAAHAAQAAAAlAAkAAAAEAAQAAAAmAAkAAAAHAAQAAADY/woAAAAEAAAAAADZ/woAAAAHAAAAAAAlAAoAAAAEAAAAAAAmAAoAAAAHAAAAAADY/wsAAAAEAAEAAADZ/wsAAAAHAAEAAAAlAAsAAAAEAAEAAAAmAAsAAAAHAAEAAADY/wwAAAAEAAIAAADZ/wwAAAAHAAIAAAAlAAwAAAAEAAIAAAAmAAwAAAAHAAIAAADY/w0AAAAEAAMAAADZ/w0AAAAHAAMAAAAlAA0AAAAEAAMAAAAmAA0AAAAHAAMAAADY/w4AAAAEAAQAAADZ/w4AAAAHAAQAAAAlAA4AAAAEAAQAAAAmAA4AAAAHAAQAAADY/w8AAAAEAAAAAADZ/w8AAAAHAAAAAAAlAA8AAAAEAAAAAAAmAA8AAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_greenhouse")
 
 [node name="Player" parent="." instance=ExtResource("1_player")]
 position = Vector2(-400, 230)
@@ -71,9 +134,13 @@ position = Vector2(-400, 230)
 [node name="FarmingManager" type="Node" parent="."]
 script = ExtResource("2_fm")
 
+[node name="SolarFlareController" parent="." instance=ExtResource("13_flare")]
+
 [node name="CropPlot0" parent="." instance=ExtResource("3_cropplot")]
 position = Vector2(-200, 238)
 plot_id = "greenhouse_plot_0"
+crop_definition = ExtResource("14_lightning_def")
+crop_texture = ExtResource("15_lightning_tex")
 
 [node name="CropPlot1" parent="." instance=ExtResource("3_cropplot")]
 position = Vector2(0, 238)
@@ -82,6 +149,8 @@ plot_id = "greenhouse_plot_1"
 [node name="CropPlot2" parent="." instance=ExtResource("3_cropplot")]
 position = Vector2(200, 238)
 plot_id = "greenhouse_plot_2"
+crop_definition = ExtResource("11_trickster_def")
+crop_texture = ExtResource("12_trickster_tex")
 
 [node name="HUD" parent="." instance=ExtResource("4_hud")]
 

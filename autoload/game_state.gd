@@ -1,10 +1,13 @@
 extends Node
 
 const SAVE_PATH := "user://save.json"
+const SOLAR_FLARE_BASE_MULTIPLIER := 5.0
+const LIGHTNING_VINE_FLARE_BONUS := 2.0
 
 var water: int = 5
 var nutrient: int = 5
 var wisdom_fruit: int = 0
+var chaos: int = 0
 var power: float = 100.0
 var emergency_resupplies: int = 2
 var upgrades: Dictionary = {}
@@ -12,11 +15,35 @@ var plot_states: Dictionary = {}
 var current_sector: String = "greenhouse"
 var next_player_position: Vector2 = Vector2.ZERO
 
+# Transient hazard state persists across sector transitions within a run but is
+# deliberately not serialized. Reloading the game always starts from a calm window.
+var solar_flare_phase: String = "calm"
+var solar_flare_time_remaining: float = 30.0
+
 func _ready() -> void:
 	load_game()
 
 func power_drain_multiplier() -> float:
 	return 0.6 if upgrades.get("efficient_grid", false) else 1.0
+
+func hazard_power_drain_multiplier() -> float:
+	if solar_flare_phase != "active":
+		return 1.0
+	return SOLAR_FLARE_BASE_MULTIPLIER + LIGHTNING_VINE_FLARE_BONUS * conductive_lightning_vine_count()
+
+func conductive_lightning_vine_count() -> int:
+	var count := 0
+	for state_data in plot_states.values():
+		if str(state_data.get("crop_id", "")) != "lightning_vine":
+			continue
+		var state_name := str(state_data.get("state", ""))
+		if state_name == "GROWING" or state_name == "READY":
+			count += 1
+	return count
+
+func reset_transient_hazards() -> void:
+	solar_flare_phase = "calm"
+	solar_flare_time_remaining = 30.0
 
 func water_cap() -> int:
 	return 15 if upgrades.get("closed_loop_hydroponics", false) else 10
@@ -32,12 +59,15 @@ func unlock_upgrade(id: String) -> void:
 	Events.upgrade_unlocked.emit(id)
 	save_game()
 
-func set_plot_state(plot_id: String, state_name: String, growth_remaining: float, crop_id: String) -> void:
-	plot_states[plot_id] = {
+func set_plot_state(plot_id: String, state_name: String, growth_remaining: float, crop_id: String, extra: Dictionary = {}) -> void:
+	var state_data := {
 		"state": state_name,
 		"growth_remaining": growth_remaining,
 		"crop_id": crop_id
 	}
+	for key in extra:
+		state_data[key] = extra[key]
+	plot_states[plot_id] = state_data
 	save_game()
 
 func get_plot_state(plot_id: String) -> Dictionary:
@@ -45,10 +75,11 @@ func get_plot_state(plot_id: String) -> Dictionary:
 
 func save_game() -> void:
 	var payload := {
-		"version": 1,
+		"version": 2,
 		"water": water,
 		"nutrient": nutrient,
 		"wisdom_fruit": wisdom_fruit,
+		"chaos": chaos,
 		"power": power,
 		"emergency_resupplies": emergency_resupplies,
 		"upgrades": upgrades,
@@ -71,6 +102,7 @@ func load_game() -> void:
 	water = int(parsed.get("water", water))
 	nutrient = int(parsed.get("nutrient", nutrient))
 	wisdom_fruit = int(parsed.get("wisdom_fruit", wisdom_fruit))
+	chaos = int(parsed.get("chaos", chaos))
 	power = float(parsed.get("power", power))
 	emergency_resupplies = int(parsed.get("emergency_resupplies", emergency_resupplies))
 	upgrades = parsed.get("upgrades", {})

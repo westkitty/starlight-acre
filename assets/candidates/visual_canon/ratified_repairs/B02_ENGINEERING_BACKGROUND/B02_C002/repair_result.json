@@ -1,0 +1,42 @@
+{
+ "slot_id": "B02_ENGINEERING_BACKGROUND",
+ "candidate_id": "B02_C002",
+ "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+ "original_path": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/game_ready.png",
+ "original_source_path": "assets/candidates/arena_agent_asset_run/slots/B02_ENGINEERING_BACKGROUND/B02_C002/source.png",
+ "repair_action": "TARGETED_IMAGE_EDIT",
+ "governing_reference": "B01_C001",
+ "repair_status": "REPAIRED",
+ "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/B02_ENGINEERING_BACKGROUND/B02_C002/repaired_source.png",
+ "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/B02_ENGINEERING_BACKGROUND/B02_C002/repaired_game_ready.png",
+ "expected_dimensions": [
+  640,
+  360
+ ],
+ "actual_dimensions": [
+  640,
+  360
+ ],
+ "sha256": {
+  "repaired_source": "d7d3246bdee71d6efe25555c7e68f1c68194ab6737832aa1e861c208782370cf",
+  "repaired_game_ready": "b8280fbffb57c65ffa4e5a715584c8074502ce47dfb6aa6172f97e61f0c117ec",
+  "original_source_unchanged": "0121a01890b98e1c7163319710390c2db51fbfa90607af62bac1c08534821711"
+ },
+ "technical_flags_before": [
+  "CONVERSION_REQUIRED",
+  "CROPPED_CONTENT"
+ ],
+ "technical_flags_after": [
+  "CONVERSION_REQUIRED"
+ ],
+ "validation": {
+  "decodes": true,
+  "format": "PNG",
+  "exact_640x360": true,
+  "deterministic_derivation": "center-crop to 16:9 + nearest-neighbor downscale (no painting)",
+  "edge_calm_margin_repaired": 0.953,
+  "edge_calm_margin_damaged": 0.917,
+  "margin_improved": true
+ },
+ "notes": "targeted image edit of the ratified candidate source; composition recomposed to bring structures fully inside frame; visual composition QA (identity/palette/depth) requires human viewing \u2014 not claimed here; deterministic checks only; CROPPED_CONTENT resolved by recomposition (structures pulled fully inside frame); no visual-approval claim \u2014 this environment cannot view images"
+}

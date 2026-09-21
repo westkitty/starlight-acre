@@ -1,0 +1,42 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B05_ARCHIVE_STACK",
+  "candidate_id": "B05_C001",
+  "asset_name": "Archive Library Data Stack",
+  "priority": "B",
+  "category": "module fixture",
+  "discovery_evidence": "docs/GAME_DESIGN.md Station Expansion: 'Archive Library - Unlocks research upgrades'; research upgrades are already implemented (research_terminal.gd) making the archive a documented, near-term buildable module.",
+  "evidence_paths": [
+    "docs/GAME_DESIGN.md",
+    "actors/terminals/research_terminal.gd"
+  ],
+  "integration_target": "future Archive Library sector (tall shelf prop; matches research-terminal 64x80 scale)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B05_ARCHIVE_STACK/B05_C001/source.png",
+  "game_ready_file": "slots/B05_ARCHIVE_STACK/B05_C001/game_ready.png",
+  "actual_source_width": 928,
+  "actual_source_height": 1152,
+  "actual_game_width": 64,
+  "actual_game_height": 80,
+  "expected_width": 64,
+  "expected_height": 80,
+  "expected_topology": "single prop, 64x80 canvas (matches research terminal scale), bottom-center anchor",
+  "alpha_present": true,
+  "sha256_source": "bffb639c334e342f9d305797612ff1cc9323a20f46e43e487155eaa69f714cbd",
+  "sha256_game_ready": "11bf54ff00707df52ac6ab7e7452bb9c8d6079cb78c05059492b1366706c74e7",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   An archive data-stack for the station's Archive Library in a 2D side-view pixel game: exactly ONE tall shelf prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no border, no frame). Slightly tall portrait composition (about 4:5). Strict side view. A worn dusk-blue and station-gray cabinet stack with maintenance copper trim; the archived knowledge shown as small glowing data crystals or sealed vials in tidy rows, cyan-teal with restrained violet accents; one small retrieval arm or reader probe; calm, precious, slightly uncanny. Dark subtle outline. No readable text, no letters, no second cabinet, no floor, no stage, no drop shadow on the background.  Variant 1: three stacked shelf rows of glowing data crystals behind a copper-framed glass front, small reader probe arm at the middle shelf.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 38.1%)",
+    "content downscaled x0.0811 (NEAREST) into 64x80 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

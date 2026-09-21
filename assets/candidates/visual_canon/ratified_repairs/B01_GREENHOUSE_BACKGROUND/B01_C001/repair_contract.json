@@ -1,0 +1,14 @@
+{
+ "slot_id": "B01_GREENHOUSE_BACKGROUND",
+ "candidate_id": "B01_C001",
+ "repair_action": "TARGETED_IMAGE_EDIT",
+ "problem": "CROPPED_CONTENT: composition cut at canvas edges (least-bad primary, still cropped)",
+ "severity": "medium",
+ "governing_reference": "E02_C001",
+ "retained_rule": "A/B: defective candidate is the ratified reference for its slot",
+ "contract": "Targeted image edit of the actual candidate source: recompose the greenhouse far-background into a complete 16:9 composition where the dome curve, distant glowing tree and machinery bands sit fully inside frame with safe margins. Preserve the exact scene identity, palette, depth hierarchy and calm middle negative-space band. Then deterministic center-crop to 16:9 + nearest-neighbor downscale to exactly 640x360.",
+ "expected_dimensions": [
+  640,
+  360
+ ]
+}

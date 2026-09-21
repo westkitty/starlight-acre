@@ -21,13 +21,17 @@ Implemented:
 - Greenhouse Sector plus Engineering Bay with bidirectional doors
 - persistent resources, upgrades, crop state, current sector, and transition spawn state
 - JSON save state at `user://save.json`
+- Trickster Vine second crop with fleeing fruit, persistent Chaos resource, and one-shot Wisdom↔Trickster Mythic Ecology
+- Paradox Trellis research upgrade (3 Chaos) that converts the Trickster theft into a shared tending pulse
 - Godot 4.7.1 headless editor, smoke, and main-scene runtime validation
 - normalized repository image assets so `.png` files contain actual PNG bytes
+- canonical Greenhouse TileMap floor/walls with TileSet collision; obsolete StaticBody2D room stubs removed after regression proof
+- 640×360 internal pixel-art viewport with a bounded player-follow camera and camera-synced sector backgrounds
+- first recurring station hazard: Solar Flare (5s warning, 8s active, 5× active power drain, 45s recovery), with Efficient Grid mitigation and canonical hazard-VFX HUD feedback
+- Lightning Vine third crop: 28s growth, +20 renewable power harvest, and a +2× active-flare conductor penalty while GROWING/READY
 
 Still incomplete:
-- visual TileMapLayer painting and collision migration
-- visual QA/reslicing of generated sprite sheets: the source images are 640x640 despite older docs claiming game-ready sheet dimensions
-- second mythic crop and cross-crop Mythic Ecology interactions
+- human visual QA of the promoted canonical sprite sheets and scene composition
 - Dexter vendor
 - audio and final feedback polish
 - manual end-to-end playthrough in the Godot editor
@@ -35,10 +39,10 @@ Still incomplete:
 ## Core Loop
 
 1. Check water, nutrients, power, and Wisdom Fruit.
-2. Plant Wisdom Fruit using water and nutrients.
+2. Plant mythic crops using water and nutrients: Lightning Vine, Wisdom Fruit, and Trickster Vine now occupy the three Greenhouse plots.
 3. Tend crops manually or let the Gardener Drone travel to a valid crop.
-4. Harvest Wisdom Fruit.
-5. Spend produce on resupply, deep power repair, or research.
+4. Harvest Wisdom for research, catch Trickster Fruit for Chaos, or harvest Lightning Vine for renewable power.
+5. Spend produce on resupply, deep power repair, or research while timing Lightning harvests around Solar Flare warnings.
 6. Enter Engineering and buy permanent station upgrades.
 7. Return to the greenhouse with state preserved.
 

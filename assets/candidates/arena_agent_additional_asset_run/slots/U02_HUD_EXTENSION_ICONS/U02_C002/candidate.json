@@ -1,0 +1,49 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "U02_HUD_EXTENSION_ICONS",
+  "candidate_id": "U02_C002",
+  "asset_name": "HUD Extension Icon Strip",
+  "priority": "A",
+  "category": "UI icons",
+  "discovery_evidence": "game_state.gd implements emergency_resupplies (starting 2) and farming_manager.gd/replenish_terminal.gd surface it in prompts, but HUD.tscn shows only water/nutrient/power/fruit icons - the resupply counter has no icon; GAME_DESIGN.md lists planned resources 'Biomass, Refined Goods, Research Data, Anomaly Residue'; research_terminal.gd implements two upgrades (efficient_grid, closed_loop_hydroponics) whose unlock messages (hud.gd _on_upgrade_unlocked) are text-only.",
+  "evidence_paths": [
+    "autoload/game_state.gd",
+    "ui/hud/HUD.tscn",
+    "ui/hud/hud.gd",
+    "systems/farming/farming_manager.gd",
+    "actors/terminals/research_terminal.gd",
+    "docs/GAME_DESIGN.md"
+  ],
+  "integration_target": "ui/hud/HUD.tscn TopBar extension (hud_icons.png atlas convention: 16x16 cells)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/U02_HUD_EXTENSION_ICONS/U02_C002/source.png",
+  "game_ready_file": "slots/U02_HUD_EXTENSION_ICONS/U02_C002/game_ready.png",
+  "actual_source_width": 2544,
+  "actual_source_height": 416,
+  "actual_game_width": 96,
+  "actual_game_height": 16,
+  "expected_width": 96,
+  "expected_height": 16,
+  "expected_topology": "icon strip 96x16, six 16x16 icons in a row: resupply canister / biomass / research data / anomaly residue / upgrade component / seed",
+  "alpha_present": true,
+  "sha256_source": "4fef95d0bce18a4d0fef1866c7f3176d9639d63f6f4f55198bb1ca2c1cc7eebc",
+  "sha256_game_ready": "882a508960a630f8a09f47b509fd5627deb2ad2adf58ccc2d7a04d4168f7a0cc",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   HUD extension icon strip for a 2D pixel game: ONE row of six 16x16 pixel icons on a very wide thin strip (96x16 proportion, 6:1), on a solid flat pure magenta #FF00FF background that is ONE single flat color edge to edge - between icons, around glyphs, across the whole strip - with no border, no frame, no caption panel, no drawn dividing lines. Icon 1 EMERGENCY RESUPPLY: a small supply canister with a strap clip. Icon 2 BIOMASS: a compact leafy moss-green clump. Icon 3 RESEARCH DATA: a small data crystal or lattice shard in cyan-teal. Icon 4 ANOMALY RESIDUE: a tiny violet flask with a droplet. Icon 5 UPGRADE COMPONENT: a small gear-and-chip fitting in station gray with a copper rim. Icon 6 SEED: a single large seed with a tiny sprout line. Each icon is complete and centered inside its own 16x16 cell; strong tiny-scale readability, bold single-pixel outlines, high contrast, GBA/SNES pixel art; absolutely no letters, no words, no numbers anywhere.  Variant 2: badge icons: each glyph on a small dark rounded chip with a thin bone-white rim.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 41.5%)",
+    "content downscaled x0.0396 (NEAREST) into 96x16 canvas, bottom-center anchor",
+    "sheet cell opaque shares (row-major): 62% 59% 62% 62% 62% 61%",
+    "multi-cell sheet: generated source is a single raster; per-cell topology measured deterministically where possible; review before slicing"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

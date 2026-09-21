@@ -1,0 +1,45 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C04_SHADOW_ROOT",
+  "source_candidate_id": "C04_C001",
+  "alternate_candidate_id": "C04_ALT_C001",
+  "priority": "C",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/C04_SHADOW_ROOT/C04_ALT_C001/source.png",
+  "game_ready_file": "slots/C04_SHADOW_ROOT/C04_ALT_C001/game_ready.png",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": true,
+  "sha256_source": "f738697fe71ec1574f576207f6bf50743a0da402dd1d0b87f37edc45f4f1cece",
+  "sha256_game_ready": "6329ab5421ca30eaba8540bd33fbe3d8e64b5719d8995671c83cdbdbd45a38f0",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one single flat color across the whole strip - between cells, around the plants, edge to edge - with absolutely no grid lines, no separating borders, no frame, no caption panel. The plant is a root-dominant mythic plant (Hades-inspired underworld botany, no god or person depicted, mystical rather than evil): growth happens mostly BELOW and AT the soil line with deep unusual silhouettes, dark purple-black root bulges partially hidden by the planter soil, sparse pale bone-white and faint violet foliage above; the READY state shows a heavy root crown lifted slightly above the soil with a cool violet glow; partially hidden growth language, mysterious, calm, uncanny but not monstrous. All growth stays INSIDE its 32x32 cell. GBA/SNES pixel art, dark subtle outline, consistent planter alignment.  CHALLENGER DESIGN (materially different from the incumbent gnarled subdued tuber cluster with thin pale sprouts): an obelisk taproot: a single tall pale bone-white taproot spire rising from the soil like a small obelisk, ringed by thin dark root collars; cool violet light leaking from hairline cracks along the spire; sparse drooping bone-white filaments at its base; the READY state: the obelisk crown splits open just above the soil, revealing a glowing violet heart inside while the filaments stiffen upward.",
+  "challenger_axes": [
+    "crown structure: splitting obelisk spire with violet heart vs gnarled tuber cluster",
+    "foliage: drooping bone-white filaments vs thin pale sprouts",
+    "glow language: violet leaking from hairline cracks vs underside glow",
+    "silhouette: vertical monolithic spire vs knotted low mass"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=3, removed 69.1%)",
+    "content downscaled x0.0665 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 32% 32% 39% 45%",
+    "planter-band IoU vs cell1: c2=0.80 c3=0.66 c4=0.52"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

@@ -1,0 +1,46 @@
+{
+ "slot_id": "E01_GREENHOUSE_TILESET",
+ "candidate_id": "E01_C002",
+ "ratified_role": "PRIMARY (human APPROVE_PRIMARY)",
+ "original_path": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/game_ready.png",
+ "original_source_path": "assets/candidates/arena_agent_asset_run/slots/E01_GREENHOUSE_TILESET/E01_C002/source.png",
+ "repair_action": "NORMALIZE_ONLY",
+ "governing_reference": "E02_C001",
+ "repair_status": "REPAIRED_WITH_FLAGS",
+ "repaired_source_path": "assets/candidates/visual_canon/ratified_repairs/E01_GREENHOUSE_TILESET/E01_C002/repaired_source.png",
+ "repaired_game_ready_path": "assets/candidates/visual_canon/ratified_repairs/E01_GREENHOUSE_TILESET/E01_C002/repaired_game_ready.png",
+ "expected_dimensions": [
+  256,
+  256
+ ],
+ "actual_dimensions": [
+  256,
+  256
+ ],
+ "sha256": {
+  "repaired_source": "a56b2c68f60fc04cf79cd795d74d4545f88be59291354183f766a125c448cd25",
+  "repaired_game_ready": "6064244e02f7e557e4d32013c374a9a9ef5a0263cf2947c7f4e41f51798ff549",
+  "original_source_unchanged": "a56b2c68f60fc04cf79cd795d74d4545f88be59291354183f766a125c448cd25"
+ },
+ "technical_flags_before": [
+  "BACKGROUND_REMOVED",
+  "CONVERSION_REQUIRED",
+  "NO_ALPHA",
+  "TILESET_OVERKEYED"
+ ],
+ "technical_flags_after": [
+  "NO_ALPHA",
+  "CONVERSION_REQUIRED"
+ ],
+ "validation": {
+  "decodes": true,
+  "format": "PNG",
+  "exact_256x256": true,
+  "derivation": "direct nearest-neighbor downscale of the intact opaque 1024x1024 source; ZERO keying",
+  "identity_check": "100.0% of pixels retained by the damaged derivative match the repair exactly (42988/42988)",
+  "dark_pixel_retention": "6135 (damaged) -> 28413 (repaired): destroyed dark tile pixels restored",
+  "grid": "16x16 tile grid preserved proportionally (1024->256 exact 4:1)",
+  "source_untouched": true
+ },
+ "notes": "OPAQUE BY DESIGN: the preserved source is an intact opaque tile sheet whose background sits within keying tolerance of the dark navy tiles; per the original run guidance (\"slice tiles from source.png (intact opaque sheet)\") and the live tileset convention, the repaired sheet is a fully opaque 16x16-grid tile sheet. NO_ALPHA is recorded honestly as the by-design state."
+}

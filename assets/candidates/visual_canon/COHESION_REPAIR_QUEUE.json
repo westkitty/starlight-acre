@@ -1,0 +1,258 @@
+{
+ "project": "starlight-acre",
+ "created": "2026-09-20",
+ "source": "VISUAL_CONTINUITY_REPORT.md (canon audit)",
+ "note": "Only assets with a real measured/recorded continuity problem are queued. PRIMARY/SECONDARY references are art-direction tools, not gameplay promotions. Nothing has been repaired yet; this queue is the plan.",
+ "entries": [
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "candidate_id": "P01_C001",
+   "problem": "retained bright frame: saturation 0.90-0.92, glow 76-82%, anchor adherence 12-17% (clean reference: 0.49 / 10% / 77%)",
+   "governing_reference": "P01_ALT_C002",
+   "preserve": "source.png untouched; frame geometry and sprite content",
+   "change": "remove flat frame via expanded flood-key re-derivation from source",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "candidate_id": "P01_C002",
+   "problem": "retained bright frame: saturation 0.90-0.92, glow 76-82%, anchor adherence 12-17% (clean reference: 0.49 / 10% / 77%)",
+   "governing_reference": "P01_ALT_C002",
+   "preserve": "source.png untouched; frame geometry and sprite content",
+   "change": "remove flat frame via expanded flood-key re-derivation from source",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "P01_PLAYER_SHEET",
+   "candidate_id": "P01_ALT_C001",
+   "problem": "retained bright frame: saturation 0.90-0.92, glow 76-82%, anchor adherence 12-17% (clean reference: 0.49 / 10% / 77%)",
+   "governing_reference": "P01_ALT_C002",
+   "preserve": "source.png untouched; frame geometry and sprite content",
+   "change": "remove flat frame via expanded flood-key re-derivation from source",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "V01_CORE_VFX",
+   "candidate_id": "V01_C001",
+   "problem": "cell background not removed (only 3.6% keyed; mean saturation 0.171 vs family 0.663)",
+   "governing_reference": "V01_ALT_C002",
+   "preserve": "effect pixels and cell order",
+   "change": "re-key retained background from source",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "V02_HAZARD_VFX",
+   "candidate_id": "V02_C001",
+   "problem": "CELL_BACKGROUND_NOT_REMOVED residue in game_ready",
+   "governing_reference": "V02_ALT_C001",
+   "preserve": "effect pixels and cell order",
+   "change": "re-key cell background from source",
+   "severity": "medium",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "candidate_id": "E01_C001",
+   "problem": "TILESET_OVERKEYED: background keying destroyed legitimate dark tile pixels (ring darkness 0.49-0.56 vs tileset median 0.887)",
+   "governing_reference": "E02_C001",
+   "preserve": "source.png untouched; tile grid geometry",
+   "change": "re-derive game_ready from source by direct nearest-neighbor slicing without flood-keying",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "candidate_id": "E01_C002",
+   "problem": "TILESET_OVERKEYED: background keying destroyed legitimate dark tile pixels (ring darkness 0.49-0.56 vs tileset median 0.887)",
+   "governing_reference": "E02_C001",
+   "preserve": "source.png untouched; tile grid geometry",
+   "change": "re-derive game_ready from source by direct nearest-neighbor slicing without flood-keying",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "candidate_id": "E01_ALT_C001",
+   "problem": "TILESET_OVERKEYED: background keying destroyed legitimate dark tile pixels (ring darkness 0.49-0.56 vs tileset median 0.887)",
+   "governing_reference": "E02_C001",
+   "preserve": "source.png untouched; tile grid geometry",
+   "change": "re-derive game_ready from source by direct nearest-neighbor slicing without flood-keying",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "E01_GREENHOUSE_TILESET",
+   "candidate_id": "E01_ALT_C002",
+   "problem": "TILESET_OVERKEYED: background keying destroyed legitimate dark tile pixels (ring darkness 0.49-0.56 vs tileset median 0.887)",
+   "governing_reference": "E02_C001",
+   "preserve": "source.png untouched; tile grid geometry",
+   "change": "re-derive game_ready from source by direct nearest-neighbor slicing without flood-keying",
+   "severity": "high",
+   "recommended_action": "NORMALIZE_ONLY"
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "candidate_id": "B01_C001",
+   "problem": "CROPPED_CONTENT: composition cut at canvas edges (least-bad primary, still cropped)",
+   "governing_reference": "E02_C001",
+   "preserve": "palette, value structure, silhouette bands",
+   "change": "recompose/extend to full 640x360 canvas",
+   "severity": "medium",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_C002",
+   "problem": "CROPPED_CONTENT: composition cut at canvas edges (least-bad primary, still cropped)",
+   "governing_reference": "B01_C001",
+   "preserve": "palette, value structure, silhouette bands",
+   "change": "recompose/extend to full 640x360 canvas",
+   "severity": "medium",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "D01_DEXTER_VENDOR",
+   "candidate_id": "D01_C002",
+   "problem": "duplicate subject: two dogs in one sprite (recorded during original-run verification; curated evidence)",
+   "governing_reference": "D01_ALT_C001",
+   "preserve": "single dog pose, tricolor coat, dropped ears, lantern-lit stall",
+   "change": "remove the second dog",
+   "severity": "high",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "A04_HARVESTER_DRONE",
+   "candidate_id": "A04_ALT_C001",
+   "problem": "MULTIPLE_SUBJECTS_POSSIBLE (island analysis) plus bottom-light bias -0.111 vs family +0.072",
+   "governing_reference": "A04_C001",
+   "preserve": "net-bag reaper design and palette",
+   "change": "remove suspected duplicate subject; restore top-light bias",
+   "severity": "medium",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "C01_WISDOM_FRUIT",
+   "candidate_id": "C01_ALT_C002",
+   "problem": "PLANTER_BAND_INCONSISTENT: planter tray band misaligned vs family planter grammar",
+   "governing_reference": "C01_ALT_C001",
+   "preserve": "crop lifecycle states and glow identity",
+   "change": "align planter band to family height/rail construction",
+   "severity": "medium",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+   "candidate_id": "T03_C003",
+   "problem": "left glow half mixes warm and cool pixels (measured 51/39 during source run)",
+   "governing_reference": "T03_C001",
+   "preserve": "overall glow composition",
+   "change": "recolor left half fully warm; keep cool strictly right",
+   "severity": "medium",
+   "recommended_action": "TARGETED_IMAGE_EDIT"
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "candidate_id": "B01_C002",
+   "problem": "CROPPED_CONTENT + family outlier",
+   "governing_reference": "B01_C001",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "candidate_id": "B01_ALT_C001",
+   "problem": "CROPPED_CONTENT + family outlier",
+   "governing_reference": "B01_C001",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B01_GREENHOUSE_BACKGROUND",
+   "candidate_id": "B01_ALT_C002",
+   "problem": "CROPPED_CONTENT + glow/light outliers (8.6% glow vs 0.9% family)",
+   "governing_reference": "B01_C001",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_C001",
+   "problem": "CROPPED_CONTENT (worst z-profile)",
+   "governing_reference": "B02_C002",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_C003",
+   "problem": "CROPPED_CONTENT (worst z-profile)",
+   "governing_reference": "B02_C002",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_ALT_C001",
+   "problem": "CROPPED_CONTENT (worst z-profile)",
+   "governing_reference": "B02_C002",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_ALT_C002",
+   "problem": "CROPPED_CONTENT (worst z-profile)",
+   "governing_reference": "B02_C002",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "B02_ENGINEERING_BACKGROUND",
+   "candidate_id": "B02_ALT_C003",
+   "problem": "CROPPED_CONTENT (worst z-profile)",
+   "governing_reference": "B02_C002",
+   "preserve": "family palette and background grammar (see canon)",
+   "change": "full 640x360 composition composed safely inside canvas",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "V01_CORE_VFX",
+   "candidate_id": "V01_C002",
+   "problem": "EXPECTED_CELL_EMPTY: required effect cell contains no content (cannot be normalized in)",
+   "governing_reference": "V01_ALT_C002",
+   "preserve": "cell order and effect meanings",
+   "change": "generate the missing effect content",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  },
+  {
+   "slot_id": "V02_HAZARD_VFX",
+   "candidate_id": "V02_C002",
+   "problem": "EXPECTED_CELL_EMPTY: required effect cell contains no content (cannot be normalized in)",
+   "governing_reference": "V02_ALT_C001",
+   "preserve": "cell order and effect meanings",
+   "change": "generate the missing effect content",
+   "severity": "high",
+   "recommended_action": "REGENERATE"
+  }
+ ]
+}

@@ -1,0 +1,42 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "P01_PLAYER_SHEET",
+  "candidate_id": "P01_C002",
+  "priority": "B",
+  "source_file": "slots/P01_PLAYER_SHEET/P01_C002/source.png",
+  "game_ready_file": "slots/P01_PLAYER_SHEET/P01_C002/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 192,
+  "actual_game_height": 192,
+  "expected_width": 192,
+  "expected_height": 192,
+  "expected_frame_layout": "animation sheet 192x192, 6 columns x 4 rows of 32x48 frames; row1: idle x4 then 2 empty; row2: walk x6; row3: jump, fall, land then 3 empty; row4: interact x2 then 4 empty",
+  "alpha_present": true,
+  "sha256_source": "d6326d2ef98d004ed5e3d154683d43b2a6f53cab772af00f82d71ba4793b3584",
+  "sha256_game_ready": "7924800a9e95c54b1cba64745d5cb85016e9f12b34cdfd51d8a4776632b7736d",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Character animation sprite sheet for a 2D side-view pixel game: strict grid of 6 columns x 4 rows of 32x48 pixel frames on a 192x192 canvas, frames touching, on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Character: orbital technician-cultivator, an adult maintenance gardener of a decaying space station. NOT a soldier, NOT a space marine, NOT a fantasy warrior. Design: slim practical jumpsuit in dusk blue with moss green panel accents, teal hydroponic gloves, bone-white trim, small tool harness, dark boots, short practical hair under a slim cap or headband, calm purposeful face kept tiny and simple, dark subtle outline. Keep proportions, clothing, palette, scale, ground contact, facing direction and silhouette IDENTICAL in every frame. Row 1: 4 idle frames (subtle breathing bob) then 2 completely empty cells. Row 2: 6-frame walk cycle. Row 3: jump pose, fall pose, landing pose, then 3 completely empty cells. Row 4: 2-frame interact reach (arming reaching forward at waist height) then 4 completely empty cells. Empty cells must be left as the flat background color only. GBA/SNES pixel art, feet aligned to the same baseline in every frame. Variant 2: slimmer frame, open collar, teal knit cap, more silhouette contrast.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "EMPTY_CELLS_OPAQUE",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "KEYING_INCOMPLETE_FRAMED_SOURCE",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=3, removed 15.1%)",
+    "content downscaled x0.1890 (NEAREST) into 192x192 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 79% 79% 78% 79% 95% 95% / 78% 80% 78% 78% 79% 81% / 95% 78% 79% 98% 95% 95% / 78% 79% 95% 98% 95% 95%",
+    "cells that must stay transparent are opaque in game_ready: r1c5=95%, r1c6=95%, r3c4=98%, r3c5=95%, r3c6=95%, r4c3=95%, r4c4=98%, r4c5=95%, r4c6=95%",
+    "source empty cells are >=80% a single flat color (the sheet background), but the source border is a different color (dark frame), so border-seeded flood keying removed only the frame and left the interior background opaque; re-key from the interior background color before slicing",
+    "occupied-cell content bottom rows: min=46 max=47 (cell height 48, spread 1)"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

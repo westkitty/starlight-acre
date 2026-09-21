@@ -1,0 +1,39 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "V01_CORE_VFX",
+  "candidate_id": "V01_C002",
+  "priority": "B",
+  "source_file": "slots/V01_CORE_VFX/V01_C002/source.png",
+  "game_ready_file": "slots/V01_CORE_VFX/V01_C002/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "vfx strip 128x32, four consecutive 32x32 cells: harvest burst / repair spark / growth glow / interaction ping, each isolated in its cell",
+  "alpha_present": true,
+  "sha256_source": "e4ec2c0c004ddd2c685ef25ba1699a4f1eb29ead593e060e413432d47219c8ed",
+  "sha256_game_ready": "8e82b287287aeba8d83f052c04777f2de07ca7fd632a943dd4f29d2b3ed53ab1",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  VFX sprite strip for a 2D pixel game: ONE row of four consecutive 32x32 cells on a 128x32 canvas, each effect isolated and centered in its own cell, on a solid flat pure magenta #FF00FF background (flat, no checkerboard). Cell 1 HARVEST BURST: a small radiating burst of warm gold shard particles. Cell 2 REPAIR SPARK: a compact copper-orange spark cluster with tiny bolt lines. Cell 3 GROWTH GLOW: a soft-ish but pixel-clustered teal-green upward glow motes rising like spores. Cell 4 INTERACTION PING: a bone-white capital E-free ping: a small hollow diamond or ring pulse with four tick marks. GBA/SNES pixel art, hard pixel clusters, no smooth gradients, no text, no letters. Variant 2: lighter sparser effects, thinner strokes, more negative space.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "EXPECTED_CELL_EMPTY",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=4, removed 67.6%)",
+    "content downscaled x0.0625 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 9% 73% 2% 46%",
+    "cells that must contain a frame/prop are (near-)empty in game_ready: r1c3=2%"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

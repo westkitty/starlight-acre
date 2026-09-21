@@ -12,6 +12,12 @@ func interact() -> void:
 		if fm.spend_wisdom_fruit(6):
 			GameState.unlock_upgrade("closed_loop_hydroponics")
 			Events.station_message.emit("Closed-Loop Hydroponics unlocked: 15-unit caps and free resupply.")
+	elif not GameState.has_upgrade("paradox_trellis"):
+		if fm.spend_chaos(3):
+			GameState.unlock_upgrade("paradox_trellis")
+			Events.station_message.emit("Paradox Trellis unlocked: stolen tending pulses now feed both crops.")
+		else:
+			Events.station_message.emit("Paradox Trellis requires 3 Chaos.")
 	_refresh_prompt()
 
 func get_prompt() -> String:
@@ -19,6 +25,8 @@ func get_prompt() -> String:
 		return "E - Research Efficient Grid (4 Wisdom Fruit)"
 	if not GameState.has_upgrade("closed_loop_hydroponics"):
 		return "E - Research Closed-Loop Hydroponics (6 Wisdom Fruit)"
+	if not GameState.has_upgrade("paradox_trellis"):
+		return "E - Research Paradox Trellis (3 Chaos)"
 	return "Research complete"
 
 func _refresh_prompt() -> void:

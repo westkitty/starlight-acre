@@ -1,0 +1,31 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B02_ENGINEERING_BACKGROUND",
+  "candidate_id": "B02_C001",
+  "priority": "A",
+  "source_file": "slots/B02_ENGINEERING_BACKGROUND/B02_C001/source.png",
+  "game_ready_file": "slots/B02_ENGINEERING_BACKGROUND/B02_C001/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 1376,
+  "actual_source_height": 768,
+  "actual_game_width": 640,
+  "actual_game_height": 360,
+  "expected_width": 640,
+  "expected_height": 360,
+  "expected_frame_layout": "single full-frame background, 640x360, 16:9, opaque",
+  "alpha_present": false,
+  "sha256_source": "f680a0f171bb17b4aa6e0c76a639a422ae135049db470c6bfdb41bc9efd3d12e",
+  "sha256_game_ready": "dffe03881e5586728cca75df2d20c666093df3e49e16512eb073b7b0c021aa66",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Wide 16:9 far background environment art in deliberate GBA/SNES pixel-art style for a 2D side-view game: the far interior of an orbital engineering bay of a decaying mythic farming station. Distant industrial architecture: colossal machinery silhouettes, conduit bundles running along walls, catwalks and maintenance scaffolding far away, a restrained reactor core glow in teal-cyan deep in the composition, copper repair patches on navy and dusk-blue structural ribs, exposed aged plating, subtle mythic strangeness such as one impossible glowing filament vine far in the back. Base colors deep space navy #0A0E1A and dusk blue #1E2D4A with teal/cyan energy accents and copper details. Quiet negative space in the middle band where foreground gameplay will happen; calm, atmospheric, slightly uncanny, lived-in. No characters, no UI, no doors, no foreground floors or platforms, not a level screenshot. Flat full-frame illustration, no border, no text. Variant 1: symmetric hall composition with a huge reactor ring glowing teal at center distance.",
+  "technical_flags": [
+    "CONVERSION_REQUIRED",
+    "CROPPED_CONTENT"
+  ],
+  "notes": [
+    "center-cropped to 16:9"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

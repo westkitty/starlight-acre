@@ -1,0 +1,49 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "P01_PLAYER_SHEET",
+  "source_candidate_id": "P01_C001",
+  "alternate_candidate_id": "P01_ALT_C001",
+  "priority": "B",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/P01_PLAYER_SHEET/P01_ALT_C001/source.png",
+  "game_ready_file": "slots/P01_PLAYER_SHEET/P01_ALT_C001/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 192,
+  "actual_game_height": 192,
+  "expected_width": 192,
+  "expected_height": 192,
+  "expected_frame_layout": "animation sheet 192x192, 6 columns x 4 rows of 32x48 frames; row1: idle x4 then 2 empty; row2: walk x6; row3: jump, fall, land then 3 empty; row4: interact x2 then 4 empty",
+  "alpha_present": true,
+  "sha256_source": "61896c46e42ef244ad78172490a47e447798c9e622a9c79688f63c07ea28b591",
+  "sha256_game_ready": "92b646d06d2b639dcad7c3aba81cb9a344c5b769ad0db2f9ee71f0cf933a8bc7",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Character animation sprite sheet for a 2D side-view pixel game: a strict square grid of 6 columns x 4 rows of 32x48 pixel frames on a square 192x192-proportioned canvas, frames touching, on a solid flat pure magenta #FF00FF background. THE MAGENTA BACKGROUND MUST REACH ALL FOUR EDGES OF THE CANVAS: absolutely NO border, NO frame, NO dark margin, NO caption panel, NO vignette, no drawn grid lines. Empty cells contain ONLY flat magenta - no props, no marks, no glow. Character: orbital technician-cultivator, an adult maintenance gardener of a decaying space station; NOT a soldier, NOT a space marine, NOT a fantasy warrior; slim practical jumpsuit in dusk blue with moss green panel accents, teal hydroponic gloves, bone-white trim, small tool harness, dark boots, short practical hair under headwear, calm purposeful face kept tiny and simple, dark subtle outline. Keep proportions, clothing, palette, scale, ground contact, facing direction and silhouette IDENTICAL in every frame; feet aligned to the same baseline in every frame. Row 1: 4 idle frames (subtle breathing bob) then 2 completely empty cells. Row 2: 6-frame walk cycle. Row 3: jump pose, fall pose, landing pose, then 3 completely empty cells. Row 4: 2-frame interact reach (arm reaching forward at waist height) then 4 completely empty cells. GBA/SNES pixel art.  CHALLENGER DESIGN (materially different from the incumbent bulkier harness with rolled sleeves and gold-emblem cap): a lean layering silhouette: a long knee-length utility vest in deep navy over the dusk-blue jumpsuit, side-sling tool belt at the hip, bone-white sleeve rolled at one forearm only; headwear a narrow folded bandana in moss green with the hair tied back in a short practical tail; the walk read slightly brisker. Same technician-cultivator identity, same palette anchors, same 32x48 frame proportions and baseline.",
+  "challenger_axes": [
+    "outfit layering: long knee-length navy utility vest vs jumpsuit with rolled sleeves",
+    "headwear: narrow moss-green folded bandana, hair in short tail vs gold-emblem cap",
+    "harness: side-sling tool belt at the hip vs bulkier back harness",
+    "walk read: brisker stride phrasing vs standard walk cycle"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "EMPTY_CELLS_OPAQUE",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "KEYING_INCOMPLETE_FRAMED_SOURCE",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=1, removed 4.9%)",
+    "content downscaled x0.1886 (NEAREST) into 192x192 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 95% 95% 98% 98% 98% 95% / 97% 97% 97% 100% 97% 97% / 97% 99% 100% 100% 97% 97% / 95% 98% 98% 98% 95% 95%",
+    "cells that must stay transparent are opaque in game_ready: r1c5=98%, r1c6=95%, r3c4=100%, r3c5=97%, r3c6=97%, r4c3=98%, r4c4=98%, r4c5=95%, r4c6=95%",
+    "source empty cells are >=80% a single flat color (the sheet background), but the source border is a different color (dark frame), so border-seeded flood keying removed only the frame and left the interior background opaque; re-key from the interior background color before slicing",
+    "occupied-cell content bottom rows: min=46 max=47 (cell height 48, spread 1)"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

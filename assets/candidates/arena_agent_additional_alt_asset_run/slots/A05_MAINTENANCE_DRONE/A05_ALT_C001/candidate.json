@@ -1,0 +1,50 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "A05_MAINTENANCE_DRONE",
+  "source_candidate_id": "A05_C001",
+  "alternate_candidate_id": "A05_ALT_C001",
+  "asset_name": "Maintenance Drone",
+  "priority": "B",
+  "category": "agent sprite",
+  "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/source.png",
+  "game_ready_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 32,
+  "actual_game_height": 32,
+  "expected_width": 32,
+  "expected_height": 32,
+  "expected_topology": "single sprite, 32x32, hover center anchor (matches GardenerDrone A01 family)",
+  "alpha_present": true,
+  "sha256_source": "9af39a56d33ef04048c059fc245f3e38814da7a72b8d75d2b006b32eb65355d5",
+  "sha256_game_ready": "21dedb4d5cf67dde5ab6a58c87cca06e5a46918d60372417fd4fc038c54b9753",
+  "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A small automated orbital MAINTENANCE drone for a 2D side-view pixel game: exactly ONE drone, single sprite centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Square 1:1 composition. Strict side view. This drone's job is SURFACE REPAIR AND UPKEEP, visibly different from gardening and engineering drones: scrubbing, polishing, sealant and inspection hardware; worn station-metal hull in station gray and dusk blue with maintenance copper accents and a small bone-white inspection lamp; hover center anchor; clearly a non-human helper. Dark subtle outline, clean hard edges against the background. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body, no second drone or duplicate, no floor, no stage, no drop shadow on the background.  Variant 1: a rounded wall-crawler puck with two rotating brush pads underneath and a small polish-wheel on an arm, hovering close to its work height.",
+  "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A small automated orbital MAINTENANCE drone for a 2D side-view pixel game: exactly ONE drone, single sprite centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Square 1:1 composition. Strict side view. This drone's job is SURFACE REPAIR AND UPKEEP, visibly different from gardening and engineering drones: scrubbing, polishing, sealant and inspection hardware; worn station-metal hull in station gray and dusk blue with maintenance copper accents and a small bone-white inspection lamp; hover center anchor; clearly a non-human helper. Dark subtle outline, clean hard edges against the background. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body, no second drone or duplicate, no floor, no stage, no drop shadow on the background.  Challenger design: a mag-rail crawler - a low wedge body with dark magnetic runner skids, a wide soft buffing belt on its belly, and a small tilting inspector head with a bone-white lamp.",
+  "challenger_axes": [
+    "magnetic runner skids with belly buffing belt vs rotating brush pads underneath",
+    "tilting inspector head vs polish-wheel arm",
+    "low wedge silhouette vs rounded puck"
+  ],
+  "source_technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 84.9%)",
+    "content downscaled x0.0403 (NEAREST) into 32x32 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

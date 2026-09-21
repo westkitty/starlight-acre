@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://ui/hud/hud.gd" id="1_hud"]
 [ext_resource type="Texture2D" path="res://assets/ui/icons/hud_icons.png" id="2_icons"]
+[ext_resource type="Texture2D" path="res://assets/effects/hazard_vfx.png" id="3_hazard"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_water"]
 atlas = ExtResource("2_icons")
@@ -18,6 +19,9 @@ region = Rect2(48, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_prompt"]
 atlas = ExtResource("2_icons")
 region = Rect2(64, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_solar_flare"]
+atlas = ExtResource("3_hazard")
+region = Rect2(0, 0, 32, 32)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -76,6 +80,18 @@ offset_right = 260.0
 offset_bottom = 78.0
 horizontal_alignment = 1
 text = ""
+visible = false
+
+[node name="FlareIndicator" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -48.0
+offset_top = 48.0
+offset_right = -16.0
+offset_bottom = 80.0
+texture = SubResource("AtlasTexture_solar_flare")
+stretch_mode = 3
+mouse_filter = 2
 visible = false
 
 [node name="PromptBar" type="HBoxContainer" parent="."]

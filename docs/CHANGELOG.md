@@ -115,7 +115,7 @@ All notable changes to Starlight Acre are documented here.
 - Single Events autoload only (no GameState autoload until Phase 3)
 - FarmingManager as scene child (not autoload) for multi-sector scalability
 - StaticBody2D for Phase 1 collision (TileMapLayer visual pass deferred to Phase 2)
-- Internal resolution: ~480×270 with Nearest filter (assumed; not yet enforced in project settings)
+- Internal resolution: 640×360 with Nearest filter, enforced in project settings; default desktop window is 1280×720 (2×)
 - ColorRect placeholders for all sprites (pixel art integration in Phase 2)
 
 ---
@@ -153,3 +153,63 @@ All notable changes to Starlight Acre are documented here.
 
 ### Known limitation
 - Generated image dimensions do not match historical sprite-sheet dimension claims; visual slicing still requires manual QA.
+
+---
+
+## [Greenhouse Environment Gate] — 2026-09-21
+
+### Changed
+- Painted the Greenhouse floor and side walls from the canonical `E01_GREENHOUSE_TILESET` atlas using real `TileMapLayer` cell data.
+- Added TileSet physics to the painted Greenhouse tiles and removed the obsolete `Floor`, `WallLeft`, and `WallRight` StaticBody2D collision stubs after independent collision proof.
+- Standardized the live internal viewport at 640×360 with a default 1280×720 desktop window and nearest-neighbor pixel filtering.
+- Added a bounded player-follow `Camera2D`; horizontal travel clamps to the room limits while the vertical frame keeps the full 32px floor slab visible.
+- Sector backgrounds now track the active camera center so a 640×360 canonical background remains screen-filling while the room scrolls.
+- Visual QA capture now runs at the actual 640×360 game viewport. The report builder accepts a completed successful `report.json` as capture evidence when an outer launcher interruption prevents the wrapper `.rc` marker from being written.
+
+### Validation
+- Greenhouse floor cells: 150; wall cells: 136.
+- With all legacy collision stubs gone, the real player lands on the TileMap floor at y=264 and is blocked by both TileMap side walls.
+- Camera contract regression checks pass at left, center, and right room positions with the background synchronized to the camera center.
+- `tests/run_core_systems.sh`: PASS after the migration.
+- Real Godot 4.7.1 Greenhouse and Engineering captures: 640×360, status OK; 34/34 visual QA crops extracted.
+
+---
+
+## [First Station Hazard — Solar Flare] — 2026-09-21
+
+### Added
+- `systems/hazards/SolarFlareController.tscn` + `solar_flare_controller.gd`: recurring Solar Flare lifecycle with 30s initial calm, 5s warning, 8s active phase, and 45s recovery.
+- `Events.hazard_state_changed` as the hazard-state notification surface.
+- Transient in-run Solar Flare phase/time on `GameState`; it survives sector transitions but is intentionally excluded from save serialization.
+- HUD Solar Flare indicator using the canonical V02 cell 1 from `assets/effects/hazard_vfx.png`.
+
+### Changed
+- Active Solar Flare multiplies normal station power drain by 5×. Existing Efficient Grid mitigation remains multiplicative at 0.6.
+- Both playable sectors instance the same Solar Flare controller so hazard state continues through Greenhouse <-> Engineering transitions.
+- Core-system regression coverage now verifies warning/active/recovery transitions, HUD state, exact drain rates, Efficient Grid mitigation, normal cross-sector continuity, and the exact-zero transition boundary.
+
+### Validation
+- Godot 4.7.1 core-system Solar Flare lifecycle test: PASS.
+- Real 640×360 active-flare capture: PASS.
+- Exact V02 render check: all 297 nontransparent pixels from canonical Solar Flare cell 1 produced exactly 297 changed pixels in the 32×32 HUD rectangle, with no spill outside the intended indicator surface.
+
+---
+
+## [Lightning Vine + Flare Ecology] — 2026-09-21
+
+### Added
+- `data/crops/lightning_vine.tres`: Zeus/storm crop using canonical C03 art, 28s growth, 15% tend bonus, 1 Water + 1 Nutrient cost, and a direct +20 power harvest.
+- The left Greenhouse plot now uses `assets/sprites/crops/lightning_vine_states.png`; Wisdom remains center and Trickster remains right, preserving the existing 200px Wisdom↔Trickster ecology radius.
+- `GameState.conductive_lightning_vine_count()` and a second Mythic Ecology rule: each GROWING or READY Lightning Vine adds +2× to active Solar Flare drain.
+
+### Changed
+- Active Solar Flare multiplier is now `5 + (2 × conductive Lightning Vines)`; one live vine therefore raises the flare from 5× to 7× before Efficient Grid mitigation.
+- Solar Flare warning/active messages explicitly call out Lightning Vine conduction when present.
+- Crop harvest output now supports direct station-power yield through the existing FarmingManager path; Lightning harvest restores 20 power and respects the 100% cap.
+- Gardener regression coverage now targets the preserved Wisdom plot explicitly, so its travel + ordinary-harvest proof remains semantically correct after CropPlot0 became Lightning.
+
+### Validation
+- Godot 4.7.1 Lightning regression: PASS for crop contract, 7× flare amplification, exact 20-power harvest, 100% cap, immediate removal of conductor risk after harvest, and cross-sector crop-state persistence.
+- Smoke test now loads and validates `lightning_vine.tres`.
+- Real 640×360 Lightning + active-flare capture: PASS.
+- Canonical C03 READY-frame slicing/alignment diagnostic: **596/596 nontransparent source pixels matched the live 32×32 sprite exactly** when the READY particle layer alone was hidden; the earlier normal READY capture differed only where particles overlaid the sprite.

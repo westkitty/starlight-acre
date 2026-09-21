@@ -1,0 +1,1008 @@
+{
+  "project": "starlight-acre",
+  "run_id": "arena_agent_additional_alt_asset_run",
+  "source_run_path": "../arena_agent_additional_asset_run",
+  "repository_commit_baseline": "97544d74d534b75472bfa99ee79439ba5752c9cf",
+  "source_candidate_count": 24,
+  "target_challenger_count": 24,
+  "generated_count": 24,
+  "validated_count": 24,
+  "failed_count": 0,
+  "technical_status_counts": {
+    "PASS_WITH_FLAGS": 24
+  },
+  "slots": [
+    {
+      "slot_id": "A02_REACTOR_CORE",
+      "source_candidates": [
+        "A02_C001",
+        "A02_C002",
+        "A02_C003"
+      ],
+      "challengers": [
+        "A02_ALT_C001",
+        "A02_ALT_C002",
+        "A02_ALT_C003"
+      ],
+      "generated_count": 3
+    },
+    {
+      "slot_id": "U02_HUD_EXTENSION_ICONS",
+      "source_candidates": [
+        "U02_C001",
+        "U02_C002",
+        "U02_C003"
+      ],
+      "challengers": [
+        "U02_ALT_C001",
+        "U02_ALT_C002",
+        "U02_ALT_C003"
+      ],
+      "generated_count": 3
+    },
+    {
+      "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+      "source_candidates": [
+        "T03_C001",
+        "T03_C002",
+        "T03_C003"
+      ],
+      "challengers": [
+        "T03_ALT_C001",
+        "T03_ALT_C002",
+        "T03_ALT_C003"
+      ],
+      "generated_count": 3
+    },
+    {
+      "slot_id": "A03_ENGINEER_DRONE",
+      "source_candidates": [
+        "A03_C001",
+        "A03_C002"
+      ],
+      "challengers": [
+        "A03_ALT_C001",
+        "A03_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "A04_HARVESTER_DRONE",
+      "source_candidates": [
+        "A04_C001",
+        "A04_C002"
+      ],
+      "challengers": [
+        "A04_ALT_C001",
+        "A04_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "A05_MAINTENANCE_DRONE",
+      "source_candidates": [
+        "A05_C001",
+        "A05_C002"
+      ],
+      "challengers": [
+        "A05_ALT_C001",
+        "A05_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "B03_DOCKING_COLLAR",
+      "source_candidates": [
+        "B03_C001",
+        "B03_C002"
+      ],
+      "challengers": [
+        "B03_ALT_C001",
+        "B03_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "B04_HYDROPONICS_RIG",
+      "source_candidates": [
+        "B04_C001",
+        "B04_C002"
+      ],
+      "challengers": [
+        "B04_ALT_C001",
+        "B04_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "B05_ARCHIVE_STACK",
+      "source_candidates": [
+        "B05_C001",
+        "B05_C002"
+      ],
+      "challengers": [
+        "B05_ALT_C001",
+        "B05_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "V02_HAZARD_VFX",
+      "source_candidates": [
+        "V02_C001",
+        "V02_C002"
+      ],
+      "challengers": [
+        "V02_ALT_C001",
+        "V02_ALT_C002"
+      ],
+      "generated_count": 2
+    },
+    {
+      "slot_id": "E03_CARGO_PROPS",
+      "source_candidates": [
+        "E03_C001"
+      ],
+      "challengers": [
+        "E03_ALT_C001"
+      ],
+      "generated_count": 1
+    }
+  ],
+  "mapping": "one-to-one: <SLOT>_C00N -> <SLOT>_ALT_C00N",
+  "candidates": [
+    {
+      "slot_id": "A02_REACTOR_CORE",
+      "source_candidate_id": "A02_C001",
+      "alternate_candidate_id": "A02_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A02_REACTOR_CORE/A02_C001/candidate.json",
+      "alternate_candidate_path": "slots/A02_REACTOR_CORE/A02_ALT_C001/candidate.json",
+      "priority": "A",
+      "category": "machinery prop",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A02_REACTOR_CORE/A02_ALT_C001/source.png",
+      "game_ready_file": "slots/A02_REACTOR_CORE/A02_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 96,
+      "actual_game_height": 96,
+      "expected_width": 96,
+      "expected_height": 96,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "eda606ae7b76942273d10f1d44ccf996238352300361f61eb62f701ded47abbe",
+        "sha256_game_ready": "7cc020c745e6b5ba2ced3fc8e99839f7dadee7a9786e0fc15aa6647fd297d119"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "horizontal drum vessel vs upright torus",
+        "cradle-saddle mount vs gimbal pedestal",
+        "window-slit plasma reveal vs open ring",
+        "cooling-ring bands vs pedestal feed conduits"
+      ]
+    },
+    {
+      "slot_id": "A02_REACTOR_CORE",
+      "source_candidate_id": "A02_C002",
+      "alternate_candidate_id": "A02_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A02_REACTOR_CORE/A02_C002/candidate.json",
+      "alternate_candidate_path": "slots/A02_REACTOR_CORE/A02_ALT_C002/candidate.json",
+      "priority": "A",
+      "category": "machinery prop",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A02_REACTOR_CORE/A02_ALT_C002/source.png",
+      "game_ready_file": "slots/A02_REACTOR_CORE/A02_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 96,
+      "actual_game_height": 96,
+      "expected_width": 96,
+      "expected_height": 96,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "8f8ba5a627c04d6c5a4d5d0b353a23b7ac1f340ef59e8b603ae74309c91acb8b",
+        "sha256_game_ready": "03497b6aa6172f7b88ed4a2ebcb01d19f5effc9b88058929b3e008fce5779b4f"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "modular honeycomb block vs monolithic crystal column",
+        "corner-bolted clamp frame vs four-strut cage",
+        "pyramidal massing vs vertical column",
+        "under-base manifold vs wide base plate"
+      ]
+    },
+    {
+      "slot_id": "A02_REACTOR_CORE",
+      "source_candidate_id": "A02_C003",
+      "alternate_candidate_id": "A02_ALT_C003",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A02_REACTOR_CORE/A02_C003/candidate.json",
+      "alternate_candidate_path": "slots/A02_REACTOR_CORE/A02_ALT_C003/candidate.json",
+      "priority": "A",
+      "category": "machinery prop",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A02_REACTOR_CORE/A02_ALT_C003/source.png",
+      "game_ready_file": "slots/A02_REACTOR_CORE/A02_ALT_C003/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 96,
+      "actual_game_height": 96,
+      "expected_width": 96,
+      "expected_height": 96,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "4b1227ceecc8f6ae2c0a66b4b6663d7a50bd61b0a57aba2d07f28042290e3072",
+        "sha256_game_ready": "ef2374b08e7e24248783cf8bb5d1da8083af8b953bf2f8a75287ee451bdb2ada"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "nested rotating rings vs static electromagnet arms",
+        "centered orb held by ring depth vs suspended sphere with arc filaments",
+        "single coil-wound pylon vs braced arm array"
+      ]
+    },
+    {
+      "slot_id": "U02_HUD_EXTENSION_ICONS",
+      "source_candidate_id": "U02_C001",
+      "alternate_candidate_id": "U02_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C001/candidate.json",
+      "alternate_candidate_path": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C001/candidate.json",
+      "priority": "A",
+      "category": "UI icons",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C001/source.png",
+      "game_ready_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C001/game_ready.png",
+      "actual_source_width": 2544,
+      "actual_source_height": 416,
+      "actual_game_width": 96,
+      "actual_game_height": 16,
+      "expected_width": 96,
+      "expected_height": 16,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "5ececc608d80573f30a0e6121d23045e7a3bf61f97d6e90f66be550cec1ae178",
+        "sha256_game_ready": "5e96152e2caccb9414eae9e0456b8b46a75836ddb101e019f0c13d373c39f838"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "beveled relief treatment vs flat two-tone",
+        "copper keyline vs single highlight cluster",
+        "embossed signage material vs plain solid fill"
+      ]
+    },
+    {
+      "slot_id": "U02_HUD_EXTENSION_ICONS",
+      "source_candidate_id": "U02_C002",
+      "alternate_candidate_id": "U02_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C002/candidate.json",
+      "alternate_candidate_path": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C002/candidate.json",
+      "priority": "A",
+      "category": "UI icons",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C002/source.png",
+      "game_ready_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C002/game_ready.png",
+      "actual_source_width": 2544,
+      "actual_source_height": 416,
+      "actual_game_width": 96,
+      "actual_game_height": 16,
+      "expected_width": 96,
+      "expected_height": 16,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "cec23964bc421b301a7c2a8dc7a91292481a46423a73524b2b45d79df4e4d9a7",
+        "sha256_game_ready": "35aef58b9cccee15dbd34bdf17e91c74baeb57b7e5bc6227e65db232da49b023"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "notched square frames vs rounded badge chips",
+        "two-color glyphs with drop-step vs rimmed chip badges",
+        "tile pictogram language vs badge language"
+      ]
+    },
+    {
+      "slot_id": "U02_HUD_EXTENSION_ICONS",
+      "source_candidate_id": "U02_C003",
+      "alternate_candidate_id": "U02_ALT_C003",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/U02_HUD_EXTENSION_ICONS/U02_C003/candidate.json",
+      "alternate_candidate_path": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C003/candidate.json",
+      "priority": "A",
+      "category": "UI icons",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C003/source.png",
+      "game_ready_file": "slots/U02_HUD_EXTENSION_ICONS/U02_ALT_C003/game_ready.png",
+      "actual_source_width": 2544,
+      "actual_source_height": 416,
+      "actual_game_width": 96,
+      "actual_game_height": 16,
+      "expected_width": 96,
+      "expected_height": 16,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "a138e40e03ba606806a3ce874748d9f7e27e40020029c8af53812f7e07523070",
+        "sha256_game_ready": "014cb97ab3f44a065f07475f0ba25c883e9fe46288eec0b1cc9f0c5ca7dc1839"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "stencil cut-out negative space vs open outline glyphs",
+        "glowing cut-out interior vs one warm accent cluster",
+        "plate silhouette mass vs line weight"
+      ]
+    },
+    {
+      "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+      "source_candidate_id": "T03_C001",
+      "alternate_candidate_id": "T03_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C001/candidate.json",
+      "alternate_candidate_path": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C001/candidate.json",
+      "priority": "A",
+      "category": "VFX overlay",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C001/source.png",
+      "game_ready_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "d6025f3586265cc895e82eb17e624242817396db956030cf63975d30f61075b2",
+        "sha256_game_ready": "cf90eb362fc16efe1d8f6b4f2f1a09d82b0a2446a08075ebb68c68a68cdf9e17"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "diagonal corner wash vs concentric halo shells",
+        "directional lighting placement vs symmetric shells",
+        "silhouette-edge cluster tracing vs top-edge brightness"
+      ]
+    },
+    {
+      "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+      "source_candidate_id": "T03_C002",
+      "alternate_candidate_id": "T03_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C002/candidate.json",
+      "alternate_candidate_path": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C002/candidate.json",
+      "priority": "A",
+      "category": "VFX overlay",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C002/source.png",
+      "game_ready_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "e2b5de5ffe91e0e73921b643820cf72a8753442e77de5b97d3e5cf34e5f3fdd2",
+        "sha256_game_ready": "65535f4f9bcf57dca73a93c2f567c4bb09c1c0231a4ca74b5b58c71c16697306"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "top-down falling curtain vs bottom-up rising mote columns",
+        "bright top bar anchor vs base pool anchor",
+        "descending flecks vs climbing motes"
+      ]
+    },
+    {
+      "slot_id": "T03_TERMINAL_ACTIVE_GLOW",
+      "source_candidate_id": "T03_C003",
+      "alternate_candidate_id": "T03_ALT_C003",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/T03_TERMINAL_ACTIVE_GLOW/T03_C003/candidate.json",
+      "alternate_candidate_path": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C003/candidate.json",
+      "priority": "A",
+      "category": "VFX overlay",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C003/source.png",
+      "game_ready_file": "slots/T03_TERMINAL_ACTIVE_GLOW/T03_ALT_C003/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "1eab9052de340120fd543f6b761f318de7f67181e9a87a4362efb6dbb07d792b",
+        "sha256_game_ready": "46926f81680a0574a97400cbbb74375648280a9ee73f4d61858c8fed56ae13b4"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "outline vein tracing vs nested pulse rings",
+        "backlit seam metaphor vs ring-pulse metaphor",
+        "internal fill halo vs spark ticks at corners"
+      ]
+    },
+    {
+      "slot_id": "A03_ENGINEER_DRONE",
+      "source_candidate_id": "A03_C001",
+      "alternate_candidate_id": "A03_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A03_ENGINEER_DRONE/A03_C001/candidate.json",
+      "alternate_candidate_path": "slots/A03_ENGINEER_DRONE/A03_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A03_ENGINEER_DRONE/A03_ALT_C001/source.png",
+      "game_ready_file": "slots/A03_ENGINEER_DRONE/A03_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "d78bb7faf550ae9ce411ff28aeabb60201f2cc9f9d3e77c6ec30f06390fe94cf",
+        "sha256_game_ready": "0e19bbfa1fd0c852fedf3760ad9aef0dc162171251f31b3c72d612aea27da0ea"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "underslung copper busbar rail vs side cable spool",
+        "side caliper arms vs forward probe arm",
+        "twin side thruster pods vs single fan",
+        "flat trapezoid hull vs drum body"
+      ]
+    },
+    {
+      "slot_id": "A03_ENGINEER_DRONE",
+      "source_candidate_id": "A03_C002",
+      "alternate_candidate_id": "A03_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A03_ENGINEER_DRONE/A03_C002/candidate.json",
+      "alternate_candidate_path": "slots/A03_ENGINEER_DRONE/A03_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A03_ENGINEER_DRONE/A03_ALT_C002/source.png",
+      "game_ready_file": "slots/A03_ENGINEER_DRONE/A03_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "b83182c0573e7cb2a241e1b4a8546359413b1f9b69e718d63633175db7cb3756",
+        "sha256_game_ready": "27c820b8f4dae6da4bcdd174fe24b9b57c994708d35305a7b3d247662715a33d"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "cube hull with transformer backpack vs twin-boom frame",
+        "hinged probe snout vs extendable visor arm",
+        "single annular ring thruster vs three caged thrusters"
+      ]
+    },
+    {
+      "slot_id": "A04_HARVESTER_DRONE",
+      "source_candidate_id": "A04_C001",
+      "alternate_candidate_id": "A04_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C001/candidate.json",
+      "alternate_candidate_path": "slots/A04_HARVESTER_DRONE/A04_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C001/source.png",
+      "game_ready_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "68359b887ac71137223408669baf01ceb8c1eee9231feef860d84fac906ad01f",
+        "sha256_game_ready": "96dc508d031b3f29337d68770c23b61b5374dd49f1f90bad50fc0d2586b382b4"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "MULTIPLE_SUBJECTS_POSSIBLE",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "hanging mesh produce net vs slung woven basket",
+        "mast body with top rotor vs rounded hull with ducted fan",
+        "three-finger side gripper vs folded pincer claw"
+      ]
+    },
+    {
+      "slot_id": "A04_HARVESTER_DRONE",
+      "source_candidate_id": "A04_C002",
+      "alternate_candidate_id": "A04_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A04_HARVESTER_DRONE/A04_C002/candidate.json",
+      "alternate_candidate_path": "slots/A04_HARVESTER_DRONE/A04_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C002/source.png",
+      "game_ready_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "0a43c610e2a5866f8f4567e68ba12839619bf657a03d34b062fac2854639b7c0",
+        "sha256_game_ready": "cd38bc887d2af5cba034571d11a68b1220c6ae544e22c939237ba83e1e25a232"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "front picker reel vs front scoop tray",
+        "top conveyor channel vs tray-held fruit",
+        "wide rear fin vs twin rear thrusters"
+      ]
+    },
+    {
+      "slot_id": "A05_MAINTENANCE_DRONE",
+      "source_candidate_id": "A05_C001",
+      "alternate_candidate_id": "A05_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C001/candidate.json",
+      "alternate_candidate_path": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/source.png",
+      "game_ready_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "9af39a56d33ef04048c059fc245f3e38814da7a72b8d75d2b006b32eb65355d5",
+        "sha256_game_ready": "21dedb4d5cf67dde5ab6a58c87cca06e5a46918d60372417fd4fc038c54b9753"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "magnetic runner skids with belly buffing belt vs rotating brush pads underneath",
+        "tilting inspector head vs polish-wheel arm",
+        "low wedge silhouette vs rounded puck"
+      ]
+    },
+    {
+      "slot_id": "A05_MAINTENANCE_DRONE",
+      "source_candidate_id": "A05_C002",
+      "alternate_candidate_id": "A05_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/A05_MAINTENANCE_DRONE/A05_C002/candidate.json",
+      "alternate_candidate_path": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "agent sprite",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C002/source.png",
+      "game_ready_file": "slots/A05_MAINTENANCE_DRONE/A05_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 32,
+      "actual_game_height": 32,
+      "expected_width": 32,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "87a9c33bc810428f05db5f51214abc30b1458a7520c9e9b39106bbc49d5df28c",
+        "sha256_game_ready": "525bcd0bcba07af9a6bb982deaf2609fe7cd0256ac11fd9d587bd377f88a9d3b"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "patch stack with welder arm vs hopper with spray boom",
+        "warm welder tip as the glow focus vs inspection lamp focus",
+        "turtle-shell silhouette vs compact box"
+      ]
+    },
+    {
+      "slot_id": "B03_DOCKING_COLLAR",
+      "source_candidate_id": "B03_C001",
+      "alternate_candidate_id": "B03_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C001/candidate.json",
+      "alternate_candidate_path": "slots/B03_DOCKING_COLLAR/B03_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "module fixture",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C001/source.png",
+      "game_ready_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C001/game_ready.png",
+      "actual_source_width": 848,
+      "actual_source_height": 1264,
+      "actual_game_width": 64,
+      "actual_game_height": 96,
+      "expected_width": 64,
+      "expected_height": 96,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "b44c3d46afc74ef042c6f1a2ddd890ded9561a904919d71cb1e76b56837d2d37",
+        "sha256_game_ready": "db6a02af02bfe6271277617813cd7c1939b974d96f41119b4ad5a8d155ab04e8"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "octagonal geometry vs circular collar",
+        "corner tension arms vs clamp petals",
+        "paired lights along top edges vs full guide-light ring"
+      ]
+    },
+    {
+      "slot_id": "B03_DOCKING_COLLAR",
+      "source_candidate_id": "B03_C002",
+      "alternate_candidate_id": "B03_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B03_DOCKING_COLLAR/B03_C002/candidate.json",
+      "alternate_candidate_path": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "module fixture",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/source.png",
+      "game_ready_file": "slots/B03_DOCKING_COLLAR/B03_ALT_C002/game_ready.png",
+      "actual_source_width": 848,
+      "actual_source_height": 1264,
+      "actual_game_width": 64,
+      "actual_game_height": 96,
+      "expected_width": 64,
+      "expected_height": 96,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "b47bb9ee876100b3d31a8449925184c28998bc1ea82912ab743a647626f6c06a",
+        "sha256_game_ready": "3067f61a2869c93984728bc507742ffa33b341944848f0c804a98a16b33ad102"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "vertical slot mouth vs rectangular cargo mouth",
+        "capture hook with rail clamps vs side ram clamps",
+        "vertical side light strips vs chevron lights above"
+      ]
+    },
+    {
+      "slot_id": "B04_HYDROPONICS_RIG",
+      "source_candidate_id": "B04_C001",
+      "alternate_candidate_id": "B04_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C001/candidate.json",
+      "alternate_candidate_path": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "machinery prop",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/source.png",
+      "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "12d376031891461b75bd8f23754c85c196c66743edb03c0ee5824c77273da617",
+        "sha256_game_ready": "8cc53122ba8c9800f7821ad7f20b4da241f3b8cba91ebe5a01be140a1de57c3b"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "single end-on filter drum vs twin round tanks",
+        "hand-crank with backwash pipe vs copper manifold with drip arm",
+        "root-strand sight tube vs sight-gauge windows"
+      ]
+    },
+    {
+      "slot_id": "B04_HYDROPONICS_RIG",
+      "source_candidate_id": "B04_C002",
+      "alternate_candidate_id": "B04_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B04_HYDROPONICS_RIG/B04_C002/candidate.json",
+      "alternate_candidate_path": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "machinery prop",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/source.png",
+      "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_ALT_C002/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "4837b7790d532fe0822b409f637bd7bad7f43f0188c3948347d385d8fe78b47d",
+        "sha256_game_ready": "94048f1d7bb08e75fb08d4cdb06dd5c5c7bcf9d79f0048748a0c0b75d27e43c7"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "zigzag pipe ladder vs vertical tube rack",
+        "header tank feeding a lower chamber vs topfill reservoir over pump heart",
+        "midpoint sprout rail vs row of gauge dials"
+      ]
+    },
+    {
+      "slot_id": "B05_ARCHIVE_STACK",
+      "source_candidate_id": "B05_C001",
+      "alternate_candidate_id": "B05_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C001/candidate.json",
+      "alternate_candidate_path": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "module fixture",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/source.png",
+      "game_ready_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C001/game_ready.png",
+      "actual_source_width": 928,
+      "actual_source_height": 1152,
+      "actual_game_width": 64,
+      "actual_game_height": 80,
+      "expected_width": 64,
+      "expected_height": 80,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "dc0f273bc2ef4b2f0fa6b1cfc4ed752f81a0f9fab86bc88e71922bfe273f6e25",
+        "sha256_game_ready": "2928a6b10e14a7f506bdc3c839bb5f850fac1835f7f70629934a535553a8ef7a"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "offset drawers vs uniform shelf rows",
+        "pulled-drawer reveal vs glass front",
+        "docked reader wand vs reader probe arm"
+      ]
+    },
+    {
+      "slot_id": "B05_ARCHIVE_STACK",
+      "source_candidate_id": "B05_C002",
+      "alternate_candidate_id": "B05_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/B05_ARCHIVE_STACK/B05_C002/candidate.json",
+      "alternate_candidate_path": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "module fixture",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/source.png",
+      "game_ready_file": "slots/B05_ARCHIVE_STACK/B05_ALT_C002/game_ready.png",
+      "actual_source_width": 928,
+      "actual_source_height": 1152,
+      "actual_game_width": 64,
+      "actual_game_height": 80,
+      "expected_width": 64,
+      "expected_height": 80,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "198224d88978357d7bbaa0b5d0c77ef52c7532048b846695dec6e43aed42d5cf",
+        "sha256_game_ready": "c5c4172eb72f2936e8cc5d1fd6d4276e4ad6391d2a9a76eb47d779c1dc0f0418"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "hanging vial rails vs spiral drum slots",
+        "copper claw cradles vs rounded drum cabinet",
+        "ladder-step probe at base vs retrieval claw at top"
+      ]
+    },
+    {
+      "slot_id": "V02_HAZARD_VFX",
+      "source_candidate_id": "V02_C001",
+      "alternate_candidate_id": "V02_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/V02_HAZARD_VFX/V02_C001/candidate.json",
+      "alternate_candidate_path": "slots/V02_HAZARD_VFX/V02_ALT_C001/candidate.json",
+      "priority": "B",
+      "category": "VFX",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/V02_HAZARD_VFX/V02_ALT_C001/source.png",
+      "game_ready_file": "slots/V02_HAZARD_VFX/V02_ALT_C001/game_ready.png",
+      "actual_source_width": 2064,
+      "actual_source_height": 512,
+      "actual_game_width": 128,
+      "actual_game_height": 32,
+      "expected_width": 128,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "7df1da25cb4aaf648314719981a09e1d60bbb95523bf8a2130bf94dcd7bb3d0b",
+        "sha256_game_ready": "b293539eb12acf2a0e2a4659e2435b3ba237feab14344605ceed7f27a3e4a173"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "centered radial bursts vs corner washes and falling showers",
+        "sun-shard / eye-ring / spark-cross metaphors",
+        "compact symmetric composition per cell"
+      ]
+    },
+    {
+      "slot_id": "V02_HAZARD_VFX",
+      "source_candidate_id": "V02_C002",
+      "alternate_candidate_id": "V02_ALT_C002",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/V02_HAZARD_VFX/V02_C002/candidate.json",
+      "alternate_candidate_path": "slots/V02_HAZARD_VFX/V02_ALT_C002/candidate.json",
+      "priority": "B",
+      "category": "VFX",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/source.png",
+      "game_ready_file": "slots/V02_HAZARD_VFX/V02_ALT_C002/game_ready.png",
+      "actual_source_width": 2064,
+      "actual_source_height": 512,
+      "actual_game_width": 128,
+      "actual_game_height": 32,
+      "expected_width": 128,
+      "expected_height": 32,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "157d690104cd3d70e95343a2d72472bb755c73fee7b3a962d5022fbdd2c93223",
+        "sha256_game_ready": "1a0e46dd74f14e523d491be039079c8f8422a033b8f5a083459e98dbd55e7940"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "sweeping curved strokes vs straight diagonal shards",
+        "fan / spiral / crescent metaphors",
+        "curved motion language across all four cells"
+      ]
+    },
+    {
+      "slot_id": "E03_CARGO_PROPS",
+      "source_candidate_id": "E03_C001",
+      "alternate_candidate_id": "E03_ALT_C001",
+      "source_candidate_path": "../arena_agent_additional_asset_run/slots/E03_CARGO_PROPS/E03_C001/candidate.json",
+      "alternate_candidate_path": "slots/E03_CARGO_PROPS/E03_ALT_C001/candidate.json",
+      "priority": "C",
+      "category": "environment props",
+      "generation_status": "generated",
+      "technical_status": "PASS_WITH_FLAGS",
+      "source_file": "slots/E03_CARGO_PROPS/E03_ALT_C001/source.png",
+      "game_ready_file": "slots/E03_CARGO_PROPS/E03_ALT_C001/game_ready.png",
+      "actual_source_width": 1024,
+      "actual_source_height": 1024,
+      "actual_game_width": 64,
+      "actual_game_height": 64,
+      "expected_width": 64,
+      "expected_height": 64,
+      "alpha_present": true,
+      "hashes": {
+        "sha256_source": "a79465ffe0b00b7ada0893d1fdeff30ccea5fdcfed167962a7c31e0d7fa54a8f",
+        "sha256_game_ready": "081f7eda4759f82e82051d2612c092ad047c2000c11cbc76457e532fb60d7bf9"
+      },
+      "flags": [
+        "BACKGROUND_REMOVED",
+        "CONVERSION_REQUIRED",
+        "FRAME_LAYOUT_UNCERTAIN",
+        "NO_ALPHA",
+        "UNREADABLE_AT_TARGET_SCALE"
+      ],
+      "challenger_axes": [
+        "station-gray riveted shells vs dusk-blue matched shells",
+        "ribbed crate / capsule tank / fold-out chest / tiered rack redesigns",
+        "teal working-light accents vs copper-trim-only accents"
+      ]
+    }
+  ]
+}

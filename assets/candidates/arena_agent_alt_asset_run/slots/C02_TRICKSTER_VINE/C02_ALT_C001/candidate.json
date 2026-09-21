@@ -1,0 +1,45 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C02_TRICKSTER_VINE",
+  "source_candidate_id": "C02_C001",
+  "alternate_candidate_id": "C02_ALT_C001",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/C02_TRICKSTER_VINE/C02_ALT_C001/source.png",
+  "game_ready_file": "slots/C02_TRICKSTER_VINE/C02_ALT_C001/game_ready.png",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells left-to-right: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": true,
+  "sha256_source": "b3a57fb2a8b34009a14797d3589adfb05f03d3b30780ee03209adca339308b92",
+  "sha256_game_ready": "90c9b6041cb68f38299e4994ea544f293639f16ce04a92a2fa2b6ba406d9e1dd",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row of four consecutive 32x32 cells on a wide 4:1 strip (128x32 proportion), left to right: stage 1 empty planter, stage 2 seedling, stage 3 growing, stage 4 READY harvest. The same small worn hydroponic planter box (station gray with teal rim, IDENTICAL position and design) appears at the bottom of all four cells. The pure flat magenta #FF00FF background is one single flat color across the whole strip - between cells, around the plants, edge to edge - with absolutely no grid lines, no separating borders, no frame, no caption panel. The plant is a mythic trickster vine (Loki-like spirit, no person depicted): subtly unruly, asymmetric, implying a desire to escape; stage 4 is unmistakably harvest-ready with glowing buds in mythic warm gold with a slight violet-green iridescence. NO cartoon face on the plant. GBA/SNES pixel art, dark subtle outline, consistent planter alignment.  CHALLENGER DESIGN (materially different from the incumbent hook-shaped curls with gold bell-like pods and a leaning ready state): a whiplash fiddlehead vine: smooth confident S-curve strokes; stage 3 tip coiled like a fern fiddlehead; the READY state is one great coiled-spiral gold bud wound like a spring above loosely draping tendrils, with tiny violet spark dots; the whole growth gesture cascades diagonally toward one side rather than leaning.",
+  "challenger_axes": [
+    "botanical morphology: fiddlehead spiral strokes vs hook-shaped curls",
+    "bud structure: one coiled-spring spiral bud vs bell-like pods",
+    "growth gesture: diagonal cascade vs visible lean",
+    "accent: violet spark dots vs gold pod glow only"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=3, removed 72.9%)",
+    "content downscaled x0.0648 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 22% 26% 32% 43%",
+    "planter-band IoU vs cell1: c2=0.88 c3=0.77 c4=0.69"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

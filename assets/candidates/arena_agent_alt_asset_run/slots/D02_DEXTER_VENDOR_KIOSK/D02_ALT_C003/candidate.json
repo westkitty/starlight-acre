@@ -1,0 +1,41 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "D02_DEXTER_VENDOR_KIOSK",
+  "source_candidate_id": "D02_C003",
+  "alternate_candidate_id": "D02_ALT_C003",
+  "priority": "A",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C003/source.png",
+  "game_ready_file": "slots/D02_DEXTER_VENDOR_KIOSK/D02_ALT_C003/game_ready.png",
+  "actual_source_width": 1264,
+  "actual_source_height": 848,
+  "actual_game_width": 96,
+  "actual_game_height": 64,
+  "expected_width": 96,
+  "expected_height": 64,
+  "expected_frame_layout": "single prop, 96x64 canvas, bottom-center anchor, clear space left for Dexter beside/within the composition, NO dog in this asset",
+  "alpha_present": true,
+  "sha256_source": "556bbd21a9b84132ed5e964e55869c01a9d6138877013a2e782f8a9c9562bb2e",
+  "sha256_game_ready": "b3f354239ee6180b722703857e8c2da97a69ee159bc719950b4ce42f04d4644a",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A compact improvised orbital trading kiosk prop for a 2D side-view pixel game: exactly ONE kiosk prop (no characters, no animals) centered on a solid flat pure magenta #FF00FF background (one flat color edge to edge, no checkerboard, no border, no frame). Slightly wide landscape composition (about 3:2). Repaired old station hardware: mismatched hull panels in dusk blue and station gray with copper brackets, a trade surface holding small seed containers, sealed rare biological goods canisters with faint teal and warm gold glow, one or two small cargo cases, a few unusual salvaged station components, a small canopy of salvaged strut and cloth in muted gold. Subtle teal/gold lighting, worn and lived-in. Deliberately leave clear empty space at one side of the counter where a very small dog vendor will later stand. NO animals, NO characters, NO readable text, no floor, no stage, no drop shadow on the background. Dark subtle outline, bottom edge on the canvas floor line.  CHALLENGER DESIGN (materially different from the incumbent scaffold table with glowing canister rack and awning): a tandem-cart kiosk: two small linked utility carts at slightly different heights - the higher one carrying a latched glowing canister crate, the lower one holding shallow seed trays - joined by a short tow bar; a striped tarp awning stretched on two poles over the rear cart only; a few salvaged components strapped underneath; clear open vendor space on the left.",
+  "challenger_axes": [
+    "base: two linked utility carts at stepped heights vs single scaffold table",
+    "awning: striped tarp on two poles over rear cart only vs fixed awning",
+    "goods arrangement: latched canister crate + shallow seed trays vs glowing rack",
+    "silhouette: tandem stepped carts vs one table mass"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 61.2%)",
+    "content downscaled x0.0923 (NEAREST) into 96x64 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

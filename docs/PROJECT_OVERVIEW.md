@@ -100,7 +100,7 @@ Ordered by value:
 | Language | GDScript |
 | View | 2D side-view |
 | Art style | GBA/SNES pixel art (16-bit aesthetic) |
-| Internal resolution | ~480×270 scaled up with Nearest filter |
+| Internal resolution | 640×360, default 2× window scale with Nearest filter |
 | Structure | Room-as-scene, scene composition |
 | Event system | Single Events autoload signal bus |
 | Data format | Resource subclasses; JSON for tabular data |

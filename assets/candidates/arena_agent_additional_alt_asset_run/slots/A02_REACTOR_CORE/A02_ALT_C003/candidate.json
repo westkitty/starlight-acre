@@ -1,0 +1,50 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "A02_REACTOR_CORE",
+  "source_candidate_id": "A02_C003",
+  "alternate_candidate_id": "A02_ALT_C003",
+  "asset_name": "Energy Reactor Core",
+  "priority": "A",
+  "category": "machinery prop",
+  "integration_target": "EngineeringBay.tscn CoreGlow node region (center-right of bay, mid-air glow position)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/A02_REACTOR_CORE/A02_ALT_C003/source.png",
+  "game_ready_file": "slots/A02_REACTOR_CORE/A02_ALT_C003/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 96,
+  "actual_game_height": 96,
+  "expected_width": 96,
+  "expected_height": 96,
+  "expected_topology": "single prop, 96x96 canvas (6x6 tiles of 16px, NEWLY PROPOSED dimensions), hover/center anchor",
+  "alpha_present": true,
+  "sha256_source": "4b1227ceecc8f6ae2c0a66b4b6663d7a50bd61b0a57aba2d07f28042290e3072",
+  "sha256_game_ready": "ef2374b08e7e24248783cf8bb5d1da8083af8b953bf2f8a75287ee451bdb2ada",
+  "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   The station's Energy Reactor core for a 2D side-view pixel game: exactly ONE reactor core prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Slightly square 1:1 composition. Strict side view. A contained luminous teal-cyan plasma heart held inside worn station hardware: dusk-blue and station-gray housing, maintenance copper feed lines and bolts, subtle repair seams; the glow reads as restrained and calm, not explosive; dark subtle outline; clean hard pixel-cluster edges against the background. It must read as the power heart of the engineering bay at gameplay scale. No readable text, no second core, no duplicate views, no floor, no stage, no drop shadow on the background, no presentation board.  Variant 3: a suspended teal sphere core floating between two angled electromagnet arms mounted on one pylon, tiny contained arc filaments hopping between the arms and the sphere.",
+  "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   The station's Energy Reactor core for a 2D side-view pixel game: exactly ONE reactor core prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Slightly square 1:1 composition. Strict side view. A contained luminous teal-cyan plasma heart held inside worn station hardware: dusk-blue and station-gray housing, maintenance copper feed lines and bolts, subtle repair seams; the glow reads as restrained and calm, not explosive; dark subtle outline; clean hard pixel-cluster edges against the background. It must read as the power heart of the engineering bay at gameplay scale. No readable text, no second core, no duplicate views, no floor, no stage, no drop shadow on the background, no presentation board.  Challenger design: a gyroscope core - one small bright teal orb held at the center of two nested copper gimbal rings that suggest slow rotation, standing on a single thick station-gray pylon wound with copper coil at its base, two tiny guide lights at the foot.",
+  "challenger_axes": [
+    "nested rotating rings vs static electromagnet arms",
+    "centered orb held by ring depth vs suspended sphere with arc filaments",
+    "single coil-wound pylon vs braced arm array"
+  ],
+  "source_technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 56.8%)",
+    "content downscaled x0.1103 (NEAREST) into 96x96 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

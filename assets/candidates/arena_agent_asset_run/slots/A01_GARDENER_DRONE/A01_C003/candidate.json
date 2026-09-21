@@ -1,0 +1,34 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "A01_GARDENER_DRONE",
+  "candidate_id": "A01_C003",
+  "priority": "A",
+  "source_file": "slots/A01_GARDENER_DRONE/A01_C003/source.png",
+  "game_ready_file": "slots/A01_GARDENER_DRONE/A01_C003/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 1408,
+  "actual_source_height": 768,
+  "actual_game_width": 32,
+  "actual_game_height": 32,
+  "expected_width": 32,
+  "expected_height": 32,
+  "expected_frame_layout": "single sprite, 32x32, bottom-center/hover-center anchor",
+  "alpha_present": true,
+  "sha256_source": "a89fadcde6f965ad1f2f5577d89cf5c4d3ed37d75850b83b3f7daf36240681e6",
+  "sha256_game_ready": "6054867444b43b5b48f4a4481a23a17a306c7680e32a9bc02d7cc5512fdbb5e9",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  A small automated orbital gardener maintenance drone for a 2D side-view pixel game, single sprite centered on a solid flat pure magenta #FF00FF background (flat single color, no checkerboard, no gradient). Strict side view. Compact utility machine: worn station-metal hull in station gray and dusk blue, hydroponic teal and moss green accents, a small clipped tool arm with tender-claw or nozzle for tending plants, a subtle teal sensor slit instead of eyes, small thruster nozzles beneath (hover center anchor). Clearly non-human, helper not enemy, botanical tending function visible in silhouette, readable at very small scale, dark subtle outline. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body. Variant 3: low wide hexagonal maintenance drone with side-mounted clipper arm and tiny top beacon in moss green.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 66.4%)",
+    "content downscaled x0.0285 (NEAREST) into 32x32 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

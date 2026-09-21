@@ -1,0 +1,43 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "B04_HYDROPONICS_RIG",
+  "candidate_id": "B04_C002",
+  "asset_name": "Hydroponics Wing Recycler Rig",
+  "priority": "B",
+  "category": "machinery prop",
+  "discovery_evidence": "docs/GAME_DESIGN.md Station Expansion: 'Hydroponics Wing - Water recycling; reduces replenish costs'; implemented closed_loop_hydroponics upgrade (research_terminal.gd / game_state.gd) gives the module a live gameplay hook.",
+  "evidence_paths": [
+    "docs/GAME_DESIGN.md",
+    "actors/terminals/research_terminal.gd",
+    "autoload/game_state.gd"
+  ],
+  "integration_target": "future Hydroponics Wing sector (free-standing machine prop, 4x4 tiles)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/B04_HYDROPONICS_RIG/B04_C002/source.png",
+  "game_ready_file": "slots/B04_HYDROPONICS_RIG/B04_C002/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 64,
+  "actual_game_height": 64,
+  "expected_width": 64,
+  "expected_height": 64,
+  "expected_topology": "single prop, 64x64 canvas (4x4 tiles of 16px, NEWLY PROPOSED dimensions), bottom-center anchor",
+  "alpha_present": true,
+  "sha256_source": "fedb3f2de642932814c8edbaa533ce9347bdfa8cc0f8f61d84c3d887e857187e",
+  "sha256_game_ready": "b7dd32abaf78d8ab468de519485330f5049fdcddfdfe62dc9b858c0a820c4934",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A hydroponics water-recycling rig for the station's Hydroponics Wing in a 2D side-view pixel game: exactly ONE machine prop centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no border, no frame). Slightly square 1:1 composition. Strict side view. Worn station hardware in dusk blue and station gray with maintenance copper pipes and fittings; visible water in calm hydroponic teal: tanks, gauges, filter cartridges and drip lines; a small moss-green trace of life where water feeds a plant rail; clearly a water recycling machine, calm and functional. Dark subtle outline. No readable text, no second machine, no floor, no stage, no drop shadow on the background.  Variant 2: a vertical rack of slim nutrient tubes around a small pump heart, with a topfill reservoir and a row of tiny gauge dials.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 69.0%)",
+    "content downscaled x0.0850 (NEAREST) into 64x64 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

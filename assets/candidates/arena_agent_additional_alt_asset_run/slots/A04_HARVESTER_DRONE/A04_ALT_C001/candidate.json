@@ -1,0 +1,52 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "A04_HARVESTER_DRONE",
+  "source_candidate_id": "A04_C001",
+  "alternate_candidate_id": "A04_ALT_C001",
+  "asset_name": "Harvester Drone",
+  "priority": "B",
+  "category": "agent sprite",
+  "integration_target": "actors/agents/ (same 32x32 hover family as GardenerDrone)",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "source_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C001/source.png",
+  "game_ready_file": "slots/A04_HARVESTER_DRONE/A04_ALT_C001/game_ready.png",
+  "actual_source_width": 1024,
+  "actual_source_height": 1024,
+  "actual_game_width": 32,
+  "actual_game_height": 32,
+  "expected_width": 32,
+  "expected_height": 32,
+  "expected_topology": "single sprite, 32x32, hover center anchor (matches GardenerDrone A01 family)",
+  "alpha_present": true,
+  "sha256_source": "68359b887ac71137223408669baf01ceb8c1eee9231feef860d84fac906ad01f",
+  "sha256_game_ready": "96dc508d031b3f29337d68770c23b61b5374dd49f1f90bad50fc0d2586b382b4",
+  "source_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A small automated orbital HARVESTER drone for a 2D side-view pixel game: exactly ONE drone, single sprite centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Square 1:1 composition. Strict side view. This drone's job is GENTLE HARVESTING and produce carrying, visibly different from a gardening drone: a soft-grip claw or cutter and a visible produce basket, crate or scoop; worn station-metal hull in station gray and dusk blue with moss green and warm gold accents; hover center anchor; clearly a non-human helper. Dark subtle outline, clean hard edges against the background. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body, no second drone or duplicate, no floor, no stage, no drop shadow on the background.  Variant 1: a basket-drone: rounded hull with a woven station-gray produce basket slung underneath, one soft pincer claw folded above it, single ducted hover fan.",
+  "challenger_generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.   A small automated orbital HARVESTER drone for a 2D side-view pixel game: exactly ONE drone, single sprite centered on a solid flat pure magenta #FF00FF background (one flat single color edge to edge, no checkerboard, no gradient, no border, no frame, no caption panel). Square 1:1 composition. Strict side view. This drone's job is GENTLE HARVESTING and produce carrying, visibly different from a gardening drone: a soft-grip claw or cutter and a visible produce basket, crate or scoop; worn station-metal hull in station gray and dusk blue with moss green and warm gold accents; hover center anchor; clearly a non-human helper. Dark subtle outline, clean hard edges against the background. No weapons, no combat language, no giant antennae, no cartoon mascot face, no huge expressive eyes, no humanoid body, no second drone or duplicate, no floor, no stage, no drop shadow on the background.  Challenger design: a net-bag reaper - a slim vertical mast body under a top lift-rotor shroud, a gentle three-finger gripper on one side, and a deep mesh produce net hanging below the hull with two tiny gold fruits visible inside.",
+  "challenger_axes": [
+    "hanging mesh produce net vs slung woven basket",
+    "mast body with top rotor vs rounded hull with ducted fan",
+    "three-finger side gripper vs folded pincer claw"
+  ],
+  "source_technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "MULTIPLE_SUBJECTS_POSSIBLE",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=1, removed 75.2%)",
+    "deterministic island analysis found 2 major opaque islands in a single-sprite slot; source may contain repeated subjects",
+    "content downscaled x0.0312 (NEAREST) into 32x32 canvas, bottom-center anchor"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}

@@ -1,0 +1,38 @@
+{
+  "project": "starlight-acre",
+  "slot_id": "C05_GOLDEN_BLOSSOM",
+  "candidate_id": "C05_C001",
+  "priority": "C",
+  "source_file": "slots/C05_GOLDEN_BLOSSOM/C05_C001/source.png",
+  "game_ready_file": "slots/C05_GOLDEN_BLOSSOM/C05_C001/game_ready.png",
+  "generation_status": "generated",
+  "technical_status": "PASS_WITH_FLAGS",
+  "actual_source_width": 2064,
+  "actual_source_height": 512,
+  "actual_game_width": 128,
+  "actual_game_height": 32,
+  "expected_width": 128,
+  "expected_height": 32,
+  "expected_frame_layout": "growth sheet 128x32, four consecutive 32x32 cells: empty planter / seedling / growing / ready; identical planter in all frames",
+  "alpha_present": true,
+  "sha256_source": "5b3dc4fca15957c7ee03b35647795f97ce1d63db5d2d84271273e94f6b4c17d9",
+  "sha256_game_ready": "41f12379ea50bd3ee6a805bbfb8dff04929454101bcc5db2fa8d39daa7658542",
+  "generation_prompt": "Starlight Acre visual identity: polished orbital mythic farming-station game; the player restores a decaying space station by cultivating impossible mythic plants. Mood: atmospheric, luminous, calm but purposeful, slightly uncanny, mysterious, lived-in, restrained wonder; machinery that has survived too long; hopeful but never cheerful children's art. NOT generic cozy farming, NOT chibi, NOT glossy mobile art, NOT military sci-fi, NOT cyberpunk city, NOT isometric or top-down, NOT photorealistic. PIXEL ART LAW: deliberate GBA/SNES-era pixel art; hard pixel edges; deliberate pixel clusters; limited shading; strong silhouettes; restrained highlights; dark subtle outlines around gameplay objects; consistent pixel density; nearest-neighbor-compatible structure; absolutely no anti-aliasing, no blur, no soft painted edges, no photographic detail, no depth of field, no AI-smear pseudo-pixels, no checkerboard patterns, no text or lettering. PALETTE ANCHORS: deep space navy #0A0E1A, dusk blue #1E2D4A, hydroponic teal #2E8B8B, moss green #4F7942, mythic warm gold #D4AF37, maintenance copper #B87333, station gray #708090, bone highlight #F5F5DC (use as anchors, not all at once). Hardware: used, repaired, modular, industrial. Mythic biology: luminous, precious, uncanny.  Four-stage crop growth sprite sheet for a 2D side-view pixel game: ONE row, four consecutive 32x32 cells on a 128x32 canvas, left to right, on a solid flat pure magenta #FF00FF background (flat, no checkerboard). The same small worn hydroponic planter box (station gray with teal rim, identical position and design) in all four cells. A warm-gold flowering mythic plant, Freya-inspired without depicting any goddess or person: elegant but NOT ornate, clean generous silhouette implying efficiency, attraction and abundance. Stage 1 empty planter. Stage 2 seedling with rounded paired leaves. Stage 3 growing stem with closed gold buds. Stage 4 READY unmistakable: an open radiant warm-gold blossom like a stylized sunflower-poppy hybrid with a soft mythic glow, a few drifting gold petal motes. Precious, calm, welcoming. GBA/SNES pixel art, dark subtle outline, consistent planter alignment. Variant 1: single large open bloom on a sturdy stem with broad moss-green leaves.",
+  "technical_flags": [
+    "BACKGROUND_REMOVED",
+    "CONVERSION_REQUIRED",
+    "FRAME_LAYOUT_UNCERTAIN",
+    "NO_ALPHA",
+    "UNREADABLE_AT_TARGET_SCALE"
+  ],
+  "notes": [
+    "flood-keyed border background (seeds=2, removed 70.0%)",
+    "content downscaled x0.0625 (NEAREST) into 128x32 canvas, bottom-center anchor",
+    "multi-cell/strip sheet: generated source is a single raster; per-cell topology not deterministically guaranteed; review before slicing",
+    "sheet cell opaque shares (row-major): 21% 25% 29% 41%",
+    "planter-band IoU vs cell1: c2=0.98 c3=0.98 c4=0.89"
+  ],
+  "selected": false,
+  "rejected": false,
+  "live_asset_replaced": false
+}
