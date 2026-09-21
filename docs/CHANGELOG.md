@@ -172,3 +172,23 @@ All notable changes to Starlight Acre are documented here.
 - Camera contract regression checks pass at left, center, and right room positions with the background synchronized to the camera center.
 - `tests/run_core_systems.sh`: PASS after the migration.
 - Real Godot 4.7.1 Greenhouse and Engineering captures: 640×360, status OK; 34/34 visual QA crops extracted.
+
+---
+
+## [First Station Hazard — Solar Flare] — 2026-09-21
+
+### Added
+- `systems/hazards/SolarFlareController.tscn` + `solar_flare_controller.gd`: recurring Solar Flare lifecycle with 30s initial calm, 5s warning, 8s active phase, and 45s recovery.
+- `Events.hazard_state_changed` as the hazard-state notification surface.
+- Transient in-run Solar Flare phase/time on `GameState`; it survives sector transitions but is intentionally excluded from save serialization.
+- HUD Solar Flare indicator using the canonical V02 cell 1 from `assets/effects/hazard_vfx.png`.
+
+### Changed
+- Active Solar Flare multiplies normal station power drain by 5×. Existing Efficient Grid mitigation remains multiplicative at 0.6.
+- Both playable sectors instance the same Solar Flare controller so hazard state continues through Greenhouse <-> Engineering transitions.
+- Core-system regression coverage now verifies warning/active/recovery transitions, HUD state, exact drain rates, Efficient Grid mitigation, normal cross-sector continuity, and the exact-zero transition boundary.
+
+### Validation
+- Godot 4.7.1 core-system Solar Flare lifecycle test: PASS.
+- Real 640×360 active-flare capture: PASS.
+- Exact V02 render check: all 297 nontransparent pixels from canonical Solar Flare cell 1 produced exactly 297 changed pixels in the 32×32 HUD rectangle, with no spill outside the intended indicator surface.

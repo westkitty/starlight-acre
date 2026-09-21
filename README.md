@@ -27,6 +27,7 @@ Implemented:
 - normalized repository image assets so `.png` files contain actual PNG bytes
 - canonical Greenhouse TileMap floor/walls with TileSet collision; obsolete StaticBody2D room stubs removed after regression proof
 - 640×360 internal pixel-art viewport with a bounded player-follow camera and camera-synced sector backgrounds
+- first recurring station hazard: Solar Flare (5s warning, 8s active, 5× active power drain, 45s recovery), with Efficient Grid mitigation and canonical hazard-VFX HUD feedback
 
 Still incomplete:
 - human visual QA of the promoted canonical sprite sheets and scene composition

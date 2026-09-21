@@ -121,8 +121,14 @@ Agent roles to follow in later phases: Engineer, Maintenance Drone, Harvester.
 ### Current: Power Drain
 Passive power drain at 0.333/second forces the player to visit the Repair Terminal periodically. Growth halts at zero power, creating a tension between tending crops and keeping the lights on.
 
+### Solar Flare (Implemented)
+- **Cadence:** 30s initial calm → 5s warning → 8s active flare → 45s recovery, then repeat.
+- **Effect:** while active, station power drains at 5× the normal rate. Crop growth is affected indirectly only if power reaches zero; the flare does not delete crops or cause permanent random damage.
+- **Mitigation:** Efficient Grid's existing 0.6 power-drain multiplier still applies during a flare.
+- **Feedback:** station messages announce warning / active / clear states and the HUD displays the canonical V02 Solar Flare effect (cell 1 of `assets/effects/hazard_vfx.png`) during warning and active phases.
+- **Continuity:** flare phase and remaining time survive sector transitions within the current run, but hazard timing is intentionally transient and is not serialized across quit/relaunch.
+
 ### Planned Hazards
-- **Solar Flare** — temporary power disruption, accelerated drain
 - **Mythic Anomaly** — crop growth mutation (positive or negative)
 - **System Malfunction** — random terminal offline for a period
 - **Module Drift** — station sector connectivity issue
@@ -188,7 +194,7 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 | Ready-crop VFX | ✅ Done |
 | Trickster Vine + flee/catch + Chaos output | ✅ Done |
 | Wisdom ↔ Trickster Mythic Ecology + Paradox Trellis | ✅ Done |
-| TileMapLayer painting and collision migration | 🔲 Requires visual atlas inspection / Godot editor |
+| Greenhouse TileMapLayer painting and collision migration | ✅ Done and regression-verified |
 
 ## Post-MVP Roadmap
 
@@ -198,4 +204,5 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 - **Research progression** — ✅ implemented: Efficient Grid (4 Wisdom), Closed-Loop Hydroponics (6 Wisdom), Paradox Trellis (3 Chaos)
 - **First Mythic Ecology proof** — ✅ implemented: one-shot Trickster theft of a neighboring Wisdom tend, upgraded to a shared pulse by Paradox Trellis
 - **Save/load system** — ✅ implemented and regression-verified across a real quit/relaunch, including saved-sector resume
+- **First station hazard: Solar Flare** — ✅ implemented: warning/active/recovery cadence, 5× active power drain, Efficient Grid mitigation, canonical V02 HUD feedback, cross-sector transient continuity
 - **Audio (ambience + feedback sounds)** — pending

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3]
+[gd_scene load_steps=16 format=3]
 
 [ext_resource type="Script" path="res://systems/world/sector_controller.gd" id="0_sector"]
 [ext_resource type="PackedScene" path="res://actors/player/Player.tscn" id="1_player"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" path="res://systems/world/SectorDoor.tscn" id="10_door"]
 [ext_resource type="Resource" path="res://data/crops/trickster_vine.tres" id="11_trickster_def"]
 [ext_resource type="Texture2D" path="res://assets/sprites/crops/trickster_vine_states.png" id="12_trickster_tex"]
+[ext_resource type="PackedScene" path="res://systems/hazards/SolarFlareController.tscn" id="13_flare"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_greenhouse"]
 texture = ExtResource("8_tiles")
@@ -130,6 +131,8 @@ position = Vector2(-400, 230)
 
 [node name="FarmingManager" type="Node" parent="."]
 script = ExtResource("2_fm")
+
+[node name="SolarFlareController" parent="." instance=ExtResource("13_flare")]
 
 [node name="CropPlot0" parent="." instance=ExtResource("3_cropplot")]
 position = Vector2(-200, 238)

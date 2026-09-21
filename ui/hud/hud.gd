@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var _prompt_bar: Control = $PromptBar
 @onready var _prompt_label: Label = $PromptBar/PromptLabel
 @onready var _status_label: Label = $StatusLabel
+@onready var _flare_indicator: TextureRect = $FlareIndicator
 var _status_timer := 0.0
 
 func _ready() -> void:
@@ -14,8 +15,10 @@ func _ready() -> void:
 	Events.interaction_prompt_changed.connect(_on_prompt_changed)
 	Events.station_message.connect(_on_station_message)
 	Events.upgrade_unlocked.connect(_on_upgrade_unlocked)
+	Events.hazard_state_changed.connect(_on_hazard_state_changed)
 	_prompt_bar.visible = false
 	_status_label.visible = false
+	_on_hazard_state_changed("solar_flare", GameState.solar_flare_phase, GameState.solar_flare_time_remaining)
 
 func _process(delta: float) -> void:
 	if _status_timer <= 0.0:
@@ -46,3 +49,9 @@ func _on_station_message(text: String) -> void:
 
 func _on_upgrade_unlocked(upgrade_id: String) -> void:
 	_on_station_message("Station upgrade unlocked: %s" % upgrade_id.replace("_", " ").capitalize())
+
+func _on_hazard_state_changed(hazard_id: String, phase: String, _time_remaining: float) -> void:
+	if hazard_id != "solar_flare":
+		return
+	_flare_indicator.visible = phase == "warning" or phase == "active"
+	_flare_indicator.modulate.a = 0.65 if phase == "warning" else 1.0

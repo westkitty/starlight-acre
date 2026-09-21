@@ -31,6 +31,7 @@
 - [x] Add a second crop only after crop visuals are trustworthy — Trickster Vine
 - [x] Give the Wisdom/Trickster pair a station-law interaction rather than only different costs/timers
 - [x] Implement one cross-crop interaction as the proof slice — Trickster steals one neighboring Wisdom tend per growth cycle
+- [x] Add the first recurring station hazard — Solar Flare: warning → accelerated power drain → recovery, with Efficient Grid mitigation
 - [ ] Candidate: Lightning Vine produces power but increases flare vulnerability
 - [ ] Candidate: Shadow Root benefits from blackout state
 - [x] Trickster Vine relocates/steals a neighboring Wisdom tending effect; Paradox Trellis turns it into a shared pulse

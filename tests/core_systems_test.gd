@@ -11,6 +11,7 @@ func _gs() -> Node:
 func _run() -> void:
 	_reset_state()
 	await _test_sector_round_trip()
+	await _test_solar_flare_lifecycle()
 	await _test_camera_contract()
 	await _test_greenhouse_tilemap_collision()
 	await _test_startup_fallback()
@@ -40,6 +41,7 @@ func _reset_state() -> void:
 	gs.plot_states = {}
 	gs.current_sector = "greenhouse"
 	gs.next_player_position = Vector2.ZERO
+	gs.reset_transient_hazards()
 	gs.save_game()
 
 func _test_sector_round_trip() -> void:
@@ -86,6 +88,97 @@ func _test_sector_round_trip() -> void:
 	var returned_player := returned.get_node_or_null("Player") as Node2D
 	if returned_player == null or absf(returned_player.position.x - 350.0) > 0.1 or returned_player.position.y < 230.0 or returned_player.position.y > 260.0:
 		failures.append("greenhouse return spawn position was not consumed correctly")
+
+func _test_solar_flare_lifecycle() -> void:
+	_reset_state()
+	var gs := _gs()
+	var err := change_scene_to_file("res://scenes/world/GreenhouseSector.tscn")
+	if err != OK:
+		failures.append("could not load GreenhouseSector for Solar Flare test")
+		return
+	await process_frame
+	await process_frame
+	var greenhouse := current_scene
+	var controller := greenhouse.get_node_or_null("SolarFlareController")
+	var manager := greenhouse.get_node_or_null("FarmingManager")
+	var hud := greenhouse.get_node_or_null("HUD")
+	var indicator := hud.get_node_or_null("FlareIndicator") as TextureRect if hud != null else null
+	if controller == null or manager == null or indicator == null:
+		failures.append("Solar Flare controller/HUD indicator missing in Greenhouse")
+		return
+
+	gs.solar_flare_phase = "calm"
+	gs.solar_flare_time_remaining = 0.0
+	controller.call("_process", 0.0)
+	if gs.solar_flare_phase != "warning" or absf(gs.solar_flare_time_remaining - 5.0) > 0.01:
+		failures.append("Solar Flare did not enter the 5-second warning phase")
+	if not indicator.visible or indicator.modulate.a > 0.7:
+		failures.append("Solar Flare warning indicator is not visible/dimmed")
+
+	gs.solar_flare_time_remaining = 0.0
+	controller.call("_process", 0.0)
+	if gs.solar_flare_phase != "active" or absf(gs.solar_flare_time_remaining - 8.0) > 0.01:
+		failures.append("Solar Flare did not enter the 8-second active phase")
+	if absf(gs.hazard_power_drain_multiplier() - 5.0) > 0.001:
+		failures.append("Solar Flare active power multiplier is not 5x")
+	if not indicator.visible or indicator.modulate.a < 0.99:
+		failures.append("Solar Flare active indicator is not fully visible")
+
+	manager.set_process(false)
+	gs.upgrades = {}
+	gs.power = 100.0
+	manager.call("_process", 1.0)
+	if absf(gs.power - 98.335) > 0.02:
+		failures.append("Solar Flare did not apply 5x base power drain")
+	gs.upgrades = {"efficient_grid": true}
+	gs.power = 100.0
+	manager.call("_process", 1.0)
+	if absf(gs.power - 99.001) > 0.02:
+		failures.append("Efficient Grid did not mitigate Solar Flare power drain")
+
+	gs.solar_flare_time_remaining = 0.0
+	controller.call("_process", 0.0)
+	if gs.solar_flare_phase != "calm" or absf(gs.solar_flare_time_remaining - 45.0) > 0.01:
+		failures.append("Solar Flare did not return to the 45-second recovery phase")
+	if indicator.visible or absf(gs.hazard_power_drain_multiplier() - 1.0) > 0.001:
+		failures.append("Solar Flare clear state did not hide the indicator/reset drain")
+
+	gs.solar_flare_phase = "warning"
+	gs.solar_flare_time_remaining = 3.0
+	var door := greenhouse.get_node_or_null("EngineeringDoor")
+	if door == null:
+		failures.append("EngineeringDoor missing during Solar Flare transition test")
+		return
+	door.interact()
+	await process_frame
+	await process_frame
+	if current_scene == null or current_scene.name != "EngineeringBay":
+		failures.append("Solar Flare transition test did not reach EngineeringBay")
+		return
+	if gs.solar_flare_phase != "warning" or gs.solar_flare_time_remaining <= 0.0 or gs.solar_flare_time_remaining > 3.0:
+		failures.append("Solar Flare transient state did not survive sector transition")
+	var engineering_controller := current_scene.get_node_or_null("SolarFlareController")
+	var engineering_hud := current_scene.get_node_or_null("HUD")
+	var engineering_indicator := engineering_hud.get_node_or_null("FlareIndicator") as TextureRect if engineering_hud != null else null
+	if engineering_controller == null or engineering_indicator == null or not engineering_indicator.visible:
+		failures.append("Solar Flare controller/indicator did not resume in EngineeringBay")
+
+	# Boundary case: changing sectors exactly as the warning expires must advance
+	# into the active flare, not reset the transient hazard to calm.
+	gs.solar_flare_phase = "warning"
+	gs.solar_flare_time_remaining = 0.0
+	var return_door := current_scene.get_node_or_null("ReturnDoor")
+	if return_door == null:
+		failures.append("ReturnDoor missing during Solar Flare boundary test")
+		return
+	return_door.interact()
+	await process_frame
+	await process_frame
+	if current_scene == null or current_scene.name != "GreenhouseSector":
+		failures.append("Solar Flare boundary test did not return to Greenhouse")
+		return
+	if gs.solar_flare_phase != "active" or absf(gs.solar_flare_time_remaining - 8.0) > 0.1:
+		failures.append("zero-time warning reset instead of advancing across a sector transition")
 
 func _test_camera_contract() -> void:
 	if int(ProjectSettings.get_setting("display/window/size/viewport_width", 0)) != 640:

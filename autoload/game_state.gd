@@ -13,11 +13,23 @@ var plot_states: Dictionary = {}
 var current_sector: String = "greenhouse"
 var next_player_position: Vector2 = Vector2.ZERO
 
+# Transient hazard state persists across sector transitions within a run but is
+# deliberately not serialized. Reloading the game always starts from a calm window.
+var solar_flare_phase: String = "calm"
+var solar_flare_time_remaining: float = 30.0
+
 func _ready() -> void:
 	load_game()
 
 func power_drain_multiplier() -> float:
 	return 0.6 if upgrades.get("efficient_grid", false) else 1.0
+
+func hazard_power_drain_multiplier() -> float:
+	return 5.0 if solar_flare_phase == "active" else 1.0
+
+func reset_transient_hazards() -> void:
+	solar_flare_phase = "calm"
+	solar_flare_time_remaining = 30.0
 
 func water_cap() -> int:
 	return 15 if upgrades.get("closed_loop_hydroponics", false) else 10

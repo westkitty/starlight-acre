@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if power <= 0.0:
 		return
-	power -= BASE_POWER_DRAIN_PER_SECOND * GameState.power_drain_multiplier() * delta
+	power -= BASE_POWER_DRAIN_PER_SECOND * GameState.power_drain_multiplier() * GameState.hazard_power_drain_multiplier() * delta
 	Events.resource_changed.emit("power", power)
 
 func can_plant(water_cost: int, nutrient_cost: int) -> bool:

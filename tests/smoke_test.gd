@@ -8,6 +8,7 @@ func _initialize() -> void:
 		"res://scenes/world/EngineeringBay.tscn",
 		"res://actors/crops/CropPlot.tscn",
 		"res://actors/terminals/ResearchTerminal.tscn",
+		"res://systems/hazards/SolarFlareController.tscn",
 		"res://data/crops/wisdom_fruit.tres",
 		"res://data/crops/trickster_vine.tres"
 	]
