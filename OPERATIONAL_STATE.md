@@ -1,7 +1,7 @@
 # Starlight Acre Operational State
 
 Project ID: starlight-acre
-Revision: 6
+Revision: 7
 Updated: 2026-09-20
 
 ## Purpose
@@ -86,18 +86,18 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 | Promotion: live SHA-256 == canonical SHA-256, 29/29 | verified (deterministic, sandbox) |
 | Atlas-region contracts in bounds (player/crop/terminal/HUD) | verified (deterministic, sandbox) |
 | Scene diffs minimal: all original nodes/connections/scripts preserved | verified (deterministic, sandbox) |
-| Godot `tests/asset_promotion_test.gd` | pending user environment (no Godot binary in promotion sandbox; test delivered, one command: `godot --headless --script tests/asset_promotion_test.gd`, expect `STARLIGHT_ASSET_PROMOTION_PASS`) |
-| Godot post-promotion smoke + 120-frame re-run | pending user environment |
+| Godot `tests/asset_promotion_test.gd` | verified on MacBook Godot 4.7.1 after completed import pass |
+| Godot post-promotion smoke test | verified on MacBook Godot 4.7.1 |
 | One-click visual QA harness: static build validation | verified (sandbox) |
-| One-click visual QA harness: actual Mac run + screenshots | pending user environment |
+| One-click visual QA harness: actual Mac run + screenshots | verified: Greenhouse + Engineering captured, report built |
 | Manual editor playthrough | pending |
 | Visual QA of promoted art | PENDING HUMAN REVIEW |
 | TileMap visual/collision QA | pending |
 | Save/relaunch persistence journey | pending |
 
 ## Pending priority
-1. Manual Godot editor visual/playthrough proof of the promoted canon (run `godot --headless --script tests/asset_promotion_test.gd` and the smoke test first in the verified 4.7.1 environment).
-2. Human visual QA pass over the 29 promoted assets in-game.
+1. Human visual QA pass over the captured Greenhouse and Engineering scenes and promoted asset close-ups.
+2. Manual player journey Greenhouse -> Engineering -> Greenhouse remains pending.
 3. Paint greenhouse TileMapLayer and validate collision before deleting stubs (E01/E02 tilesets already promoted).
 4. Add second mythic crop only after crop-resource architecture and visuals are proven (C02-C05 art ready as PROMOTED_FUTURE_USE).
 5. Implement the first cross-crop Mythic Ecology interaction.
@@ -109,6 +109,8 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Revision 3: recorded explicit human approval of all 29 recommended visual-canon primaries; ratification decision file is now authoritative while repair compilation and live promotion remain pending.
 - Revision 4: compiled the human-ratified canon (29/29), pruned the 25-entry draft repair queue to 3 canonical repairs, completed all 3 repairs non-destructively, and published FINAL_VISUAL_CANON_MANIFEST.json as the authoritative promotion input; live promotion and visual playthrough remain pending.
 - Revision 5: promoted all 29 ratified canonical assets byte-preserving into live paths (7 replaced with rollback hashes recorded, 22 created; LIVE_ASSET_PROMOTION_MANIFEST.json published), integrated canonical art into the existing implemented surfaces via minimal visual-only scene edits, delivered tests/asset_promotion_test.gd, and verified promotion deterministically in-sandbox (hashes, dimensions, region bounds, scene preservation, git diff --check). Godot-run checks and visual QA pending the user's environment and review.
+- Revision 6: added the one-click visual QA harness and offline review report.
+- Revision 7: executed the harness on the MacBook with Godot 4.7.1, discovered fresh-checkout imports were required, added an automatic Godot import preflight, then verified asset test PASS, smoke test PASS, Greenhouse capture PASS, Engineering capture PASS, 34/34 crop/frame crops generated, and report generation PASS. Human visual judgment remains pending.
 
 ## Delivery
 - Implementation commit: 07e6196bc1278e55dd6653798c5865e55f7d21fb

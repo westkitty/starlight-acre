@@ -167,7 +167,19 @@ run_with_timeout() {
 	return "$_rc"
 }
 
-# ------------------------------------------------------- 5. technical checks
+# --------------------------------------------------- 5. prime Godot imports
+
+printf '\n  Preparing Godot imports for this checkout...\n'
+printf 'godot --headless --editor --path <repo> --quit\n\n' > "$OUT_DIR/check_import.log"
+if run_with_timeout 180 run_godot --headless --editor --path "$REPO_ROOT" --quit >> "$OUT_DIR/check_import.log" 2>&1; then
+	printf '  Godot import cache: ready\n'
+else
+	_import_rc=$?
+	printf '  Godot import cache: FAILED (exit %s)\n' "$_import_rc"
+	die "Godot could not finish importing this checkout. Details are saved in:\n$OUT_DIR/check_import.log"
+fi
+
+# ------------------------------------------------------- 6. technical checks
 
 step "[3/5]" "Running technical checks (no game window opens for this)"
 
