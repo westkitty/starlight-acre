@@ -13,4 +13,6 @@ tend_bonus = 0.2
 water_cost = 1
 nutrient_cost = 1
 harvest_yield = 1
+harvest_name = "Wisdom Fruit"
+harvest_resource_id = "wisdom_fruit"
 station_effect_id = "research_currency"

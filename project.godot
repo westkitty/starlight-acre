@@ -7,13 +7,21 @@ config_version=5
 
 config/name="Starlight Acre"
 config/description="Orbital mythic farming station — grow mythic crops, manage station resources, survive the void."
-run/main_scene="res://scenes/world/GreenhouseSector.tscn"
+run/main_scene="res://scenes/world/Startup.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [autoload]
 
 Events="*res://autoload/Events.gd"
 GameState="*res://autoload/game_state.gd"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
 
 [input]
 

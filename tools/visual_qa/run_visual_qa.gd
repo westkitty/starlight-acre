@@ -6,7 +6,7 @@ extends SceneTree
 ##   godot --path . --script res://tools/visual_qa/run_visual_qa.gd
 ##
 ## What it does:
-##   1. Resizes the game window to 1280x720.
+##   1. Captures at the canonical 640x360 internal pixel-art viewport.
 ##   2. Instantiates the REAL GreenhouseSector and EngineeringBay scenes
 ##      (player, HUD, drone, terminals, doors — the true live composition),
 ##      lets each settle, and saves a screenshot of the game view.
@@ -27,7 +27,7 @@ func _initialize() -> void:
 
 
 class QARunner extends Node:
-	const WINDOW_SIZE := Vector2i(1280, 720)
+	const WINDOW_SIZE := Vector2i(640, 360)
 	const SETTLE_FRAMES := 45
 	const OUTPUT_DIR := "res://visual_qa_output"
 	const CROPS_DIR := "res://visual_qa_output/crops"

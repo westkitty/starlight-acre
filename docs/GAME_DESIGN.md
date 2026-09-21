@@ -55,8 +55,25 @@ Growth pauses when station power reaches zero.
 - **Yield:** 1 Wisdom Fruit per harvest
 - **Current visual:** `assets/sprites/crops/wisdom_fruit_states.png` (32×32px, 4 states) with ready-state glow from `assets/effects/pixel_art_effects.png`
 
-### Future Crops (Post-MVP)
-- **Trickster Vine** (Loki) — unstable harvest behavior, evasive
+### Trickster Vine (Second Crop — Implemented)
+- **Mythology:** Loki-inspired — ripe fruit refuses the first clean harvest
+- **Growth time:** 24 seconds (base)
+- **Tend bonus:** 15% timer reduction per tend
+- **Cost:** 1 water, 1 nutrient to plant
+- **Ready behavior:** first harvest attempt spawns a separate Trickster Fruit entity that jumps 72px away; catch the escaped fruit to finish the harvest
+- **Yield:** 1 Chaos
+- **Automation rule:** Gardener Drone may tend it while growing but cannot auto-harvest/catch it
+- **Persistence:** escaped fruit position/state survives room changes and save/relaunch
+- **Current visual:** `assets/sprites/crops/trickster_vine_states.png` (32×32px, 4 states); fleeing fruit reuses the ready-state biological portion as its moving entity
+
+### First Mythic Ecology Rule — Wisdom ↔ Trickster
+- A GROWING Trickster Vine within 224px of a GROWING Wisdom Fruit can steal exactly one tending pulse per Trickster growth cycle.
+- The stolen pulse applies the Wisdom tend's absolute time reduction to Trickster instead; Wisdom receives no reduction for that one interaction.
+- This can be triggered by manual tending or Gardener Drone tending, making automation part of the ecology rather than exempt from it.
+- The Trickster's spent-steal state persists across sector changes/save state and resets only on a new growth cycle.
+- **Paradox Trellis** costs 3 Chaos at the Research Terminal. Once unlocked, a theft is caught and mirrored: both Wisdom and Trickster receive the tending reduction while the one-theft-per-cycle limit remains.
+
+### Future Crops
 - **Lightning Vine** (Zeus) — supports energy/power systems
 - **Shadow Root** (Hades) — underground or hidden-zone cultivation
 - **Golden Blossom** (Freya) — efficiency buffs and station attraction
@@ -70,7 +87,8 @@ Growth pauses when station power reaches zero.
 | Water | Replenish Terminal | Planting crops |
 | Nutrients | Replenish Terminal | Planting crops |
 | Power | Repair Terminal | Passive drain; required for crop growth |
-| Wisdom Fruit | Harvesting | Upgrades, progression currency |
+| Wisdom Fruit | Wisdom Fruit harvest | Upgrades, progression currency |
+| Chaos | Catching escaped Trickster Fruit | Paradox Trellis research (3 Chaos) |
 
 **Current economy:**
 - Power drains at ~0.333/second (100% lasts ~5 minutes)
@@ -87,9 +105,10 @@ Agents are simple heuristic workers — not AI, not simulated people. They execu
 
 **Current agent: Gardener Drone**
 - Patrols the greenhouse
-- Scans crop plots every 5 seconds
-- Tends GROWING plots and harvests READY plots through the public `CropPlot.interact()` interface
-- Does not water, schedule, pathfind, or manage multiple sectors yet
+- Scans crop plots for actionable work
+- Tends GROWING plots and harvests ordinary READY plots through public crop behavior
+- Will tend Trickster Vine while growing but intentionally will not auto-catch its escaped fruit
+- Does not water, schedule, pathfind across obstacles, or manage multiple sectors yet
 
 Agent roles to follow in later phases: Engineer, Maintenance Drone, Harvester.
 
@@ -167,13 +186,16 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 | Player, crop, terminal, HUD, background sprite integration | ✅ Done |
 | Gardener drone | ✅ Done |
 | Ready-crop VFX | ✅ Done |
-| TileMapLayer painting and collision migration | 🔲 Requires Godot editor |
+| Trickster Vine + flee/catch + Chaos output | ✅ Done |
+| Wisdom ↔ Trickster Mythic Ecology + Paradox Trellis | ✅ Done |
+| TileMapLayer painting and collision migration | 🔲 Requires visual atlas inspection / Godot editor |
 
 ## Post-MVP Roadmap
 
-- Trickster Vine (2nd crop)
-- Room transitions (2 sectors)
-- Dexter vendor encounter
-- Wisdom Fruit upgrade spend mechanic
-- Save/load system
-- Audio (ambience + feedback sounds)
+- **Trickster Vine (2nd crop)** — ✅ implemented: one bounded flee, separate catchable fruit entity, Chaos output, persisted escape state
+- **Room transitions (2 sectors)** — ✅ implemented and regression-verified Greenhouse <-> Engineering
+- **Dexter vendor encounter** — pending
+- **Research progression** — ✅ implemented: Efficient Grid (4 Wisdom), Closed-Loop Hydroponics (6 Wisdom), Paradox Trellis (3 Chaos)
+- **First Mythic Ecology proof** — ✅ implemented: one-shot Trickster theft of a neighboring Wisdom tend, upgraded to a shared pulse by Paradox Trellis
+- **Save/load system** — ✅ implemented and regression-verified across a real quit/relaunch, including saved-sector resume
+- **Audio (ambience + feedback sounds)** — pending

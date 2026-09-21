@@ -11,6 +11,9 @@ var nutrient: int:
 var wisdom_fruit: int:
 	get: return GameState.wisdom_fruit
 	set(value): GameState.wisdom_fruit = maxi(0, value)
+var chaos: int:
+	get: return GameState.chaos
+	set(value): GameState.chaos = maxi(0, value)
 var power: float:
 	get: return GameState.power
 	set(value): GameState.power = clampf(value, 0.0, 100.0)
@@ -39,6 +42,28 @@ func spend_nutrient(amount: int) -> void:
 func add_wisdom_fruit(amount: int) -> void:
 	wisdom_fruit += amount
 	_commit_resource("wisdom_fruit", float(wisdom_fruit))
+
+func add_chaos(amount: int) -> void:
+	chaos += amount
+	_commit_resource("chaos", float(chaos))
+
+func spend_chaos(amount: int) -> bool:
+	if chaos < amount:
+		return false
+	chaos -= amount
+	_commit_resource("chaos", float(chaos))
+	return true
+
+func add_crop_yield(resource_id: String, amount: int) -> bool:
+	match resource_id:
+		"wisdom_fruit":
+			add_wisdom_fruit(amount)
+		"chaos":
+			add_chaos(amount)
+		_:
+			push_error("Unknown crop harvest resource: %s" % resource_id)
+			return false
+	return true
 
 func spend_wisdom_fruit(amount: int) -> bool:
 	if wisdom_fruit < amount:
@@ -89,4 +114,5 @@ func _broadcast_all() -> void:
 	Events.resource_changed.emit("water", float(water))
 	Events.resource_changed.emit("nutrient", float(nutrient))
 	Events.resource_changed.emit("wisdom_fruit", float(wisdom_fruit))
+	Events.resource_changed.emit("chaos", float(chaos))
 	Events.resource_changed.emit("power", power)

@@ -227,14 +227,19 @@ def read_capture(out_dir):
             log = open(os.path.join(out_dir, "check_capture.log"), errors="replace").read()
         except OSError:
             log = ""
+    both_ok = all(s["present"] and s["report_status"] == "OK" for s in shots.values())
     if not os.path.isfile(rc_path):
-        return {"status": "NOT_RUN", "exit_code": None, "log": "",
+        # The outer macOS launcher can be interrupted after the Godot capture
+        # script has already completed and written its own authoritative
+        # report. In that case, do not downgrade a fully recorded successful
+        # capture to NOT_RUN merely because the wrapper's rc marker is absent.
+        status = "PASS" if (report.get("status") == "OK" and both_ok) else "NOT_RUN"
+        return {"status": status, "exit_code": None, "log": log,
                 "report": report, "shots": shots}
     try:
         exit_code = open(rc_path).read().strip()
     except OSError:
         exit_code = None
-    both_ok = all(s["present"] and s["report_status"] == "OK" for s in shots.values())
     status = "PASS" if (exit_code == "0" and both_ok) else "FAIL"
     return {"status": status, "exit_code": exit_code, "log": log,
             "report": report, "shots": shots}

@@ -115,7 +115,7 @@ All notable changes to Starlight Acre are documented here.
 - Single Events autoload only (no GameState autoload until Phase 3)
 - FarmingManager as scene child (not autoload) for multi-sector scalability
 - StaticBody2D for Phase 1 collision (TileMapLayer visual pass deferred to Phase 2)
-- Internal resolution: ~480×270 with Nearest filter (assumed; not yet enforced in project settings)
+- Internal resolution: 640×360 with Nearest filter, enforced in project settings; default desktop window is 1280×720 (2×)
 - ColorRect placeholders for all sprites (pixel art integration in Phase 2)
 
 ---
@@ -153,3 +153,22 @@ All notable changes to Starlight Acre are documented here.
 
 ### Known limitation
 - Generated image dimensions do not match historical sprite-sheet dimension claims; visual slicing still requires manual QA.
+
+---
+
+## [Greenhouse Environment Gate] — 2026-09-21
+
+### Changed
+- Painted the Greenhouse floor and side walls from the canonical `E01_GREENHOUSE_TILESET` atlas using real `TileMapLayer` cell data.
+- Added TileSet physics to the painted Greenhouse tiles and removed the obsolete `Floor`, `WallLeft`, and `WallRight` StaticBody2D collision stubs after independent collision proof.
+- Standardized the live internal viewport at 640×360 with a default 1280×720 desktop window and nearest-neighbor pixel filtering.
+- Added a bounded player-follow `Camera2D`; horizontal travel clamps to the room limits while the vertical frame keeps the full 32px floor slab visible.
+- Sector backgrounds now track the active camera center so a 640×360 canonical background remains screen-filling while the room scrolls.
+- Visual QA capture now runs at the actual 640×360 game viewport. The report builder accepts a completed successful `report.json` as capture evidence when an outer launcher interruption prevents the wrapper `.rc` marker from being written.
+
+### Validation
+- Greenhouse floor cells: 150; wall cells: 136.
+- With all legacy collision stubs gone, the real player lands on the TileMap floor at y=264 and is blocked by both TileMap side walls.
+- Camera contract regression checks pass at left, center, and right room positions with the background synchronized to the camera center.
+- `tests/run_core_systems.sh`: PASS after the migration.
+- Real Godot 4.7.1 Greenhouse and Engineering captures: 640×360, status OK; 34/34 visual QA crops extracted.
