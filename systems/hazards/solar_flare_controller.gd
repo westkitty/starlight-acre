@@ -35,13 +35,21 @@ func _advance_phase() -> void:
 func _enter_warning() -> void:
 	GameState.solar_flare_phase = "warning"
 	GameState.solar_flare_time_remaining = WARNING_DURATION
-	Events.station_message.emit("Solar flare warning - impact in 5 seconds.")
+	var conductors := GameState.conductive_lightning_vine_count()
+	if conductors > 0:
+		Events.station_message.emit("Solar flare warning - Lightning Vine will amplify the surge.")
+	else:
+		Events.station_message.emit("Solar flare warning - impact in 5 seconds.")
 	_emit_state()
 
 func _enter_active() -> void:
 	GameState.solar_flare_phase = "active"
 	GameState.solar_flare_time_remaining = ACTIVE_DURATION
-	Events.station_message.emit("Solar flare active - power drain accelerating.")
+	var conductors := GameState.conductive_lightning_vine_count()
+	if conductors > 0:
+		Events.station_message.emit("Solar flare active - Lightning Vine conducting. Power drain %dx." % int(GameState.hazard_power_drain_multiplier()))
+	else:
+		Events.station_message.emit("Solar flare active - power drain accelerating.")
 	_emit_state()
 
 func _enter_calm() -> void:

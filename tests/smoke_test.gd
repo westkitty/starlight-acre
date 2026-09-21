@@ -10,7 +10,8 @@ func _initialize() -> void:
 		"res://actors/terminals/ResearchTerminal.tscn",
 		"res://systems/hazards/SolarFlareController.tscn",
 		"res://data/crops/wisdom_fruit.tres",
-		"res://data/crops/trickster_vine.tres"
+		"res://data/crops/trickster_vine.tres",
+		"res://data/crops/lightning_vine.tres"
 	]
 	for path in required:
 		if load(path) == null:
@@ -21,6 +22,9 @@ func _initialize() -> void:
 	var trickster := load("res://data/crops/trickster_vine.tres") as CropDefinition
 	if trickster == null or trickster.crop_id != "trickster_vine" or trickster.ready_dodge_count != 1:
 		failures.append("Trickster Vine definition invalid")
+	var lightning := load("res://data/crops/lightning_vine.tres") as CropDefinition
+	if lightning == null or lightning.crop_id != "lightning_vine" or lightning.harvest_resource_id != "power" or lightning.harvest_yield != 20:
+		failures.append("Lightning Vine definition invalid")
 	if Engine.get_version_info().major != 4:
 		failures.append("unexpected Godot major version")
 	if failures.is_empty():

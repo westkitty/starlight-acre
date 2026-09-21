@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CropDefinition" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/crops/crop_definition.gd" id="1_cropdef"]
+
+[resource]
+script = ExtResource("1_cropdef")
+crop_id = "lightning_vine"
+crop_name = "Lightning Vine"
+mythic_domain = "Zeus / storm"
+mythic_note = "The vine stores useful station charge, but living conductive tissue amplifies solar-flare load while it is growing or ready."
+growth_time = 28.0
+tend_bonus = 0.15
+water_cost = 1
+nutrient_cost = 1
+harvest_yield = 20
+harvest_name = "Storm Charge"
+harvest_resource_id = "power"
+station_effect_id = "flare_conductor"

@@ -155,6 +155,8 @@ func _complete_harvest() -> void:
 		return
 	if crop_definition.harvest_resource_id == "chaos":
 		Events.station_message.emit("Caught %s. Chaos: %d." % [_harvest_name(), fm.chaos])
+	elif crop_definition.harvest_resource_id == "power":
+		Events.station_message.emit("Harvested %s. Power: %d%%." % [_harvest_name(), int(fm.power)])
 	_set_state(State.EMPTY)
 
 func _dodge_ready_crop() -> void:

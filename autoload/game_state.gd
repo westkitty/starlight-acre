@@ -1,6 +1,8 @@
 extends Node
 
 const SAVE_PATH := "user://save.json"
+const SOLAR_FLARE_BASE_MULTIPLIER := 5.0
+const LIGHTNING_VINE_FLARE_BONUS := 2.0
 
 var water: int = 5
 var nutrient: int = 5
@@ -25,7 +27,19 @@ func power_drain_multiplier() -> float:
 	return 0.6 if upgrades.get("efficient_grid", false) else 1.0
 
 func hazard_power_drain_multiplier() -> float:
-	return 5.0 if solar_flare_phase == "active" else 1.0
+	if solar_flare_phase != "active":
+		return 1.0
+	return SOLAR_FLARE_BASE_MULTIPLIER + LIGHTNING_VINE_FLARE_BONUS * conductive_lightning_vine_count()
+
+func conductive_lightning_vine_count() -> int:
+	var count := 0
+	for state_data in plot_states.values():
+		if str(state_data.get("crop_id", "")) != "lightning_vine":
+			continue
+		var state_name := str(state_data.get("state", ""))
+		if state_name == "GROWING" or state_name == "READY":
+			count += 1
+	return count
 
 func reset_transient_hazards() -> void:
 	solar_flare_phase = "calm"

@@ -12,6 +12,7 @@ func _run() -> void:
 	_reset_state()
 	await _test_sector_round_trip()
 	await _test_solar_flare_lifecycle()
+	await _test_lightning_vine()
 	await _test_camera_contract()
 	await _test_greenhouse_tilemap_collision()
 	await _test_startup_fallback()
@@ -179,6 +180,81 @@ func _test_solar_flare_lifecycle() -> void:
 		return
 	if gs.solar_flare_phase != "active" or absf(gs.solar_flare_time_remaining - 8.0) > 0.1:
 		failures.append("zero-time warning reset instead of advancing across a sector transition")
+
+func _test_lightning_vine() -> void:
+	_reset_state()
+	var gs := _gs()
+	var err := change_scene_to_file("res://scenes/world/GreenhouseSector.tscn")
+	if err != OK:
+		failures.append("could not load GreenhouseSector for Lightning Vine test")
+		return
+	await process_frame
+	await process_frame
+	var greenhouse := current_scene
+	var plot := greenhouse.get_node_or_null("CropPlot0")
+	var manager := greenhouse.get_node_or_null("FarmingManager")
+	if plot == null or manager == null:
+		failures.append("Lightning Vine plot/FarmingManager missing")
+		return
+	if plot.crop_definition == null or plot.crop_definition.crop_id != "lightning_vine":
+		failures.append("CropPlot0 is not configured as Lightning Vine")
+		return
+	if plot.crop_definition.growth_time != 28.0 or plot.crop_definition.harvest_resource_id != "power" or plot.crop_definition.harvest_yield != 20:
+		failures.append("Lightning Vine crop contract drifted")
+
+	manager.set_process(false)
+	plot.set("_growth_timer", 12.0)
+	plot.call("_set_state", 2)
+	if gs.conductive_lightning_vine_count() != 1:
+		failures.append("GROWING Lightning Vine did not register as one flare conductor")
+	gs.solar_flare_phase = "active"
+	gs.solar_flare_time_remaining = 8.0
+	if absf(gs.hazard_power_drain_multiplier() - 7.0) > 0.001:
+		failures.append("one conductive Lightning Vine should amplify active flare drain from 5x to 7x")
+	gs.power = 40.0
+	manager.call("_process", 1.0)
+	if absf(gs.power - 37.669) > 0.02:
+		failures.append("7x Lightning-amplified Solar Flare drain is incorrect")
+
+	gs.power = 40.0
+	plot.call("_set_state", 3)
+	plot.interact()
+	if int(plot.get_state()) != 0:
+		failures.append("harvesting Lightning Vine did not reset the plot")
+	if absf(gs.power - 60.0) > 0.01:
+		failures.append("Lightning Vine harvest did not restore exactly 20 station power")
+	if gs.conductive_lightning_vine_count() != 0 or absf(gs.hazard_power_drain_multiplier() - 5.0) > 0.001:
+		failures.append("harvesting Lightning Vine did not immediately remove its flare vulnerability")
+
+	gs.power = 95.0
+	plot.call("_set_state", 3)
+	plot.interact()
+	if absf(gs.power - 100.0) > 0.01:
+		failures.append("Lightning Vine power harvest did not respect the 100% power cap")
+
+	plot.set("_growth_timer", 12.0)
+	plot.call("_set_state", 2)
+	err = change_scene_to_file("res://scenes/world/EngineeringBay.tscn")
+	if err != OK:
+		failures.append("could not leave Greenhouse during Lightning Vine persistence test")
+		return
+	await process_frame
+	await process_frame
+	err = change_scene_to_file("res://scenes/world/GreenhouseSector.tscn")
+	if err != OK:
+		failures.append("could not reload Greenhouse during Lightning Vine persistence test")
+		return
+	await process_frame
+	await process_frame
+	plot = current_scene.get_node_or_null("CropPlot0")
+	if plot == null or plot.crop_definition == null or plot.crop_definition.crop_id != "lightning_vine":
+		failures.append("Lightning Vine plot did not survive sector reload")
+		return
+	var saved: Dictionary = gs.get_plot_state("greenhouse_plot_0")
+	if str(saved.get("state", "")) != "GROWING" or str(saved.get("crop_id", "")) != "lightning_vine":
+		failures.append("Lightning Vine growth state did not persist across sector reload")
+	if gs.conductive_lightning_vine_count() != 1 or absf(gs.hazard_power_drain_multiplier() - 7.0) > 0.001:
+		failures.append("reloaded Lightning Vine lost its active-flare conductor effect")
 
 func _test_camera_contract() -> void:
 	if int(ProjectSettings.get_setting("display/window/size/viewport_width", 0)) != 640:
@@ -526,12 +602,13 @@ func _test_gardener_travel_and_harvest() -> void:
 	await process_frame
 	var greenhouse := current_scene
 	var gardener := greenhouse.get_node_or_null("GardenerDrone")
-	var plot := greenhouse.get_node_or_null("CropPlot0")
+	var plot := greenhouse.get_node_or_null("CropPlot1")
 	if gardener == null or plot == null:
-		failures.append("Gardener or target CropPlot missing")
+		failures.append("Gardener or target Wisdom CropPlot missing")
 		return
 	gardener.move_speed = 1000.0
 	gardener.interaction_radius = 20.0
+	gardener.global_position.x = -300.0
 	var start_x: float = gardener.global_position.x
 	plot.call("_set_state", 3)
 	for _i in range(45):

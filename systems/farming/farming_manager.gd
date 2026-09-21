@@ -47,6 +47,10 @@ func add_chaos(amount: int) -> void:
 	chaos += amount
 	_commit_resource("chaos", float(chaos))
 
+func add_power(amount: int) -> void:
+	power += float(amount)
+	_commit_resource("power", power)
+
 func spend_chaos(amount: int) -> bool:
 	if chaos < amount:
 		return false
@@ -60,6 +64,8 @@ func add_crop_yield(resource_id: String, amount: int) -> bool:
 			add_wisdom_fruit(amount)
 		"chaos":
 			add_chaos(amount)
+		"power":
+			add_power(amount)
 		_:
 			push_error("Unknown crop harvest resource: %s" % resource_id)
 			return false

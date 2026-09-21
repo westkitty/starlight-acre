@@ -42,7 +42,7 @@ Each crop plot cycles through four states:
 |-------|--------|-------------|
 | EMPTY | Empty planter | E to plant (costs water + nutrients) |
 | PLANTED | Sprout | — (waiting, brief) |
-| GROWING | Growing Wisdom Fruit | E to tend (reduces growth timer) |
+| GROWING | Growing crop | E to tend (reduces growth timer) |
 | READY | Ready sprite + glow | E to harvest (yields produce) |
 
 Growth pauses when station power reaches zero.
@@ -73,8 +73,24 @@ Growth pauses when station power reaches zero.
 - The Trickster's spent-steal state persists across sector changes/save state and resets only on a new growth cycle.
 - **Paradox Trellis** costs 3 Chaos at the Research Terminal. Once unlocked, a theft is caught and mirrored: both Wisdom and Trickster receive the tending reduction while the one-theft-per-cycle limit remains.
 
+### Lightning Vine (Third Crop — Implemented)
+- **Mythology:** Zeus-inspired — contained electrical biology grown as station infrastructure
+- **Growth time:** 28 seconds (base)
+- **Tend bonus:** 15% timer reduction per tend
+- **Cost:** 1 water, 1 nutrient to plant
+- **Yield:** 20 station power per harvest, capped at 100%
+- **Solar Flare interaction:** each GROWING or READY Lightning Vine is a conductor that adds +2× to active Solar Flare drain. With one vine alive, a normal 5× flare becomes 7× until the vine is harvested or reset.
+- **Automation:** Gardener Drone may tend and harvest it like an ordinary crop; this naturally shortens the conductor-risk window once it reaches READY.
+- **Persistence:** growth state and remaining time use the normal plot-state save path, so conductor status survives room changes and save/relaunch as crop state.
+- **Current visual:** canonical `C03_C001` at `assets/sprites/crops/lightning_vine_states.png` (32×32px, 4 states)
+
+### Second Mythic Ecology Rule — Lightning ↔ Solar Flare
+- Lightning Vine is both a renewable power source and a hazard amplifier.
+- The active Solar Flare multiplier is `5 + (2 × conductive Lightning Vines)` before Efficient Grid mitigation.
+- Harvesting a READY Lightning Vine immediately removes its +2× flare penalty and restores 20 power, making harvest timing matter during a warning or active flare.
+- Flare warning/active station messages explicitly call out the conductive vine when present.
+
 ### Future Crops
-- **Lightning Vine** (Zeus) — supports energy/power systems
 - **Shadow Root** (Hades) — underground or hidden-zone cultivation
 - **Golden Blossom** (Freya) — efficiency buffs and station attraction
 
@@ -86,7 +102,7 @@ Growth pauses when station power reaches zero.
 |----------|--------|------|
 | Water | Replenish Terminal | Planting crops |
 | Nutrients | Replenish Terminal | Planting crops |
-| Power | Repair Terminal | Passive drain; required for crop growth |
+| Power | Repair Terminal; Lightning Vine harvest (+20) | Passive drain; Solar Flare surge; required for crop growth |
 | Wisdom Fruit | Wisdom Fruit harvest | Upgrades, progression currency |
 | Chaos | Catching escaped Trickster Fruit | Paradox Trellis research (3 Chaos) |
 
@@ -125,6 +141,7 @@ Passive power drain at 0.333/second forces the player to visit the Repair Termin
 - **Cadence:** 30s initial calm → 5s warning → 8s active flare → 45s recovery, then repeat.
 - **Effect:** while active, station power drains at 5× the normal rate. Crop growth is affected indirectly only if power reaches zero; the flare does not delete crops or cause permanent random damage.
 - **Mitigation:** Efficient Grid's existing 0.6 power-drain multiplier still applies during a flare.
+- **Lightning Vine coupling:** each GROWING or READY Lightning Vine adds +2× to the active flare multiplier; one vine therefore raises 5× to 7× until harvested/reset.
 - **Feedback:** station messages announce warning / active / clear states and the HUD displays the canonical V02 Solar Flare effect (cell 1 of `assets/effects/hazard_vfx.png`) during warning and active phases.
 - **Continuity:** flare phase and remaining time survive sector transitions within the current run, but hazard timing is intentionally transient and is not serialized across quit/relaunch.
 
@@ -194,6 +211,7 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 | Ready-crop VFX | ✅ Done |
 | Trickster Vine + flee/catch + Chaos output | ✅ Done |
 | Wisdom ↔ Trickster Mythic Ecology + Paradox Trellis | ✅ Done |
+| Lightning Vine + renewable power + Solar Flare conductor risk | ✅ Done |
 | Greenhouse TileMapLayer painting and collision migration | ✅ Done and regression-verified |
 
 ## Post-MVP Roadmap
@@ -205,4 +223,5 @@ Dexter is a periodic visitor who arrives at the Docking Bay. He trades in rare s
 - **First Mythic Ecology proof** — ✅ implemented: one-shot Trickster theft of a neighboring Wisdom tend, upgraded to a shared pulse by Paradox Trellis
 - **Save/load system** — ✅ implemented and regression-verified across a real quit/relaunch, including saved-sector resume
 - **First station hazard: Solar Flare** — ✅ implemented: warning/active/recovery cadence, 5× active power drain, Efficient Grid mitigation, canonical V02 HUD feedback, cross-sector transient continuity
+- **Lightning Vine (3rd crop)** — ✅ implemented: +20 renewable power harvest and +2× active-flare conductor risk while GROWING/READY
 - **Audio (ambience + feedback sounds)** — pending

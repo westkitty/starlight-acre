@@ -192,3 +192,24 @@ All notable changes to Starlight Acre are documented here.
 - Godot 4.7.1 core-system Solar Flare lifecycle test: PASS.
 - Real 640×360 active-flare capture: PASS.
 - Exact V02 render check: all 297 nontransparent pixels from canonical Solar Flare cell 1 produced exactly 297 changed pixels in the 32×32 HUD rectangle, with no spill outside the intended indicator surface.
+
+---
+
+## [Lightning Vine + Flare Ecology] — 2026-09-21
+
+### Added
+- `data/crops/lightning_vine.tres`: Zeus/storm crop using canonical C03 art, 28s growth, 15% tend bonus, 1 Water + 1 Nutrient cost, and a direct +20 power harvest.
+- The left Greenhouse plot now uses `assets/sprites/crops/lightning_vine_states.png`; Wisdom remains center and Trickster remains right, preserving the existing 200px Wisdom↔Trickster ecology radius.
+- `GameState.conductive_lightning_vine_count()` and a second Mythic Ecology rule: each GROWING or READY Lightning Vine adds +2× to active Solar Flare drain.
+
+### Changed
+- Active Solar Flare multiplier is now `5 + (2 × conductive Lightning Vines)`; one live vine therefore raises the flare from 5× to 7× before Efficient Grid mitigation.
+- Solar Flare warning/active messages explicitly call out Lightning Vine conduction when present.
+- Crop harvest output now supports direct station-power yield through the existing FarmingManager path; Lightning harvest restores 20 power and respects the 100% cap.
+- Gardener regression coverage now targets the preserved Wisdom plot explicitly, so its travel + ordinary-harvest proof remains semantically correct after CropPlot0 became Lightning.
+
+### Validation
+- Godot 4.7.1 Lightning regression: PASS for crop contract, 7× flare amplification, exact 20-power harvest, 100% cap, immediate removal of conductor risk after harvest, and cross-sector crop-state persistence.
+- Smoke test now loads and validates `lightning_vine.tres`.
+- Real 640×360 Lightning + active-flare capture: PASS.
+- Canonical C03 READY-frame slicing/alignment diagnostic: **596/596 nontransparent source pixels matched the live 32×32 sprite exactly** when the READY particle layer alone was hidden; the earlier normal READY capture differed only where particles overlaid the sprite.

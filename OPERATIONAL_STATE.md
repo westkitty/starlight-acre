@@ -1,7 +1,7 @@
 # Starlight Acre Operational State
 
 Project ID: starlight-acre
-Revision: 12
+Revision: 13
 Updated: 2026-09-21
 
 ## Purpose
@@ -30,7 +30,7 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 
 ## Verified working
 - Godot 4.7.1 can initialize the modified project headlessly without script/resource parse errors.
-- `tests/smoke_test.gd` passes and loads GreenhouseSector, EngineeringBay, CropPlot, ResearchTerminal, and Wisdom Fruit Resource.
+- `tests/smoke_test.gd` passes and loads GreenhouseSector, EngineeringBay, CropPlot, ResearchTerminal, SolarFlareController, and all three live crop resources: Wisdom Fruit, Trickster Vine, and Lightning Vine.
 - The real main scene runs headlessly for 120 frames without script/runtime errors.
 - Previously invalid JPEG-encoded .png files were normalized and import successfully.
 - Recovered July terminal/HUD/VFX files parse under the current runtime.
@@ -50,6 +50,10 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - First recurring station hazard is implemented and regression-verified: Solar Flare cycles 30s initial calm → 5s warning → 8s active → 45s recovery. Active flare multiplies normal power drain by 5×; Efficient Grid's existing 0.6 multiplier still mitigates it.
 - Solar Flare state is intentionally transient across quit/relaunch but survives live Greenhouse ↔ Engineering transitions. The exact-zero phase-boundary transition case is regression-verified to advance rather than reset.
 - Solar Flare HUD feedback uses canonical V02 cell 1. A real 640×360 active-flare render passed; all 297 nontransparent source pixels produced exactly 297 changed pixels inside the intended 32×32 HUD rectangle with no spill.
+- Lightning Vine is implemented as the third mythic crop on Greenhouse CropPlot0 using canonical C03_C001: 28s growth, 15% tend bonus, 1 Water + 1 Nutrient planting cost, and +20 station power on harvest capped at 100%.
+- Second Mythic Ecology proof is implemented: each GROWING or READY Lightning Vine is a Solar Flare conductor and adds +2× to the active flare multiplier. One live vine therefore turns the base 5× flare into 7× before Efficient Grid mitigation; harvesting/resetting the vine immediately removes that penalty.
+- Lightning Vine crop state uses the normal persisted plot-state path, so conductor status survives sector reloads/save-relaunch as crop state while Solar Flare timing itself remains transient. Regression coverage verifies 7× drain, exact +20 power harvest, 100% cap, immediate risk removal, and sector-reload persistence.
+- Canonical C03 rendering is technically verified: in a real 640×360 Greenhouse capture, hiding only READY particles for one diagnostic frame produced a 596/596 exact pixel match between the canonical 32×32 READY frame and the live sprite. The ordinary capture's differences were solely particle overlay.
 
 ## Implemented but not fully verified
 - Manual player journey across Greenhouse -> Engineering -> Greenhouse (automated round-trip verified; interactive feel still pending).
@@ -62,7 +66,7 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Greenhouse TileMap painting/collision migration is complete. Engineering Bay still uses its earlier StaticBody2D floor/wall collision and Polygon2D floor visual.
 - ~~Generated art source files are 640x640 despite historical documentation claiming sprite-sheet dimensions~~ Resolved by canon promotion: live files are now exactly the documented sheet dimensions (192x192 player, 128x32 crop states, 64x64 terminals, 80x16 HUD, 256x256 tileset, 128x32 VFX, 640x360 backgrounds).
 - Visual QA of the promoted art remains PENDING USER REVIEW overall: dimensions, hashes, region bounds, scene loads, Greenhouse camera framing, and Greenhouse floor/wall render sanity are verified; the user has not yet signed off on the complete sprite/scene aesthetic pass.
-- Remaining mythic crops (C03-C05), engineering fixtures, future drones, Dexter (D01_ALT_C001 exact, locked), and HUD extensions remain PROMOTED_FUTURE_USE art only. C02 Trickster Vine and V02 Solar Flare VFX have graduated into live gameplay; V02 cells 2-4 remain unused.
+- Remaining mythic crops (C04-C05), engineering fixtures, future drones, Dexter (D01_ALT_C001 exact, locked), and HUD extensions remain PROMOTED_FUTURE_USE art only. C02 Trickster Vine, C03 Lightning Vine, and V02 Solar Flare VFX have graduated into live gameplay; V02 cells 2-4 remain unused.
 - Audio remains absent.
 - Delivery identity is the active branch `arena/01a0bd0b-starlight-acre` and PR #2; use Git history for exact per-revision commit hashes rather than embedding a self-referential current SHA here.
 
@@ -76,14 +80,15 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Canonical repairs completed 3/3 (`RATIFIED_REPAIR_RESULTS.json`): E01_C002 tileset re-derived from the intact opaque source with zero keying (REPAIRED_WITH_FLAGS, 100% identity with all previously retained pixels, dark-tile pixels restored); B01_C001 and B02_C002 backgrounds recomposed to full-frame 16:9 and re-derived at exactly 640x360 (REPAIRED). Repaired derivatives live only under `assets/candidates/visual_canon/ratified_repairs/`; original candidate libraries are byte-untouched.
 - `assets/candidates/visual_canon/FINAL_VISUAL_CANON_MANIFEST.json` was authoritative for asset promotion (canonical file per slot, hashes, repair provenance).
 - LIVE PROMOTION COMPLETE 2026-09-20: all 29 canonical assets promoted byte-preserving (copy only, SHA-256 verified live == canonical for every file); 7 replaced existing live paths (previous live SHA-256 recorded), 22 created at deterministic snake_case paths. Full map with provenance and rollback hashes: `assets/candidates/visual_canon/LIVE_ASSET_PROMOTION_MANIFEST.json`. Git history is the rollback mechanism.
-- Integrated into existing implemented surfaces (visual-only changes): player sheet regions, Wisdom Fruit hframes=4, Repair/Replenish terminal atlas halves, HUD five 16x16 icons, ReadyGlow VFX texture, greenhouse background (z -10), greenhouse tileset (promoted only — no TileMap painting), ResearchTerminal/GardenerDrone/SectorDoor placeholder polygons/ColorRect replaced by canonical Sprite2Ds at floor-consistent positions (names, scripts, Area2D shapes, connections unchanged), EngineeringBay gained a Background Sprite2D (Backdrop retained beneath at z -11) and the CoreGlow polygon was replaced by the 96x96 reactor core Sprite2D at the established position (visual only).
-- 15 slots remain PROMOTED_FUTURE_USE (drones A03-A05, fixtures B03-B05, crops C03-C05, Dexter D01/D02, E02/E03, T03 active glow, U02): present in the live library and deliberately not instantiated. C02 Trickster Vine and V02 Solar Flare VFX have graduated into live gameplay; V02 cells 2-4 remain reserved for future hazards. T03 has no existing visual state in research_terminal.gd, so it stays uninstantiated per contract.
+- Integrated into implemented surfaces: player sheet regions, Wisdom/Trickster/Lightning crop hframes=4, Repair/Replenish terminal atlas halves, HUD five 16x16 icons plus V02 Solar Flare indicator, ReadyGlow VFX texture, greenhouse background (z -10), canonical E01 greenhouse TileMap floor/walls with physics, ResearchTerminal/GardenerDrone/SectorDoor canonical Sprite2Ds, and EngineeringBay background/reactor visuals.
+- 14 slots remain PROMOTED_FUTURE_USE (drones A03-A05, fixtures B03-B05, crops C04-C05, Dexter D01/D02, E02/E03, T03 active glow, U02): present in the live library and deliberately not instantiated. C02 Trickster Vine, C03 Lightning Vine, and V02 Solar Flare VFX have graduated into live gameplay; V02 cells 2-4 remain reserved for future hazards. T03 has no existing visual state in research_terminal.gd, so it stays uninstantiated per contract.
 - Visual playthrough remains pending (see Pending priority).
 
 ## Current gameplay economy
 - Initial water: 5.
 - Initial nutrients: 5.
 - Initial power: 100%.
+- Lightning Vine is the renewable power crop: each harvest restores exactly 20 power, capped at 100%.
 - Initial emergency resupplies: 2.
 - Chaos: 0 initially; caught Trickster Fruit yields 1 Chaos. The catch reports the stored total through the station-message HUD rather than inventing an unratified icon.
 - Paradox Trellis costs 3 Chaos; after unlock, Trickster tend theft becomes a shared pulse that advances both the neighboring Wisdom Fruit and the Trickster Vine.
@@ -92,6 +97,7 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Efficient Grid costs 4 Wisdom Fruit and reduces passive power drain by 40%.
 - Closed-Loop Hydroponics costs 6 Wisdom Fruit, raises water/nutrient caps to 15, and makes resupply free.
 - Paradox Trellis costs 3 Chaos and converts the once-per-cycle Trickster tend theft into a mirrored Wisdom+Trickster pulse.
+- Solar Flare base active drain is 5×; each GROWING/READY Lightning Vine adds +2× before Efficient Grid's 0.6 mitigation, so one conductive vine produces a 7× raw flare multiplier.
 
 ## Validation matrix
 | Check | State |
@@ -108,20 +114,21 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 | Godot post-promotion smoke test | verified on MacBook Godot 4.7.1 |
 | One-click visual QA harness: static build validation | verified (sandbox) |
 | One-click visual QA harness: actual Mac run + screenshots | verified at 640×360: Greenhouse + Engineering captured, 34/34 crops extracted, report rebuilt; report builder also accepts a successful `report.json` when the outer launcher rc marker is missing |
-| Core systems regression suite | verified: persistence relaunch, sector round-trip/fallback, all research purchases, Trickster flee/catch + persistence, one-shot Wisdom↔Trickster tend theft, Paradox Trellis mirrored pulse, Gardener, Solar Flare lifecycle/drain/mitigation/transition boundary, Greenhouse TileMap/camera, 120-frame main |
+| Core systems regression suite | verified: persistence relaunch, sector round-trip/fallback, all research purchases, Trickster flee/catch + persistence, Wisdom↔Trickster tend theft + Paradox Trellis, Lightning Vine +20 power + 7× flare conduction + persistence, Gardener, Solar Flare lifecycle/drain/mitigation/transition boundary, Greenhouse TileMap/camera, 120-frame main |
 | Manual editor playthrough | pending |
 | Trickster flee-event render capture | verified technically (`visual_qa_output/trickster_flee.png` produced by real Godot render); aesthetic review pending |
 | Visual QA of promoted art | PENDING HUMAN REVIEW |
 | Greenhouse TileMap visual/collision QA | verified mechanically + real render sanity pass; user aesthetic sign-off pending |
 | Solar Flare hazard QA | verified lifecycle + exact drain rates + Efficient Grid mitigation + cross-sector continuity + exact-zero boundary + canonical V02 HUD render; user feel/aesthetic sign-off pending |
+| Lightning Vine + Flare ecology QA | verified exact 28s/15%/1+1/+20 crop contract, 7× one-vine flare multiplier, 100% power cap, immediate conductor removal on harvest, sector-reload persistence, 596/596 canonical READY-frame live-pixel match with particles isolated; user feel/aesthetic sign-off pending |
 | Save/relaunch persistence journey | verified across separate Godot processes, including saved-sector resume |
 
 ## Pending priority
-1. Human visual QA pass over the captured Greenhouse, Engineering, Trickster flee-event, and Solar Flare HUD renders.
-2. Manual interactive playthrough for movement/transition feel, Trickster catch/steal feel, Paradox Trellis Research UX, Gardener normal-speed pathing feel, camera feel at both sector edges, and Solar Flare warning/pressure feel.
-3. Next bounded gameplay slice: Lightning Vine, using the now-live Solar Flare as its risk/reward hook rather than adding an isolated third crop.
-4. Engineering Bay environment pass if needed: replace its remaining placeholder floor/wall presentation without destabilizing the validated sector loop.
-5. Dexter vendor, anomaly framework, audio, and release polish (D01_ALT_C001 art ready, locked, no vendor gameplay).
+1. Human visual QA pass over the captured Greenhouse, Engineering, Trickster flee-event, Solar Flare HUD, and Lightning+Flare renders.
+2. Manual interactive playthrough for movement/transition feel, Trickster catch/steal feel, Lightning harvest timing, Paradox Trellis Research UX, Gardener normal-speed pathing feel, camera feel at both sector edges, and Solar Flare warning/pressure feel.
+3. Engineering Bay environment pass: replace its remaining placeholder floor/wall presentation with canonical E02 while preserving the validated sector loop and camera/collision contract.
+4. After Engineering visual parity, choose the next bounded ecology slice: Shadow Root tied to blackout/low-power state, or Dexter Docking Bay if a social/vendor loop advances the finishable game more.
+5. Audio, anomaly/malfunction framework, accessibility/options, and release polish.
 
 ## Revision history
 - Revision 1: initial current-state control surface created during upgrade pass.
@@ -136,6 +143,7 @@ A small, finishable 2D orbital mythic farming-station game in which the player r
 - Revision 10: implemented the first Mythic Ecology interaction: a neighboring growing Trickster Vine can steal exactly one Wisdom Fruit tending pulse per growth cycle within 224px, including pulses triggered by automation. Added Paradox Trellis at the Research Terminal for 3 Chaos; after unlock the stolen pulse advances both crops. Steal state, Chaos, and the upgrade persist; regression coverage verifies base theft, one-shot limit, reload persistence, upgraded mirrored behavior, and all prior core systems.
 - Revision 11: completed the Greenhouse environment gate. Painted canonical E01 floor/wall TileMapLayers, proved TileSet collision independently, removed the obsolete StaticBody2D room stubs, standardized the live viewport at 640×360 with a bounded player-follow Camera2D and camera-synced sector backgrounds, corrected visual QA capture to the real internal resolution, and hardened report generation so a completed `report.json` remains valid evidence when the outer launcher rc marker is interrupted.
 - Revision 12: implemented the first recurring station hazard, Solar Flare. Added a 30/5/8/45 calm-warning-active-recovery cadence, 5× active power drain with Efficient Grid mitigation, transient cross-sector hazard continuity, canonical V02 HUD feedback, an exact-zero transition guard, smoke coverage, a real 640×360 active-flare render proof, and full regression coverage.
+- Revision 13: implemented Lightning Vine as the third mythic crop using canonical C03_C001. It grows in 28s, harvests directly into +20 station power, and creates the second Mythic Ecology law: each GROWING/READY Lightning Vine adds +2× to active Solar Flare drain. Added explicit conductor messaging, persistence/regression coverage, preserved the Gardener travel test against the center Wisdom plot, proved canonical C03 READY rendering at 596/596 exact pixels with particles isolated, and re-ran the full persistence/core/runtime + normal visual-QA suite.
 
 ## Delivery
 - Branch: `arena/01a0bd0b-starlight-acre`
